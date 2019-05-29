@@ -28,11 +28,11 @@ public class PlayerController : MonoBehaviour
     
     private void Awake()
     {
-        jump = (KeyCode) System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("jumpKey", sJump));
-        forward = (KeyCode) System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("forwardKey", sForward));
-        backward = (KeyCode) System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("backwardKey", sBack));
-        left = (KeyCode) System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("leftKey", sLeft));
-        right = (KeyCode) System.Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("rightKey", sRight));
+        jump = (KeyCode) Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("jumpKey", sJump));
+        forward = (KeyCode) Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("forwardKey", sForward));
+        backward = (KeyCode) Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("backwardKey", sBack));
+        left = (KeyCode) Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("leftKey", sLeft));
+        right = (KeyCode) Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("rightKey", sRight));
     }
 
     public void Update()

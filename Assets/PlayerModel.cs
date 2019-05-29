@@ -30,7 +30,7 @@ public class PlayerModel : MonoBehaviour
 //    public float baseAttackDamage;
 //    public float attackDamage;
 
-    private void Start()
+    private void Awake()
     {
         speed = baseSpeed;
         sprintSpeedMult = baseSprintSpeedMult;
@@ -39,7 +39,12 @@ public class PlayerModel : MonoBehaviour
         
         body = GetComponent<Rigidbody>();
         
+        
+        
     }
 
-    
+    private void FixedUpdate()
+    {
+        
+    }
 }
