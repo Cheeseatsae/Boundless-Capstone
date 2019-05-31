@@ -18,13 +18,16 @@ public class PlayerController : MonoBehaviour
     public string sLeft = "A";
     public string sRight = "D";
 
-    public delegate void InputAction(float i);
+    public delegate void InputAxis(float i);
+
+    public event InputAxis OnForwardInput;
+    public event InputAxis OnBackwardInput;
+    public event InputAxis OnLeftInput;
+    public event InputAxis OnRightInput;
+
+    public delegate void InputAction();
 
     public event InputAction OnJumpInput;
-    public event InputAction OnForwardInput;
-    public event InputAction OnBackwardInput;
-    public event InputAction OnLeftInput;
-    public event InputAction OnRightInput;
     
     private void Awake()
     {
@@ -38,10 +41,8 @@ public class PlayerController : MonoBehaviour
     public void Update()
     {
 
-        if (Input.GetKey(jump))
-            OnJumpInput?.Invoke(1);
-        else
-            OnJumpInput?.Invoke(0);
+        if (Input.GetKeyDown(jump))
+            OnJumpInput?.Invoke();
         
         if (Input.GetKey(forward)) 
             OnForwardInput?.Invoke(1);
