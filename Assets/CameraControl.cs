@@ -7,28 +7,17 @@ public class CameraControl : MonoBehaviour
     public float cameraSpeed = 120f;
 
     public GameObject followObj;
-
-    public Vector3 followPosition;
-
+    
     public float clamp = 80;
 
     public float sensitivity = 150;
 
-    public GameObject camera;
-
-    public GameObject player;
-
-    public float disX;
-    public float disY;
-    public float disZ;
     public float mouseX;
     public float mouseY;
     public float finalInputX;
     public float finalInputZ;
-    public float smoothX;
-    public float smoothY;
-    public float rotY = 0.0f;
-    public float rotX = 0.0f;
+    public float rotY;
+    public float rotX;
     
     
     
@@ -64,6 +53,9 @@ public class CameraControl : MonoBehaviour
         Quaternion localRot = Quaternion.Euler(rotX, rotY, 0.0f);
         transform.rotation = localRot;
 
+        Quaternion r = followObj.transform.rotation;
+        followObj.transform.rotation = Quaternion.Euler(r.x, rotY, r.z);
+        
     }
 
     private void FixedUpdate()
