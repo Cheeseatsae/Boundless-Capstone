@@ -18,8 +18,9 @@ public class CameraControl : MonoBehaviour
     public float finalInputZ;
     public float rotY;
     public float rotX;
-    
-    
+
+    public bool invertX;
+    public bool invertY;
     
     
     // Start is called before the first frame update
@@ -42,8 +43,8 @@ public class CameraControl : MonoBehaviour
         
         mouseX = Input.GetAxis("Mouse X");
         mouseY = Input.GetAxis("Mouse Y");
-        finalInputX = /*inputX +*/ mouseX;
-        finalInputZ = /*inputZ +*/ mouseY;
+        finalInputX = /*inputX +*/ mouseX * (invertX ? -1 : 1);
+        finalInputZ = /*inputZ +*/ mouseY * (invertY ? -1 : 1);
 
         rotY += finalInputX * sensitivity * Time.deltaTime;
         rotX += finalInputZ * sensitivity * Time.deltaTime;
