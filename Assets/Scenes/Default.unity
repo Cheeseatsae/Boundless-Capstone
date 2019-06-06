@@ -436,6 +436,7 @@ MonoBehaviour:
   sRight: D
   sMouse0: Mouse0
   sMouse1: Mouse1
+  sShift: LeftShift
 --- !u!1001 &437329796
 PrefabInstance:
   m_ObjectHideFlags: 0

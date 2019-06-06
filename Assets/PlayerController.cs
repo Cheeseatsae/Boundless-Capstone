@@ -20,8 +20,8 @@ public class PlayerController : MonoBehaviour
     public string sBack = "S";
     public string sLeft = "A";
     public string sRight = "D";
-    public string sMouse0 = "mouse0";
-    public string sMouse1 = "mouse1";
+    public string sMouse0 = "Mouse0";
+    public string sMouse1 = "Mouse1";
     public string sShift = "LeftShift";
     
     public delegate void InputAxis(float i);
