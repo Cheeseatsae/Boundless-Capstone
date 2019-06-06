@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Mirror;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController : NetworkBehaviour
 {
     
     public KeyCode jump {get; set;}
@@ -53,6 +54,9 @@ public class PlayerController : MonoBehaviour
 
     public void Update()
     {
+        
+        if(!isLocalPlayer)
+            return;
 
         if (Input.GetKeyDown(jump))
             OnJumpInput?.Invoke();

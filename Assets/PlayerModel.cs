@@ -37,6 +37,8 @@ public class PlayerModel : MonoBehaviour
 //    public float baseAttackDamage;
 //    public float attackDamage;
 
+    public AbilityBase ability1;
+
     private void Awake()
     {
         speed = baseSpeed;
@@ -54,6 +56,10 @@ public class PlayerModel : MonoBehaviour
         controller.OnBackwardInput += UpdateBackInput;
         controller.OnLeftInput += UpdateLeftInput;
         controller.OnRightInput += UpdateRightInput;
+        
+        controller.OnMouse0Input += OnMouse0Input;
+
+        ability1 = GetComponent<Ability1>();
     }
 
     private void FixedUpdate()
@@ -118,5 +124,16 @@ public class PlayerModel : MonoBehaviour
     {
         speed /= sprintSpeedMult;
     }
-    
+
+    private void OnMouse0Input()
+    {
+        ability1.Enter();
+    }
+    private void OnMouse1Input()
+    {
+        
+    }
+
+
+
 }

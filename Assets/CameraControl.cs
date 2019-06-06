@@ -29,8 +29,9 @@ public class CameraControl : MonoBehaviour
         Vector3 rotation = transform.rotation.eulerAngles;
         rotX = rotation.x;
         rotY = rotation.y;
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        followObj = GameObject.FindWithTag("Player");
+        //Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = false;
 
     }
 
