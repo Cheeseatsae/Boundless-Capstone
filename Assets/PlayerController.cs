@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     public KeyCode right {get; set;}
     public KeyCode mouse0 { get; set; }
     public KeyCode mouse1 { get; set; }
+    public KeyCode shift { get; set; }
     
     public string sJump = "Space";
     public string sForward = "W";
@@ -21,7 +22,8 @@ public class PlayerController : MonoBehaviour
     public string sRight = "D";
     public string sMouse0 = "mouse0";
     public string sMouse1 = "mouse1";
-
+    public string sShift = "LeftShift";
+    
     public delegate void InputAxis(float i);
 
     public event InputAxis OnForwardInput;
@@ -34,6 +36,8 @@ public class PlayerController : MonoBehaviour
     public event InputAction OnJumpInput;
     public event InputAction OnMouse0Input;
     public event InputAction OnMouse1Input;
+    public event InputAction OnShiftInputDown;
+    public event InputAction OnShiftInputUp;
     
     private void Awake()
     {
@@ -42,6 +46,7 @@ public class PlayerController : MonoBehaviour
         backward = (KeyCode) Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("backwardKey", sBack));
         left = (KeyCode) Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("leftKey", sLeft));
         right = (KeyCode) Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("rightKey", sRight));
+        shift = (KeyCode) Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("shiftKey", sShift));
         mouse0 = (KeyCode) Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Mouse0", sMouse0));
         mouse1 = (KeyCode) Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Mouse1", sMouse1));
     }
@@ -51,6 +56,12 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(jump))
             OnJumpInput?.Invoke();
+        
+        if (Input.GetKeyDown(shift))
+            OnShiftInputDown?.Invoke();
+        
+        if (Input.GetKeyUp(shift))
+            OnShiftInputUp?.Invoke();
         
         if (Input.GetKeyDown(mouse0))
             OnMouse0Input?.Invoke();

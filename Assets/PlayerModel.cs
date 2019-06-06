@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerModel : MonoBehaviour
 {
     public float baseSpeed;
-    [HideInInspector]     public float speed;
+    [HideInInspector] public float speed;
     public float baseSprintSpeedMult;
     [HideInInspector] public float sprintSpeedMult;
     public int baseJumps;
@@ -46,7 +46,9 @@ public class PlayerModel : MonoBehaviour
         
         body = GetComponent<Rigidbody>();
 
-        controller.OnJumpInput += UpdateJumpInput;
+        controller.OnJumpInput += JumpInputDown;
+        controller.OnShiftInputDown += ShiftInputDown;
+        controller.OnShiftInputUp += ShiftInputUp;
         
         controller.OnForwardInput += UpdateForwardInput;
         controller.OnBackwardInput += UpdateBackInput;
@@ -72,7 +74,9 @@ public class PlayerModel : MonoBehaviour
 
     private void OnDestroy()
     {
-        controller.OnJumpInput -= UpdateJumpInput;
+        controller.OnJumpInput -= JumpInputDown;
+        controller.OnShiftInputDown -= ShiftInputDown;
+        controller.OnShiftInputUp -= ShiftInputUp;
         
         controller.OnForwardInput -= UpdateForwardInput;
         controller.OnBackwardInput -= UpdateBackInput;
@@ -100,9 +104,19 @@ public class PlayerModel : MonoBehaviour
         _rightInput = i;
     }
 
-    private void UpdateJumpInput()
+    private void JumpInputDown()
     {
         body.velocity = new Vector3(body.velocity.x, jumpHeight, body.velocity.z);
     }
 
+    private void ShiftInputDown()
+    {
+        speed *= sprintSpeedMult;
+    }
+    
+    private void ShiftInputUp()
+    {
+        speed /= sprintSpeedMult;
+    }
+    
 }
