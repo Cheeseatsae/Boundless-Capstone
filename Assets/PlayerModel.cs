@@ -88,7 +88,7 @@ public class PlayerModel : MonoBehaviour
         body.velocity = new Vector3(v.x, body.velocity.y, v.y);
     }
 
-    private void OnCollisionStay(Collision other)
+    private void OnCollisionEnter(Collision other)
     {
         foreach (ContactPoint c in other.contacts)
         {

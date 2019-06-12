@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 9064367217528433733}
   - component: {fileID: 9134880087942267290}
   - component: {fileID: -2392807555510866843}
+  - component: {fileID: -5048125680820625554}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -95,13 +96,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8844a1ff56d108f4085765ec50910958, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseSpeed: 250
+  baseSpeed: 500
   speed: 0
   baseMaxSpeed: 7
   maxSpeed: 0
   baseSprintSpeedMult: 20
   sprintSpeedMult: 0
-  baseJumps: 2
+  baseJumps: 1
   jumps: 0
   baseJumpHeight: 5
   jumpHeight: 0
@@ -153,7 +154,7 @@ MonoBehaviour:
   serverOnly: 0
   localPlayerAuthority: 1
   m_AssetId: 
-  m_SceneId: 2635678071
+  m_SceneId: 1330165549
 --- !u!114 &9134880087942267290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,3 +192,17 @@ MonoBehaviour:
   bulletPref: {fileID: 3695492489222300511, guid: fc7ded4b216793047a2651587c217a80,
     type: 3}
   projectileSpeed: 4
+--- !u!114 &-5048125680820625554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8086389977643893722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f74aedd71d9a4f55b3ce499326d45fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncInterval: 0.1
+  compressRotation: 1
