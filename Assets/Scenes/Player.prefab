@@ -96,6 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8844a1ff56d108f4085765ec50910958, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  syncInterval: 0.1
   baseSpeed: 500
   speed: 0
   baseMaxSpeed: 7
@@ -108,6 +109,7 @@ MonoBehaviour:
   jumpHeight: 0
   body: {fileID: 0}
   controller: {fileID: 9134880087942267290}
+  camPrefab: {fileID: 66740816703162726, guid: 3cea5fecf712f9c439ddbc6da6d17cf7, type: 3}
   ability1: {fileID: 0}
 --- !u!136 &8086389977643893696
 CapsuleCollider:
@@ -154,7 +156,7 @@ MonoBehaviour:
   serverOnly: 0
   localPlayerAuthority: 1
   m_AssetId: 
-  m_SceneId: 1330165549
+  m_SceneId: 3015592970
 --- !u!114 &9134880087942267290
 MonoBehaviour:
   m_ObjectHideFlags: 0

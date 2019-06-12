@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Mirror;
 using UnityEngine;
 
 public class CameraControl : MonoBehaviour
@@ -32,13 +33,12 @@ public class CameraControl : MonoBehaviour
         followObj = GameObject.FindWithTag("Player");
         //Cursor.lockState = CursorLockMode.Locked;
         //Cursor.visible = false;
-
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        
         mouseX = Input.GetAxis("Mouse X");
         mouseY = Input.GetAxis("Mouse Y");
         finalInputX = mouseX * (invertX ? -1 : 1);

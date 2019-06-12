@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Mirror;
 using UnityEngine;
 
-public class PlayerModel : MonoBehaviour
+public class PlayerModel : NetworkBehaviour
 {
     public float baseSpeed;
     [HideInInspector] public float speed;
@@ -20,6 +21,8 @@ public class PlayerModel : MonoBehaviour
     public Rigidbody body;
 
     public PlayerController controller;
+    public GameObject camPrefab;
+    private CameraControl myCam;
     
     private float _forwardInput;
     private float _backInput;
@@ -44,6 +47,7 @@ public class PlayerModel : MonoBehaviour
 
     private void Awake()
     {
+        
         speed = baseSpeed;
         maxSpeed = baseMaxSpeed;
         sprintSpeedMult = baseSprintSpeedMult;
@@ -65,6 +69,13 @@ public class PlayerModel : MonoBehaviour
         controller.OnMouse0Input += OnMouse0Input;
 
         ability1 = GetComponent<Ability1>();
+    }
+
+    private void Start()
+    {
+        // BROKEN - DOES NOT WORK CLIENT SIDE
+        myCam = Instantiate(camPrefab, transform.position, transform.rotation).GetComponent<CameraControl>();
+        myCam.followObj = this.gameObject;
     }
 
     private void FixedUpdate()
@@ -159,6 +170,8 @@ public class PlayerModel : MonoBehaviour
         controller.OnBackwardInput -= UpdateBackInput;
         controller.OnLeftInput -= UpdateLeftInput;
         controller.OnRightInput -= UpdateRightInput;
+        
+        Destroy(myCam.gameObject);
     }
 
 }
