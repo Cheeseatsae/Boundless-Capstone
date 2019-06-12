@@ -13,10 +13,10 @@ public class Ability1 : AbilityBase
     [Command]
     void CmdFire(float lifeTime)
     {
-        GameObject bullet = Instantiate(bulletPref, transform.position + transform.right, Quaternion.identity);
+        GameObject bullet = Instantiate(bulletPref, transform.position + transform.forward, Quaternion.identity);
 
         Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
-        bulletRb.velocity = transform.right * projectileSpeed;
+        bulletRb.velocity = transform.forward * projectileSpeed;
         
         Destroy(bullet,lifeTime);
         

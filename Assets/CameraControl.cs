@@ -39,13 +39,10 @@ public class CameraControl : MonoBehaviour
     void Update()
     {
 
-        //float inputX = Input.GetAxis("JoyStickHori");
-       // float inputZ = Input.GetAxis("JoyStickVert");
-        
         mouseX = Input.GetAxis("Mouse X");
         mouseY = Input.GetAxis("Mouse Y");
-        finalInputX = /*inputX +*/ mouseX * (invertX ? -1 : 1);
-        finalInputZ = /*inputZ +*/ mouseY * (invertY ? -1 : 1);
+        finalInputX = mouseX * (invertX ? -1 : 1);
+        finalInputZ = mouseY * (invertY ? -1 : 1);
 
         rotY += finalInputX * sensitivity * Time.deltaTime;
         rotX += finalInputZ * sensitivity * Time.deltaTime;

@@ -7,10 +7,13 @@ public class PlayerModel : MonoBehaviour
 {
     public float baseSpeed;
     [HideInInspector] public float speed;
+    public float baseMaxSpeed;
+    [HideInInspector] public float maxSpeed;
     public float baseSprintSpeedMult;
     [HideInInspector] public float sprintSpeedMult;
     public int baseJumps;
     [HideInInspector] public int jumps;
+    private int remainingJumps;
     public float baseJumpHeight;
     [HideInInspector] public float jumpHeight;
     
@@ -42,8 +45,10 @@ public class PlayerModel : MonoBehaviour
     private void Awake()
     {
         speed = baseSpeed;
+        maxSpeed = baseMaxSpeed;
         sprintSpeedMult = baseSprintSpeedMult;
         jumps = baseJumps;
+        remainingJumps = jumps;
         jumpHeight = baseJumpHeight;
         
         body = GetComponent<Rigidbody>();
@@ -66,29 +71,36 @@ public class PlayerModel : MonoBehaviour
     {
         Vector3 velocity = body.velocity;
         
-        Vector3 force = new Vector3(_rightInput - _leftInput, 0, _forwardInput - _backInput) * speed * Time.deltaTime;
+        Vector3 force = new Vector3(_rightInput - _leftInput, 0, _forwardInput - _backInput) * 10 * speed * Time.deltaTime;
         body.AddRelativeForce(force);
 
         // if no input is detected and we're on the ground, smooth movement to a stop quickly
         if (_backInput + _leftInput + _rightInput + _forwardInput == 0)
         {
-            float x = Mathf.Lerp(velocity.x, 0, 0.25f);
-            float z = Mathf.Lerp(velocity.z, 0, 0.25f);
+            float x = Mathf.Lerp(velocity.x, 0, 0.2f);
+            float z = Mathf.Lerp(velocity.z, 0, 0.2f);
             body.velocity = new Vector3(x, velocity.y, z);
         }
+
+        // Clamped x + z magnitude
+        Vector2 v = new Vector2(body.velocity.x, body.velocity.z);
+        v = Vector2.ClampMagnitude(v, maxSpeed);
+        body.velocity = new Vector3(v.x, body.velocity.y, v.y);
     }
 
-    private void OnDestroy()
+    private void OnCollisionStay(Collision other)
     {
-        controller.OnJumpInput -= JumpInputDown;
-        controller.OnShiftInputDown -= ShiftInputDown;
-        controller.OnShiftInputUp -= ShiftInputUp;
-        
-        controller.OnForwardInput -= UpdateForwardInput;
-        controller.OnBackwardInput -= UpdateBackInput;
-        controller.OnLeftInput -= UpdateLeftInput;
-        controller.OnRightInput -= UpdateRightInput;
+        foreach (ContactPoint c in other.contacts)
+        {
+            Debug.DrawRay(c.point, c.normal, Color.red, 2);
+
+            if (c.normal.y > 0.4f)
+                remainingJumps = jumps;
+
+        }
     }
+    
+    // Actions to perform when input is received 
     
     private void UpdateForwardInput(float i)
     {
@@ -112,7 +124,10 @@ public class PlayerModel : MonoBehaviour
 
     private void JumpInputDown()
     {
+        if (remainingJumps <= 0) return;
+        
         body.velocity = new Vector3(body.velocity.x, jumpHeight, body.velocity.z);
+        remainingJumps--;
     }
 
     private void ShiftInputDown()
@@ -134,6 +149,16 @@ public class PlayerModel : MonoBehaviour
         
     }
 
-
+    private void OnDestroy()
+    {
+        controller.OnJumpInput -= JumpInputDown;
+        controller.OnShiftInputDown -= ShiftInputDown;
+        controller.OnShiftInputUp -= ShiftInputUp;
+        
+        controller.OnForwardInput -= UpdateForwardInput;
+        controller.OnBackwardInput -= UpdateBackInput;
+        controller.OnLeftInput -= UpdateLeftInput;
+        controller.OnRightInput -= UpdateRightInput;
+    }
 
 }

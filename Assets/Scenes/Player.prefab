@@ -95,13 +95,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8844a1ff56d108f4085765ec50910958, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseSpeed: 1000
+  baseSpeed: 250
   speed: 0
+  baseMaxSpeed: 7
+  maxSpeed: 0
   baseSprintSpeedMult: 20
   sprintSpeedMult: 0
-  baseJumps: 1
+  baseJumps: 2
   jumps: 0
-  baseJumpHeight: 2
+  baseJumpHeight: 5
   jumpHeight: 0
   body: {fileID: 0}
   controller: {fileID: 9134880087942267290}
@@ -151,7 +153,7 @@ MonoBehaviour:
   serverOnly: 0
   localPlayerAuthority: 1
   m_AssetId: 
-  m_SceneId: 1124764429
+  m_SceneId: 2635678071
 --- !u!114 &9134880087942267290
 MonoBehaviour:
   m_ObjectHideFlags: 0
