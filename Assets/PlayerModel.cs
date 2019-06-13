@@ -146,7 +146,6 @@ public class PlayerModel : NetworkBehaviour
     [Command]
     private void CmdJump()
     {
-        Debug.Log("Jumped");
         RpcJump();
     }
 
