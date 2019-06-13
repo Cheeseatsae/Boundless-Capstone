@@ -146,7 +146,6 @@ public class PlayerModel : NetworkBehaviour
     [Command]
     private void CmdJump()
     {
-        Debug.Log("Jumped");
         RpcJump();
     }
 
@@ -159,11 +158,13 @@ public class PlayerModel : NetworkBehaviour
     private void ShiftInputDown()
     {
         speed *= sprintSpeedMult;
+        maxSpeed *= sprintSpeedMult;
     }
     
     private void ShiftInputUp()
     {
         speed /= sprintSpeedMult;
+        maxSpeed /= sprintSpeedMult;
     }
 
     private void OnMouse0Input()
