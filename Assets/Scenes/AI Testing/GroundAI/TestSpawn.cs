@@ -6,6 +6,7 @@ using UnityEngine;
 public class TestSpawn : NetworkBehaviour
 {
     public GameObject groundAI;
+    
 
     public Transform spawnPoint;
     // Start is called before the first frame update
@@ -23,6 +24,7 @@ public class TestSpawn : NetworkBehaviour
         }
     }
     
+    [Command]
     void CmdFire()
     {
         GameObject AI = Instantiate(groundAI, spawnPoint.position, Quaternion.identity);

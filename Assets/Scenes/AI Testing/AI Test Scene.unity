@@ -708,7 +708,7 @@ MonoBehaviour:
   runInBackground: 1
   startOnHeadless: 1
   serverTickRate: 30
-  showDebugMessages: 0
+  showDebugMessages: 1
   offlineScene: 
   onlineScene: 
   transport: {fileID: 989932414}
@@ -1102,15 +1102,15 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -7891740872279920830, guid: 0aebd788854327043a9d57f442db9703,
-        type: 3}
-      propertyPath: m_SceneId
-      value: 1561857276
-      objectReference: {fileID: 0}
     - target: {fileID: 5747712285712444256, guid: 0aebd788854327043a9d57f442db9703,
         type: 3}
       propertyPath: m_Name
       value: AIGroundTest
+      objectReference: {fileID: 0}
+    - target: {fileID: -7891740872279920830, guid: 0aebd788854327043a9d57f442db9703,
+        type: 3}
+      propertyPath: m_SceneId
+      value: 1561857276
       objectReference: {fileID: 0}
     - target: {fileID: 5747712285712444254, guid: 0aebd788854327043a9d57f442db9703,
         type: 3}
