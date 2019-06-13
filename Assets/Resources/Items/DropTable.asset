@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: DropTable
   m_EditorClassIdentifier: 
   commonItems:
-  - itemId: 0
+  - itemId: 1
     physical: 0
     objectToAdd: {fileID: 0}
-    scriptToAdd: {fileID: 0}
+    scriptToAdd: {fileID: 5330577577913039135, guid: 78bb2f8dae192534e8560f6a4c231d7a,
+      type: 3}
   - itemId: 0
     physical: 0
     objectToAdd: {fileID: 0}

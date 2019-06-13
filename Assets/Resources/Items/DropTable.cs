@@ -6,6 +6,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "DropTable", menuName = "DropTable", order = 1)]
 public class DropTable : ScriptableObject
 {
+
     [Serializable]
     public class ItemContainer
     {
