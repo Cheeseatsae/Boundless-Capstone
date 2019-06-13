@@ -22,7 +22,6 @@ public class PlayerModel : NetworkBehaviour
 
     public PlayerController controller;
     public GameObject camPrefab;
-    private CameraControl myCam;
     
     private float _forwardInput;
     private float _backInput;
@@ -74,8 +73,10 @@ public class PlayerModel : NetworkBehaviour
     private void Start()
     {
         // BROKEN - DOES NOT WORK CLIENT SIDE
-        myCam = Instantiate(camPrefab, transform.position, transform.rotation).GetComponent<CameraControl>();
-        myCam.followObj = this.gameObject;
+//        myCam = Instantiate(camPrefab, transform.position, transform.rotation).GetComponent<CameraControl>();
+//        myCam.followObj = this.gameObject;
+        if (isLocalPlayer)
+            CameraControl.playerCam.followObj = this.gameObject;
     }
 
     private void FixedUpdate()
@@ -171,7 +172,6 @@ public class PlayerModel : NetworkBehaviour
         controller.OnLeftInput -= UpdateLeftInput;
         controller.OnRightInput -= UpdateRightInput;
         
-        Destroy(myCam.gameObject);
     }
 
 }
