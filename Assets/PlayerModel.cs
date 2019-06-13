@@ -138,10 +138,24 @@ public class PlayerModel : NetworkBehaviour
     {
         if (remainingJumps <= 0) return;
         
-        body.velocity = new Vector3(body.velocity.x, jumpHeight, body.velocity.z);
+        CmdJump();
+        //body.velocity = new Vector3(body.velocity.x, jumpHeight, body.velocity.z);
         remainingJumps--;
     }
 
+    [Command]
+    private void CmdJump()
+    {
+        Debug.Log("Jumped");
+        RpcJump();
+    }
+
+    [ClientRpc]
+    private void RpcJump()
+    {
+        body.velocity = new Vector3(body.velocity.x, jumpHeight, body.velocity.z);
+    }
+    
     private void ShiftInputDown()
     {
         speed *= sprintSpeedMult;
