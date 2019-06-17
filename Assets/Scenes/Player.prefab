@@ -101,7 +101,7 @@ MonoBehaviour:
   speed: 0
   baseMaxSpeed: 7
   maxSpeed: 0
-  baseSprintSpeedMult: 20
+  baseSprintSpeedMult: 1.5
   sprintSpeedMult: 0
   baseJumps: 1
   jumps: 0
@@ -140,7 +140,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 112
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &9064367217528433733
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,7 +156,7 @@ MonoBehaviour:
   serverOnly: 0
   localPlayerAuthority: 1
   m_AssetId: 
-  m_SceneId: 4142506259
+  m_SceneId: 2369100513
 --- !u!114 &9134880087942267290
 MonoBehaviour:
   m_ObjectHideFlags: 0
