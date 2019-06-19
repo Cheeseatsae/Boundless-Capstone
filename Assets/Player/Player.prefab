@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 9134880087942267290}
   - component: {fileID: -2392807555510866843}
   - component: {fileID: -5048125680820625554}
+  - component: {fileID: 1772594557683322157}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -156,7 +157,7 @@ MonoBehaviour:
   serverOnly: 0
   localPlayerAuthority: 1
   m_AssetId: 
-  m_SceneId: 2369100513
+  m_SceneId: 0
 --- !u!114 &9134880087942267290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,3 +209,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncInterval: 0
   compressRotation: 1
+--- !u!114 &1772594557683322157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8086389977643893722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b54b534b3f0f2534ca26d3b3855d7a7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncInterval: 0.1
+  baseMaxHealth: 100
+  health: 100
+  maxHealth: 0
+  baseHealthRegen: 1
+  healthRegen: 1
+  regenTick: 1
