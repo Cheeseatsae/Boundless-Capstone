@@ -19,10 +19,10 @@ public class PlayerModel : NetworkBehaviour
     [HideInInspector] public float jumpHeight;
     
     public Rigidbody body;
-
     public PlayerController controller;
-    public GameObject camPrefab;
-    
+    public Camera myCam;
+    public Vector3 target;
+
     private float _forwardInput;
     private float _backInput;
     private float _leftInput;
@@ -72,11 +72,32 @@ public class PlayerModel : NetworkBehaviour
 
     private void Start()
     {
-        // BROKEN - DOES NOT WORK CLIENT SIDE
-//        myCam = Instantiate(camPrefab, transform.position, transform.rotation).GetComponent<CameraControl>();
-//        myCam.followObj = this.gameObject;
+        myCam = CameraControl.playerCam.GetComponentInChildren<Camera>();
+
         if (isLocalPlayer)
             CameraControl.playerCam.followObj = this.gameObject;
+    }
+
+    // for aiming at items - Not going to work, should have consistent aiming direction for everything not separate ones for items;
+    private void Update()
+    {
+        if (!isLocalPlayer) return;
+        
+        RaycastHit h;
+        if (Physics.Raycast(myCam.ViewportPointToRay(new Vector3(0.5f,0.6f,0f)),out h, 1000))
+        {
+            Debug.DrawLine(myCam.transform.position, h.point, Color.green, 0.05f);
+            target = h.point;
+        }
+        
+    }
+
+    // test aim location for player
+    private void OnDrawGizmos()
+    {
+        Vector3 pos = myCam.transform.position + (myCam.transform.forward * 10);
+        Gizmos.color = Color.magenta;
+        Gizmos.DrawSphere(pos, 0.1f);
     }
 
     private void FixedUpdate()
