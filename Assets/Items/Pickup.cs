@@ -21,7 +21,7 @@ public class Pickup : MonoBehaviour
 
         // getcomponent to see if player already has script
         if (other.gameObject.GetComponent(t))
-            Debug.Log("AAAAAA");
+            Debug.Log("Component Found");
         
         // add script
         ItemBase ib = (ItemBase)other.gameObject.AddComponent(t);
