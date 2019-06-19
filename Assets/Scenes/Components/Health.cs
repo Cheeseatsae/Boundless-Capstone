@@ -43,6 +43,15 @@ public class Health : NetworkBehaviour
     private void TakeDamage(int amount)
     {
         health -= amount;
+        
+    }
+
+    public void Update()
+    {
+        if (health == 0)
+        {
+            Debug.Log("ima deeeeed");
+        }
     }
 
     private IEnumerator Regen()
