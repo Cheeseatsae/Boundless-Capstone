@@ -26,5 +26,8 @@ public class AIBullet : NetworkBehaviour
             Health healthComp = other.GetComponent<Health>();
             healthComp.CmdDoDamage(damage);
         }
+        
+        NetworkServer.Destroy(this.gameObject);
+        Destroy(this.gameObject);
     }
 }
