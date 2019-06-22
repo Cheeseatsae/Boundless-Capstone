@@ -42,7 +42,7 @@ namespace Mirror.Weaver
         public static bool GenerateLogErrors { get; set; }
 
         // private properties
-        static bool DebugLogEnabled = true;
+        static readonly bool DebugLogEnabled = true;
 
         // Network types
         public static TypeReference NetworkBehaviourType;
@@ -87,9 +87,11 @@ namespace Mirror.Weaver
         public static MethodReference NetworkServerGetLocalClientActive;
         public static MethodReference NetworkClientGetActive;
         public static MethodReference getBehaviourIsServer;
+        public static MethodReference NetworkReaderReadPackedInt32;
         public static MethodReference NetworkReaderReadPackedUInt32;
-        public static MethodReference NetworkReaderReadPackedUInt64;
         public static MethodReference NetworkWriterWritePackedUInt64;
+        public static MethodReference NetworkWriterWritePackedInt32;
+        public static MethodReference NetworkReaderReadPackedUInt64;
 
         public static MethodReference NetworkReadUInt16;
         public static MethodReference NetworkWriteUInt16;
@@ -187,7 +189,7 @@ namespace Mirror.Weaver
             WeaveLists.numSyncVars[className] = num;
         }
 
-        static internal void ConfirmGeneratedCodeClass()
+        internal static void ConfirmGeneratedCodeClass()
         {
             if (WeaveLists.generateContainerClass == null)
             {
@@ -309,10 +311,13 @@ namespace Mirror.Weaver
 
             NetworkWriterWriteInt16 = Resolvers.ResolveMethodWithArg(NetworkWriterType, CurrentAssembly, "Write", int16Type);
 
+            NetworkReaderReadPackedInt32 = Resolvers.ResolveMethod(NetworkReaderType, CurrentAssembly, "ReadPackedInt32");
             NetworkReaderReadPackedUInt32 = Resolvers.ResolveMethod(NetworkReaderType, CurrentAssembly, "ReadPackedUInt32");
             NetworkReaderReadPackedUInt64 = Resolvers.ResolveMethod(NetworkReaderType, CurrentAssembly, "ReadPackedUInt64");
 
+            NetworkWriterWritePackedInt32 = Resolvers.ResolveMethod(NetworkWriterType, CurrentAssembly, "WritePackedInt32");
             NetworkWriterWritePackedUInt64 = Resolvers.ResolveMethod(NetworkWriterType, CurrentAssembly, "WritePackedUInt64");
+
 
             NetworkReadUInt16 = Resolvers.ResolveMethod(NetworkReaderType, CurrentAssembly, "ReadUInt16");
             NetworkWriteUInt16 = Resolvers.ResolveMethodWithArg(NetworkWriterType, CurrentAssembly, "Write", uint16Type);
@@ -387,17 +392,9 @@ namespace Mirror.Weaver
         {
             // a valid type is a simple class or struct. so we generate only code for types we dont know, and if they are not inside
             // this assembly it must mean that we are trying to serialize a variable outside our scope. and this will fail.
-
+            // no need to report an error here, the caller will report a better error
             string assembly = CurrentAssembly.MainModule.Name;
-            if (variable.Module.Name != assembly)
-            {
-                Weaver.Error("parameter [" + variable.Name +
-                    "] is of the type [" +
-                    variable.FullName +
-                    "] is not a valid type, please make sure to use a valid type.");
-                return false;
-            }
-            return true;
+            return variable.Module.Name == assembly;
         }
 
         static void CheckMonoBehaviour(TypeDefinition td)
@@ -500,19 +497,19 @@ namespace Mirror.Weaver
             TypeReference parent = td.BaseType;
             while (parent != null)
             {
-                if (parent.FullName.StartsWith(SyncListType.FullName))
+                if (parent.FullName.StartsWith(SyncListType.FullName, StringComparison.Ordinal))
                 {
                     SyncListProcessor.Process(td);
                     didWork = true;
                     break;
                 }
-                else if (parent.FullName.StartsWith(SyncSetType.FullName))
+                else if (parent.FullName.StartsWith(SyncSetType.FullName, StringComparison.Ordinal))
                 {
                     SyncListProcessor.Process(td);
                     didWork = true;
                     break;
                 }
-                else if (parent.FullName.StartsWith(SyncDictionaryType.FullName))
+                else if (parent.FullName.StartsWith(SyncDictionaryType.FullName, StringComparison.Ordinal))
                 {
                     SyncDictionaryProcessor.Process(td);
                     didWork = true;
@@ -539,7 +536,7 @@ namespace Mirror.Weaver
             return didWork;
         }
 
-        static bool Weave(string assName, IEnumerable<string> dependencies, IAssemblyResolver assemblyResolver, string unityEngineDLLPath, string mirrorNetDLLPath, string outputDir)
+        static bool Weave(string assName, IEnumerable<string> dependencies, string unityEngineDLLPath, string mirrorNetDLLPath, string outputDir)
         {
             using (DefaultAssemblyResolver asmResolver = new DefaultAssemblyResolver())
             using (CurrentAssembly = AssemblyDefinition.ReadAssembly(assName, new ReaderParameters { ReadWrite = true, ReadSymbols = true, AssemblyResolver = asmResolver }))
@@ -637,7 +634,7 @@ namespace Mirror.Weaver
             return true;
         }
 
-        public static bool WeaveAssemblies(IEnumerable<string> assemblies, IEnumerable<string> dependencies, IAssemblyResolver assemblyResolver, string outputDir, string unityEngineDLLPath, string mirrorNetDLLPath)
+        public static bool WeaveAssemblies(IEnumerable<string> assemblies, IEnumerable<string> dependencies, string outputDir, string unityEngineDLLPath, string mirrorNetDLLPath)
         {
             WeavingFailed = false;
             WeaveLists = new WeaverLists();
@@ -651,7 +648,7 @@ namespace Mirror.Weaver
                 {
                     foreach (string ass in assemblies)
                     {
-                        if (!Weave(ass, dependencies, assemblyResolver, unityEngineDLLPath, mirrorNetDLLPath, outputDir))
+                        if (!Weave(ass, dependencies, unityEngineDLLPath, mirrorNetDLLPath, outputDir))
                         {
                             return false;
                         }

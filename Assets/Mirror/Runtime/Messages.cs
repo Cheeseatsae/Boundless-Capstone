@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Mirror
 {
@@ -153,11 +154,25 @@ namespace Mirror
 
     public class ConnectMessage : EmptyMessage {}
 
-    public class SceneMessage : StringMessage
+    public class SceneMessage : MessageBase
     {
-        public SceneMessage(string value) : base(value) {}
+        public string sceneName;
+        public LoadSceneMode sceneMode; // Single = 0, Additive = 1
+        public LocalPhysicsMode physicsMode; // None = 0, Physics3D = 1, Physics2D = 2
 
-        public SceneMessage() {}
+        public override void Deserialize(NetworkReader reader)
+        {
+            sceneName = reader.ReadString();
+            sceneMode = (LoadSceneMode)reader.ReadByte();
+            physicsMode = (LocalPhysicsMode)reader.ReadByte();
+        }
+
+        public override void Serialize(NetworkWriter writer)
+        {
+            writer.Write(sceneName);
+            writer.Write((byte)sceneMode);
+            writer.Write((byte)physicsMode);
+        }
     }
     #endregion
 
@@ -168,14 +183,16 @@ namespace Mirror
         public uint netId;
         public int componentIndex;
         public int functionHash;
-        public byte[] payload; // the parameters for the Cmd function
+        // the parameters for the Cmd function
+        // -> ArraySegment to avoid unnecessary allocations
+        public ArraySegment<byte> payload;
 
         public override void Deserialize(NetworkReader reader)
         {
             netId = reader.ReadPackedUInt32();
             componentIndex = (int)reader.ReadPackedUInt32();
             functionHash = reader.ReadInt32(); // hash is always 4 full bytes, WritePackedInt would send 1 extra byte here
-            payload = reader.ReadBytesAndSize();
+            payload = reader.ReadBytesAndSizeSegment();
         }
 
         public override void Serialize(NetworkWriter writer)
@@ -183,7 +200,7 @@ namespace Mirror
             writer.WritePackedUInt32(netId);
             writer.WritePackedUInt32((uint)componentIndex);
             writer.Write(functionHash);
-            writer.WriteBytesAndSize(payload);
+            writer.WriteBytesAndSizeSegment(payload);
         }
     }
 
@@ -203,7 +220,9 @@ namespace Mirror
         public Vector3 position;
         public Quaternion rotation;
         public Vector3 scale;
-        public byte[] payload;
+        // the serialized component data
+        // -> ArraySegment to avoid unnecessary allocations
+        public ArraySegment<byte> payload;
 
         public override void Deserialize(NetworkReader reader)
         {
@@ -213,7 +232,7 @@ namespace Mirror
             position = reader.ReadVector3();
             rotation = reader.ReadQuaternion();
             scale = reader.ReadVector3();
-            payload = reader.ReadBytesAndSize();
+            payload = reader.ReadBytesAndSizeSegment();
         }
 
         public override void Serialize(NetworkWriter writer)
@@ -224,7 +243,7 @@ namespace Mirror
             writer.Write(position);
             writer.Write(rotation);
             writer.Write(scale);
-            writer.WriteBytesAndSize(payload);
+            writer.WriteBytesAndSizeSegment(payload);
         }
     }
 
@@ -236,7 +255,9 @@ namespace Mirror
         public Vector3 position;
         public Quaternion rotation;
         public Vector3 scale;
-        public byte[] payload;
+        // the serialized component data
+        // -> ArraySegment to avoid unnecessary allocations
+        public ArraySegment<byte> payload;
 
         public override void Deserialize(NetworkReader reader)
         {
@@ -246,7 +267,7 @@ namespace Mirror
             position = reader.ReadVector3();
             rotation = reader.ReadQuaternion();
             scale = reader.ReadVector3();
-            payload = reader.ReadBytesAndSize();
+            payload = reader.ReadBytesAndSizeSegment();
         }
 
         public override void Serialize(NetworkWriter writer)
@@ -257,7 +278,7 @@ namespace Mirror
             writer.Write(position);
             writer.Write(rotation);
             writer.Write(scale);
-            writer.WriteBytesAndSize(payload);
+            writer.WriteBytesAndSizeSegment(payload);
         }
     }
 
@@ -316,18 +337,20 @@ namespace Mirror
     class UpdateVarsMessage : MessageBase
     {
         public uint netId;
-        public byte[] payload;
+        // the serialized component data
+        // -> ArraySegment to avoid unnecessary allocations
+        public ArraySegment<byte> payload;
 
         public override void Deserialize(NetworkReader reader)
         {
             netId = reader.ReadPackedUInt32();
-            payload = reader.ReadBytesAndSize();
+            payload = reader.ReadBytesAndSizeSegment();
         }
 
         public override void Serialize(NetworkWriter writer)
         {
             writer.WritePackedUInt32(netId);
-            writer.WriteBytesAndSize(payload);
+            writer.WriteBytesAndSizeSegment(payload);
         }
     }
 

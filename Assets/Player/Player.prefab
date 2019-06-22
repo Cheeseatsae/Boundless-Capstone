@@ -65,7 +65,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 17ef6b08f961dcd489967621ce467113, type: 2}
+  - {fileID: 2100000, guid: 4df5a05f4099803409365fc1ef686658, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -110,7 +110,8 @@ MonoBehaviour:
   jumpHeight: 0
   body: {fileID: 0}
   controller: {fileID: 9134880087942267290}
-  camPrefab: {fileID: 66740816703162726, guid: 3cea5fecf712f9c439ddbc6da6d17cf7, type: 3}
+  myCam: {fileID: 0}
+  target: {x: 0, y: 0, z: 0}
   ability1: {fileID: 0}
 --- !u!136 &8086389977643893696
 CapsuleCollider:
@@ -157,7 +158,7 @@ MonoBehaviour:
   serverOnly: 0
   localPlayerAuthority: 1
   m_AssetId: 
-  m_SceneId: 0
+  m_SceneId: 951321677
 --- !u!114 &9134880087942267290
 MonoBehaviour:
   m_ObjectHideFlags: 0
