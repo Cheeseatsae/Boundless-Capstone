@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using Mirror;
+using Mirror.Examples.Pong;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -10,7 +11,7 @@ public class GroundAI_Model : NetworkBehaviour
 
     public GameObject target;
     private float minDistance = Mathf.Infinity;
-    private List<GameObject> Players = new List<GameObject>();
+    public List<GameObject> Players = new List<GameObject>();
     public GameObject bulletPref;
     public float coolDown;
     public float projectileSpeed;
@@ -27,15 +28,17 @@ public class GroundAI_Model : NetworkBehaviour
 
     void Start()
     {
-        foreach (GameObject player in GameObject.FindGameObjectsWithTag("Player"))
+        foreach (Health health in FindObjectsOfType<Health>())
         {
-            Players.Add(player);
+            health.EventDeath += RecalPlayerList;
         }
+        RecalPlayerList();        
     }
 
     // Update is called once per frame
     void Update()
     {
+        
         foreach (GameObject player in Players)
         {
             float distance = Vector3.Distance(player.transform.position, transform.position);
@@ -58,8 +61,7 @@ public class GroundAI_Model : NetworkBehaviour
                     CmdFire();
                     rangedCooldown = true;
                     StartCoroutine(Cooldown());
-                }
-                
+                }               
             }
         }
         
@@ -80,5 +82,14 @@ public class GroundAI_Model : NetworkBehaviour
         yield return new WaitForSeconds(coolDown);
         rangedCooldown = false;
 
+    }
+
+    public void RecalPlayerList()
+    {
+        Players.Clear();
+        foreach (GameObject player in GameObject.FindGameObjectsWithTag("Player"))
+        {
+            Players.Add(player);
+        }
     }
 }

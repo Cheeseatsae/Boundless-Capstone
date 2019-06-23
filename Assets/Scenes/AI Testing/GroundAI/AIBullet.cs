@@ -21,13 +21,14 @@ public class AIBullet : NetworkBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<Health>())
+        if (other.GetComponent<Health>() && other.GetComponent<PlayerModel>())
         {
             Health healthComp = other.GetComponent<Health>();
             healthComp.CmdDoDamage(damage);
+            NetworkServer.Destroy(this.gameObject);
+            Destroy(this.gameObject);
         }
         
-        NetworkServer.Destroy(this.gameObject);
-        Destroy(this.gameObject);
+        
     }
 }

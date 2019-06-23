@@ -16,9 +16,20 @@ public class Health : NetworkBehaviour
     
     //Events
     public delegate void TakeDamageDelegate(int amount);
-
+    public delegate void OnDeath();
+    public delegate void ReCalPlayers();
     [SyncEvent] 
     public event TakeDamageDelegate EventTakeDamage;
+
+    [SyncEvent] 
+    public event OnDeath EventDeath;
+    
+    [SyncEvent] 
+    public event ReCalPlayers EventRecal;
+    
+    
+        
+    
     
     private void Start()
     {
@@ -27,11 +38,35 @@ public class Health : NetworkBehaviour
         if (NetworkClient.active)
         {
             EventTakeDamage += TakeDamage;
+            EventDeath += Death;
+            
         }
         if (healthRegen > 0)
         {
             StartCoroutine(Regen());
         }       
+    }
+
+    private void ReCal()
+    {
+        
+    }
+
+    [Command]
+    private void CmdDeath()
+    {
+        EventDeath();
+    }
+    
+    private void Death()
+    {
+        if (GetComponent<GroundAI_Model>())
+        {
+            EventRecal();
+        }
+        
+        NetworkServer.Destroy(this.gameObject);
+        Destroy(this.gameObject);
     }
 
     [Command]
@@ -43,6 +78,7 @@ public class Health : NetworkBehaviour
     private void TakeDamage(int amount)
     {
         health -= amount;
+        CheckForDeath();
         
     }
 
@@ -64,4 +100,14 @@ public class Health : NetworkBehaviour
             // send event
         }
     }
+
+    public void CheckForDeath()
+    {
+        if (health <= 0)
+        {
+            EventDeath();
+        }
+    }
+    
+    
 }
