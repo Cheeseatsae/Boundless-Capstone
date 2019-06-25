@@ -7,29 +7,23 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shader Graphs_LitTest
-  m_Shader: {fileID: -6465566751694194690, guid: d59cedd7cad3faf4ea7b4389c6a39137,
+  m_Name: Mat_Rim
+  m_Shader: {fileID: -6465566751694194690, guid: 0aa02f1b3c944ab4ea568e36bbc1cfb2,
     type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
-  stringTagMap:
-    MotionVector: User
-  disabledShaderPasses:
-  - MOTIONVECTORS
+  stringTagMap: {}
+  disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 00eab65f56c22fa4aa80f4d1b89a99dc, type: 3}
+        m_Texture: {fileID: 2800000, guid: 68d5b10a6313aeb48bef09d87564a5af, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - _Fresnel: 0.5
-    - _TimeMult: 0.1
-    - _Transparency: 0.742
+    m_Floats: []
     m_Colors:
-    - _BaseColour: {r: 1, g: 0, b: 0, a: 0}
-    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Colour: {r: 0.46151638, g: 0, b: 0.6698113, a: 1}
