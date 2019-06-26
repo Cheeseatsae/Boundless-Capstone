@@ -14,6 +14,8 @@ public class CameraControl : MonoBehaviour
 
     public float sensitivity = 150;
 
+    public Vector3 followOffset;
+
     public float mouseX;
     public float mouseY;
     public float finalInputX;
@@ -74,9 +76,10 @@ public class CameraControl : MonoBehaviour
 
     private void UpdatePos()
     {
-        Transform target = followObj.transform;
-
+        Vector3 target = followObj.transform.position + followOffset;
+        float dis = Vector3.Distance(target, transform.position);
+        
         float step = cameraSpeed * Time.deltaTime;
-        transform.position = Vector3.MoveTowards(transform.position, target.position, step);
+        transform.position = Vector3.MoveTowards(transform.position, target, step);
     }
 }

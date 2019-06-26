@@ -83,11 +83,12 @@ public class PlayerModel : NetworkBehaviour
     {
         if (!isLocalPlayer) return;
         
+        target = myCam.transform.position + (myCam.transform.forward * 10);
+        
         RaycastHit h;
-        if (Physics.Raycast(myCam.ViewportPointToRay(new Vector3(0.5f,0.6f,0f)),out h, 1000))
+        if (Physics.Linecast(transform.position, target, out h))
         {
-            Debug.DrawLine(myCam.transform.position, h.point, Color.green, 0.05f);
-            target = h.point;
+            Debug.DrawLine(transform.position, h.point, Color.green, 0.05f);
         }
         
     }
@@ -95,9 +96,8 @@ public class PlayerModel : NetworkBehaviour
     // test aim location for player
     private void OnDrawGizmos()
     {
-        Vector3 pos = myCam.transform.position + (myCam.transform.forward * 10);
         Gizmos.color = Color.magenta;
-        Gizmos.DrawSphere(pos, 0.1f);
+        Gizmos.DrawSphere(target, 0.1f);
     }
 
     private void FixedUpdate()
