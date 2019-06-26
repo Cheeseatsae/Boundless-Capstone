@@ -10,7 +10,8 @@ public class GroundAI_Model : NetworkBehaviour
 
     public GameObject target;
     private float minDistance = Mathf.Infinity;
-    public List<GameObject> Players = new List<GameObject>();
+    //public List<GameObject> Players = new List<GameObject>();
+    public AIManager aiManager;
     public GameObject bulletPref;
     public float coolDown;
     public float projectileSpeed;
@@ -27,15 +28,15 @@ public class GroundAI_Model : NetworkBehaviour
 
     void Start()
     {
-
-        RecalPlayerList();        
+        aiManager = FindObjectOfType<AIManager>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
         
-        foreach (GameObject player in Players)
+        foreach (GameObject player in aiManager.Players)
         {
             if (player != null)
             {
@@ -89,12 +90,5 @@ public class GroundAI_Model : NetworkBehaviour
 
     }
 
-    public void RecalPlayerList()
-    {
-        Players.Clear();
-        foreach (GameObject player in GameObject.FindGameObjectsWithTag("Player"))
-        {
-            Players.Add(player);
-        }
-    }
+
 }
