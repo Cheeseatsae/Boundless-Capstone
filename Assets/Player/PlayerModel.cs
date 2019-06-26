@@ -160,7 +160,7 @@ public class PlayerModel : NetworkBehaviour
         if (remainingJumps <= 0) return;
         
         CmdJump();
-        //body.velocity = new Vector3(body.velocity.x, jumpHeight, body.velocity.z);
+        body.velocity = new Vector3(body.velocity.x, jumpHeight, body.velocity.z);
         remainingJumps--;
     }
 

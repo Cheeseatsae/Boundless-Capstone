@@ -106,7 +106,7 @@ MonoBehaviour:
   sprintSpeedMult: 0
   baseJumps: 1
   jumps: 0
-  baseJumpHeight: 5
+  baseJumpHeight: 15
   jumpHeight: 0
   body: {fileID: 0}
   controller: {fileID: 9134880087942267290}
@@ -158,7 +158,7 @@ MonoBehaviour:
   serverOnly: 0
   localPlayerAuthority: 1
   m_AssetId: 
-  m_SceneId: 951321677
+  m_SceneId: 1704396952
 --- !u!114 &9134880087942267290
 MonoBehaviour:
   m_ObjectHideFlags: 0
