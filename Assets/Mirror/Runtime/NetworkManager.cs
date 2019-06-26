@@ -14,12 +14,12 @@ namespace Mirror
         Random,
         RoundRobin
     }
-
+    
     [AddComponentMenu("Network/NetworkManager")]
     [HelpURL("https://vis2k.github.io/Mirror/Components/NetworkManager")]
     public class NetworkManager : MonoBehaviour
     {
-
+         
         // configuration
         [FormerlySerializedAs("m_DontDestroyOnLoad")] public bool dontDestroyOnLoad = true;
         [FormerlySerializedAs("m_RunInBackground")] public bool runInBackground = true;
@@ -70,7 +70,8 @@ namespace Mirror
 
         static UnityEngine.AsyncOperation loadingSceneAsync;
         static NetworkConnection clientReadyConnection;
-
+        
+        
         // virtual so that inheriting classes' Awake() can call base.Awake() too
         public virtual void Awake()
         {
@@ -84,6 +85,8 @@ namespace Mirror
 
             // setup OnSceneLoaded callback
             SceneManager.sceneLoaded += OnSceneLoaded;
+
+            
         }
 
         // headless mode detection

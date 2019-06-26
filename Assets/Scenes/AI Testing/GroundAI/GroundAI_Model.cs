@@ -2,7 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using Mirror;
-using Mirror.Examples.Pong;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -28,10 +27,7 @@ public class GroundAI_Model : NetworkBehaviour
 
     void Start()
     {
-        foreach (Health health in FindObjectsOfType<Health>())
-        {
-            health.EventDeath += RecalPlayerList;
-        }
+
         RecalPlayerList();        
     }
 
@@ -41,14 +37,23 @@ public class GroundAI_Model : NetworkBehaviour
         
         foreach (GameObject player in Players)
         {
-            float distance = Vector3.Distance(player.transform.position, transform.position);
-            if (distance < minDistance)
+            if (player != null)
             {
-                target = player;
-                minDistance = distance;
+                float distance = Vector3.Distance(player.transform.position, transform.position);
+                if (distance < minDistance)
+                {
+                    target = player;
+                    minDistance = distance;
+                }
             }
+            
         }
-        navmesh.destination = target.transform.position;
+
+        if (target != null)
+        {
+            navmesh.destination = target.transform.position;
+        }
+        
         RaycastHit hit;
         
         if (Physics.Raycast(transform.position, transform.forward, out hit))

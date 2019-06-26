@@ -9,7 +9,7 @@ public class Health : NetworkBehaviour
     public int baseMaxHealth;
     public int health;
     [HideInInspector] public int maxHealth;
-    
+    public AIManager aiManager;
     public int baseHealthRegen;
     public int healthRegen;
     public float regenTick = 1;
@@ -17,7 +17,7 @@ public class Health : NetworkBehaviour
     //Events
     public delegate void TakeDamageDelegate(int amount);
     public delegate void OnDeath();
-    public delegate void ReCalPlayers();
+    public delegate void ReCalPlayers(GameObject player);
     [SyncEvent] 
     public event TakeDamageDelegate EventTakeDamage;
 
@@ -26,11 +26,13 @@ public class Health : NetworkBehaviour
     
     [SyncEvent] 
     public event ReCalPlayers EventRecal;
-    
-    
-        
-    
-    
+
+    public void Awake()
+    {
+        aiManager = FindObjectOfType<AIManager>();
+    }
+
+
     private void Start()
     {
         maxHealth = baseMaxHealth;
@@ -60,9 +62,9 @@ public class Health : NetworkBehaviour
     
     private void Death()
     {
-        if (GetComponent<GroundAI_Model>())
+        if (GetComponent<PlayerModel>())
         {
-            EventRecal();
+            aiManager.Players.Remove(gameObject);
         }
         
         NetworkServer.Destroy(this.gameObject);
