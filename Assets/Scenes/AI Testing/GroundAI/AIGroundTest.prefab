@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 5747712285712444257}
   - component: {fileID: -7891740872279920830}
   - component: {fileID: -2946629245046867974}
+  - component: {fileID: -9194247105183948250}
   m_Layer: 0
   m_Name: AIGroundTest
   m_TagString: Untagged
@@ -110,6 +111,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncInterval: 0.1
   target: {fileID: 0}
+  aiManager: {fileID: 0}
   bulletPref: {fileID: 7704365907161935278, guid: 9a8824215a3e86e4082d0b64d45ffe27,
     type: 3}
   coolDown: 2
@@ -168,8 +170,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   serverOnly: 0
   localPlayerAuthority: 0
-  m_AssetId: 0aebd788854327043a9d57f442db9703
-  m_SceneId: 0
+  m_AssetId: 
+  m_SceneId: 1820307638
 --- !u!114 &-2946629245046867974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -184,3 +186,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncInterval: 0.1
   compressRotation: 1
+--- !u!114 &-9194247105183948250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5747712285712444256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b54b534b3f0f2534ca26d3b3855d7a7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncInterval: 0.1
+  baseMaxHealth: 50
+  health: 50
+  maxHealth: 0
+  aiManager: {fileID: 0}
+  baseHealthRegen: 0
+  healthRegen: 0
+  regenTick: 1

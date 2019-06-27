@@ -40,8 +40,7 @@ public class CameraControl : MonoBehaviour
         rotX = rotation.x;
         rotY = rotation.y;
         // followObj = GameObject.FindWithTag("Player");
-        // Cursor.lockState = CursorLockMode.Locked;
-        // Cursor.visible = false;
+         
     }
 
     // Update is called once per frame

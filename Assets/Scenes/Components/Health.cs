@@ -9,7 +9,7 @@ public class Health : NetworkBehaviour
     public int baseMaxHealth;
     public int health;
     [HideInInspector] public int maxHealth;
-    public AIManager aiManager;
+    [HideInInspector] public AIManager aiManager;
     public int baseHealthRegen;
     public int healthRegen;
     public float regenTick = 1;

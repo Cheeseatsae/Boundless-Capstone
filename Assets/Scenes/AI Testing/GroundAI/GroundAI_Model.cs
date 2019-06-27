@@ -5,7 +5,7 @@ using Mirror;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class GroundAI_Model : NetworkBehaviour
+public class GroundAI_Model : AIBaseModel
 {
 
     public GameObject target;

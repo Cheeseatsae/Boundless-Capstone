@@ -5,14 +5,15 @@ using UnityEngine;
 
 public class Damager : NetworkBehaviour
 {
-    public GameObject projectile;
+    
     public int damage;
     
     //effects
-    
+
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<Health>() && other.GetComponent<PlayerModel>())
+        if (other.GetComponent<Health>() && other.GetComponent<AIBaseModel>())
         {
             Health healthComp = other.GetComponent<Health>();
             healthComp.CmdDoDamage(damage);

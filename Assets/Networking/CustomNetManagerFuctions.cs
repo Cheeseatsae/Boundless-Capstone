@@ -20,5 +20,7 @@ public class CustomNetManagerFuctions : NetworkManager
     {
         base.OnServerAddPlayer(conn, extraMessage);
         aiManager.Players.Add(conn.playerController.gameObject);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 }
