@@ -83,13 +83,36 @@ public class PlayerModel : NetworkBehaviour
     {
         if (!isLocalPlayer) return;
         
-        target = myCam.transform.position + (myCam.transform.forward * 10);
+        //target = myCam.transform.position + (myCam.transform.forward * 10);
+        //myCam.transform.position + myCam.transform.forward
+        RaycastHit a;
+        Debug.DrawLine(transform.position, transform.position + myCam.transform.forward*10, Color.red, 0.05f);
+        Physics.Raycast(myCam.transform.position, myCam.transform.forward, out a, 10000);
         
-        RaycastHit h;
-        if (Physics.Linecast(transform.position, target, out h))
-        {
-            Debug.DrawLine(transform.position, h.point, Color.green, 0.05f);
-        }
+        // Aiming at a distance :
+        // close range use raycast
+        // long range use spherecast
+        // if distance between raycast hit and spherecast is over threshold aim at spherecast hit
+        
+        
+            Debug.Log(a.point);
+            if (a.point!= Vector3.zero)
+            {
+                Vector3 temp = a.point - transform.position;
+                Debug.DrawLine(transform.position, transform.position+temp, Color.green, 0.05f);
+            }
+            else
+            {
+                Vector3 temp = myCam.transform.forward;
+                Debug.DrawLine(transform.position, transform.position+(temp * 1000), Color.black, 0.05f);
+            }
+        
+        
+//        RaycastHit h;
+//        if (Physics.Linecast(transform.position, target, out h))
+//        {
+//            Debug.DrawLine(transform.position, h.point, Color.green, 0.05f);
+//        }
         
     }
 
