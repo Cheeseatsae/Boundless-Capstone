@@ -53,23 +53,25 @@ public class GroundAI_Model : NetworkBehaviour
         if (target != null)
         {
             navmesh.destination = target.transform.position;
-        }
-        
-        RaycastHit hit;
-        
-        if (Physics.Raycast(transform.position, transform.forward, out hit))
-        {
             
-            if (hit.collider.gameObject == target)
+            RaycastHit hit;
+        
+            if (Physics.Raycast(transform.position, (target.transform.position - transform.position), out hit))
             {
-                if (rangedCooldown == false)
+            
+                if (hit.collider.gameObject == target)
                 {
-                    CmdFire();
-                    rangedCooldown = true;
-                    StartCoroutine(Cooldown());
-                }               
+                    if (rangedCooldown == false)
+                    {
+                        CmdFire();
+                        rangedCooldown = true;
+                        StartCoroutine(Cooldown());
+                    }               
+                }
             }
         }
+        
+
         
     }
     [Command]
@@ -77,9 +79,11 @@ public class GroundAI_Model : NetworkBehaviour
     {
         
         GameObject bullet = Instantiate(bulletPref, transform.position + transform.forward, Quaternion.identity);
-
+        
+        
         Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
-        bulletRb.velocity = transform.forward * projectileSpeed;
+        Vector3 dir = (target.transform.position - transform.position).normalized;
+        bulletRb.velocity = dir * projectileSpeed;
         NetworkServer.Spawn(bullet);
     }
     
