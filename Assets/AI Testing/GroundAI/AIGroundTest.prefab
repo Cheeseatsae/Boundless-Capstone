@@ -128,7 +128,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 1
-  m_Speed: 3
+  m_Speed: 10
   m_Acceleration: 8
   avoidancePriority: 5
   m_AngularSpeed: 500
@@ -171,7 +171,7 @@ MonoBehaviour:
   serverOnly: 0
   localPlayerAuthority: 0
   m_AssetId: 
-  m_SceneId: 1820307638
+  m_SceneId: 0
 --- !u!114 &-2946629245046867974
 MonoBehaviour:
   m_ObjectHideFlags: 0
