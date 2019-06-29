@@ -23,7 +23,8 @@ public class Ability1 : AbilityBase
         GameObject bullet = Instantiate(bulletPref, transform.position + transform.forward, Quaternion.Euler(90,90,0));
         
         Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
-        bulletRb.velocity = transform.forward * projectileSpeed;
+        Vector3 dir = (player.target - transform.position).normalized;
+        bulletRb.velocity = dir * projectileSpeed;
 
         Transform t = bullet.transform;
         t.LookAt(player.target);
