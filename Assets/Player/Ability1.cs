@@ -25,9 +25,6 @@ public class Ability1 : AbilityBase
         Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
         Vector3 dir = (player.target - transform.position).normalized;
         bulletRb.velocity = dir * projectileSpeed;
-
-        Transform t = bullet.transform;
-        t.LookAt(player.target);
         
         Destroy(bullet, lifeTime);
         

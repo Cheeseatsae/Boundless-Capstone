@@ -65,7 +65,6 @@ MonoBehaviour:
   body: {fileID: 0}
   controller: {fileID: 9134880087942267290}
   myCam: {fileID: 0}
-  target: {x: 0, y: 0, z: 0}
   viewObject: {fileID: 8826769825250883112}
   ability1: {fileID: 0}
   baseAttackSpeed: 0
@@ -74,6 +73,7 @@ MonoBehaviour:
   attackRange: 0
   baseAttackDamage: 0
   attackDamage: 0
+  target: {x: 0, y: 0, z: 0}
   sphereRadius: 1
   maxRayDistance: 10000
   aimingThreshold: 3
@@ -127,7 +127,7 @@ MonoBehaviour:
   serverOnly: 0
   localPlayerAuthority: 1
   m_AssetId: 
-  m_SceneId: 981713440
+  m_SceneId: 4003812829
 --- !u!114 &9134880087942267290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -166,7 +166,7 @@ MonoBehaviour:
   bulletPref: {fileID: 3695492489222300511, guid: fc7ded4b216793047a2651587c217a80,
     type: 3}
   rangeInMetres: 0
-  projectileSpeed: 30
+  projectileSpeed: 50
 --- !u!114 &-5048125680820625554
 MonoBehaviour:
   m_ObjectHideFlags: 0
