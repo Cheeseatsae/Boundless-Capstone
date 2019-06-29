@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6336877779567276794}
   - component: {fileID: 6541306208932040739}
-  - component: {fileID: 2339012838378861}
+  - component: {fileID: 25954648}
   m_Layer: 0
   m_Name: AIManager
   m_TagString: Untagged
@@ -46,11 +46,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncInterval: 0.1
   Players: []
-  maxEnemySpawnDistance: 0
-  minEnemySpawnDistance: 0
+  maxEnemySpawnDistance: 20
+  minEnemySpawnDistance: 15
   groundAI: {fileID: 5747712285712444256, guid: 0aebd788854327043a9d57f442db9703,
     type: 3}
---- !u!114 &2339012838378861
+--- !u!114 &25954648
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -62,7 +62,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  serverOnly: 0
+  serverOnly: 1
   localPlayerAuthority: 0
   m_AssetId: 
-  m_SceneId: 449556741
+  m_SceneId: 1286044173

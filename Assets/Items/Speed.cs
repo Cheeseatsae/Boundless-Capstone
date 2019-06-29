@@ -12,9 +12,11 @@ public class Speed : ItemBase
         base.StackEffect();
 
         var p = GetComponent<PlayerModel>();
+        if (p == null) return;
+        
         p.speed += 5;
         p.maxSpeed += 5;
-        
+
     }
 
     public override void RemoveStack()

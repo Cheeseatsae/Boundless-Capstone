@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Net.NetworkInformation;
 using Mirror;
 using UnityEngine;
 
 public class PlayerModel : NetworkBehaviour
 {
+    [Header("Movement Variables")]
     public float baseSpeed;
     [HideInInspector] public float speed;
     public float baseMaxSpeed;
@@ -18,10 +20,12 @@ public class PlayerModel : NetworkBehaviour
     public float baseJumpHeight;
     [HideInInspector] public float jumpHeight;
     
+    [Header("References")]
     public Rigidbody body;
     public PlayerController controller;
     public Camera myCam;
-    public Vector3 target;
+    public GameObject viewObject;
+    public AbilityBase ability1;
 
     private float _forwardInput;
     private float _backInput;
@@ -34,16 +38,26 @@ public class PlayerModel : NetworkBehaviour
 //    public float maxHealth;
 //    public float baseHealthRegen;
 //    public float healthRegen;
-//
-//    public float baseAttackSpeed;
-//    public float attackSpeed;
-//    public float baseAttackRange;
-//    public float attackRange;
-//    public float baseAttackDamage;
-//    public float attackDamage;
 
-    public AbilityBase ability1;
+    [Header("Attacking Variables")]
+    public float baseAttackSpeed;
+    [HideInInspector] public float attackSpeed;
+    public float baseAttackRange;
+    [HideInInspector] public float attackRange;
+    public float baseAttackDamage;
+    [HideInInspector] public float attackDamage;
 
+    [Header("Aiming Variables")]
+    public Vector3 target;
+    public float sphereRadius;
+    public float maxRayDistance;
+    public float aimingThreshold;
+    public float playerDistanceThreshold;
+    public float fallbackAimDistance;
+    public LayerMask mask;
+
+    private Color c;
+    
     private void Awake()
     {
         
@@ -53,6 +67,9 @@ public class PlayerModel : NetworkBehaviour
         jumps = baseJumps;
         remainingJumps = jumps;
         jumpHeight = baseJumpHeight;
+        attackSpeed = baseAttackSpeed;
+        attackRange = baseAttackRange;
+        attackDamage = baseAttackDamage;
         
         body = GetComponent<Rigidbody>();
 
@@ -77,36 +94,62 @@ public class PlayerModel : NetworkBehaviour
         if (isLocalPlayer)
             CameraControl.playerCam.followObj = this.gameObject;
     }
-
+    
     // for aiming at items - Not going to work, should have consistent aiming direction for everything not separate ones for items;
     private void Update()
     {
+        
         if (!isLocalPlayer) return;
+
+        viewObject.transform.LookAt(target);
+
+        Transform camTransform = myCam.transform;
+        Vector3 camPos = camTransform.position;
+        Vector3 camFwd = camTransform.forward;
         
-        //target = myCam.transform.position + (myCam.transform.forward * 10);
-        //myCam.transform.position + myCam.transform.forward
-        RaycastHit a;
-        Debug.DrawLine(transform.position, transform.position + myCam.transform.forward*10, Color.red, 0.05f);
-        Physics.Raycast(myCam.transform.position, myCam.transform.forward, out a, 10000);
+        Ray r = new Ray(camPos, camFwd);
+
+        Physics.Raycast(r, out RaycastHit ray, maxRayDistance, mask);
+        Physics.SphereCast(r, sphereRadius, out RaycastHit sphere, maxRayDistance, mask);
         
-        // Aiming at a distance :
-        // close range use raycast
-        // long range use spherecast
-        // if distance between raycast hit and spherecast is over threshold aim at spherecast hit
-        
-        
-            Debug.Log(a.point);
-            if (a.point!= Vector3.zero)
-            {
-                Vector3 temp = a.point - transform.position;
-                Debug.DrawLine(transform.position, transform.position+temp, Color.green, 0.05f);
+        if (ray.point != Vector3.zero) // if ray hits
+        {
+            if (Vector3.Distance(ray.point, sphere.point) > aimingThreshold)
+            { // if ray and sphere are too far apart use ray
+                target = ray.point;
+                c = Color.green;
             }
-            else
+            else // if ray and sphere are close
             {
-                Vector3 temp = myCam.transform.forward;
-                Debug.DrawLine(transform.position, transform.position+(temp * 1000), Color.black, 0.05f);
+                if (Vector3.Distance(sphere.point, transform.position) < playerDistanceThreshold)
+                { // if sphere is too close to player use ray
+                    target = ray.point;
+                    c = Color.yellow;
+                }
+                else
+                { // if sphere is far enough from player use sphere
+                    target = sphere.point;
+                    c = Color.blue;
+                }
             }
-        
+            
+            Debug.DrawLine(transform.position, target, Color.green, 0.05f);
+        }
+        else // if ray misses
+        {
+            if (Vector3.Distance(sphere.point, transform.position) > playerDistanceThreshold && sphere.point != Vector3.zero)
+            { // if sphere hit is far enough from player
+                target = sphere.point;
+                c = Color.red;
+            }
+            else // if sphere is too close
+            {
+                target = camPos + (camFwd * fallbackAimDistance);
+                c = Color.magenta;
+            }
+
+            Debug.DrawLine(transform.position, target, Color.red, 0.05f);
+        }
         
 //        RaycastHit h;
 //        if (Physics.Linecast(transform.position, target, out h))
@@ -119,8 +162,8 @@ public class PlayerModel : NetworkBehaviour
     // test aim location for player
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.magenta;
-        Gizmos.DrawSphere(target, 0.1f);
+        Gizmos.color = c;
+        Gizmos.DrawSphere(target, 0.5f);
     }
 
     private void FixedUpdate()
