@@ -39,5 +39,7 @@ public class Ability1 : AbilityBase
         
         // clients now accurately shoot but there's still a delay
         CmdFire(player.attackRange, player.target);
+        
+        //https://vis2k.github.io/Mirror/Concepts/GameObjects/SpawnObject
     }
 }
