@@ -15,7 +15,6 @@ GameObject:
   - component: {fileID: 7055809306936718785}
   - component: {fileID: 5159307005178349387}
   - component: {fileID: -6450712206844845959}
-  - component: {fileID: -465941978452777478}
   m_Layer: 9
   m_Name: Sphere
   m_TagString: Untagged
@@ -110,7 +109,7 @@ MonoBehaviour:
   serverOnly: 0
   localPlayerAuthority: 0
   m_AssetId: 
-  m_SceneId: 730282673
+  m_SceneId: 1303413993
 --- !u!114 &5159307005178349387
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,17 +140,3 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &-465941978452777478
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3695492489222300511}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59dd9545f43e4ad4d8ccde90183b45f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  syncInterval: 0.1
-  damage: 10

@@ -98,9 +98,48 @@ public class PlayerModel : NetworkBehaviour
     // for aiming at items - Not going to work, should have consistent aiming direction for everything not separate ones for items;
     private void Update()
     {
-        
-        if (!isLocalPlayer) return;
+//        if (!isLocalPlayer) return;
 
+//        RaycastHit h;
+//        if (Physics.Linecast(transform.position, target, out h))
+//        {
+//            Debug.DrawLine(transform.position, h.point, Color.green, 0.05f);
+//        }
+        
+    }
+
+    // test aim location for player
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = c;
+        Gizmos.DrawSphere(target, 0.5f);
+    }
+
+    private void FixedUpdate()
+    {
+        Vector3 velocity = body.velocity;
+        
+        Vector3 force = new Vector3(_rightInput - _leftInput, 0, _forwardInput - _backInput) * 10 * speed * Time.deltaTime;
+        body.AddRelativeForce(force);
+
+        // if no input is detected and we're on the ground, smooth movement to a stop quickly
+        if (_backInput + _leftInput + _rightInput + _forwardInput == 0)
+        {
+            float x = Mathf.Lerp(velocity.x, 0, 0.2f);
+            float z = Mathf.Lerp(velocity.z, 0, 0.2f);
+            body.velocity = new Vector3(x, velocity.y, z);
+        }
+
+        // Clamped x + z magnitude
+        Vector2 v = new Vector2(body.velocity.x, body.velocity.z);
+        v = Vector2.ClampMagnitude(v, maxSpeed);
+        body.velocity = new Vector3(v.x, body.velocity.y, v.y);
+        
+        if (isLocalPlayer) Targeting();
+    }
+
+    private void Targeting()
+    {
         viewObject.transform.LookAt(target);
 
         Transform camTransform = myCam.transform;
@@ -150,41 +189,6 @@ public class PlayerModel : NetworkBehaviour
 
             Debug.DrawLine(transform.position, target, Color.red, 0.05f);
         }
-        
-//        RaycastHit h;
-//        if (Physics.Linecast(transform.position, target, out h))
-//        {
-//            Debug.DrawLine(transform.position, h.point, Color.green, 0.05f);
-//        }
-        
-    }
-
-    // test aim location for player
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = c;
-        Gizmos.DrawSphere(target, 0.5f);
-    }
-
-    private void FixedUpdate()
-    {
-        Vector3 velocity = body.velocity;
-        
-        Vector3 force = new Vector3(_rightInput - _leftInput, 0, _forwardInput - _backInput) * 10 * speed * Time.deltaTime;
-        body.AddRelativeForce(force);
-
-        // if no input is detected and we're on the ground, smooth movement to a stop quickly
-        if (_backInput + _leftInput + _rightInput + _forwardInput == 0)
-        {
-            float x = Mathf.Lerp(velocity.x, 0, 0.2f);
-            float z = Mathf.Lerp(velocity.z, 0, 0.2f);
-            body.velocity = new Vector3(x, velocity.y, z);
-        }
-
-        // Clamped x + z magnitude
-        Vector2 v = new Vector2(body.velocity.x, body.velocity.z);
-        v = Vector2.ClampMagnitude(v, maxSpeed);
-        body.velocity = new Vector3(v.x, body.velocity.y, v.y);
     }
 
     private void OnCollisionEnter(Collision other)
