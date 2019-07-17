@@ -12,17 +12,6 @@ public class Ability1 : AbilityBase
 
     public float projectileSpeed;
     
-    // bullet should be spawned client side then sent to server. server bullet that is sent to other clients should only be visual
-    // client side should manage damage and everything else
-    // server side doesn't need to be 100% positional accurate 
-    
-
-    // Start is called before the first frame update
-    private void Start()
-    {
-        rangeInMetres = player.attackRange * projectileSpeed;
-    }
-
     [Command]
     void CmdFire(float lifeTime, Vector3 target)
     {
@@ -35,6 +24,8 @@ public class Ability1 : AbilityBase
         Destroy(bullet, lifeTime);
         
         NetworkServer.Spawn(bullet);
+        
+        bullet.GetComponent<Projectile>().RpcSetVelocity(bulletRb.velocity);
         //Debug.Log("test");
     }
 
