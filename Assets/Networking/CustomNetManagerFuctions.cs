@@ -19,12 +19,42 @@ public class CustomNetManagerFuctions : NetworkManager
 
     public override void OnServerAddPlayer(NetworkConnection conn, AddPlayerMessage extraMessage)
     {
-        base.OnServerAddPlayer(conn, extraMessage);
+        // BASE START
+        
+        if (LogFilter.Debug) Debug.Log("NetworkManager.OnServerAddPlayer");
+
+        if (playerPrefab == null)
+        {
+            Debug.LogError("The PlayerPrefab is empty on the NetworkManager. Please setup a PlayerPrefab object.");
+            return;
+        }
+
+        if (playerPrefab.GetComponent<NetworkIdentity>() == null)
+        {
+            Debug.LogError("The PlayerPrefab does not have a NetworkIdentity. Please add a NetworkIdentity to the player prefab.");
+            return;
+        }
+
+        if (conn.playerController != null)
+        {
+            Debug.LogError("There is already a player for this connections.");
+            return;
+        }
+
+        Transform startPos = GetStartPosition();
+        GameObject player = startPos != null
+            ? Instantiate(playerPrefab, startPos.position, startPos.rotation)
+            : Instantiate(playerPrefab);
+
+        NetworkServer.AddPlayerForConnection(conn, player);
+        
+        // BASE END
+        
         aiManager.Players.Add(conn.playerController.gameObject);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
-
+    
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.P))
@@ -40,6 +70,16 @@ public class CustomNetManagerFuctions : NetworkManager
                 Cursor.visible = false;
             }
         }
+    }
+        
+    public override void OnServerRemovePlayer(NetworkConnection conn, NetworkIdentity player)
+    {
+        // BASE START
+        if (player.gameObject != null)
+        {
+            NetworkServer.Destroy(player.gameObject);
+        }
+        // BASE END
     }
 
     // on player spawn generate prefabs per player where necessary 

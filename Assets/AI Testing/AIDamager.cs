@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Mirror;
 using UnityEngine;
 
-public class AIDamager : MonoBehaviour
+public class AIDamager : NetworkBehaviour
 {
     public List<GameObject> PlayerList = new List<GameObject>();
 
@@ -17,12 +17,6 @@ public class AIDamager : MonoBehaviour
     void Start()
     {
         knockupDirection = new Vector3(0,0.5f,0);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     private void OnTriggerEnter(Collider other)
@@ -57,7 +51,5 @@ public class AIDamager : MonoBehaviour
             health.CmdDoDamage(slamDamage);
         }
     }
-    
-    
     
 }
