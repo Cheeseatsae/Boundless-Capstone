@@ -112,12 +112,17 @@ MonoBehaviour:
   syncInterval: 0.1
   target: {fileID: 0}
   aiManager: {fileID: 0}
+  damageZone: {fileID: 13196669011458187, guid: adaf53882ed59974baf78de0d35c349e,
+    type: 3}
+  meleeCooldown: 0
+  knockupDirection: {x: 0, y: 0.5, z: 0}
+  targetDistance: 0
+  meleeCoolDown: 5
+  rangedCoolDown: 3
   bulletPref: {fileID: 7704365907161935278, guid: 9a8824215a3e86e4082d0b64d45ffe27,
     type: 3}
-  coolDown: 2
-  projectileSpeed: 50
   rangedCooldown: 0
-  meleeCooldown: 0
+  projectileSpeed: 50
 --- !u!195 &5747712285712444258
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -171,7 +176,7 @@ MonoBehaviour:
   serverOnly: 0
   localPlayerAuthority: 0
   m_AssetId: 
-  m_SceneId: 0
+  m_SceneId: 535894668
 --- !u!114 &-2946629245046867974
 MonoBehaviour:
   m_ObjectHideFlags: 0

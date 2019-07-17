@@ -10,7 +10,7 @@ public class AIManager : NetworkBehaviour
 {
      
     public List<GameObject> Players = new List<GameObject>();
-
+    public float distanceCheck;
     public int maxEnemySpawnDistance;
     public int minEnemySpawnDistance;
 
@@ -29,9 +29,16 @@ public class AIManager : NetworkBehaviour
 
             dir *= UnityEngine.Random.Range(minEnemySpawnDistance, maxEnemySpawnDistance);
 
-            GameObject AI = Instantiate(groundAI, player.transform.position + dir, Quaternion.identity);
-            NetworkServer.Spawn(AI);
+            RaycastHit hit;
 
+            if (Physics.Raycast(dir, Vector3.down,out hit, distanceCheck))
+            {
+                if (hit.collider != null)
+                {
+                    GameObject AI = Instantiate(groundAI, player.transform.position + dir, Quaternion.identity);
+                    NetworkServer.Spawn(AI);
+                }
+            }
         }
     }
 

@@ -10,13 +10,23 @@ public class GroundAI_Model : AIBaseModel
 
     public GameObject target;
     private float minDistance = Mathf.Infinity;
-    //public List<GameObject> Players = new List<GameObject>();
     public AIManager aiManager;
-    public GameObject bulletPref;
-    public float coolDown;
-    public float projectileSpeed;
-    public bool rangedCooldown = false;
+    public GameObject damageZone;
+    
+    
+    
+    
+    //Ground Slam Variables
     public bool meleeCooldown = false;
+    public float targetDistance;
+    public float meleeCoolDown;
+    public AIDamager slamDamager;
+    
+    //Ranged Ability Variables
+    public float rangedCoolDown;
+    public GameObject bulletPref;
+    public bool rangedCooldown = false;
+    public float projectileSpeed;
 
     private NavMeshAgent navmesh;
     // Start is called before the first frame update
@@ -65,9 +75,23 @@ public class GroundAI_Model : AIBaseModel
                     {
                         CmdFire();
                         rangedCooldown = true;
-                        StartCoroutine(Cooldown());
+                        StartCoroutine(RangedCooldown());
                     }               
                 }
+            }
+
+            targetDistance = Vector3.Distance(transform.position, target.transform.position);
+            if (targetDistance < 5)
+            {
+                if (meleeCooldown == false)
+                {
+                    navmesh.isStopped = true;
+                    navmesh.velocity = new Vector3(0,0,0);
+                    meleeCooldown = true;
+                    StartCoroutine(MeleeCharge());
+                    StartCoroutine(MeleeCooldown());
+                }
+                
             }
         }
         
@@ -86,13 +110,56 @@ public class GroundAI_Model : AIBaseModel
         bulletRb.velocity = dir * projectileSpeed;
         NetworkServer.Spawn(bullet);
     }
-    
-    public IEnumerator Cooldown()
+    [Command]
+    public void CmdGroundSlam()
     {
-        yield return new WaitForSeconds(coolDown);
+        
+        if (targetDistance < 5)
+        {
+            slamDamager.CmdSlamDamage();
+            navmesh.isStopped = false;
+        }else navmesh.isStopped = false;
+
+    }
+    
+    public IEnumerator RangedCooldown()
+    {
+        yield return new WaitForSeconds(rangedCoolDown);
         rangedCooldown = false;
 
     }
+    
+    public IEnumerator MeleeCooldown()
+    {
+        yield return new WaitForSeconds(meleeCoolDown);
+        meleeCooldown = false;
 
+    }
+    public IEnumerator MeleeCharge()
+    {
+        GameObject damage = Instantiate(damageZone, transform.position, Quaternion.identity);
+        NetworkServer.Spawn(damage);
+        slamDamager = damage.GetComponent<AIDamager>();
+        slamDamager.owner = this.gameObject;
+        Vector3 maxScale = new Vector3(7,7,7);
+        float currentTime = 0.0f;
+        do
+        {
+            damage.transform.localScale = Vector3.Lerp(damage.transform.localScale, maxScale, currentTime * 0.1f);
+            currentTime += Time.deltaTime;
+            yield return null;
+        } while (currentTime <= 5);
+        NetworkServer.Destroy(damage);
+        //yield return new WaitForSeconds(3);
+        
+        CmdGroundSlam();
+        
+
+    }
+    [Command]
+    public void CmdSpawnDamager()
+    {
+        
+    }
 
 }
