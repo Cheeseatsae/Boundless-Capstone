@@ -24,8 +24,8 @@ public class Health : NetworkBehaviour
     [SyncEvent] 
     public event OnDeath EventDeath;
     
-    [SyncEvent] 
-    public event ReCalPlayers EventRecal;
+//    [SyncEvent] 
+//    public event ReCalPlayers EventRecal;
 
     public void Awake()
     {

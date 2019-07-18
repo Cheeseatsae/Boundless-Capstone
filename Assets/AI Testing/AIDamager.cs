@@ -40,7 +40,7 @@ public class AIDamager : NetworkBehaviour
     [Command]
     public void CmdSlamDamage()
     {
-        RaycastHit hit;
+
         Collider[] cols = Physics.OverlapSphere(this.gameObject.transform.position, 7f, layer);
         
         foreach (Collider col in cols)

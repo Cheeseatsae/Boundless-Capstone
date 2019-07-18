@@ -19,7 +19,7 @@ public class AIManager : NetworkBehaviour
 
 
     [Command]
-    public void CmdSpawnArounfPlayer()
+    public void CmdSpawnAroundPlayer()
     {
         foreach (GameObject player in Players)
         {
@@ -29,7 +29,7 @@ public class AIManager : NetworkBehaviour
 
             dir *= UnityEngine.Random.Range(minEnemySpawnDistance, maxEnemySpawnDistance);
 
-            RaycastHit hit;
+//            RaycastHit hit;
             //Need to fix raycast not working on greybox level
             //if (Physics.Raycast(dir, Vector3.down,out hit, distanceCheck))
             //{
@@ -47,7 +47,7 @@ public class AIManager : NetworkBehaviour
     {
         if (Input.GetKeyDown(KeyCode.L))
         {
-            CmdSpawnArounfPlayer();
+            CmdSpawnAroundPlayer();
             //Debug.Log("fucking work... plz");
         }
     }

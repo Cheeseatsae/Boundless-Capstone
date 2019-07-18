@@ -12,8 +12,9 @@ public class CustomNetManagerFuctions : NetworkManager
     // Start is called before the first frame update
 
 
-    public void Awake()
+    public override void Awake()
     {
+        base.Awake();
         aiManager = FindObjectOfType<AIManager>();
     }
 
