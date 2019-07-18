@@ -24,6 +24,7 @@ public class AIDamager : NetworkBehaviour
     {
         if (!isServer) return;
         NetworkServer.Destroy(this.gameObject);
+        Destroy(this.gameObject);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -43,29 +44,34 @@ public class AIDamager : NetworkBehaviour
     }
 
     public LayerMask layer;
-
     
     public void SlamDamage()
     {
 
         Collider[] cols = Physics.OverlapSphere(this.gameObject.transform.position, 7f, layer);
-        
+
         foreach (Collider col in cols)
         {
-            
+
             Rigidbody targetRb = col.gameObject.GetComponent<Rigidbody>();
+
             Vector3 dir = (col.gameObject.transform.position - owner.transform.position) * 3;
             dir.y = 0;
             dir = dir.normalized;
             dir.y = knockupDirection.y;
+
             CmdApplyKnockback(col.gameObject, dir);
-            targetRb.velocity =  dir *15;
+
+            targetRb.velocity = dir * 15;
             Health health = col.gameObject.GetComponent<Health>();
             health.CmdDoDamage(slamDamage);
         }
+
         owner.GetComponent<Health>().EventDeath -= Delete;
         Delete();
+
     }
+    
     [Command]
     public void CmdApplyKnockback(GameObject player , Vector3 dir)
     {

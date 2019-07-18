@@ -113,11 +113,8 @@ public class GroundAI_Model : AIBaseModel
     public void CmdGroundSlam()
     {
         
-        if (targetDistance < 5)
-        {
-            slamDamager.SlamDamage();
-            navmesh.isStopped = false;
-        }else navmesh.isStopped = false;
+        slamDamager.SlamDamage();
+        navmesh.isStopped = false;
 
     }
     
