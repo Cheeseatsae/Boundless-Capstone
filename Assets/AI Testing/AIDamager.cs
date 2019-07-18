@@ -35,19 +35,24 @@ public class AIDamager : NetworkBehaviour
         }
     }
 
+    public LayerMask layer;
+
     [Command]
     public void CmdSlamDamage()
     {
-        foreach (GameObject player in PlayerList)
+        RaycastHit hit;
+        Collider[] cols = Physics.OverlapSphere(this.gameObject.transform.position, 7f, layer);
+        
+        foreach (Collider col in cols)
         {
-            Rigidbody targetRb = player.GetComponent<Rigidbody>();
-            Vector3 dir = (player.transform.position - owner.transform.position) * 3;
+            Rigidbody targetRb = col.gameObject.GetComponent<Rigidbody>();
+            Vector3 dir = (col.gameObject.transform.position - owner.transform.position) * 3;
             dir.y = 0;
             dir = dir.normalized;
             dir.y = knockupDirection.y;
         
             targetRb.velocity =  dir *15;
-            Health health = player.GetComponent<Health>();
+            Health health = col.gameObject.GetComponent<Health>();
             health.CmdDoDamage(slamDamage);
         }
     }

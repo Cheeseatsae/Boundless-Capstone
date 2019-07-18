@@ -21,6 +21,7 @@ public class GroundAI_Model : AIBaseModel
     public float targetDistance;
     public float meleeCoolDown;
     public AIDamager slamDamager;
+    public GameObject damage;
     
     //Ranged Ability Variables
     public float rangedCoolDown;
@@ -88,6 +89,7 @@ public class GroundAI_Model : AIBaseModel
                     navmesh.isStopped = true;
                     navmesh.velocity = new Vector3(0,0,0);
                     meleeCooldown = true;
+                    CmdSpawnDamager();
                     StartCoroutine(MeleeCharge());
                     StartCoroutine(MeleeCooldown());
                 }
@@ -137,10 +139,6 @@ public class GroundAI_Model : AIBaseModel
     }
     public IEnumerator MeleeCharge()
     {
-        GameObject damage = Instantiate(damageZone, transform.position, Quaternion.identity);
-        NetworkServer.Spawn(damage);
-        slamDamager = damage.GetComponent<AIDamager>();
-        slamDamager.owner = this.gameObject;
         Vector3 maxScale = new Vector3(7,7,7);
         float currentTime = 0.0f;
         do
@@ -149,17 +147,20 @@ public class GroundAI_Model : AIBaseModel
             currentTime += Time.deltaTime;
             yield return null;
         } while (currentTime <= 5);
-        NetworkServer.Destroy(damage);
+        
         //yield return new WaitForSeconds(3);
         
         CmdGroundSlam();
-        
+        NetworkServer.Destroy(damage);
 
     }
     [Command]
     public void CmdSpawnDamager()
     {
-        
+        damage = Instantiate(damageZone, transform.position, Quaternion.identity);
+        NetworkServer.Spawn(damage);
+        slamDamager = damage.GetComponent<AIDamager>();
+        slamDamager.owner = this.gameObject;
     }
 
 }
