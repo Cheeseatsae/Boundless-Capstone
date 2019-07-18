@@ -43,7 +43,7 @@ public class GroundAI_Model : AIBaseModel
     // Update is called once per frame
     void Update()
     {
-        
+        if (!isServer) return;
         foreach (GameObject player in aiManager.Players)
         {
             if (player != null)
