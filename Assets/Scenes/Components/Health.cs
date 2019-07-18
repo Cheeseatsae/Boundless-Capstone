@@ -74,7 +74,7 @@ public class Health : NetworkBehaviour
     [Command]
     public void CmdDoDamage(int amount)
     {
-        EventTakeDamage(amount);
+        EventTakeDamage?.Invoke(amount);
     }
 
     private void TakeDamage(int amount)
@@ -107,7 +107,7 @@ public class Health : NetworkBehaviour
     {
         if (health <= 0)
         {
-            EventDeath();
+            EventDeath?.Invoke();
         }
     }
     

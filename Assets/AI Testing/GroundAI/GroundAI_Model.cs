@@ -13,9 +13,6 @@ public class GroundAI_Model : AIBaseModel
     public AIManager aiManager;
     public GameObject damageZone;
     
-    
-    
-    
     //Ground Slam Variables
     public bool meleeCooldown = false;
     public float targetDistance;

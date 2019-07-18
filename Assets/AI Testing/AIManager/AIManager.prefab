@@ -46,6 +46,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncInterval: 0.1
   Players: []
+  distanceCheck: 5
   maxEnemySpawnDistance: 20
   minEnemySpawnDistance: 15
   groundAI: {fileID: 5747712285712444256, guid: 0aebd788854327043a9d57f442db9703,
@@ -65,4 +66,4 @@ MonoBehaviour:
   serverOnly: 1
   localPlayerAuthority: 0
   m_AssetId: 
-  m_SceneId: 1286044173
+  m_SceneId: 1270241236
