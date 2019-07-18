@@ -105,8 +105,10 @@ public class Health : NetworkBehaviour
 
     public void CheckForDeath()
     {
+        if (!isServer) return;
         if (health <= 0)
         {
+            
             EventDeath?.Invoke();
         }
     }
