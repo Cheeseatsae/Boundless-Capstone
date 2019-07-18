@@ -11,6 +11,7 @@ public class AIDamager : NetworkBehaviour
     public GameObject owner;
     
     public Vector3 knockupDirection;
+    public float damageRadius;
     
     public int slamDamage;
     // Start is called before the first frame update
@@ -48,7 +49,7 @@ public class AIDamager : NetworkBehaviour
     public void SlamDamage()
     {
 
-        Collider[] cols = Physics.OverlapSphere(this.gameObject.transform.position, 7f, layer);
+        Collider[] cols = Physics.OverlapSphere(this.gameObject.transform.position, damageRadius, layer);
 
         foreach (Collider col in cols)
         {
