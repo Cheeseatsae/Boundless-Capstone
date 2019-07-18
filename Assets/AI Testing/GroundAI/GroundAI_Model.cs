@@ -150,7 +150,7 @@ public class GroundAI_Model : AIBaseModel
         yield return new WaitForSeconds(3);
         
         CmdGroundSlam();
-        NetworkServer.Destroy(damage);
+        
 
     }
     [Command]

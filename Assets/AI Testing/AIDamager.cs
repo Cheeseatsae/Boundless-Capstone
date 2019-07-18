@@ -62,6 +62,8 @@ public class AIDamager : NetworkBehaviour
             Health health = col.gameObject.GetComponent<Health>();
             health.CmdDoDamage(slamDamage);
         }
+        owner.GetComponent<Health>().EventDeath -= Delete;
+        Delete();
     }
     [Command]
     public void CmdApplyKnockback(GameObject player , Vector3 dir)
