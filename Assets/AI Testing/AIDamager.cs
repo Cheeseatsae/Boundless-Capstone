@@ -22,6 +22,7 @@ public class AIDamager : NetworkBehaviour
     
     public void Delete()
     {
+        if (!isServer) return;
         NetworkServer.Destroy(this.gameObject);
     }
 
