@@ -30,15 +30,16 @@ public class AIManager : NetworkBehaviour
             dir *= UnityEngine.Random.Range(minEnemySpawnDistance, maxEnemySpawnDistance);
 
             RaycastHit hit;
-
-            if (Physics.Raycast(dir, Vector3.down,out hit, distanceCheck))
-            {
-                if (hit.collider != null)
-                {
+            //Need to fix raycast not working on greybox level
+            //if (Physics.Raycast(dir, Vector3.down,out hit, distanceCheck))
+            //{
+                //if (hit.collider != null)
+                //{
                     GameObject AI = Instantiate(groundAI, player.transform.position + dir, Quaternion.identity);
                     NetworkServer.Spawn(AI);
-                }
-            }
+                    //Debug.Log("i did a thing");
+                //}
+            //}
         }
     }
 
@@ -47,6 +48,7 @@ public class AIManager : NetworkBehaviour
         if (Input.GetKeyDown(KeyCode.L))
         {
             CmdSpawnArounfPlayer();
+            //Debug.Log("fucking work... plz");
         }
     }
 }
