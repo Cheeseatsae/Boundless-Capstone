@@ -87,7 +87,7 @@ public class GroundAI_Model : AIBaseModel
                     navmesh.velocity = new Vector3(0,0,0);
                     meleeCooldown = true;
                     CmdSpawnDamager();
-                    StartCoroutine(MeleeCharge());
+                    
                     StartCoroutine(MeleeCooldown());
                 }
                 
@@ -115,7 +115,7 @@ public class GroundAI_Model : AIBaseModel
         
         if (targetDistance < 5)
         {
-            slamDamager.CmdSlamDamage();
+            slamDamager.SlamDamage();
             navmesh.isStopped = false;
         }else navmesh.isStopped = false;
 
@@ -134,18 +134,20 @@ public class GroundAI_Model : AIBaseModel
         meleeCooldown = false;
 
     }
+    
+    
     public IEnumerator MeleeCharge()
     {
-        Vector3 maxScale = new Vector3(7,7,7);
-        float currentTime = 0.0f;
-        do
-        {
-            damage.transform.localScale = Vector3.Lerp(damage.transform.localScale, maxScale, currentTime * 0.1f);
-            currentTime += Time.deltaTime;
-            yield return null;
-        } while (currentTime <= 5);
+        //Vector3 maxScale = new Vector3(7,7,7);
+        //float currentTime = 0.0f;
+        //do
+        //{
+        //    damage.transform.localScale = Vector3.Lerp(damage.transform.localScale, maxScale, currentTime * 0.1f);
+        //    currentTime += Time.deltaTime;
+        //    yield return null;
+        //} while (currentTime <= 5);
         
-        //yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(3);
         
         CmdGroundSlam();
         NetworkServer.Destroy(damage);
@@ -155,9 +157,19 @@ public class GroundAI_Model : AIBaseModel
     public void CmdSpawnDamager()
     {
         damage = Instantiate(damageZone, transform.position, Quaternion.identity);
-        NetworkServer.Spawn(damage);
+        
         slamDamager = damage.GetComponent<AIDamager>();
         slamDamager.owner = this.gameObject;
+        damage.transform.localScale = new Vector3(7f,7f,7f);
+        NetworkServer.Spawn(damage);
+        StartCoroutine(MeleeCharge());
+        //RpcRunCharge();
+    }
+
+    [ClientRpc]
+    public void RpcRunCharge()
+    {
+        //StartCoroutine(MeleeCharge());
     }
 
 }
