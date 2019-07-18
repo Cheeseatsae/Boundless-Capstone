@@ -160,6 +160,7 @@ public class GroundAI_Model : AIBaseModel
         
         slamDamager = damage.GetComponent<AIDamager>();
         slamDamager.owner = this.gameObject;
+        GetComponent<Health>().EventDeath += slamDamager.Delete;
         damage.transform.localScale = new Vector3(7f,7f,7f);
         NetworkServer.Spawn(damage);
         StartCoroutine(MeleeCharge());

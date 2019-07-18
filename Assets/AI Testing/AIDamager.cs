@@ -17,7 +17,7 @@ public class AIDamager : NetworkBehaviour
     void Start()
     {
         knockupDirection = new Vector3(0,0.5f,0);
-        owner.GetComponent<Health>().EventDeath += Delete;
+        
     }
     
     public void Delete()
