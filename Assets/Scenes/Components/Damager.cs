@@ -16,7 +16,11 @@ public class Damager : NetworkBehaviour
         if (!other.GetComponent<Health>() || !other.GetComponent<AIBaseModel>()) return;
         
         Health healthComp = other.GetComponent<Health>();
-        healthComp.CmdDoDamage(damage);
+        if (isServer)
+        {
+            healthComp.CmdDoDamage(damage);
+        }
+        
         NetworkServer.Destroy(this.gameObject);
         Destroy(this.gameObject);
 
