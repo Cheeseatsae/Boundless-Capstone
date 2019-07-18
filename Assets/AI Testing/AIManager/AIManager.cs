@@ -3,8 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using Mirror;
 using UnityEngine;
-using Random = System.Random;
-
 
 public class AIManager : NetworkBehaviour
 {
@@ -16,8 +14,6 @@ public class AIManager : NetworkBehaviour
 
     public GameObject groundAI;
     
-
-
     [Command]
     public void CmdSpawnAroundPlayer()
     {
@@ -45,7 +41,7 @@ public class AIManager : NetworkBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.L))
+        if (Input.GetKeyDown(KeyCode.L) && isServer)
         {
             CmdSpawnAroundPlayer();
             //Debug.Log("fucking work... plz");

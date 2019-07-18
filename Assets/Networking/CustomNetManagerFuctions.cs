@@ -15,7 +15,8 @@ public class CustomNetManagerFuctions : NetworkManager
     public override void Awake()
     {
         base.Awake();
-        aiManager = FindObjectOfType<AIManager>();
+
+        aiManager.enabled = true;
     }
 
     public override void OnServerAddPlayer(NetworkConnection conn, AddPlayerMessage extraMessage)
