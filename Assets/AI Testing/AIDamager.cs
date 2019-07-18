@@ -11,12 +11,18 @@ public class AIDamager : NetworkBehaviour
     public GameObject owner;
     
     public Vector3 knockupDirection;
-
+    
     public int slamDamage;
     // Start is called before the first frame update
     void Start()
     {
         knockupDirection = new Vector3(0,0.5f,0);
+        owner.GetComponent<Health>().EventDeath += Delete;
+    }
+    
+    public void Delete()
+    {
+        NetworkServer.Destroy(this.gameObject);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -45,36 +51,32 @@ public class AIDamager : NetworkBehaviour
         
         foreach (Collider col in cols)
         {
-            CmdApplyKnockback(col.gameObject);
+            
             Rigidbody targetRb = col.gameObject.GetComponent<Rigidbody>();
             Vector3 dir = (col.gameObject.transform.position - owner.transform.position) * 3;
             dir.y = 0;
             dir = dir.normalized;
             dir.y = knockupDirection.y;
-        
+            CmdApplyKnockback(col.gameObject, dir);
             targetRb.velocity =  dir *15;
             Health health = col.gameObject.GetComponent<Health>();
             health.CmdDoDamage(slamDamage);
         }
     }
     [Command]
-    public void CmdApplyKnockback(GameObject player)
+    public void CmdApplyKnockback(GameObject player , Vector3 dir)
     {
-        RpcApplyKnockback(player);
+        RpcApplyKnockback(player, dir);
     }
 
     [ClientRpc]
-    public void RpcApplyKnockback(GameObject player)
+    public void RpcApplyKnockback(GameObject player, Vector3 dir)
     {
         Rigidbody targetRb = player.GetComponent<Rigidbody>();
-        Vector3 dir = (player.transform.position - owner.transform.position) * 3;
-        dir.y = 0;
-        dir = dir.normalized;
-        dir.y = knockupDirection.y;
-        
         targetRb.velocity =  dir *15;
-        Health health = player.GetComponent<Health>();
-        health.CmdDoDamage(slamDamage);
     }
+
+
+
 
 }
