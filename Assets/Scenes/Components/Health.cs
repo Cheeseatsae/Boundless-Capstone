@@ -74,6 +74,7 @@ public class Health : NetworkBehaviour
     [Command]
     public void CmdDoDamage(int amount)
     {
+        if (!isServer) return;
         EventTakeDamage?.Invoke(amount);
     }
 
