@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1713774545939617423}
   - component: {fileID: 8083954695516112481}
   - component: {fileID: 4347894997756958930}
+  - component: {fileID: -7287694471871927166}
   - component: {fileID: 7293549280160946370}
   m_Layer: 0
   m_Name: AirAI
@@ -110,7 +111,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   serverOnly: 0
   localPlayerAuthority: 0
-  m_AssetId: ed2444e4643baca488fa1319912d55af
+  m_AssetId: 
   m_SceneId: 0
 --- !u!114 &4347894997756958930
 MonoBehaviour:
@@ -126,6 +127,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncInterval: 0.1
   compressRotation: 1
+--- !u!114 &-7287694471871927166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1299756857714876720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d28cf9d1a53440439c8895ef5c3bd12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncInterval: 0.1
+  target: {fileID: 0}
+  aiManager: {fileID: 0}
+  speed: 3
+  minGroundDistance: 10
+  maxGroundDistance: 20
+  targetDir: {x: 0, y: 0, z: 0}
+  upDir: {x: 0, y: 0, z: 0}
+  downDir: {x: 0, y: 0, z: 0}
 --- !u!54 &7293549280160946370
 Rigidbody:
   m_ObjectHideFlags: 0
