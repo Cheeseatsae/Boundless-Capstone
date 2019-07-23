@@ -84,9 +84,8 @@ public class CustomNetManagerFuctions : NetworkManager
         // BASE END
     }
 
-    // on player spawn generate prefabs per player where necessary 
-    // 
-    // have items that require create instance of spawnable prefab and update it, then replace the old one
-    // will need to pass player, ability, new prefab/added component 
+    // On server start spawn one of each base prefab per player out in nowhere land and assign it to players
+    // players will modify those base objects and use them as their prefabs
+    // on new scene load, save the objects in their current state and re-spawn them in the next scene + resetup the references
     
 }
