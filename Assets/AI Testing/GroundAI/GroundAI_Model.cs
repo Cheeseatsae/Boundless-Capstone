@@ -44,7 +44,7 @@ public class GroundAI_Model : AIBaseModel
     void Update()
     {
         if (!isServer) return;
-        foreach (GameObject player in aiManager.Players)
+        foreach (GameObject player in CustomNetManager.players)
         {
             if (player != null)
             {

@@ -9,7 +9,6 @@ public class Health : NetworkBehaviour
     public int baseMaxHealth;
     public int health;
     [HideInInspector] public int maxHealth;
-    [HideInInspector] public AIManager aiManager;
     public int baseHealthRegen;
     public int healthRegen;
     public float regenTick = 1;
@@ -26,12 +25,6 @@ public class Health : NetworkBehaviour
     
 //    [SyncEvent] 
 //    public event ReCalPlayers EventRecal;
-
-    public void Awake()
-    {
-        aiManager = FindObjectOfType<AIManager>();
-    }
-
 
     private void Start()
     {
@@ -57,18 +50,18 @@ public class Health : NetworkBehaviour
     [Command]
     private void CmdDeath()
     {
-        EventDeath();
+        EventDeath?.Invoke();
     }
     
     private void Death()
     {
         if (GetComponent<PlayerModel>())
         {
-            aiManager.Players.Remove(gameObject);
+            CustomNetManager.players.Remove(gameObject);
         }
         
-        NetworkServer.Destroy(this.gameObject);
-        Destroy(this.gameObject);
+        NetworkServer.Destroy(gameObject);
+        Destroy(gameObject);
     }
 
     [Command]
@@ -82,14 +75,13 @@ public class Health : NetworkBehaviour
     {
         health -= amount;
         CheckForDeath();
-        
     }
 
     public void Update()
     {
         if (health == 0)
         {
-            Debug.Log("ima deeeeed");
+            Debug.Log("ima deeeeead", gameObject);
         }
     }
 

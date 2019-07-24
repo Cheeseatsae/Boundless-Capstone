@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using Mirror;
 using UnityEngine;
 
-public class CustomNetManagerFuctions : NetworkManager
+public class CustomNetManager : NetworkManager
 {
 
     public AIManager aiManager;
+    public static List<GameObject> players;
     
     // Start is called before the first frame update
 
@@ -52,7 +53,7 @@ public class CustomNetManagerFuctions : NetworkManager
         
         // BASE END
         
-        aiManager.Players.Add(conn.playerController.gameObject);
+        players.Add(conn.playerController.gameObject);
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }

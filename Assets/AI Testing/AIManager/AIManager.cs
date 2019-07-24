@@ -6,8 +6,7 @@ using UnityEngine;
 
 public class AIManager : NetworkBehaviour
 {
-     
-    public List<GameObject> Players = new List<GameObject>();
+    
     public float distanceCheck;
     public int maxEnemySpawnDistance;
     public int minEnemySpawnDistance;
@@ -17,7 +16,7 @@ public class AIManager : NetworkBehaviour
     [Command]
     public void CmdSpawnAroundPlayer()
     {
-        foreach (GameObject player in Players)
+        foreach (GameObject player in CustomNetManager.players)
         {
             float angle = UnityEngine.Random.Range(0.0f, Mathf.PI * 2);
             
