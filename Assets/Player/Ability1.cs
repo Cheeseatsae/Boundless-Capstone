@@ -29,6 +29,27 @@ public class Ability1 : AbilityBase
         //Debug.Log("test");
     }
 
+    [Command]
+    public void CmdColourChange()
+    {
+        Debug.Log("Changin Colour");
+        RpcColourChange();
+        Material mat = bulletPref.GetComponent<Renderer>().material;
+        mat.color = Color.red;
+        bulletPref.GetComponent<Renderer>().material = mat;
+        bulletPref.transform.localScale *= 2;
+    }
+
+    [ClientRpc]
+    private void RpcColourChange()
+    {
+        Debug.Log("Fuckertyy");
+        Material mat = bulletPref.GetComponent<Renderer>().material;
+        mat.color = Color.red;
+        bulletPref.AddComponent<BoxCollider>();
+        bulletPref.GetComponent<Renderer>().material = mat;
+    }
+    
     public override void Enter()
     {
         if(!isLocalPlayer) return; 

@@ -83,6 +83,7 @@ public class PlayerModel : NetworkBehaviour
         controller.OnRightInput += UpdateRightInput;
         
         controller.OnMouse0Input += OnMouse0Input;
+        controller.OnMouse1Input += OnMouse1Input;
 
         ability1 = GetComponent<Ability1>();
     }
@@ -93,19 +94,6 @@ public class PlayerModel : NetworkBehaviour
 
         if (isLocalPlayer)
             CameraControl.playerCam.followObj = this.gameObject;
-    }
-    
-    // for aiming at items - Not going to work, should have consistent aiming direction for everything not separate ones for items;
-    private void Update()
-    {
-//        if (!isLocalPlayer) return;
-
-//        RaycastHit h;
-//        if (Physics.Linecast(transform.position, target, out h))
-//        {
-//            Debug.DrawLine(transform.position, h.point, Color.green, 0.05f);
-//        }
-        
     }
 
     // test aim location for player
@@ -264,7 +252,7 @@ public class PlayerModel : NetworkBehaviour
     }
     private void OnMouse1Input()
     {
-        
+        GetComponent<Ability1>().CmdColourChange();
     }
 
     private void OnDestroy()
@@ -277,7 +265,10 @@ public class PlayerModel : NetworkBehaviour
         controller.OnBackwardInput -= UpdateBackInput;
         controller.OnLeftInput -= UpdateLeftInput;
         controller.OnRightInput -= UpdateRightInput;
-        
+
+        controller.OnMouse0Input -= OnMouse0Input;
+        controller.OnMouse1Input -= OnMouse1Input;
+
     }
 
 }
