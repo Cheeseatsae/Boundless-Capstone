@@ -8,7 +8,10 @@ public class CustomNetManager : NetworkManager
 {
 
     public AIManager aiManager;
-    public static List<GameObject> players;
+    public static List<GameObject> players = new List<GameObject>();
+
+    [Header("Player Prefabs")]
+    public GameObject playerBulletPrefab;
     
     // Start is called before the first frame update
 
@@ -54,8 +57,21 @@ public class CustomNetManager : NetworkManager
         // BASE END
         
         players.Add(conn.playerController.gameObject);
+        CmdSetupPlayer(conn.playerController.gameObject);
+        
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+    }
+
+    [Command]
+    private void CmdSetupPlayer(GameObject p)
+    {
+        Vector3 spawnPos = new Vector3(0,-15000,0);
+        GameObject obj = Instantiate(playerBulletPrefab, spawnPos, Quaternion.identity);
+        
+        NetworkServer.Spawn(obj);
+
+        p.GetComponent<Ability1>().bulletPref = obj;
     }
     
     private void Update()
