@@ -59,6 +59,11 @@ public class Health : NetworkBehaviour
         {
             CustomNetManager.players.Remove(gameObject);
         }
+
+        if (GetComponent<AIBaseModel>())
+        {
+            CustomNetManager.aiManager.numberofAi--;
+        }
         
         NetworkServer.Destroy(gameObject);
         Destroy(gameObject);

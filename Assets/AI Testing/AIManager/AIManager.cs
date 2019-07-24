@@ -21,7 +21,10 @@ public class AIManager : NetworkBehaviour
     public List<GameObject> aiList = new List<GameObject>();
     public GameObject toSpawn;
     public LayerMask layer;
-
+    public int numberofAi;
+    public int maxAI;
+    public float secondsBetweenSpawn;
+    public float elapsedTime;
     private void Start()
     {
         aiList.Add(groundAI);
@@ -34,6 +37,18 @@ public class AIManager : NetworkBehaviour
         {
             CmdSpawn();
             //Debug.Log("fucking work... plz");
+        }
+
+        elapsedTime += Time.deltaTime;
+        if (elapsedTime > secondsBetweenSpawn)
+        {
+            elapsedTime = 0;
+            if (numberofAi < maxAI)
+            {
+                CmdSpawn();
+            }
+            
+
         }
     }
     
@@ -112,6 +127,8 @@ public class AIManager : NetworkBehaviour
             {
                 spawningLocation.y = spawningLocation.y + 15;
             }
+
+            numberofAi++;
             Debug.Log("spawn" + toSpawn);
             GameObject ai = Instantiate(toSpawn, spawningLocation, Quaternion.identity);
             NetworkServer.Spawn(ai);
