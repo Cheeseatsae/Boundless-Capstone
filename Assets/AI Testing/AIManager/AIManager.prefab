@@ -45,12 +45,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   syncInterval: 0.1
-  Players: []
   distanceCheck: 5
   maxEnemySpawnDistance: 20
   minEnemySpawnDistance: 15
   groundAI: {fileID: 5747712285712444256, guid: 0aebd788854327043a9d57f442db9703,
     type: 3}
+  airAi: {fileID: 1299756857714876720, guid: ed2444e4643baca488fa1319912d55af, type: 3}
+  spawningLocation: {x: 0, y: 0, z: 0}
+  amountToSpawn: 3
+  aiList: []
+  toSpawn: {fileID: 0}
+  layer:
+    serializedVersion: 2
+    m_Bits: 1024
+  numberofAi: 0
+  maxAI: 10
+  secondsBetweenSpawn: 5
+  elapsedTime: 0
 --- !u!114 &25954648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,4 +77,4 @@ MonoBehaviour:
   serverOnly: 1
   localPlayerAuthority: 0
   m_AssetId: 
-  m_SceneId: 1270241236
+  m_SceneId: 2273545412
