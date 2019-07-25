@@ -1,7 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using Mirror;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class AirAiModel : AIBaseModel
 {
@@ -20,6 +22,10 @@ public class AirAiModel : AIBaseModel
     public Vector3 downDir;
     public float distance;
     public Vector3 direction;
+    
+    //Avoidance
+    public List<GameObject> NearMe = new List<GameObject>();
+    public float toClose;
     
     //Abilities
     // Start is called before the first frame update
@@ -83,7 +89,8 @@ public class AirAiModel : AIBaseModel
         rb.velocity = targetDir * speed;
         
         transform.LookAt(target.transform);
-        
+        Avoidance();
+
 
 
 
@@ -97,5 +104,34 @@ public class AirAiModel : AIBaseModel
         float y = Random.Range(min, max);
         float z = Random.Range(min, max);
         return new Vector3(x,y,z);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.GetComponent<AirAiModel>())
+        {
+            NearMe.Add(other.gameObject);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (NearMe.Contains(other.gameObject))
+        {
+            NearMe.Remove(other.gameObject);
+        }
+    }
+
+    public void Avoidance()
+    {
+        foreach (GameObject ai in NearMe)
+        {
+            float dist = Vector3.Distance(transform.position, ai.transform.position);
+            if (dist <= toClose)
+            {
+                Vector3 dir = (ai.transform.position - transform.position).normalized;
+                rb.velocity = -dir * (speed * 2);
+            }
+        }
     }
 }
