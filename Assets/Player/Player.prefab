@@ -78,10 +78,11 @@ MonoBehaviour:
   maxRayDistance: 10000
   aimingThreshold: 3
   playerDistanceThreshold: 2
-  fallbackAimDistance: 15
+  fallbackAimDistance: 50
   mask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 1843
+  camOffset: 2
 --- !u!136 &8086389977643893696
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -127,7 +128,7 @@ MonoBehaviour:
   serverOnly: 0
   localPlayerAuthority: 1
   m_AssetId: 
-  m_SceneId: 2094700974
+  m_SceneId: 0
 --- !u!114 &9134880087942267290
 MonoBehaviour:
   m_ObjectHideFlags: 0

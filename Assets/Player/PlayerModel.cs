@@ -126,6 +126,8 @@ public class PlayerModel : NetworkBehaviour
         if (isLocalPlayer) Targeting();
     }
 
+    public float camOffset;
+    
     private void Targeting()
     {
         viewObject.transform.LookAt(target);
@@ -134,7 +136,7 @@ public class PlayerModel : NetworkBehaviour
         Vector3 camPos = camTransform.position;
         Vector3 camFwd = camTransform.forward;
         
-        Ray r = new Ray(camPos, camFwd);
+        Ray r = new Ray(camPos + (camFwd * camOffset), camFwd * (camOffset + 1));
 
         Physics.Raycast(r, out RaycastHit ray, maxRayDistance, mask);
         Physics.SphereCast(r, sphereRadius, out RaycastHit sphere, maxRayDistance, mask);

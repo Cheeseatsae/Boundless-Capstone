@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7055809306936718785}
   - component: {fileID: -6450712206844845959}
   - component: {fileID: -4020843658292290280}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,7 +123,7 @@ MonoBehaviour:
   serverOnly: 0
   localPlayerAuthority: 0
   m_AssetId: 
-  m_SceneId: 588897685
+  m_SceneId: 990670429
 --- !u!54 &-6450712206844845959
 Rigidbody:
   m_ObjectHideFlags: 0

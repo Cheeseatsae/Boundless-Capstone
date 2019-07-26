@@ -21,8 +21,8 @@ public class CustomNetManager : NetworkManager
     {
         base.Awake();
 
-        aiManager.enabled = true;
         aiManager = managerRef;
+        // aiManager.enabled = true;
     }
 
     public override void OnServerAddPlayer(NetworkConnection conn, AddPlayerMessage extraMessage)
