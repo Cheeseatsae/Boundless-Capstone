@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Mirror;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Random = System.Random;
 
 public class AIManager : NetworkBehaviour
@@ -23,6 +24,7 @@ public class AIManager : NetworkBehaviour
     public LayerMask layer;
     public int numberofAi;
     public int maxAI;
+    public int numberofKills;
     public float secondsBetweenSpawn;
     public float elapsedTime;
     private void Start()
@@ -50,6 +52,12 @@ public class AIManager : NetworkBehaviour
             
 
         }
+
+        if (numberofKills <= 0)
+        {
+            StartCoroutine(RunEndLevel());
+        }
+        
     }
     
     public Vector3 GetLocation()
@@ -117,6 +125,7 @@ public class AIManager : NetworkBehaviour
     [Command]
     public void CmdSpawn()
     {
+        
         for (int i = 0; i < amountToSpawn; i++)
         {
             toSpawn = PickWhatToSpawn();
@@ -134,6 +143,21 @@ public class AIManager : NetworkBehaviour
             NetworkServer.Spawn(ai);
 
         }
+    }
+
+    [Command]
+    public void CmdGotKillCount()
+    {
+        CustomNetManager.singleton.StopClient();
+        CustomNetManager.singleton.StopHost();
+        
+        
+    }
+
+    IEnumerator RunEndLevel()
+    {
+        yield return new WaitForSeconds(2);
+        CmdGotKillCount();
     }
     
 }

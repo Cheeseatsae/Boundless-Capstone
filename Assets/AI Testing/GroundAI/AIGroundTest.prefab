@@ -34,7 +34,7 @@ Transform:
   m_GameObject: {fileID: 5747712285712444256}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.99, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -115,9 +115,10 @@ MonoBehaviour:
   damageZone: {fileID: 13196669011458187, guid: adaf53882ed59974baf78de0d35c349e,
     type: 3}
   meleeCooldown: 0
-  knockupDirection: {x: 0, y: 0.5, z: 0}
   targetDistance: 0
   meleeCoolDown: 5
+  slamDamager: {fileID: 0}
+  damage: {fileID: 0}
   rangedCoolDown: 3
   bulletPref: {fileID: 7704365907161935278, guid: 9a8824215a3e86e4082d0b64d45ffe27,
     type: 3}
@@ -176,7 +177,7 @@ MonoBehaviour:
   serverOnly: 0
   localPlayerAuthority: 0
   m_AssetId: 
-  m_SceneId: 535894668
+  m_SceneId: 0
 --- !u!114 &-2946629245046867974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,7 +208,6 @@ MonoBehaviour:
   baseMaxHealth: 50
   health: 50
   maxHealth: 0
-  aiManager: {fileID: 0}
   baseHealthRegen: 0
   healthRegen: 0
   regenTick: 1

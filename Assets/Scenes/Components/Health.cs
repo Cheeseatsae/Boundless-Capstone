@@ -63,6 +63,7 @@ public class Health : NetworkBehaviour
         if (GetComponent<AIBaseModel>())
         {
             CustomNetManager.aiManager.numberofAi--;
+            CustomNetManager.aiManager.numberofKills--;
         }
         
         NetworkServer.Destroy(gameObject);

@@ -89,7 +89,7 @@ public class AirAiModel : AIBaseModel
         rb.velocity = targetDir * speed;
         
         transform.LookAt(target.transform);
-        Avoidance();
+        //Avoidance();
 
 
 
@@ -122,7 +122,7 @@ public class AirAiModel : AIBaseModel
         }
     }
 
-    public void Avoidance()
+    /*public void Avoidance()
     {
         foreach (GameObject ai in NearMe)
         {
@@ -133,5 +133,5 @@ public class AirAiModel : AIBaseModel
                 rb.velocity = -dir * (speed * 2);
             }
         }
-    }
+    }*/
 }

@@ -144,7 +144,7 @@ public class GroundAI_Model : AIBaseModel
         //    yield return null;
         //} while (currentTime <= 5);
         
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(2);
         
         CmdGroundSlam();
         
