@@ -56,6 +56,20 @@ public class PlayerModel : NetworkBehaviour
     public float fallbackAimDistance;
     public LayerMask mask;
 
+    // Floor checking variables  
+    [Serializable]
+    public struct Crumb
+    {
+        public Vector3 pos;
+        public Transform obj;
+    }
+    
+    private RaycastHit floorCheck;
+    
+    [Header("Floor Check Variables")]
+    public int floor;
+    public List<Crumb> crumbTrail = new List<Crumb>();
+    
     private Color c;
     
     private void Awake()
@@ -93,7 +107,57 @@ public class PlayerModel : NetworkBehaviour
         myCam = CameraControl.playerCam.GetComponentInChildren<Camera>();
 
         if (isLocalPlayer)
+        {
             CameraControl.playerCam.followObj = this.gameObject;
+            StartCoroutine(MarkPreviousPosition());
+        }
+    }
+
+    private IEnumerator MarkPreviousPosition()
+    {
+        yield return new WaitForSeconds(0.3f);
+        
+        Physics.Raycast(transform.position, Vector3.down, out floorCheck, 100);
+        
+        Crumb firstC = new Crumb { pos = transform.position, obj = floorCheck.collider.gameObject.transform };
+
+        crumbTrail.Add(firstC);
+
+        while (true)
+        {
+            yield return new WaitForSeconds(1);
+
+            Physics.Raycast(transform.position, Vector3.down, out floorCheck, 100);
+
+            if (floorCheck.point == Vector3.zero) continue;
+            if (floorCheck.collider.gameObject.layer != floor) continue;
+
+        if (crumbTrail.Count < 5)
+            {
+                Crumb newC = new Crumb { pos = transform.position, obj = floorCheck.collider.gameObject.transform };
+                crumbTrail.Insert(0, newC);
+            }
+            else
+            {
+                crumbTrail.RemoveAt(crumbTrail.Count - 1);
+                Crumb newC = new Crumb { pos = transform.position, obj = floorCheck.collider.gameObject.transform };
+                crumbTrail.Insert(0, newC);
+            }
+        }
+    }
+
+    public void MovePlayerToSolidGround()
+    {
+        Vector2 pos = new Vector2(crumbTrail[0].pos.x, crumbTrail[0].pos.z);
+        Vector3 objPos = new Vector2(crumbTrail[0].obj.position.x, crumbTrail[0].obj.position.z);
+
+        float x = Mathf.Lerp(pos.x, objPos.x, 0.2f);
+        float y = crumbTrail[0].pos.y + 3;
+        float z = Mathf.Lerp(pos.y, objPos.y, 0.2f);
+        
+        Vector3 spawnPos = new Vector3(x,y,z);
+
+        transform.position = spawnPos;
     }
 
     // test aim location for player

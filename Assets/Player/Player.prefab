@@ -82,6 +82,8 @@ MonoBehaviour:
   mask:
     serializedVersion: 2
     m_Bits: 1843
+  floor: 10
+  crumbTrail: []
   camOffset: 2
 --- !u!136 &8086389977643893696
 CapsuleCollider:
@@ -128,7 +130,7 @@ MonoBehaviour:
   serverOnly: 0
   localPlayerAuthority: 1
   m_AssetId: 
-  m_SceneId: 0
+  m_SceneId: 3572179223
 --- !u!114 &9134880087942267290
 MonoBehaviour:
   m_ObjectHideFlags: 0
