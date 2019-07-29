@@ -58,6 +58,10 @@ public class Health : NetworkBehaviour
         if (GetComponent<PlayerModel>())
         {
             CustomNetManager.players.Remove(gameObject);
+            if (CustomNetManager.players.Count < 1)
+            {
+                CustomNetManager.aiManager.CmdGotKillCount();
+            }
         }
 
         if (GetComponent<AIBaseModel>())
@@ -111,6 +115,8 @@ public class Health : NetworkBehaviour
             EventDeath?.Invoke();
         }
     }
+    
+    
     
     
 }
