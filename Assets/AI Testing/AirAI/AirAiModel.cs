@@ -28,6 +28,21 @@ public class AirAiModel : AIBaseModel
     public float toClose;
     
     //Abilities
+    public GameObject projectilePref;
+    public Transform bulletPos1;
+    
+    public Transform bulletPos2;
+
+    public Transform currentSpawnPos;
+    public float minTargetRange;
+
+    public float projSpeed;
+
+    public bool onCd = false;
+
+    public float flakCooldown;
+
+    public Vector3 targetDirection;
     // Start is called before the first frame update
     void Start()
     {
@@ -90,6 +105,15 @@ public class AirAiModel : AIBaseModel
         
         transform.LookAt(target.transform);
         //Avoidance();
+        
+        //Abilities
+        targetDirection = (target.transform.position - transform.position).normalized;
+        if (distance < minTargetRange && onCd == false)
+        {
+            StartCoroutine(FlakAttack());
+            onCd = true;
+            StartCoroutine(FlakCooldown());
+        }
 
 
 
@@ -122,10 +146,11 @@ public class AirAiModel : AIBaseModel
         }
     }
 
-    /*public void Avoidance()
+    public void Avoidance()
     {
         foreach (GameObject ai in NearMe)
         {
+            if (ai == null) return;
             float dist = Vector3.Distance(transform.position, ai.transform.position);
             if (dist <= toClose)
             {
@@ -133,5 +158,38 @@ public class AirAiModel : AIBaseModel
                 rb.velocity = -dir * (speed * 2);
             }
         }
-    }*/
+    }
+    
+    [Command]
+    public void CmdFlakCannon(int cannon)
+    {
+        
+        if (cannon == 1)
+        {
+            currentSpawnPos = bulletPos1;
+        } else if (cannon == 2)
+        {
+            currentSpawnPos = bulletPos2;
+        }
+
+        GameObject flak = Instantiate(projectilePref, currentSpawnPos.position, Quaternion.identity);
+        Rigidbody flakRb = flak.GetComponent<Rigidbody>();
+        flakRb.velocity = targetDirection * projSpeed;
+        NetworkServer.Spawn(flak);
+    }
+
+    public IEnumerator FlakAttack()
+    {
+        CmdFlakCannon(1);
+        yield return new WaitForSeconds(0.5f);
+        CmdFlakCannon(2);
+        
+
+    }
+
+    public IEnumerator FlakCooldown()
+    {
+        yield return new WaitForSeconds(flakCooldown);
+        onCd = false;
+    }
 }
