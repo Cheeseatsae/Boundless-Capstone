@@ -129,8 +129,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   serverOnly: 0
   localPlayerAuthority: 1
-  m_AssetId: 
-  m_SceneId: 3572179223
+  m_AssetId: ed2444e4643baca488fa1319912d55af
+  m_SceneId: 0
 --- !u!114 &9134880087942267290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,7 +168,7 @@ MonoBehaviour:
   player: {fileID: 8086389977643893697}
   bulletPref: {fileID: 0}
   rangeInMetres: 0
-  projectileSpeed: 50
+  projectileSpeed: 100
 --- !u!114 &-5048125680820625554
 MonoBehaviour:
   m_ObjectHideFlags: 0

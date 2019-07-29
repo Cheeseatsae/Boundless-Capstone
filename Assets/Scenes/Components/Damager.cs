@@ -14,6 +14,7 @@ public class Damager : NetworkBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (!other.GetComponent<Health>() || !other.GetComponent<AIBaseModel>()) return;
+        if (other.isTrigger) return;
         
         Health healthComp = other.GetComponent<Health>();
         if (isServer)
@@ -23,7 +24,6 @@ public class Damager : NetworkBehaviour
         
         NetworkServer.Destroy(this.gameObject);
         Destroy(this.gameObject);
-
 
     }
 }
