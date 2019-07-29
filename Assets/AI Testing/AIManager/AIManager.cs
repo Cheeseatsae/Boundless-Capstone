@@ -86,10 +86,10 @@ public class AIManager : NetworkBehaviour
                 dir = new Vector3(Mathf.Sin(angle),0,Mathf.Cos(angle));
                 dir *= UnityEngine.Random.Range(minEnemySpawnDistance, maxEnemySpawnDistance);
                 location = new Vector3(player.transform.position.x + dir.x, 100, player.transform.position.z + dir.z);
-                Debug.Log(location);
+                //Debug.Log(location);
                 Physics.Raycast(location, Vector3.down, out hit, 200, layer);
                 Debug.DrawRay(location, Vector3.down, Color.red, 5);
-                Debug.Log(hit.point);
+                //Debug.Log(hit.point);
                 
                 iterations++;
 
@@ -98,7 +98,7 @@ public class AIManager : NetworkBehaviour
             {
                 //Debug.Log("Didnt hit nothing");
                 returnLocation = hit.point;
-                Debug.Log(returnLocation);
+                //Debug.Log(returnLocation);
             }
 
             else
