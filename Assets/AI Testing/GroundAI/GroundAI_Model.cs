@@ -25,6 +25,7 @@ public class GroundAI_Model : AIBaseModel
     public GameObject bulletPref;
     public bool rangedCooldown = false;
     public float projectileSpeed;
+    public bool cantFire = false;
 
     private NavMeshAgent navmesh;
     // Start is called before the first frame update
@@ -49,7 +50,7 @@ public class GroundAI_Model : AIBaseModel
             if (player != null)
             {
                 float distance = Vector3.Distance(player.transform.position, transform.position);
-                if (distance < minDistance)
+                if (distance < minDistance && cantFire == false)
                 {
                     target = player;
                     minDistance = distance;
@@ -71,8 +72,12 @@ public class GroundAI_Model : AIBaseModel
                 {
                     if (rangedCooldown == false)
                     {
-                        CmdFire();
+                        navmesh.isStopped = true;
+                        navmesh.velocity = new Vector3(0,0,0);
+                        StartCoroutine(RangedWait());
+                        
                         rangedCooldown = true;
+                        cantFire = false;
                         StartCoroutine(RangedCooldown());
                     }               
                 }
@@ -83,6 +88,7 @@ public class GroundAI_Model : AIBaseModel
             {
                 if (meleeCooldown == false)
                 {
+                    cantFire = true;
                     navmesh.isStopped = true;
                     navmesh.velocity = new Vector3(0,0,0);
                     meleeCooldown = true;
@@ -168,6 +174,13 @@ public class GroundAI_Model : AIBaseModel
     public void RpcRunCharge()
     {
         //StartCoroutine(MeleeCharge());
+    }
+
+    IEnumerator RangedWait()
+    {
+        yield return new WaitForSeconds(0.5f);
+        CmdFire();
+        navmesh.isStopped = false;
     }
 
 }

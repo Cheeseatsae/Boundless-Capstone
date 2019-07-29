@@ -13,7 +13,13 @@ public class AIDamager : NetworkBehaviour
     public Vector3 knockupDirection;
     public float damageRadius;
     
+    
+    
+    //Damage Types
+    
     public int slamDamage;
+
+    public int explosionDamage;
     // Start is called before the first frame update
     void Start()
     {
@@ -84,6 +90,30 @@ public class AIDamager : NetworkBehaviour
     {
         Rigidbody targetRb = player.GetComponent<Rigidbody>();
         targetRb.velocity =  dir *15;
+    }
+
+    public void ExplosionDamage()
+    {
+        foreach (GameObject players in PlayerList)
+        {
+            Health health = players.GetComponent<Health>();
+            health.CmdDoDamage(explosionDamage);
+            Delete();
+            CmdDeleteExplosion();
+        }
+    }
+
+
+    [Command]
+    public void CmdDeleteExplosion()
+    {
+        StartCoroutine(WaitASec());
+    }
+    IEnumerator WaitASec()
+    {
+        yield return new WaitForSeconds(0.5f);
+        Debug.Log("Deleteme");
+        
     }
 
 
