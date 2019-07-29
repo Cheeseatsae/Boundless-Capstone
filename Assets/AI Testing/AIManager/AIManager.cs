@@ -1,112 +1,92 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using Mirror;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using Random = System.Random;
 
 public class AIManager : NetworkBehaviour
 {
-    
+    public List<GameObject> aiList = new List<GameObject>();
+    public GameObject airAi;
+    public int amountToSpawn;
+
     public float distanceCheck;
-    public int maxEnemySpawnDistance;
-    public int minEnemySpawnDistance;
+    public float elapsedTime;
 
     public GameObject groundAI;
-    public GameObject airAi;
-    
-    //AI Spawning Variables
-    public Vector3 spawningLocation;
-    public int amountToSpawn;
-    public List<GameObject> aiList = new List<GameObject>();
-    public GameObject toSpawn;
     public LayerMask layer;
-    public int numberofAi;
     public int maxAI;
+    public int maxEnemySpawnDistance;
+    public int minEnemySpawnDistance;
+    public int numberofAi;
     public int numberofKills;
     public float secondsBetweenSpawn;
-    public float elapsedTime;
+
+    //AI Spawning Variables
+    public Vector3 spawningLocation;
+    public GameObject toSpawn;
+
     private void Start()
     {
         aiList.Add(groundAI);
         aiList.Add(airAi);
     }
 
-    void Update()
+    private void Update()
     {
         if (Input.GetKeyDown(KeyCode.L) && isServer)
-        {
             CmdSpawn();
-            //Debug.Log("fucking work... plz");
-        }
+        //Debug.Log("fucking work... plz");
 
         elapsedTime += Time.deltaTime;
+
         if (elapsedTime > secondsBetweenSpawn)
         {
             elapsedTime = 0;
-            if (numberofAi < maxAI)
-            {
-                CmdSpawn();
-            }
-            
-
+            if (numberofAi < maxAI) CmdSpawn();
         }
 
-        if (numberofKills <= 0)
-        {
-            StartCoroutine(RunEndLevel());
-        }
-        
+        if (numberofKills <= 0) StartCoroutine(RunEndLevel());
     }
-    
-    public Vector3 GetLocation()
+
+    public Vector3 GetLocation(GameObject player)
     {
         //Debug.Log("Run Location");
-        Vector3 returnLocation = new Vector3(0,0,0);
-        
-        if (CustomNetManager.players.Count < 1)
+        var returnLocation = new Vector3(0, 0, 0);
+
+        if (CustomNetManager.players.Count < 1) return Vector3.zero;
+
+        var angle = new float();
+        var dir = new Vector3();
+
+        var location = new Vector3();
+        var hit = new RaycastHit();
+
+        var iterations = 0;
+
+
+        while (hit.point == Vector3.zero && iterations < 15)
         {
-            return Vector3.zero;
+            angle = Random.Range(0.0f, Mathf.PI * 2);
+            dir = new Vector3(Mathf.Sin(angle), 0, Mathf.Cos(angle));
+            dir *= Random.Range(minEnemySpawnDistance, maxEnemySpawnDistance);
+            location = new Vector3(player.transform.position.x + dir.x, 100, player.transform.position.z + dir.z);
+            //Debug.Log(location);
+            Physics.Raycast(location, Vector3.down, out hit, 200, layer);
+            Debug.DrawRay(location, Vector3.down, Color.red, 5);
+            //Debug.Log(hit.point);
+
+            iterations++;
         }
-        foreach (GameObject player in CustomNetManager.players)
-        {
-            float angle = new float();
-            Vector3 dir = new Vector3();
-            
-            Vector3 location = new Vector3();
-            RaycastHit hit = new RaycastHit();
 
-            int iterations = 0;
-            
+        if (hit.point != Vector3.zero)
+            //Debug.Log("Didnt hit nothing");
+            returnLocation = hit.point;
+        //Debug.Log(returnLocation);
 
-            while (hit.point == Vector3.zero && iterations < 15) 
-            {
-                angle = UnityEngine.Random.Range(0.0f, Mathf.PI * 2);
-                dir = new Vector3(Mathf.Sin(angle),0,Mathf.Cos(angle));
-                dir *= UnityEngine.Random.Range(minEnemySpawnDistance, maxEnemySpawnDistance);
-                location = new Vector3(player.transform.position.x + dir.x, 100, player.transform.position.z + dir.z);
-                //Debug.Log(location);
-                Physics.Raycast(location, Vector3.down, out hit, 200, layer);
-                Debug.DrawRay(location, Vector3.down, Color.red, 5);
-                //Debug.Log(hit.point);
-                
-                iterations++;
+        else
+            returnLocation = Vector3.zero;
 
-            }
-            if (hit.point != Vector3.zero)
-            {
-                //Debug.Log("Didnt hit nothing");
-                returnLocation = hit.point;
-                //Debug.Log(returnLocation);
-            }
 
-            else
-            {
-                returnLocation = Vector3.zero;
-            }
-            
-        }
         //Debug.Log(returnLocation);
 
         return returnLocation;
@@ -114,50 +94,42 @@ public class AIManager : NetworkBehaviour
 
     public GameObject PickWhatToSpawn()
     {
-        int spawnThis = UnityEngine.Random.Range(0, aiList.Count);
-        GameObject aiToSpawn = aiList[spawnThis];
+        var spawnThis = Random.Range(0, aiList.Count);
+        var aiToSpawn = aiList[spawnThis];
         Debug.Log(aiToSpawn);
         return aiToSpawn;
-        
     }
 
 
     [Command]
     public void CmdSpawn()
     {
-        
-        for (int i = 0; i < amountToSpawn; i++)
-        {
-            toSpawn = PickWhatToSpawn();
-            spawningLocation = GetLocation();
-            if (spawningLocation == Vector3.zero)
-                return;
-            if (toSpawn == airAi)
+        foreach (var player in CustomNetManager.players)
+            for (var i = 0; i < amountToSpawn; i++)
             {
-                spawningLocation.y = spawningLocation.y + 15;
+                toSpawn = PickWhatToSpawn();
+                spawningLocation = GetLocation(player);
+                if (spawningLocation == Vector3.zero)
+                    return;
+                if (toSpawn == airAi) spawningLocation.y = spawningLocation.y + 15;
+
+                numberofAi++;
+                //Debug.Log("spawn" + toSpawn);
+                var ai = Instantiate(toSpawn, spawningLocation, Quaternion.identity);
+                NetworkServer.Spawn(ai);
             }
-
-            numberofAi++;
-            //Debug.Log("spawn" + toSpawn);
-            GameObject ai = Instantiate(toSpawn, spawningLocation, Quaternion.identity);
-            NetworkServer.Spawn(ai);
-
-        }
     }
 
     [Command]
     public void CmdGotKillCount()
     {
-        CustomNetManager.singleton.StopClient();
-        CustomNetManager.singleton.StopHost();
-        
-        
+        NetworkManager.singleton.StopClient();
+        NetworkManager.singleton.StopHost();
     }
 
-    IEnumerator RunEndLevel()
+    private IEnumerator RunEndLevel()
     {
         yield return new WaitForSeconds(2);
         CmdGotKillCount();
     }
-    
 }
