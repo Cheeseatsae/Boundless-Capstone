@@ -62,7 +62,7 @@ public class AIManager : NetworkBehaviour
     
     public Vector3 GetLocation()
     {
-        Debug.Log("Run Location");
+        //Debug.Log("Run Location");
         Vector3 returnLocation = new Vector3(0,0,0);
         
         if (CustomNetManager.players.Count < 1)
@@ -96,7 +96,7 @@ public class AIManager : NetworkBehaviour
             }
             if (hit.point != Vector3.zero)
             {
-                Debug.Log("Didnt hit nothing");
+                //Debug.Log("Didnt hit nothing");
                 returnLocation = hit.point;
                 Debug.Log(returnLocation);
             }
@@ -138,7 +138,7 @@ public class AIManager : NetworkBehaviour
             }
 
             numberofAi++;
-            Debug.Log("spawn" + toSpawn);
+            //Debug.Log("spawn" + toSpawn);
             GameObject ai = Instantiate(toSpawn, spawningLocation, Quaternion.identity);
             NetworkServer.Spawn(ai);
 

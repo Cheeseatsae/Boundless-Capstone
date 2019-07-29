@@ -82,13 +82,13 @@ public class AirAiModel : AIBaseModel
             //To close to ground
             if(Vector3.Distance(transform.position, hit.point) <= minGroundDistance)
             {
-                Debug.Log("moveup");
+                //Debug.Log("moveup");
                 direction = new Vector3(0,1,0);
                 //rb.velocity = -upDir * speed;
             }
             else if (Vector3.Distance(transform.position, hit.point) >= maxGroundDistance)
             {
-                Debug.Log("movedown");
+                //Debug.Log("movedown");
                 direction = new Vector3(0,-1,0);
                 //rb.velocity = downDir * speed;
             }
