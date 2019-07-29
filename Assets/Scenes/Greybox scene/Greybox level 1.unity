@@ -195,6 +195,11 @@ PrefabInstance:
       propertyPath: m_SceneId
       value: 2720803501
       objectReference: {fileID: 0}
+    - target: {fileID: 6541306208932040739, guid: f0c0c75b58ad84542a88f30748e6c9ca,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0c0c75b58ad84542a88f30748e6c9ca, type: 3}
 --- !u!1 &187557997
@@ -3851,7 +3856,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 150041036}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f211ff307debebc40b9b4ab13d6bd0c9, type: 3}
   m_Name: 
