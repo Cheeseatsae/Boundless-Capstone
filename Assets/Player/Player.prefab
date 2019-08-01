@@ -85,6 +85,8 @@ MonoBehaviour:
   floor: 10
   crumbTrail: []
   camOffset: 2
+  playFabUserObj: {fileID: 2609842523394191113, guid: 96876c159dd002e43a639731b5995faa,
+    type: 3}
 --- !u!136 &8086389977643893696
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -129,8 +131,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   serverOnly: 0
   localPlayerAuthority: 1
-  m_AssetId: ed2444e4643baca488fa1319912d55af
-  m_SceneId: 0
+  m_AssetId: 
+  m_SceneId: 2708907081
 --- !u!114 &9134880087942267290
 MonoBehaviour:
   m_ObjectHideFlags: 0

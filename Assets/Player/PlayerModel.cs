@@ -110,6 +110,7 @@ public class PlayerModel : NetworkBehaviour
         {
             CameraControl.playerCam.followObj = this.gameObject;
             StartCoroutine(MarkPreviousPosition());
+            SetupPlayFab();
         }
     }
 
@@ -335,6 +336,19 @@ public class PlayerModel : NetworkBehaviour
         controller.OnMouse0Input -= OnMouse0Input;
         controller.OnMouse1Input -= OnMouse1Input;
 
+    }
+
+    // PLAYFAB TESTING
+
+    [Header("PlayFab")] 
+    public GameObject playFabUserObj;
+
+    private PlayFabUser playfabUser;
+    
+    private void SetupPlayFab()
+    {
+        playfabUser = Instantiate(playFabUserObj, Vector3.zero, Quaternion.identity).GetComponent<PlayFabUser>();
+        playfabUser.player = GetComponent<NetworkIdentity>();
     }
 
 }
