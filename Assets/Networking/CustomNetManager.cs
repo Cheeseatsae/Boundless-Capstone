@@ -90,6 +90,7 @@ public class CustomNetManager : NetworkManager
                 Cursor.visible = false;
             }
         }
+
     }
         
     public override void OnServerRemovePlayer(NetworkConnection conn, NetworkIdentity player)

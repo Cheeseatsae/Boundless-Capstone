@@ -294,27 +294,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1 &656307715 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2820606728479989981, guid: 9e45fadf099eeba41882529376fdcf29,
-    type: 3}
-  m_PrefabInstance: {fileID: 2820606728521264958}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &656307716
+--- !u!114 &387143414 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 82585980940633212, guid: 3a2d4c20dbb65c4409684bcbe47bf9e3,
+    type: 3}
+  m_PrefabInstance: {fileID: 6425097731819489573}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 656307715}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6442dc8070ceb41f094e44de0bf87274, type: 3}
+  m_Script: {fileID: 11500000, guid: 79874ac94d5b1314788ecf0e86bd23fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  showGUI: 1
-  offsetX: 0
-  offsetY: 0
 --- !u!1001 &2820606728521264958
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -382,17 +373,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2820606728479989979, guid: 9e45fadf099eeba41882529376fdcf29,
+    - target: {fileID: 1079436855934463876, guid: 9e45fadf099eeba41882529376fdcf29,
         type: 3}
-      propertyPath: playerPrefab
+      propertyPath: lobbyPlayerPrefab
       value: 
-      objectReference: {fileID: 8086389977643893722, guid: 58c3dce607ee80247991f80241eb2b1c,
-        type: 3}
-    - target: {fileID: 2820606728479989979, guid: 9e45fadf099eeba41882529376fdcf29,
-        type: 3}
-      propertyPath: playerSpawnMethod
-      value: 1
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 387143414}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e45fadf099eeba41882529376fdcf29, type: 3}
 --- !u!1001 &6425097731819489573

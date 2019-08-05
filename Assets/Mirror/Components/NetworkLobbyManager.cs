@@ -20,7 +20,7 @@ namespace Mirror
         [Header("Lobby Settings")]
         [FormerlySerializedAs("m_ShowLobbyGUI")] [SerializeField] internal bool showLobbyGUI = true;
         [FormerlySerializedAs("m_MinPlayers")] [SerializeField] int minPlayers = 1;
-        [FormerlySerializedAs("m_LobbyPlayerPrefab")] [SerializeField] NetworkLobbyPlayer lobbyPlayerPrefab;
+        [FormerlySerializedAs("m_LobbyPlayerPrefab")] [SerializeField] public NetworkLobbyPlayer lobbyPlayerPrefab;
 
         [Scene]
         public string LobbyScene;
@@ -207,7 +207,7 @@ namespace Mirror
             OnLobbyServerDisconnect(conn);
         }
 
-        public override void OnServerAddPlayer(NetworkConnection conn, AddPlayerMessage extraMessage)
+        /*public override void OnServerAddPlayer(NetworkConnection conn, AddPlayerMessage extraMessage)
         {
             if (SceneManager.GetActiveScene().name != LobbyScene) return;
 
@@ -228,7 +228,7 @@ namespace Mirror
             RecalculateLobbyPlayerIndices();
 
             NetworkServer.AddPlayerForConnection(conn, newLobbyGameObject);
-        }
+        }*/
 
         void RecalculateLobbyPlayerIndices()
         {
@@ -281,7 +281,7 @@ namespace Mirror
             base.ServerChangeScene(sceneName);
         }
 
-        public override void OnServerSceneChanged(string sceneName)
+        /*public override void OnServerSceneChanged(string sceneName)
         {
             if (sceneName != LobbyScene)
             {
@@ -293,7 +293,7 @@ namespace Mirror
             }
 
             OnLobbyServerSceneChanged(sceneName);
-        }
+        }*/
 
         public override void OnStartServer()
         {
