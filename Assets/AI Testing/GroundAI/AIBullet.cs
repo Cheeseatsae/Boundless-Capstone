@@ -11,17 +11,6 @@ public class AIBullet : NetworkBehaviour
     public GameObject damageZone;
     public AIDamager aiDamager;
     public GameObject damager;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -40,9 +29,6 @@ public class AIBullet : NetworkBehaviour
             
         }
 
-
-        
-        
     }
 
     private void OnCollisionEnter(Collision other)

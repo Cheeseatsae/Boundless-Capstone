@@ -26,6 +26,7 @@ public class PlayerModel : NetworkBehaviour
     public Camera myCam;
     public GameObject viewObject;
     public AbilityBase ability1;
+    public AbilityBase ability3;
 
     private float _forwardInput;
     private float _backInput;
@@ -100,6 +101,7 @@ public class PlayerModel : NetworkBehaviour
         controller.OnMouse1Input += OnMouse1Input;
 
         ability1 = GetComponent<Ability1>();
+        ability3 = GetComponent<Ability3>();
     }
 
     private void Start()
@@ -319,7 +321,9 @@ public class PlayerModel : NetworkBehaviour
     }
     private void OnMouse1Input()
     {
-        GetComponent<Ability1>().CmdColourChange();
+        ability3.Enter();
+
+        //GetComponent<Ability1>().CmdColourChange();
     }
 
     private void OnDestroy()
