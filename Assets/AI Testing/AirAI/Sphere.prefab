@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 4235760578875422377}
   m_Layer: 2
   m_Name: Sphere
-  m_TagString: Untagged
+  m_TagString: AirAi
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126,7 +126,7 @@ MonoBehaviour:
   serverOnly: 0
   localPlayerAuthority: 0
   m_AssetId: 
-  m_SceneId: 766864205
+  m_SceneId: 266457272
 --- !u!114 &-4943143259617360016
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,3 +155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncInterval: 0.1
   damage: 5
+  damageZone: {fileID: 152085436202727555, guid: 847f3d82a1522cc4dabca1eebe750f21,
+    type: 3}
+  aiDamager: {fileID: 0}
+  damager: {fileID: 0}

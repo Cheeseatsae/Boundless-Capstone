@@ -18,15 +18,21 @@ public class AIBullet : NetworkBehaviour
         {
             Health healthComp = other.GetComponent<Health>();
             healthComp.CmdDoDamage(damage);
-            if (gameObject.CompareTag("AirAi"))
-            {
-                damager = Instantiate(damageZone, this.gameObject.transform.position, Quaternion.identity);
-                NetworkServer.Spawn(damager);
-                
-            }
             NetworkServer.Destroy(this.gameObject);
             Destroy(this.gameObject);
             
+        }
+        if (other.gameObject.layer == 10 || other.gameObject.GetComponent<PlayerModel>())
+        {
+            if (gameObject.CompareTag("AirAi"))
+            {
+                damager = Instantiate(damageZone, gameObject.transform.position, Quaternion.identity);
+                NetworkServer.Spawn(damager);
+                aiDamager = damager.GetComponent<AIDamager>();
+                CmdExplosion();
+            }
+            NetworkServer.Destroy(this.gameObject);
+            Destroy(this.gameObject);
         }
 
     }
@@ -42,17 +48,21 @@ public class AIBullet : NetworkBehaviour
             Destroy(this.gameObject);
             
         }
-        if (gameObject.CompareTag("AirAi"))
+
+        if (other.gameObject.layer == 10 || other.gameObject.GetComponent<PlayerModel>())
         {
-            damager = Instantiate(damageZone, gameObject.transform.position, Quaternion.identity);
-            NetworkServer.Spawn(damager);
-            aiDamager = damager.GetComponent<AIDamager>();
-            CmdExplosion();
-
-
+            if (gameObject.CompareTag("AirAi"))
+            {
+                damager = Instantiate(damageZone, gameObject.transform.position, Quaternion.identity);
+                NetworkServer.Spawn(damager);
+                aiDamager = damager.GetComponent<AIDamager>();
+                CmdExplosion();
+            }
+            NetworkServer.Destroy(this.gameObject);
+            Destroy(this.gameObject);
         }
-        NetworkServer.Destroy(this.gameObject);
-        Destroy(this.gameObject);
+        
+
     }
 
     [Command]

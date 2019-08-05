@@ -79,7 +79,7 @@ namespace Mirror
                 allPlayersReady = false;
         }
 
-        public override void OnServerReady(NetworkConnection conn)
+        /*public override void OnServerReady(NetworkConnection conn)
         {
             if (LogFilter.Debug) Debug.Log("NetworkLobbyManager OnServerReady");
             base.OnServerReady(conn);
@@ -94,7 +94,7 @@ namespace Mirror
             }
         }
 
-        void SceneLoadedForPlayer(NetworkConnection conn, GameObject lobbyPlayer)
+        /*void SceneLoadedForPlayer(NetworkConnection conn, GameObject lobbyPlayer)
         {
             if (LogFilter.Debug) Debug.LogFormat("NetworkLobby SceneLoadedForPlayer scene: {0} {1}", SceneManager.GetActiveScene().name, conn);
 
@@ -124,7 +124,7 @@ namespace Mirror
 
             // replace lobby player with game player
             NetworkServer.ReplacePlayerForConnection(conn, gamePlayer);
-        }
+        }*/
 
         public void CheckReadyToBegin()
         {

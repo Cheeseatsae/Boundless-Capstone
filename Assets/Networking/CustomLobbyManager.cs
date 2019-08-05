@@ -20,7 +20,20 @@ public class CustomLobbyManager : NetworkLobbyManager
         base.OnLobbyServerPlayersReady();
         
     }
-    
+    public override void OnServerReady(NetworkConnection conn)
+    {
+        if (LogFilter.Debug) Debug.Log("NetworkLobbyManager OnServerReady");
+        base.OnServerReady(conn);
+
+        if (conn != null && conn.playerController != null)
+        {
+            GameObject lobbyPlayer = conn.playerController.gameObject;
+
+            // if null or not a lobby player, dont replace it
+            if (lobbyPlayer != null && lobbyPlayer.GetComponent<NetworkLobbyPlayer>() != null)
+                SceneLoadedForPlayer(conn, lobbyPlayer);
+        }
+    }
     
     public override void OnServerAddPlayer(NetworkConnection conn, AddPlayerMessage extraMessage)
     {
@@ -47,7 +60,7 @@ public class CustomLobbyManager : NetworkLobbyManager
             //conns.Add(conn.playerController.gameObject);
         }
 
-        if (SceneManager.GetActiveScene().name == GameplayScene)
+        /*if (SceneManager.GetActiveScene().name == GameplayScene)
         {
             // BASE START
         
@@ -85,7 +98,7 @@ public class CustomLobbyManager : NetworkLobbyManager
         
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
-        }
+        }*/
 
     }
     
@@ -129,6 +142,7 @@ public class CustomLobbyManager : NetworkLobbyManager
         }
 
         OnLobbyServerSceneChanged(sceneName);
+        
     }
     
     
@@ -166,7 +180,7 @@ public class CustomLobbyManager : NetworkLobbyManager
         // BASE END
     }
     
-    void SceneLoadedForPlayer(NetworkConnection conn, GameObject lobbyPlayer)
+    public void SceneLoadedForPlayer(NetworkConnection conn, GameObject lobbyPlayer)
     {
         if (LogFilter.Debug) Debug.LogFormat("NetworkLobby SceneLoadedForPlayer scene: {0} {1}", SceneManager.GetActiveScene().name, conn);
 
@@ -177,10 +191,11 @@ public class CustomLobbyManager : NetworkLobbyManager
             pending.conn = conn;
             pending.lobbyPlayer = lobbyPlayer;
             pendingPlayers.Add(pending);
+            
             return;
         }
 
-        GameObject gamePlayer = OnLobbyServerCreateGamePlayer(conn);
+        GameObject gamePlayer = OnLobbyServerCreateGamePlayer(conn);       
         
         if (gamePlayer == null)
         {
@@ -203,7 +218,8 @@ public class CustomLobbyManager : NetworkLobbyManager
 
         // replace lobby player with game player
         NetworkServer.ReplacePlayerForConnection(conn, gamePlayer);
-        
+        players.Add(conn.playerController.gameObject);
+        //conns.Add(gamePlayer);
         
 
     }

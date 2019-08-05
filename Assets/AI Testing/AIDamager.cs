@@ -98,9 +98,9 @@ public class AIDamager : NetworkBehaviour
         {
             Health health = players.GetComponent<Health>();
             health.CmdDoDamage(explosionDamage);
-            Delete();
-            CmdDeleteExplosion();
-        }
+            
+        }        
+        CmdDeleteExplosion();
     }
 
 
@@ -113,6 +113,7 @@ public class AIDamager : NetworkBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         Debug.Log("Deleteme");
+        Delete();
         
     }
 

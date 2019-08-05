@@ -54,7 +54,7 @@ public class AirAiModel : AIBaseModel
     void Update()
     {
         if (!isServer) return;
-        foreach (GameObject player in CustomNetManager.players)
+        foreach (GameObject player in CustomLobbyManager.players)
         {
             if (player != null)
             {

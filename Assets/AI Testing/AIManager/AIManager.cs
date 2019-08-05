@@ -21,6 +21,7 @@ public class AIManager : NetworkBehaviour
     public int numberofKills;
     public float secondsBetweenSpawn;
 
+    public int numberofplayers;
     //AI Spawning Variables
     public Vector3 spawningLocation;
     public GameObject toSpawn;
@@ -33,6 +34,7 @@ public class AIManager : NetworkBehaviour
 
     private void Update()
     {
+        numberofplayers = CustomLobbyManager.players.Count;
         if (Input.GetKeyDown(KeyCode.L) && isServer)
             CmdSpawn();
         //Debug.Log("fucking work... plz");
@@ -53,7 +55,7 @@ public class AIManager : NetworkBehaviour
         //Debug.Log("Run Location");
         var returnLocation = new Vector3(0, 0, 0);
 
-        if (CustomNetManager.players.Count < 1) return Vector3.zero;
+        if (CustomLobbyManager.players.Count < 1) return Vector3.zero;
 
         var angle = new float();
         var dir = new Vector3();
@@ -104,7 +106,7 @@ public class AIManager : NetworkBehaviour
     [Command]
     public void CmdSpawn()
     {
-        foreach (var player in CustomNetManager.players)
+        foreach (var player in CustomLobbyManager.players)
             for (var i = 0; i < amountToSpawn; i++)
             {
                 toSpawn = PickWhatToSpawn();
