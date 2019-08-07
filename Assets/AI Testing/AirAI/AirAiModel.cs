@@ -44,8 +44,15 @@ public class AirAiModel : AIBaseModel
 
     public Vector3 targetDirection;
     // Start is called before the first frame update
+    private void Awake()
+    {
+        
+    }
+
+
     void Start()
     {
+        
         aiManager = FindObjectOfType<AIManager>();
         rb = GetComponent<Rigidbody>();
 
@@ -54,19 +61,7 @@ public class AirAiModel : AIBaseModel
     void Update()
     {
         if (!isServer) return;
-        foreach (GameObject player in CustomLobbyManager.players)
-        {
-            if (player != null)
-            {
-                float distance = Vector3.Distance(player.transform.position, transform.position);
-                if (distance < minDistance)
-                {
-                    target = player;
-                    minDistance = distance;
-                }
-            }
-            
-        }   
+        Targetting();
         
         //Movement
         
@@ -102,12 +97,16 @@ public class AirAiModel : AIBaseModel
         }
         //Get Target Direction and look at rotation
         rb.velocity = targetDir * speed;
+        if (target != null)
+        {
+            transform.LookAt(target.transform);
+            targetDirection = (target.transform.position - transform.position).normalized;
+        }
         
-        transform.LookAt(target.transform);
         //Avoidance();
         
         //Abilities
-        targetDirection = (target.transform.position - transform.position).normalized;
+        
         if (distance < minTargetRange && onCd == false)
         {
             StartCoroutine(FlakAttack());
@@ -191,5 +190,18 @@ public class AirAiModel : AIBaseModel
     {
         yield return new WaitForSeconds(flakCooldown);
         onCd = false;
+    }
+
+    public void Targetting()
+    {
+        foreach (GameObject player in CustomLobbyManager.players)
+        {
+            float distance = Vector3.Distance(player.transform.position, transform.position);
+            if (distance < minDistance)
+            {
+                target = player;
+                minDistance = distance;
+            }
+        }  
     }
 }
