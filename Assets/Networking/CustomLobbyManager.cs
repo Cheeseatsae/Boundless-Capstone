@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using Mirror;
 using UnityEngine;
@@ -10,16 +11,21 @@ public class CustomLobbyManager : NetworkLobbyManager
     public AIManager managerRef;
     public static AIManager aiManager;
     public static List<GameObject> players = new List<GameObject>();
+    
     public List<GameObject> conns = new List<GameObject>();
 
     [Header("Player Prefabs")]
     public GameObject playerBulletPrefab;
+    
+    public delegate void PlayerSpawn(NetworkIdentity p, NetworkIdentity obj);
+    public event PlayerSpawn OnPlayerSpawn;
 
     public override void OnLobbyServerPlayersReady()
     {
         base.OnLobbyServerPlayersReady();
         
     }
+    
     public override void OnServerReady(NetworkConnection conn)
     {
         if (LogFilter.Debug) Debug.Log("NetworkLobbyManager OnServerReady");
@@ -33,8 +39,9 @@ public class CustomLobbyManager : NetworkLobbyManager
             if (lobbyPlayer != null && lobbyPlayer.GetComponent<NetworkLobbyPlayer>() != null)
                 SceneLoadedForPlayer(conn, lobbyPlayer);
         }
+        
     }
-    
+
     public override void OnServerAddPlayer(NetworkConnection conn, AddPlayerMessage extraMessage)
     {
         if (SceneManager.GetActiveScene().name == LobbyScene)
@@ -108,8 +115,10 @@ public class CustomLobbyManager : NetworkLobbyManager
         GameObject obj = Instantiate(playerBulletPrefab, spawnPos, Quaternion.identity);
         
         NetworkServer.Spawn(obj);
-
+        
         p.GetComponent<Ability1>().bulletPref = obj;
+        
+        OnPlayerSpawn?.Invoke(p.GetComponent<NetworkIdentity>(), obj.GetComponent<NetworkIdentity>());
     }
     
     void RecalculateLobbyPlayerIndices()
@@ -134,7 +143,6 @@ public class CustomLobbyManager : NetworkLobbyManager
                 
             }
                 
-
             pendingPlayers.Clear();
             managerRef = FindObjectOfType<AIManager>();
             aiManager = managerRef;
@@ -144,13 +152,6 @@ public class CustomLobbyManager : NetworkLobbyManager
         OnLobbyServerSceneChanged(sceneName);
         
     }
-    
-    
-    
-    
-    
-    
-    
     
     private void Update()
     {
@@ -205,22 +206,19 @@ public class CustomLobbyManager : NetworkLobbyManager
                 ? Instantiate(playerPrefab, startPos.position, startPos.rotation)
                 : Instantiate(playerPrefab, Vector3.zero, Quaternion.identity);
             gamePlayer.name = playerPrefab.name;
-            
-            
+                        
         }
-
-
 
         if (!OnLobbyServerSceneLoadedForPlayer(lobbyPlayer, gamePlayer))
             return;
 
-
-
         // replace lobby player with game player
         NetworkServer.ReplacePlayerForConnection(conn, gamePlayer);
-        players.Add(conn.playerController.gameObject);
-        //conns.Add(gamePlayer);
+        players.Add(conn.playerController.gameObject); // add players to list 
+        SetupPlayer(conn.playerController.gameObject);
         
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
 
     }
 

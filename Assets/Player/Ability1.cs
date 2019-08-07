@@ -9,7 +9,6 @@ public class Ability1 : AbilityBase
     public GameObject bulletPref;
     [HideInInspector] public float rangeInMetres;
 
-
     public float projectileSpeed;
     
     [Command]
@@ -49,6 +48,8 @@ public class Ability1 : AbilityBase
         bulletPref.AddComponent<BoxCollider>();
         bulletPref.GetComponent<Renderer>().material = mat;
     }
+    
+    
     
     public override void Enter()
     {
