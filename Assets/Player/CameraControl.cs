@@ -39,8 +39,6 @@ public class CameraControl : MonoBehaviour
         Vector3 rotation = transform.rotation.eulerAngles;
         rotX = rotation.x;
         rotY = rotation.y;
-        // followObj = GameObject.FindWithTag("Player");
-         
     }
 
     // Update is called once per frame

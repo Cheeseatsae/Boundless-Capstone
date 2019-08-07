@@ -100,21 +100,22 @@ public class GroundAI_Model : AIBaseModel
             }
         }
         
-
-        
     }
+    
     [Command]
     public void CmdFire()
     {
+        if (target == null) return;
         
         GameObject bullet = Instantiate(bulletPref, transform.position + transform.forward, Quaternion.identity);
         
-        
         Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
+
         Vector3 dir = (target.transform.position - transform.position).normalized;
         bulletRb.velocity = dir * projectileSpeed;
         NetworkServer.Spawn(bullet);
     }
+    
     [Command]
     public void CmdGroundSlam()
     {
@@ -153,9 +154,8 @@ public class GroundAI_Model : AIBaseModel
         yield return new WaitForSeconds(2);
         
         CmdGroundSlam();
-        
-
     }
+    
     [Command]
     public void CmdSpawnDamager()
     {

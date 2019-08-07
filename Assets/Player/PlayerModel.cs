@@ -323,7 +323,7 @@ public class PlayerModel : NetworkBehaviour
     {
         ability3.Enter();
 
-        //GetComponent<Ability1>().CmdColourChange();
+        GetComponent<Ability1>().CmdColourChange();
     }
 
     private void OnDestroy()
