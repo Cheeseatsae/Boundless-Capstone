@@ -57,17 +57,17 @@ public class Health : NetworkBehaviour
     {
         if (GetComponent<PlayerModel>())
         {
-            CustomNetManager.players.Remove(gameObject);
-            if (CustomNetManager.players.Count < 1)
+            CustomLobbyManager.players.Remove(gameObject);
+            if (CustomLobbyManager.players.Count < 1)
             {
-                CustomNetManager.aiManager.CmdGotKillCount();
+                CustomLobbyManager.aiManager.CmdGotKillCount();
             }
         }
 
         if (GetComponent<AIBaseModel>())
         {
-            CustomNetManager.aiManager.numberofAi--;
-            CustomNetManager.aiManager.numberofKills--;
+            CustomLobbyManager.aiManager.numberofAi--;
+            CustomLobbyManager.aiManager.numberofKills--;
         }
         
         NetworkServer.Destroy(gameObject);

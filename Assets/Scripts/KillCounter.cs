@@ -17,7 +17,7 @@ public class KillCounter : NetworkBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        aiManager = CustomNetManager.aiManager;
+        aiManager = CustomLobbyManager.aiManager;
         text = GetComponent<Text>();
     }
 

@@ -125,8 +125,10 @@ public class AIManager : NetworkBehaviour
     [Command]
     public void CmdGotKillCount()
     {
+        
         NetworkManager.singleton.StopClient();
         NetworkManager.singleton.StopHost();
+        CustomLobbyManager.players.Clear();
     }
 
     private IEnumerator RunEndLevel()
