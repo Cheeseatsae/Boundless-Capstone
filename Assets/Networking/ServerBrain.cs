@@ -61,11 +61,10 @@ public class ServerBrain : NetworkBehaviour
     }
 }
 
-[Serializable]
 public struct PrefabContainer
 {
-    [SerializeField] public NetworkIdentity player;
-    [SerializeField] public NetworkIdentity prefab1;
+    public NetworkIdentity player;
+    public NetworkIdentity prefab1;
 }
 
 public class SyncListPrefabs : SyncList<PrefabContainer> {}
