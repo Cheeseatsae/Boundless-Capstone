@@ -132,6 +132,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: AIManager
       objectReference: {fileID: 0}
+    - target: {fileID: 8273263837249964237, guid: f0c0c75b58ad84542a88f30748e6c9ca,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6336877779567276794, guid: f0c0c75b58ad84542a88f30748e6c9ca,
         type: 3}
       propertyPath: m_LocalPosition.x

@@ -25,7 +25,7 @@ public class CustomLobbyManager : NetworkLobbyManager
         base.OnLobbyServerPlayersReady();
         
     }
-    
+
     public override void OnServerReady(NetworkConnection conn)
     {
         if (LogFilter.Debug) Debug.Log("NetworkLobbyManager OnServerReady");

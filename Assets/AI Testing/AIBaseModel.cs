@@ -24,11 +24,9 @@ public class AIBaseModel : NetworkBehaviour
         Targetting();
     }
     
-    
-    
     public void Targetting()
     {
-        GameObject newTarget = new GameObject();
+        GameObject newTarget = this.gameObject;
         maxDistance = Mathf.Infinity;
         foreach (GameObject player in CustomLobbyManager.players)
         {

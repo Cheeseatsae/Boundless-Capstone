@@ -101,8 +101,8 @@ public class AirAiModel : AIBaseModel
         
         if (distance < minTargetRange && onCd == false)
         {
-            StartCoroutine(FlakAttack());
             onCd = true;
+            StartCoroutine(FlakAttack());
             StartCoroutine(FlakCooldown());
         }
     }
