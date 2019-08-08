@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 9134880087942267290}
   - component: {fileID: -2392807555510866843}
   - component: {fileID: -4823980990555307367}
+  - component: {fileID: -2313572668704378061}
   - component: {fileID: -5048125680820625554}
   - component: {fileID: 1772594557683322157}
   m_Layer: 9
@@ -69,6 +70,7 @@ MonoBehaviour:
   viewObject: {fileID: 8826769825250883112}
   ability1: {fileID: 0}
   ability3: {fileID: 0}
+  ability4: {fileID: 0}
   baseAttackSpeed: 0
   attackSpeed: 0
   baseAttackRange: 5
@@ -134,7 +136,7 @@ MonoBehaviour:
   serverOnly: 0
   localPlayerAuthority: 1
   m_AssetId: 
-  m_SceneId: 1758151758
+  m_SceneId: 0
 --- !u!114 &9134880087942267290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,6 +158,9 @@ MonoBehaviour:
   sMouse0: Mouse0
   sMouse1: Mouse1
   sShift: LeftShift
+  sInteract: E
+  sQKey: Q
+  sRKey: R
 --- !u!114 &-2392807555510866843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,6 +199,28 @@ MonoBehaviour:
   explosionRadius: 8
   damage: 25
   cooldown: 3
+--- !u!114 &-2313572668704378061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8086389977643893722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0ed520df11f5d24ab71afd73b18594d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncInterval: 0.1
+  player: {fileID: 8086389977643893697}
+  cols: []
+  damageRadius: 1
+  damageTimer: 0
+  damagePerTick: 5
+  onCooldown: 0
+  amountofTicks: 20
+  cooldown: 3
+  abilityDuration: 3
 --- !u!114 &-5048125680820625554
 MonoBehaviour:
   m_ObjectHideFlags: 0

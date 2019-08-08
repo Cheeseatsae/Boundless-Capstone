@@ -27,6 +27,7 @@ public class PlayerModel : NetworkBehaviour
     public GameObject viewObject;
     public AbilityBase ability1;
     public AbilityBase ability3;
+    public AbilityBase ability4;
 
     private float _forwardInput;
     private float _backInput;
@@ -107,6 +108,7 @@ public class PlayerModel : NetworkBehaviour
         
         ability1 = GetComponent<Ability1>();
         ability3 = GetComponent<Ability3>();
+        ability4 = GetComponent<Ability4>();
     }
 
     private void Start()
@@ -349,7 +351,7 @@ public class PlayerModel : NetworkBehaviour
 
     private void OnRKeyInput()
     {
-        
+        ability4.Enter();
     }
     
     private void OnDestroy()
