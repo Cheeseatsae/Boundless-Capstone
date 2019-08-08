@@ -100,6 +100,10 @@ public class PlayerModel : NetworkBehaviour
         controller.OnMouse0Input += OnMouse0Input;
         controller.OnMouse1Input += OnMouse1Input;
 
+        controller.OnInteractInput += OnInteractInput;
+        controller.OnQKeyInput += OnQKeyInput;
+        controller.OnRKeyInput += OnRKeyInput;
+        
         ability1 = GetComponent<Ability1>();
         ability3 = GetComponent<Ability3>();
     }
@@ -326,6 +330,21 @@ public class PlayerModel : NetworkBehaviour
         GetComponent<Ability1>().CmdColourChange();
     }
 
+    private void OnInteractInput()
+    {
+        
+    }
+
+    private void OnQKeyInput()
+    {
+        
+    }
+
+    private void OnRKeyInput()
+    {
+        
+    }
+    
     private void OnDestroy()
     {
         controller.OnJumpInput -= JumpInputDown;
@@ -340,6 +359,9 @@ public class PlayerModel : NetworkBehaviour
         controller.OnMouse0Input -= OnMouse0Input;
         controller.OnMouse1Input -= OnMouse1Input;
 
+        controller.OnInteractInput -= OnInteractInput;
+        controller.OnQKeyInput -= OnQKeyInput;
+        controller.OnRKeyInput -= OnRKeyInput;
     }
 
     // PLAYFAB TESTING

@@ -15,6 +15,9 @@ public class PlayerController : NetworkBehaviour
     public KeyCode mouse0 { get; set; }
     public KeyCode mouse1 { get; set; }
     public KeyCode shift { get; set; }
+    public KeyCode interact { get; set; }
+    public KeyCode qkey { get; set; }
+    public KeyCode rkey { get; set; }
     
     public string sJump = "Space";
     public string sForward = "W";
@@ -24,6 +27,9 @@ public class PlayerController : NetworkBehaviour
     public string sMouse0 = "Mouse0";
     public string sMouse1 = "Mouse1";
     public string sShift = "LeftShift";
+    public string sInteract = "E";
+    public string sQKey = "Q";
+    public string sRKey = "R";
     
     public delegate void InputAxis(float i);
 
@@ -39,6 +45,9 @@ public class PlayerController : NetworkBehaviour
     public event InputAction OnMouse1Input;
     public event InputAction OnShiftInputDown;
     public event InputAction OnShiftInputUp;
+    public event InputAction OnInteractInput;
+    public event InputAction OnQKeyInput;
+    public event InputAction OnRKeyInput;
     
     private void Awake()
     {
@@ -50,6 +59,9 @@ public class PlayerController : NetworkBehaviour
         shift = (KeyCode) Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("shiftKey", sShift));
         mouse0 = (KeyCode) Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Mouse0", sMouse0));
         mouse1 = (KeyCode) Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("Mouse1", sMouse1));
+        interact = (KeyCode) Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("interactKey", sInteract));
+        qkey = (KeyCode) Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("qKey", sQKey));
+        rkey = (KeyCode) Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("rKey", sRKey));
     }
 
     public void Update()
@@ -58,6 +70,7 @@ public class PlayerController : NetworkBehaviour
         if(!isLocalPlayer)
             return;
 
+        // Button Push
         if (Input.GetKeyDown(jump))
             OnJumpInput?.Invoke();
         
@@ -73,6 +86,16 @@ public class PlayerController : NetworkBehaviour
         if (Input.GetKeyDown(mouse1))
             OnMouse1Input?.Invoke();
         
+        if (Input.GetKeyDown(interact))
+            OnInteractInput?.Invoke();
+        
+        if (Input.GetKeyDown(qkey))
+            OnQKeyInput?.Invoke();
+            
+        if (Input.GetKeyDown(rkey))
+            OnRKeyInput?.Invoke();
+            
+        // Axis
         if (Input.GetKey(forward)) 
             OnForwardInput?.Invoke(1);
         else 

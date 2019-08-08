@@ -396,6 +396,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ServerBrain
       objectReference: {fileID: 0}
+    - target: {fileID: 2903733575228166498, guid: c7092dbb45ab5ed4cbdefa96fa9ece99,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2903733575228166501, guid: c7092dbb45ab5ed4cbdefa96fa9ece99,
         type: 3}
       propertyPath: m_LocalPosition.x
