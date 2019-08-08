@@ -7,10 +7,6 @@ using UnityEngine.AI;
 
 public class GroundAI_Model : AIBaseModel
 {
-
-    public GameObject target;
-    private float minDistance = Mathf.Infinity;
-    public AIManager aiManager;
     public GameObject damageZone;
     
     //Ground Slam Variables
@@ -42,22 +38,10 @@ public class GroundAI_Model : AIBaseModel
     }
 
     // Update is called once per frame
-    void Update()
+    public override void Update()
     {
+        base.Update();
         if (!isServer) return;
-        foreach (GameObject player in CustomLobbyManager.players)
-        {
-            if (player != null)
-            {
-                float distance = Vector3.Distance(player.transform.position, transform.position);
-                if (distance < minDistance && cantFire == false)
-                {
-                    target = player;
-                    minDistance = distance;
-                }
-            }
-            
-        }
 
         if (target != null)
         {
@@ -101,6 +85,8 @@ public class GroundAI_Model : AIBaseModel
         }
         
     }
+
+    
     
     [Command]
     public void CmdFire()
@@ -142,17 +128,7 @@ public class GroundAI_Model : AIBaseModel
     
     public IEnumerator MeleeCharge()
     {
-        //Vector3 maxScale = new Vector3(7,7,7);
-        //float currentTime = 0.0f;
-        //do
-        //{
-        //    damage.transform.localScale = Vector3.Lerp(damage.transform.localScale, maxScale, currentTime * 0.1f);
-        //    currentTime += Time.deltaTime;
-        //    yield return null;
-        //} while (currentTime <= 5);
-        
         yield return new WaitForSeconds(2);
-        
         CmdGroundSlam();
     }
     
@@ -169,12 +145,7 @@ public class GroundAI_Model : AIBaseModel
         StartCoroutine(MeleeCharge());
         //RpcRunCharge();
     }
-
-    [ClientRpc]
-    public void RpcRunCharge()
-    {
-        //StartCoroutine(MeleeCharge());
-    }
+    
 
     IEnumerator RangedWait()
     {

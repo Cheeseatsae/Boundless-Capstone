@@ -34,7 +34,7 @@ public class AIManager : NetworkBehaviour
 
     private void Update()
     {
-        numberofplayers = CustomLobbyManager.players.Count;
+        
         if (Input.GetKeyDown(KeyCode.L) && isServer)
             CmdSpawn();
         //Debug.Log("fucking work... plz");

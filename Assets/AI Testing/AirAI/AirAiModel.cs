@@ -7,12 +7,6 @@ using Random = UnityEngine.Random;
 
 public class AirAiModel : AIBaseModel
 {
-    //General
-    public GameObject target;
-    private float minDistance = Mathf.Infinity;
-    public AIManager aiManager;
-    private Rigidbody rb;
-    
     //Movement
     public float speed;
     public float minGroundDistance;
@@ -50,18 +44,16 @@ public class AirAiModel : AIBaseModel
     }
 
 
-    void Start()
+    public override void Start()
     {
+        base.Start();
         
-        aiManager = FindObjectOfType<AIManager>();
-        rb = GetComponent<Rigidbody>();
 
     }
     // Update is called once per frame
-    void Update()
+    public override void Update()
     {
-        if (!isServer) return;
-        Targetting();
+        base.Update();
         
         //Movement
         
@@ -113,13 +105,8 @@ public class AirAiModel : AIBaseModel
             onCd = true;
             StartCoroutine(FlakCooldown());
         }
-
-
-
-
-
-
     }
+    
     //Calculate Movement Deviation
     public Vector3 RandomVector(float min, float max)
     {
@@ -192,16 +179,5 @@ public class AirAiModel : AIBaseModel
         onCd = false;
     }
 
-    public void Targetting()
-    {
-        foreach (GameObject player in CustomLobbyManager.players)
-        {
-            float distance = Vector3.Distance(player.transform.position, transform.position);
-            if (distance < minDistance)
-            {
-                target = player;
-                minDistance = distance;
-            }
-        }  
-    }
+
 }
