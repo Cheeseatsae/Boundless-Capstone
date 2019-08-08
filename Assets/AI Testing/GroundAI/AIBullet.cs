@@ -14,6 +14,8 @@ public class AIBullet : NetworkBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (!isServer) return;
+        
         if (other.GetComponent<Health>() && other.GetComponent<PlayerModel>())
         {
             Health healthComp = other.GetComponent<Health>();

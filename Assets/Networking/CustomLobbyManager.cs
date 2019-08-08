@@ -8,7 +8,6 @@ using UnityEngine.SceneManagement;
 public class CustomLobbyManager : NetworkLobbyManager
 {
     
-    public AIManager managerRef;
     public static AIManager aiManager;
     public static List<GameObject> players = new List<GameObject>();
     
@@ -20,6 +19,9 @@ public class CustomLobbyManager : NetworkLobbyManager
     public delegate void PlayerSpawn(NetworkIdentity p, NetworkIdentity obj);
     public event PlayerSpawn OnPlayerSpawn;
 
+    public delegate void SceneChangeComplete();
+    public static event SceneChangeComplete OnSceneChangeComplete;
+    
     public override void OnLobbyServerPlayersReady()
     {
         base.OnLobbyServerPlayersReady();
@@ -104,8 +106,6 @@ public class CustomLobbyManager : NetworkLobbyManager
             }
                 
             pendingPlayers.Clear();
-            managerRef = FindObjectOfType<AIManager>();
-            aiManager = managerRef;
             
         }
 

@@ -25,9 +25,10 @@ public class PlayerModel : NetworkBehaviour
     public PlayerController controller;
     public Camera myCam;
     public GameObject viewObject;
-    public AbilityBase ability1;
-    public AbilityBase ability3;
-    public AbilityBase ability4;
+    [HideInInspector] public AbilityBase ability1;
+    [HideInInspector] public AbilityBase ability2;
+    [HideInInspector] public AbilityBase ability3;
+    [HideInInspector] public AbilityBase ability4;
 
     private float _forwardInput;
     private float _backInput;
@@ -107,6 +108,7 @@ public class PlayerModel : NetworkBehaviour
         controller.OnRKeyInput += OnRKeyInput;
         
         ability1 = GetComponent<Ability1>();
+        ability2 = GetComponent<Ability2>();
         ability3 = GetComponent<Ability3>();
         ability4 = GetComponent<Ability4>();
     }
@@ -329,14 +331,14 @@ public class PlayerModel : NetworkBehaviour
     
     private void OnMouse1Down()
     {
-        
 
+        ability2.Enter();
         // GetComponent<Ability1>().CmdColourChange();
     }
     
     private void OnMouse1Up()
     {
-
+        
     }
 
     private void OnInteractInput()

@@ -54,7 +54,7 @@ public class AirAiModel : AIBaseModel
     public override void Update()
     {
         base.Update();
-        
+        if (!isServer) return;
         //Movement
         
 
@@ -103,7 +103,7 @@ public class AirAiModel : AIBaseModel
         {
             onCd = true;
             StartCoroutine(FlakAttack());
-            StartCoroutine(FlakCooldown());
+            StartCoroutine(FlakCooldown()); 
         }
     }
     

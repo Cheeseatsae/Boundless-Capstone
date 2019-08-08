@@ -1,7 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using Mirror;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class AIManager : NetworkBehaviour
 {
@@ -26,6 +28,11 @@ public class AIManager : NetworkBehaviour
     public Vector3 spawningLocation;
     public GameObject toSpawn;
 
+    private void Awake()
+    {
+        SetReferenceInServer();
+    }
+
     private void Start()
     {
         aiList.Add(groundAI);
@@ -48,6 +55,11 @@ public class AIManager : NetworkBehaviour
         }
 
         if (numberofKills <= 0) StartCoroutine(RunEndLevel());
+    }
+
+    private void SetReferenceInServer()
+    {
+        CustomLobbyManager.aiManager = this;
     }
 
     public Vector3 GetLocation(GameObject player)

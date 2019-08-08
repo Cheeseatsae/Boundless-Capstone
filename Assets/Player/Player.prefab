@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 9064367217528433733}
   - component: {fileID: 9134880087942267290}
   - component: {fileID: -2392807555510866843}
+  - component: {fileID: 8037546844118699840}
   - component: {fileID: -4823980990555307367}
   - component: {fileID: -2313572668704378061}
   - component: {fileID: -5048125680820625554}
@@ -60,15 +61,16 @@ MonoBehaviour:
   maxSpeed: 0
   baseSprintSpeedMult: 1.5
   sprintSpeedMult: 0
-  baseJumps: 1
+  baseJumps: 25
   jumps: 0
-  baseJumpHeight: 5
+  baseJumpHeight: 10
   jumpHeight: 0
   body: {fileID: 0}
   controller: {fileID: 9134880087942267290}
   myCam: {fileID: 0}
   viewObject: {fileID: 8826769825250883112}
   ability1: {fileID: 0}
+  ability2: {fileID: 0}
   ability3: {fileID: 0}
   ability4: {fileID: 0}
   baseAttackSpeed: 0
@@ -136,7 +138,7 @@ MonoBehaviour:
   serverOnly: 0
   localPlayerAuthority: 1
   m_AssetId: 
-  m_SceneId: 0
+  m_SceneId: 2435149960
 --- !u!114 &9134880087942267290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,6 +181,28 @@ MonoBehaviour:
     type: 3}
   rangeInMetres: 0
   projectileSpeed: 100
+--- !u!114 &8037546844118699840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8086389977643893722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 477dd2f26759aa047a53bf46680b6518, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncInterval: 0.1
+  player: {fileID: 0}
+  projectilePref: {fileID: 4270748845602874235, guid: 9042d922e3dbf0047be8b46899c9834b,
+    type: 3}
+  baseDamage: 15
+  chargeDuration: 2
+  projectileSpeed: 50
+  baseExplosionRadius: 3
+  cooldown: 5
+  currentProjectile: {fileID: 0}
 --- !u!114 &-4823980990555307367
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -31,8 +31,6 @@ public class ServerBrain : NetworkBehaviour
             container.player = p;
             container.prefab1 = obj;
             playerPrefabs.Add(container);
-
-            Debug.LogWarning("Player " + p.gameObject.name + "Has prefab ", obj.gameObject);
         }
         
         StartCoroutine(SetupOtherPlayerReferences(p));
