@@ -97,7 +97,7 @@ LightmapSettings:
     m_ShowResolutionOverlay: 1
     m_ExportTrainingData: 0
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -363,6 +363,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1079436855934463876, guid: 9e45fadf099eeba41882529376fdcf29,
         type: 3}
+      propertyPath: spawnPrefabs.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1079436855934463876, guid: 9e45fadf099eeba41882529376fdcf29,
+        type: 3}
       propertyPath: LobbyScene
       value: LobbyTest
       objectReference: {fileID: 0}
@@ -371,6 +376,12 @@ PrefabInstance:
       propertyPath: offlineScene
       value: LobbyTest
       objectReference: {fileID: 0}
+    - target: {fileID: 1079436855934463876, guid: 9e45fadf099eeba41882529376fdcf29,
+        type: 3}
+      propertyPath: spawnPrefabs.Array.data[7]
+      value: 
+      objectReference: {fileID: 2903733575228166498, guid: c7092dbb45ab5ed4cbdefa96fa9ece99,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e45fadf099eeba41882529376fdcf29, type: 3}
 --- !u!1001 &2903733575531027528
