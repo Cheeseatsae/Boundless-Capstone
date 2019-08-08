@@ -98,7 +98,8 @@ public class PlayerModel : NetworkBehaviour
         controller.OnRightInput += UpdateRightInput;
         
         controller.OnMouse0Input += OnMouse0Input;
-        controller.OnMouse1Input += OnMouse1Input;
+        controller.OnMouse1Down += OnMouse1Down;
+        controller.OnMouse1Up += OnMouse1Up;
 
         controller.OnInteractInput += OnInteractInput;
         controller.OnQKeyInput += OnQKeyInput;
@@ -323,11 +324,17 @@ public class PlayerModel : NetworkBehaviour
     {
         ability1.Enter();
     }
-    private void OnMouse1Input()
+    
+    private void OnMouse1Down()
     {
-        ability3.Enter();
+        
 
-        GetComponent<Ability1>().CmdColourChange();
+        // GetComponent<Ability1>().CmdColourChange();
+    }
+    
+    private void OnMouse1Up()
+    {
+
     }
 
     private void OnInteractInput()
@@ -337,7 +344,7 @@ public class PlayerModel : NetworkBehaviour
 
     private void OnQKeyInput()
     {
-        
+        ability3.Enter();
     }
 
     private void OnRKeyInput()
@@ -357,7 +364,8 @@ public class PlayerModel : NetworkBehaviour
         controller.OnRightInput -= UpdateRightInput;
 
         controller.OnMouse0Input -= OnMouse0Input;
-        controller.OnMouse1Input -= OnMouse1Input;
+        controller.OnMouse1Down -= OnMouse1Down;
+        controller.OnMouse1Up -= OnMouse1Up;
 
         controller.OnInteractInput -= OnInteractInput;
         controller.OnQKeyInput -= OnQKeyInput;

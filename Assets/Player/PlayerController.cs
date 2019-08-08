@@ -42,7 +42,8 @@ public class PlayerController : NetworkBehaviour
 
     public event InputAction OnJumpInput;
     public event InputAction OnMouse0Input;
-    public event InputAction OnMouse1Input;
+    public event InputAction OnMouse1Down;
+    public event InputAction OnMouse1Up;
     public event InputAction OnShiftInputDown;
     public event InputAction OnShiftInputUp;
     public event InputAction OnInteractInput;
@@ -62,6 +63,7 @@ public class PlayerController : NetworkBehaviour
         interact = (KeyCode) Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("interactKey", sInteract));
         qkey = (KeyCode) Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("qKey", sQKey));
         rkey = (KeyCode) Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("rKey", sRKey));
+        
     }
 
     public void Update()
@@ -84,7 +86,10 @@ public class PlayerController : NetworkBehaviour
             OnMouse0Input?.Invoke();
             
         if (Input.GetKeyDown(mouse1))
-            OnMouse1Input?.Invoke();
+            OnMouse1Down?.Invoke();
+
+        if (Input.GetKeyUp(mouse1))
+            OnMouse1Up?.Invoke();
         
         if (Input.GetKeyDown(interact))
             OnInteractInput?.Invoke();
