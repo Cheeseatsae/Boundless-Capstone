@@ -14,7 +14,12 @@ public class Ability4 : AbilityBase
     public float amountofTicks;
     public float cooldown;
 
+    public GameObject laser;
+    public Transform laserPoint;
     public int abilityDuration;
+    public LineRenderer lineRenderer;
+
+    public GameObject newLaser;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +29,7 @@ public class Ability4 : AbilityBase
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     [Command]
@@ -35,6 +40,7 @@ public class Ability4 : AbilityBase
         damageTimer = abilityDuration / amountofTicks;
 
         StartCoroutine(RunBlaster());
+        RpcVisuals();
 
     }
 
@@ -68,5 +74,18 @@ public class Ability4 : AbilityBase
     public override void Enter()
     {
         CmdBlaster();
+    }
+
+    [ClientRpc]
+    public void RpcVisuals()
+    {
+        newLaser = Instantiate(laser, laserPoint.position, player.transform.rotation);
+        newLaser.transform.parent = laserPoint.transform;
+        lineRenderer = newLaser.GetComponentInChildren<LineRenderer>();
+        lineRenderer.SetPosition(0, player.transform.position);
+        lineRenderer.SetPosition(1, player.target);
+        
+        
+        Destroy(newLaser, abilityDuration);
     }
 }
