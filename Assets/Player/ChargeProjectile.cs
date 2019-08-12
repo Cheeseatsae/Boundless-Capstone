@@ -9,7 +9,7 @@ public class ChargeProjectile : NetworkBehaviour
 
     public GameObject explosion;
     private float lifetime;
-    public float explosionRadius;
+    [HideInInspector] public float explosionRadius;
     [HideInInspector] public int damage;
     [HideInInspector] public bool fired = false;
 

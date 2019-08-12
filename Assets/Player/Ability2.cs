@@ -13,15 +13,21 @@ public class Ability2 : AbilityBase
     public PlayerModel player;
     private Rigidbody body;
     public GameObject projectilePref;
+    
     public int baseDamage;
     private int damage;
+    
     public float chargeDuration;
     public float projectileSpeed;
+    
     public float baseExplosionRadius;
     private float explosionRadius;
+    
     public float cooldown;
     private bool onCooldown;
+    
     public GameObject currentProjectile;
+    
     private float chargeTime = 0;
     private bool charging = false;
     
@@ -46,14 +52,12 @@ public class Ability2 : AbilityBase
         NetworkServer.Spawn(currentProjectile);
         RpcCharge(currentProjectile);
         
-        Debug.Log("Spawning Projectile AAAAAAAAAAAAAAAAAAAAAAAAAA");
-        
     }
 
     [ClientRpc]
     void RpcCharge(GameObject c)
     {
-        charging = true;
+        chargeTime = 0;
         currentProjectile = c;
         StartCoroutine(Hold());
     }
@@ -66,11 +70,23 @@ public class Ability2 : AbilityBase
 
     IEnumerator Hold()
     {
-        while (charging)
+        Vector3 oldScale = currentProjectile.transform.localScale;
+        Vector3 newScale = oldScale * 2.3f;
+        
+        while (chargeTime < chargeDuration)
         {
+            chargeTime += Time.deltaTime;
+            float chargeAmount = chargeTime / chargeDuration;
+            
             currentProjectile.transform.position = player.view.position + player.view.forward;
+            currentProjectile.transform.localScale = Vector3.Lerp(oldScale, newScale, chargeAmount);
+            damage = (int)Mathf.Lerp(baseDamage, baseDamage * 2, chargeAmount);
+            explosionRadius = Mathf.Lerp(baseExplosionRadius, baseExplosionRadius * 2, chargeAmount);
+            
             yield return null;
         }
+        
+        ReleaseInput();
     }
     
     private void ReleaseInput()
@@ -93,21 +109,23 @@ public class Ability2 : AbilityBase
         c.damage = damage;
         c.explosionRadius = explosionRadius;
         c.RpcFire(bulletRb.velocity);
-
     }
     
     [ClientRpc]
     private void RpcLaunch()
     {
-        charging = false;
+        chargeTime = chargeDuration + 1;
     }
     
     public override void Enter()
     {
-        Debug.Log("Ability 2 go baby weeeeeeeeeeeee");
-        //if (!isLocalPlayer) return;
+        if (!isLocalPlayer) return;
         if (onCooldown) return;
         onCooldown = true;
+        chargeTime = 0;
+
+        explosionRadius = baseExplosionRadius;
+        damage = baseDamage;
         
         currentProjectile = null;
 

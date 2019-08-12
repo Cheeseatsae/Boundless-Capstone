@@ -336,7 +336,6 @@ public class PlayerModel : NetworkBehaviour
     
     private void OnMouse1Down()
     {
-        Debug.Log("RIGHT MOUSE");
         ability2.Enter();
         // GetComponent<Ability1>().CmdColourChange();
     }
