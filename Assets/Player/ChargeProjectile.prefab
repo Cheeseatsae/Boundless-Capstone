@@ -124,8 +124,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   serverOnly: 0
   localPlayerAuthority: 0
-  m_AssetId: 
-  m_SceneId: 3545922087
+  m_AssetId: 9042d922e3dbf0047be8b46899c9834b
+  m_SceneId: 0
 --- !u!114 &4270748845602874238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,6 +141,6 @@ MonoBehaviour:
   syncInterval: 0.1
   explosion: {fileID: 5619184812650833503, guid: 58b0e21c590283847aaee9f4b67e4568,
     type: 3}
-  explosionRadius: 0
+  explosionRadius: 1
   damage: 0
   fired: 0

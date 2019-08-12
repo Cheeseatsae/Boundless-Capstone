@@ -23,114 +23,97 @@ public class Ability2 : AbilityBase
     private bool onCooldown;
     public GameObject currentProjectile;
     private float chargeTime = 0;
+    private bool charging = false;
     
     private void Start()
     {
         player = GetComponent<PlayerModel>();
         damage = baseDamage;
-        player.controller.OnMouse1Up += CmdForceLaunch;
+        onCooldown = false;
+        player.controller.OnMouse1Up += ReleaseInput;
     }
 
     private void OnDestroy()
     {
-        player.controller.OnMouse1Up -= CmdForceLaunch;
+        player.controller.OnMouse1Up -=ReleaseInput;
     }
 
     [Command]
-    void CmdCharge()
+    void CmdCharge(Vector3 target)
     {
-        if (onCooldown) return;
-
-        onCooldown = true;
-
         
-        // PROJECTILE NOT SPAWNING AFTER SECOND ATTEMPT
-        // ALSO CLIENT ISNT ABLE TO SPAWN PRETTY MUCH AT ALL AT THE MOMENT ITS TOTALLY SCREWED
-        
-        
-        currentProjectile = Instantiate(projectilePref, transform.forward, Quaternion.identity);
+        currentProjectile = Instantiate(projectilePref, transform.position + transform.forward, Quaternion.identity);
         NetworkServer.Spawn(currentProjectile);
-        
         RpcCharge(currentProjectile);
+        
+        Debug.Log("Spawning Projectile AAAAAAAAAAAAAAAAAAAAAAAAAA");
+        
     }
 
     [ClientRpc]
-    void RpcCharge(GameObject p)
+    void RpcCharge(GameObject c)
     {
-        currentProjectile = p;
-        StartCoroutine(Charge());
+        charging = true;
+        currentProjectile = c;
+        StartCoroutine(Hold());
     }
-
+    
     IEnumerator StartCooldown()
     {
         yield return new WaitForSecondsRealtime(cooldown);
         onCooldown = false;
     }
 
-    IEnumerator Charge()
+    IEnumerator Hold()
     {
-        Vector3 scale = currentProjectile.transform.localScale * 2;
-        float radius = explosionRadius * 1.5f;
-        
-        while (chargeTime < chargeDuration)
+        while (charging)
         {
-            chargeTime += Time.deltaTime;
-
-            currentProjectile.transform.position = transform.position + transform.forward;
-            
-            damage = (int)(baseDamage + (baseDamage * chargeTime / (chargeDuration / 2)));
-            currentProjectile.transform.localScale = Vector3.Lerp(currentProjectile.transform.localScale,scale,chargeTime / chargeDuration);
-
-            explosionRadius = Mathf.Lerp(explosionRadius,radius , chargeTime / chargeDuration);
-            
+            currentProjectile.transform.position = player.view.position + player.view.forward;
             yield return null;
         }
-        
-        if (hasAuthority) CmdLaunch();
-    }
-
-    [Command]
-    private void CmdForceLaunch()
-    {
-        RpcForceLaunch();
-    }
-
-    [ClientRpc]
-    private void RpcForceLaunch()
-    {
-        chargeTime = chargeDuration + 1;
     }
     
+    private void ReleaseInput()
+    {
+        if (isLocalPlayer) CmdLaunch(player.target);
+    }
+
     [Command]
-    public void CmdLaunch()
+    private void CmdLaunch(Vector3 target)
     {
         if (currentProjectile == null) return;
+        RpcLaunch();
         
-        StartCoroutine(StartCooldown());
         Rigidbody bulletRb = currentProjectile.GetComponent<Rigidbody>();
-        Vector3 dir = (player.target - transform.position).normalized;
+        Vector3 dir = (target - transform.position).normalized;
         bulletRb.velocity = dir * projectileSpeed;
 
         ChargeProjectile c = currentProjectile.GetComponent<ChargeProjectile>();
 
         c.damage = damage;
         c.explosionRadius = explosionRadius;
-        c.RpcFire(bulletRb.velocity);  
-        
+        c.RpcFire(bulletRb.velocity);
+
+    }
+    
+    [ClientRpc]
+    private void RpcLaunch()
+    {
+        charging = false;
     }
     
     public override void Enter()
     {
-        if(!isLocalPlayer) return;
-
-        chargeTime = 0;
-        explosionRadius = baseExplosionRadius;
-        damage = baseDamage;
+        Debug.Log("Ability 2 go baby weeeeeeeeeeeee");
+        //if (!isLocalPlayer) return;
+        if (onCooldown) return;
+        onCooldown = true;
+        
         currentProjectile = null;
 
         // clients now accurately shoot but there's still a delay
-        CmdCharge();
-    
+        CmdCharge(player.target);
+        StartCoroutine(StartCooldown());
         // https://vis2k.github.io/Mirror/Concepts/GameObjects/SpawnObject
     }
 }

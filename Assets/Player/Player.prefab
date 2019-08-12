@@ -61,7 +61,7 @@ MonoBehaviour:
   maxSpeed: 0
   baseSprintSpeedMult: 1.5
   sprintSpeedMult: 0
-  baseJumps: 25
+  baseJumps: 2
   jumps: 0
   baseJumpHeight: 10
   jumpHeight: 0
@@ -88,6 +88,7 @@ MonoBehaviour:
   mask:
     serializedVersion: 2
     m_Bits: 1843
+  view: {fileID: 3629170492538489294}
   floor: 10
   crumbTrail: []
   camOffset: 2
@@ -137,8 +138,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   serverOnly: 0
   localPlayerAuthority: 1
-  m_AssetId: 
-  m_SceneId: 2435149960
+  m_AssetId: 58c3dce607ee80247991f80241eb2b1c
+  m_SceneId: 0
 --- !u!114 &9134880087942267290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,7 +202,7 @@ MonoBehaviour:
   chargeDuration: 2
   projectileSpeed: 50
   baseExplosionRadius: 3
-  cooldown: 5
+  cooldown: 1
   currentProjectile: {fileID: 0}
 --- !u!114 &-4823980990555307367
 MonoBehaviour:
@@ -244,7 +245,11 @@ MonoBehaviour:
   onCooldown: 0
   amountofTicks: 20
   cooldown: 3
+  laser: {fileID: 0}
+  laserPoint: {fileID: 0}
   abilityDuration: 3
+  lineRenderer: {fileID: 0}
+  newLaser: {fileID: 0}
 --- !u!114 &-5048125680820625554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -288,6 +293,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3629170492538489294}
   - component: {fileID: 5244607075503855926}
+  - component: {fileID: 2995143240877783944}
+  - component: {fileID: 6433049727925587604}
   - component: {fileID: 1797404152326585492}
   m_Layer: 9
   m_Name: View
@@ -347,6 +354,36 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!114 &2995143240877783944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8826769825250883112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  serverOnly: 0
+  localPlayerAuthority: 0
+  m_AssetId: 58c3dce607ee80247991f80241eb2b1c
+  m_SceneId: 0
+--- !u!114 &6433049727925587604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8826769825250883112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f74aedd71d9a4f55b3ce499326d45fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncInterval: 0.1
+  compressRotation: 1
 --- !u!33 &1797404152326585492
 MeshFilter:
   m_ObjectHideFlags: 0

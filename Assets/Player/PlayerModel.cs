@@ -25,6 +25,7 @@ public class PlayerModel : NetworkBehaviour
     public PlayerController controller;
     public Camera myCam;
     public GameObject viewObject;
+    [HideInInspector] public Transform view;
     [HideInInspector] public AbilityBase ability1;
     [HideInInspector] public AbilityBase ability2;
     [HideInInspector] public AbilityBase ability3;
@@ -77,6 +78,7 @@ public class PlayerModel : NetworkBehaviour
     
     private void Awake()
     {
+        view = viewObject.transform;
         
         speed = baseSpeed;
         maxSpeed = baseMaxSpeed;
@@ -179,6 +181,11 @@ public class PlayerModel : NetworkBehaviour
         Gizmos.DrawSphere(target, 0.5f);
     }
 
+    private void Update()
+    {
+        if (isLocalPlayer) Targeting();
+    }
+
     private void FixedUpdate()
     {
         Vector3 velocity = body.velocity;
@@ -198,8 +205,6 @@ public class PlayerModel : NetworkBehaviour
         Vector2 v = new Vector2(body.velocity.x, body.velocity.z);
         v = Vector2.ClampMagnitude(v, maxSpeed);
         body.velocity = new Vector3(v.x, body.velocity.y, v.y);
-        
-        if (isLocalPlayer) Targeting();
     }
 
     public float camOffset;
@@ -331,7 +336,7 @@ public class PlayerModel : NetworkBehaviour
     
     private void OnMouse1Down()
     {
-
+        Debug.Log("RIGHT MOUSE");
         ability2.Enter();
         // GetComponent<Ability1>().CmdColourChange();
     }
