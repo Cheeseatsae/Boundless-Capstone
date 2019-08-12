@@ -18,7 +18,8 @@ public class Ability4 : AbilityBase
     public Transform laserPoint;
     public int abilityDuration;
     public LineRenderer lineRenderer;
-
+    public ParticleSystem particleSystem;
+    public Vector3 dir;
     public GameObject newLaser;
     // Start is called before the first frame update
     void Start()
@@ -27,8 +28,10 @@ public class Ability4 : AbilityBase
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
+       
+        RpcUpdateVisuals();
 
     }
 
@@ -60,7 +63,8 @@ public class Ability4 : AbilityBase
 
             yield return new WaitForSeconds(damageTimer);
         }
-        
+        NetworkServer.Destroy(newLaser);
+        Destroy(newLaser, abilityDuration);
         StartCoroutine(Cooldown());
     }
     
@@ -82,10 +86,18 @@ public class Ability4 : AbilityBase
         newLaser = Instantiate(laser, laserPoint.position, player.transform.rotation);
         newLaser.transform.parent = laserPoint.transform;
         lineRenderer = newLaser.GetComponentInChildren<LineRenderer>();
-        lineRenderer.SetPosition(0, player.transform.position);
-        lineRenderer.SetPosition(1, player.target);
         
         
-        Destroy(newLaser, abilityDuration);
+    }
+    [ClientRpc]
+    public void RpcUpdateVisuals()
+    {
+        if(lineRenderer != null)
+        {
+            //Debug.Log("this is running");
+            lineRenderer.SetPosition(0, player.transform.position);
+            lineRenderer.SetPosition(1, player.target);
+        }
+        
     }
 }

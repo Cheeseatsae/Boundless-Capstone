@@ -112,7 +112,7 @@ public class AIDamager : NetworkBehaviour
     IEnumerator WaitASec()
     {
         yield return new WaitForSeconds(0.5f);
-        Debug.Log("Deleteme");
+        //Debug.Log("Deleteme");
         Delete();
         
     }
