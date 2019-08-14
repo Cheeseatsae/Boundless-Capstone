@@ -543,6 +543,46 @@ PrefabInstance:
       propertyPath: aiText
       value: 
       objectReference: {fileID: 8661012786411272471}
+    - target: {fileID: 2099486036337320236, guid: 11e789a3a3a7e1142bf0c9566772b354,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2099486036337320239, guid: 11e789a3a3a7e1142bf0c9566772b354,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 266
+      objectReference: {fileID: 0}
+    - target: {fileID: 2099486036144238608, guid: 11e789a3a3a7e1142bf0c9566772b354,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2099486035707880899, guid: 11e789a3a3a7e1142bf0c9566772b354,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5711816821843609895, guid: 11e789a3a3a7e1142bf0c9566772b354,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2179496353526105152, guid: 11e789a3a3a7e1142bf0c9566772b354,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 265
+      objectReference: {fileID: 0}
+    - target: {fileID: 3765034008752506048, guid: 11e789a3a3a7e1142bf0c9566772b354,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3214922711529963548, guid: 11e789a3a3a7e1142bf0c9566772b354,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11e789a3a3a7e1142bf0c9566772b354, type: 3}
 --- !u!1001 &2820606728521264958
@@ -668,6 +708,31 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3598588641080594989, guid: 33528d417c5e26849ae2f22298efd557,
         type: 3}
+    - target: {fileID: 1079436855934463876, guid: 9e45fadf099eeba41882529376fdcf29,
+        type: 3}
+      propertyPath: lobbyUI
+      value: 
+      objectReference: {fileID: 1745979753}
+    - target: {fileID: 1079436855934463876, guid: 9e45fadf099eeba41882529376fdcf29,
+        type: 3}
+      propertyPath: killsSlider
+      value: 
+      objectReference: {fileID: 610397543}
+    - target: {fileID: 1079436855934463876, guid: 9e45fadf099eeba41882529376fdcf29,
+        type: 3}
+      propertyPath: aiSlider
+      value: 
+      objectReference: {fileID: 4116123679361253720}
+    - target: {fileID: 1079436855934463876, guid: 9e45fadf099eeba41882529376fdcf29,
+        type: 3}
+      propertyPath: killsText
+      value: 
+      objectReference: {fileID: 1502152564}
+    - target: {fileID: 1079436855934463876, guid: 9e45fadf099eeba41882529376fdcf29,
+        type: 3}
+      propertyPath: aiText
+      value: 
+      objectReference: {fileID: 8661012786411272471}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e45fadf099eeba41882529376fdcf29, type: 3}
 --- !u!1001 &2903733575531027528
