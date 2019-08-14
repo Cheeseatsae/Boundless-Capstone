@@ -29,12 +29,11 @@ public class Ability2 : AbilityBase
     public GameObject currentProjectile;
     
     private float chargeTime = 0;
-    private bool charging = false;
-    
+
     private void Start()
     {
         player = GetComponent<PlayerModel>();
-        damage = baseDamage;
+        
         onCooldown = false;
         player.controller.OnMouse1Up += ReleaseInput;
     }
@@ -115,6 +114,7 @@ public class Ability2 : AbilityBase
     private void RpcLaunch()
     {
         chargeTime = chargeDuration + 1;
+        StartCoroutine(StartCooldown());
     }
     
     public override void Enter()
@@ -125,13 +125,11 @@ public class Ability2 : AbilityBase
         chargeTime = 0;
 
         explosionRadius = baseExplosionRadius;
+        baseDamage = (int)(player.attackDamage * 1.5f);
         damage = baseDamage;
         
         currentProjectile = null;
-
-        // clients now accurately shoot but there's still a delay
+        
         CmdCharge(player.target);
-        StartCoroutine(StartCooldown());
-        // https://vis2k.github.io/Mirror/Concepts/GameObjects/SpawnObject
     }
 }

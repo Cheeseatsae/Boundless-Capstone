@@ -31,6 +31,12 @@ public class Damager : NetworkBehaviour
         Destroy(this.gameObject);
 
     }
+    
+    [ClientRpc]
+    public void RpcSetDamage(int d)
+    {
+        damage = d;
+    }
 
     public void DoDamage(GameObject other)
     {

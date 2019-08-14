@@ -101,8 +101,9 @@ public class PlayerModel : NetworkBehaviour
         controller.OnLeftInput += UpdateLeftInput;
         controller.OnRightInput += UpdateRightInput;
         
-        controller.OnMouse0Input += OnMouse0Input;
+        controller.OnMouse0Down += OnMouse0Down;
         controller.OnMouse1Down += OnMouse1Down;
+        controller.OnMouse0Up += OnMouse0Up;
         controller.OnMouse1Up += OnMouse1Up;
 
         controller.OnInteractInput += OnInteractInput;
@@ -329,9 +330,14 @@ public class PlayerModel : NetworkBehaviour
         maxSpeed /= sprintSpeedMult;
     }
 
-    private void OnMouse0Input()
+    private void OnMouse0Down()
     {
         ability1.Enter();
+    }
+    
+    private void OnMouse0Up()
+    {
+        ability1.Exit();
     }
     
     private void OnMouse1Down()
@@ -371,9 +377,10 @@ public class PlayerModel : NetworkBehaviour
         controller.OnLeftInput -= UpdateLeftInput;
         controller.OnRightInput -= UpdateRightInput;
 
-        controller.OnMouse0Input -= OnMouse0Input;
-        controller.OnMouse1Down -= OnMouse1Down;
-        controller.OnMouse1Up -= OnMouse1Up;
+        controller.OnMouse0Down += OnMouse0Down;
+        controller.OnMouse1Down += OnMouse1Down;
+        controller.OnMouse0Up += OnMouse0Up;
+        controller.OnMouse1Up += OnMouse1Up;
 
         controller.OnInteractInput -= OnInteractInput;
         controller.OnQKeyInput -= OnQKeyInput;

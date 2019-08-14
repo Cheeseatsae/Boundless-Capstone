@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Pickup : MonoBehaviour
 {
@@ -10,13 +11,13 @@ public class Pickup : MonoBehaviour
 
     private void Awake()
     {
-        item = table.commonItems[0];
+        item = table.commonItems[Random.Range(0,table.commonItems.Length - 1)];
     }
 
     private void OnTriggerEnter(Collider other)
     {
         
-        if (other.gameObject.GetComponent<PlayerModel>())
+        if (other.GetComponent<PlayerModel>())
             TakeItem(other.gameObject);
 
     }

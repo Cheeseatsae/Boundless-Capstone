@@ -34,6 +34,7 @@ public class Ability3 : AbilityBase
     void RpcBlastOff()
     {
         if (onCooldown) return;
+        damage = (int)(player.attackDamage * 2.2f);
         
         onCooldown = true;
         StartCoroutine(StartCooldown());
@@ -64,10 +65,7 @@ public class Ability3 : AbilityBase
     public override void Enter()
     {
         if(!isLocalPlayer) return; 
-    
-        // clients now accurately shoot but there's still a delay
+        
         CmdBlastOff();
-    
-        //https://vis2k.github.io/Mirror/Concepts/GameObjects/SpawnObject
     }
 }

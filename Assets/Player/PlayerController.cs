@@ -41,7 +41,8 @@ public class PlayerController : NetworkBehaviour
     public delegate void InputAction();
 
     public event InputAction OnJumpInput;
-    public event InputAction OnMouse0Input;
+    public event InputAction OnMouse0Down;
+    public event InputAction OnMouse0Up;
     public event InputAction OnMouse1Down;
     public event InputAction OnMouse1Up;
     public event InputAction OnShiftInputDown;
@@ -83,8 +84,11 @@ public class PlayerController : NetworkBehaviour
             OnShiftInputUp?.Invoke();
         
         if (Input.GetKeyDown(mouse0))
-            OnMouse0Input?.Invoke();
-            
+            OnMouse0Down?.Invoke();
+        
+        if (Input.GetKeyUp(mouse0))
+            OnMouse0Up?.Invoke();
+        
         if (Input.GetKeyDown(mouse1))
             OnMouse1Down?.Invoke();
 
