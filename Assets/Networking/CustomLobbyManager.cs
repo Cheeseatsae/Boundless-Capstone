@@ -4,13 +4,14 @@ using System.Collections.Generic;
 using Mirror;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class CustomLobbyManager : NetworkLobbyManager
 {
     
     public static AIManager aiManager;
     public static List<GameObject> players = new List<GameObject>();
-    
+    public GameObject lobbyUI;
     public List<GameObject> conns = new List<GameObject>();
 
     [Header("Player Prefabs")]
@@ -22,6 +23,14 @@ public class CustomLobbyManager : NetworkLobbyManager
     public delegate void SceneChangeComplete();
     public static event SceneChangeComplete OnSceneChangeComplete;
     
+    
+    public Slider killsSlider;
+
+    public Text killsText;
+    
+    public Slider aiSlider;
+
+    public Text aiText;
     public override void OnLobbyServerPlayersReady()
     {
         base.OnLobbyServerPlayersReady();
@@ -43,6 +52,19 @@ public class CustomLobbyManager : NetworkLobbyManager
         }
         
     }
+
+    public override void OnLobbyStartHost()
+    {
+        
+        //killsSlider.enabled = true;
+    }
+    public override void OnLobbyStartServer()
+    {
+        
+        //killsSlider.enabled = true;
+    }
+        
+        
 
     public override void OnServerAddPlayer(NetworkConnection conn, AddPlayerMessage extraMessage)
     {
@@ -67,6 +89,7 @@ public class CustomLobbyManager : NetworkLobbyManager
 
             NetworkServer.AddPlayerForConnection(conn, newLobbyGameObject); 
             //conns.Add(conn.playerController.gameObject);
+            
         }
         
     }
@@ -129,6 +152,7 @@ public class CustomLobbyManager : NetworkLobbyManager
             }
         }
 
+
     }
     
     public override void OnServerRemovePlayer(NetworkConnection conn, NetworkIdentity player)
@@ -154,7 +178,12 @@ public class CustomLobbyManager : NetworkLobbyManager
             pendingPlayers.Add(pending);
             
             return;
+
+
         }
+
+
+        
 
         GameObject gamePlayer = OnLobbyServerCreateGamePlayer(conn);       
         
@@ -171,7 +200,10 @@ public class CustomLobbyManager : NetworkLobbyManager
 
         if (!OnLobbyServerSceneLoadedForPlayer(lobbyPlayer, gamePlayer))
             return;
-
+        aiManager.numberofKills = (int)killsSlider.value;
+        aiManager.amountToSpawn = (int) aiSlider.value;
+        aiManager.maxAI = aiManager.amountToSpawn * 10;
+        
         // replace lobby player with game player
         NetworkServer.ReplacePlayerForConnection(conn, gamePlayer);
         players.Add(conn.playerController.gameObject); // add players to list 
