@@ -22,15 +22,12 @@ public class CustomLobbyManager : NetworkLobbyManager
 
     public delegate void SceneChangeComplete();
     public static event SceneChangeComplete OnSceneChangeComplete;
-    
+    public int kills;
+    public int ai;
     
     public Slider killsSlider;
-
-    public Text killsText;
-    
     public Slider aiSlider;
 
-    public Text aiText;
     public override void OnLobbyServerPlayersReady()
     {
         base.OnLobbyServerPlayersReady();
@@ -135,7 +132,7 @@ public class CustomLobbyManager : NetworkLobbyManager
         OnLobbyServerSceneChanged(sceneName);
         
     }
-    
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.P))
@@ -150,6 +147,12 @@ public class CustomLobbyManager : NetworkLobbyManager
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
             }
+        }
+
+        if (SceneManager.GetActiveScene().name == "lobbyTest")
+        {
+            ai = (int) aiSlider.value;
+            kills = (int)killsSlider.value;
         }
 
 
@@ -200,8 +203,8 @@ public class CustomLobbyManager : NetworkLobbyManager
 
         if (!OnLobbyServerSceneLoadedForPlayer(lobbyPlayer, gamePlayer))
             return;
-        aiManager.numberofKills = (int)killsSlider.value;
-        aiManager.amountToSpawn = (int) aiSlider.value;
+        aiManager.numberofKills = kills;
+        aiManager.amountToSpawn = ai;
         aiManager.maxAI = aiManager.amountToSpawn * 10;
         
         // replace lobby player with game player
