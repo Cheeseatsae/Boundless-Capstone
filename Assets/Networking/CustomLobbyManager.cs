@@ -149,7 +149,7 @@ public class CustomLobbyManager : NetworkLobbyManager
             }
         }
 
-        if (SceneManager.GetActiveScene().name == "lobbyTest")
+        if (SceneManager.GetActiveScene().name == "LobbyTest")
         {
             ai = (int) aiSlider.value;
             kills = (int)killsSlider.value;
