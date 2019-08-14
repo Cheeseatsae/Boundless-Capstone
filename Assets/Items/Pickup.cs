@@ -16,10 +16,10 @@ public class Pickup : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (!other.GetComponent<PlayerModel>()) return;
         
-        if (other.GetComponent<PlayerModel>())
-            TakeItem(other.gameObject);
-
+        TakeItem(other.gameObject);
+        item = table.commonItems[Random.Range(0,table.commonItems.Length - 1)];
     }
 
     public void TakeItem(GameObject other)

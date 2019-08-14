@@ -4,11 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
-public class AttackSpeed : ItemBase
+public class Jumps : ItemBase
 {
 
-    private const float AttackSpeedBoost = 4;
-    
     public override void StackEffect()
     {
         base.StackEffect();
@@ -16,7 +14,7 @@ public class AttackSpeed : ItemBase
         var p = GetComponent<PlayerModel>();
         if (p == null) return;
 
-        p.attackSpeed = p.baseAttackSpeed + (stackCount * AttackSpeedBoost);
+        p.jumps = p.baseJumps + stackCount;
 
     }
 
