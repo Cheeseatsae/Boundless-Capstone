@@ -35,7 +35,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8086389977643893722}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.6485955, y: 0.6334706, z: -1.0346205}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3629170492538489294}
@@ -138,8 +138,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   serverOnly: 0
   localPlayerAuthority: 1
-  m_AssetId: 
-  m_SceneId: 439265913
+  m_AssetId: 58c3dce607ee80247991f80241eb2b1c
+  m_SceneId: 0
 --- !u!114 &9134880087942267290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -245,8 +245,8 @@ MonoBehaviour:
   onCooldown: 0
   amountofTicks: 20
   cooldown: 3
-  laser: {fileID: 0}
-  laserPoint: {fileID: 0}
+  laser: {fileID: 3598588641080594989, guid: 33528d417c5e26849ae2f22298efd557, type: 3}
+  laserPoint: {fileID: 8086389977643893702}
   abilityDuration: 3
   lineRenderer: {fileID: 0}
   particleSystem: {fileID: 0}
