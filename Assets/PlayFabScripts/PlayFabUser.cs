@@ -18,6 +18,13 @@ public class PlayFabUser : MonoBehaviour
         playerID = GetPlayerID();
         playfab.TryLogin(playerID);
     }
+    
+    private void OnDestroy()
+    {
+        
+        playfab.SetUserData("PlayTime", Time.time.ToString());
+
+    }
 
     public string GetPlayerID()
     {
