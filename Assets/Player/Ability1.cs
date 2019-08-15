@@ -25,7 +25,7 @@ public class Ability1 : AbilityBase
     }
 
     [Command]
-    void CmdFire(float lifeTime, Vector3 target)
+    public void CmdFire(float lifeTime, Vector3 target)
     {
         GameObject bullet = Instantiate(bulletPref, transform.position + transform.forward, Quaternion.Euler(90,90,0));
         

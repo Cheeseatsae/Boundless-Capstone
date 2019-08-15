@@ -78,8 +78,7 @@ public class PlayerModel : NetworkBehaviour
     
     private void Awake()
     {
-        view = viewObject.transform;
-        
+
         speed = baseSpeed;
         maxSpeed = baseMaxSpeed;
         sprintSpeedMult = baseSprintSpeedMult;
@@ -92,6 +91,8 @@ public class PlayerModel : NetworkBehaviour
         
         body = GetComponent<Rigidbody>();
 
+        controller = GetComponent<PlayerController>();
+        
         controller.OnJumpInput += JumpInputDown;
         controller.OnShiftInputDown += ShiftInputDown;
         controller.OnShiftInputUp += ShiftInputUp;
@@ -118,6 +119,7 @@ public class PlayerModel : NetworkBehaviour
 
     private void Start()
     {
+        view = viewObject.transform;
         myCam = CameraControl.playerCam.GetComponentInChildren<Camera>();
 
         if (isLocalPlayer)

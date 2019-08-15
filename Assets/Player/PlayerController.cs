@@ -126,5 +126,4 @@ public class PlayerController : NetworkBehaviour
             OnRightInput?.Invoke(0);
         
     }
-    
 }
