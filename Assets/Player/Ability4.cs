@@ -17,8 +17,6 @@ public class Ability4 : AbilityBase
     public GameObject laser;
     public Transform laserPoint;
     public int abilityDuration;
-    public LineRenderer lineRenderer;
-    public ParticleSystem particleSystem;
     public Vector3 dir;
     public GameObject newLaser;
     // Start is called before the first frame update
@@ -28,10 +26,12 @@ public class Ability4 : AbilityBase
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
-       
-        RpcUpdateVisuals();
+
+        
+
+
 
     }
 
@@ -43,8 +43,10 @@ public class Ability4 : AbilityBase
         damageTimer = abilityDuration / amountofTicks;
 
         StartCoroutine(RunBlaster());
-        RpcVisuals();
-
+        newLaser = Instantiate(laser, player.transform.forward, Quaternion.identity);
+        //newLaser.transform.parent = laserPoint.transform;
+        NetworkServer.Spawn(newLaser);
+        RpcVisuals(newLaser);
     }
 
     IEnumerator RunBlaster()
@@ -81,23 +83,50 @@ public class Ability4 : AbilityBase
     }
 
     [ClientRpc]
-    public void RpcVisuals()
+    public void RpcVisuals(GameObject las)
     {
-        newLaser = Instantiate(laser, laserPoint.position, player.transform.rotation);
-        newLaser.transform.parent = laserPoint.transform;
-        lineRenderer = newLaser.GetComponentInChildren<LineRenderer>();
-        
-        
+        StartCoroutine(Hold(las));
+
+    }
+    [Command]
+    public void CmdVisuals()
+    {
+        if (newLaser != null)
+        {
+            newLaser.transform.position = player.transform.localPosition;
+        }
+        //RpcVisuals();
+    }
+
+    public void Visuals()
+    {
+
     }
     [ClientRpc]
     public void RpcUpdateVisuals()
     {
-        if(lineRenderer != null)
-        {
-            //Debug.Log("this is running");
-            lineRenderer.SetPosition(0, player.transform.position);
-            lineRenderer.SetPosition(1, player.target);
-        }
+
         
     }
+    
+    IEnumerator Hold(GameObject l)
+    {
+        float time = 0;
+        float speed = 120f;
+        while (time < abilityDuration)
+        {
+            time += Time.deltaTime;
+            l.transform.position = player.transform.localPosition;
+            Vector3 targetDir = player.target - transform.position;
+            float step = speed * Time.deltaTime;
+            Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, step, 0.0f);
+            
+            l.transform.rotation = Quaternion.LookRotation(newDir);
+            
+            
+            
+            yield return null;
+        }               
+    }
+
 }

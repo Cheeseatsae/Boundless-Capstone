@@ -139,7 +139,7 @@ MonoBehaviour:
   serverOnly: 0
   localPlayerAuthority: 1
   m_AssetId: 
-  m_SceneId: 236967836
+  m_SceneId: 246654358
 --- !u!114 &9134880087942267290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -248,11 +248,9 @@ MonoBehaviour:
   onCooldown: 0
   amountofTicks: 20
   cooldown: 3
-  laser: {fileID: 3598588641080594989, guid: 33528d417c5e26849ae2f22298efd557, type: 3}
+  laser: {fileID: 5760947994300614520, guid: da3c2bb279609db46888e9d76eab1167, type: 3}
   laserPoint: {fileID: 8086389977643893702}
   abilityDuration: 3
-  lineRenderer: {fileID: 0}
-  particleSystem: {fileID: 0}
   dir: {x: 0, y: 0, z: 0}
   newLaser: {fileID: 0}
 --- !u!114 &-5048125680820625554
