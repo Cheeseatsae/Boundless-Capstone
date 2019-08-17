@@ -28,15 +28,26 @@ public class AIManager : NetworkBehaviour
     public Vector3 spawningLocation;
     public GameObject toSpawn;
 
+    public delegate void LevelEnd();
+    public static event LevelEnd OnLevelEnd;
+    
     private void Awake()
     {
         SetReferenceInServer();
     }
 
+    private bool levelEnded = false;
+    
     private void Start()
     {
         aiList.Add(groundAI);
         aiList.Add(airAi);
+        OnLevelEnd += RunEndLevel;
+    }
+
+    private void OnDestroy()
+    {
+        OnLevelEnd -= RunEndLevel;
     }
 
     private void Update()
@@ -54,7 +65,7 @@ public class AIManager : NetworkBehaviour
             if (numberofAi < maxAI) CmdSpawn();
         }
 
-        if (numberofKills <= 0) StartCoroutine(RunEndLevel());
+        if (numberofKills <= 0 && !levelEnded) OnLevelEnd?.Invoke();
     }
 
     private void SetReferenceInServer()
@@ -143,7 +154,13 @@ public class AIManager : NetworkBehaviour
         CustomLobbyManager.players.Clear();
     }
 
-    private IEnumerator RunEndLevel()
+    private void RunEndLevel()
+    {
+        levelEnded = true;
+        StartCoroutine(EndLevelCoroutine());
+    }
+    
+    private IEnumerator EndLevelCoroutine()
     {
         yield return new WaitForSeconds(2);
         CmdGotKillCount();
