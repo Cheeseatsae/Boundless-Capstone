@@ -2,6 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using Mirror;
+using Mono.CecilX.Cil;
+using Mono.CompilerServices.SymbolWriter;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -26,12 +28,6 @@ public class CustomLobbyManager : NetworkLobbyManager
     
     public Slider killsSlider;
     public Slider aiSlider;
-
-    public override void OnLobbyServerPlayersReady()
-    {
-        base.OnLobbyServerPlayersReady();
-        
-    }
 
     public override void OnServerReady(NetworkConnection conn)
     {

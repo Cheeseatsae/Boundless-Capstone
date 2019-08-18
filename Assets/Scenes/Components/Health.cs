@@ -16,15 +16,12 @@ public class Health : NetworkBehaviour
     //Events
     public delegate void TakeDamageDelegate(int amount);
     public delegate void OnDeath();
-    public delegate void ReCalPlayers(GameObject player);
+    
     [SyncEvent] 
     public event TakeDamageDelegate EventTakeDamage;
 
     [SyncEvent] 
     public event OnDeath EventDeath;
-    
-//    [SyncEvent] 
-//    public event ReCalPlayers EventRecal;
 
     private void Start()
     {
@@ -42,18 +39,7 @@ public class Health : NetworkBehaviour
             StartCoroutine(Regen());
         }       
     }
-
-    private void ReCal()
-    {
-        
-    }
-
-    [Command]
-    private void CmdDeath()
-    {
-        EventDeath?.Invoke();
-    }
-    
+   
     private void Death()
     {
         if (!isServer) return;
@@ -61,6 +47,7 @@ public class Health : NetworkBehaviour
         if (GetComponent<PlayerModel>())
         {
             CustomLobbyManager.players.Remove(gameObject);
+            
             if (CustomLobbyManager.players.Count < 1)
             {
                 CustomLobbyManager.aiManager.CmdGotKillCount();
@@ -86,14 +73,6 @@ public class Health : NetworkBehaviour
     {
         health -= amount;
         CheckForDeath();
-    }
-
-    public void Update()
-    {
-        if (health == 0)
-        {
-            Debug.Log("ima deeeeead", gameObject);
-        }
     }
 
     private IEnumerator Regen()

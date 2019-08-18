@@ -31,13 +31,6 @@ public class GroundAI_Model : AIBaseModel
         navmesh = GetComponent<NavMeshAgent>();
     }
 
-    public override void Start()
-    {
-        base.Start();
-        aiManager = FindObjectOfType<AIManager>();
-    }
-    
-
     // Update is called once per frame
     public override void Update()
     {

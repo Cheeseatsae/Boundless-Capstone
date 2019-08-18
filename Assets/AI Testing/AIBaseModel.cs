@@ -8,12 +8,10 @@ public class AIBaseModel : NetworkBehaviour
     
     public GameObject target;
     private float maxDistance = Mathf.Infinity;
-    public AIManager aiManager;
     public Rigidbody rb;
     // Start is called before the first frame update
     public virtual void Start()
     {
-        aiManager = FindObjectOfType<AIManager>();
         rb = GetComponent<Rigidbody>();
     }
 
@@ -21,15 +19,22 @@ public class AIBaseModel : NetworkBehaviour
     public virtual void Update()
     {
         if (!isServer) return;
-        Targetting();
+        Targeting();
+    }
+
+    private void ReceiveNewTarget()
+    {
+        
     }
     
-    public void Targetting()
+    private void Targeting()
     {
-        GameObject newTarget = this.gameObject;
+        
+        GameObject newTarget = gameObject;
         maxDistance = Mathf.Infinity;
         foreach (GameObject player in CustomLobbyManager.players)
         {
+            
             float distance = Vector3.Distance(player.transform.position, transform.position);
             if (distance < maxDistance)
             {
