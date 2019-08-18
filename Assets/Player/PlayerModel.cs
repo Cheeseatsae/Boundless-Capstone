@@ -212,9 +212,22 @@ public class PlayerModel : NetworkBehaviour
 
     public float camOffset;
     
+    [Command]
+    void CmdUpdateViewRotation(Quaternion q)
+    {
+        RpcUpdateViewRotation(q);
+    }
+
+    [ClientRpc]
+    void RpcUpdateViewRotation(Quaternion q)
+    {
+        view.rotation = q;
+    }
+    
     private void Targeting()
     {
-        viewObject.transform.LookAt(target);
+        view.LookAt(target);
+        CmdUpdateViewRotation(view.rotation);
 
         Transform camTransform = myCam.transform;
         Vector3 camPos = camTransform.position;

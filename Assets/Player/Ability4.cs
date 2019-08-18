@@ -82,18 +82,7 @@ public class Ability4 : AbilityBase
         }
         //RpcVisuals();
     }
-
-    public void Visuals()
-    {
-
-    }
-    [ClientRpc]
-    public void RpcUpdateVisuals()
-    {
-
-        
-    }
-    
+  
     IEnumerator Hold(GameObject l)
     {
         float time = 0;
@@ -102,14 +91,14 @@ public class Ability4 : AbilityBase
         {
             time += Time.deltaTime;
             l.transform.position = player.transform.localPosition;
-            Vector3 targetDir = player.target - transform.position;
-            float step = speed * Time.deltaTime;
-            Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, step, 0.0f);
+            l.transform.rotation = player.view.rotation;
             
-            l.transform.rotation = Quaternion.LookRotation(newDir);
-            
-            
-            
+//            Vector3 targetDir = player.target - transform.position;
+//            float step = speed * Time.deltaTime;
+//            Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, step, 0.0f);
+//            
+//            l.transform.rotation = Quaternion.LookRotation(newDir);
+//            
             yield return null;
         }               
     }
