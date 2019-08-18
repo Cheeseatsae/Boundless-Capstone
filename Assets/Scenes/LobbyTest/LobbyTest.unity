@@ -97,7 +97,7 @@ LightmapSettings:
     m_ShowResolutionOverlay: 1
     m_ExportTrainingData: 0
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -706,7 +706,7 @@ PrefabInstance:
         type: 3}
       propertyPath: spawnPrefabs.Array.data[12]
       value: 
-      objectReference: {fileID: 3598588641080594989, guid: 33528d417c5e26849ae2f22298efd557,
+      objectReference: {fileID: 5760947994300614520, guid: da3c2bb279609db46888e9d76eab1167,
         type: 3}
     - target: {fileID: 1079436855934463876, guid: 9e45fadf099eeba41882529376fdcf29,
         type: 3}

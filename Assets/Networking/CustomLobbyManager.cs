@@ -11,8 +11,6 @@ public class CustomLobbyManager : NetworkLobbyManager
     
     public static AIManager aiManager;
     public static List<GameObject> players = new List<GameObject>();
-    public GameObject lobbyUI;
-    public List<GameObject> conns = new List<GameObject>();
 
     [Header("Player Prefabs")]
     public GameObject playerBulletPrefab;
@@ -22,6 +20,7 @@ public class CustomLobbyManager : NetworkLobbyManager
 
     public delegate void SceneChangeComplete();
     public static event SceneChangeComplete OnSceneChangeComplete;
+    
     public int kills;
     public int ai;
     
@@ -130,6 +129,7 @@ public class CustomLobbyManager : NetworkLobbyManager
         }
 
         OnLobbyServerSceneChanged(sceneName);
+        OnSceneChangeComplete?.Invoke();
         
     }
 
@@ -181,12 +181,7 @@ public class CustomLobbyManager : NetworkLobbyManager
             pendingPlayers.Add(pending);
             
             return;
-
-
         }
-
-
-        
 
         GameObject gamePlayer = OnLobbyServerCreateGamePlayer(conn);       
         
@@ -203,7 +198,7 @@ public class CustomLobbyManager : NetworkLobbyManager
 
         if (!OnLobbyServerSceneLoadedForPlayer(lobbyPlayer, gamePlayer))
             return;
-        aiManager.numberofKills = kills;
+        aiManager.numberOfKills = kills;
         aiManager.amountToSpawn = ai;
         aiManager.maxAI = aiManager.amountToSpawn * 10;
         

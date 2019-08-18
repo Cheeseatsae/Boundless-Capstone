@@ -19,21 +19,6 @@ public class Ability4 : AbilityBase
     public int abilityDuration;
     public Vector3 dir;
     public GameObject newLaser;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-        
-
-
-
-    }
 
     [Command]
     public void CmdBlaster()

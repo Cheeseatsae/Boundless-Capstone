@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using Mirror;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -19,8 +20,13 @@ public class AIManager : NetworkBehaviour
     public int maxAI;
     public int maxEnemySpawnDistance;
     public int minEnemySpawnDistance;
-    public int numberofAi;
-    public int numberofKills;
+    public int numberOfAi;
+
+    public delegate void KillNumberChanged(int i);
+    public event KillNumberChanged EventKillNumberChanged;
+
+    public int numberOfKills;
+
     public float secondsBetweenSpawn;
 
     public int numberofplayers;
@@ -33,39 +39,41 @@ public class AIManager : NetworkBehaviour
     
     private void Awake()
     {
-        SetReferenceInServer();
+        CustomLobbyManager.OnSceneChangeComplete += SetReferenceInServer;
+        OnLevelEnd += RunEndLevel;
     }
-
+    
     private bool levelEnded = false;
     
     private void Start()
     {
         aiList.Add(groundAI);
         aiList.Add(airAi);
-        OnLevelEnd += RunEndLevel;
+        if (isServer) RpcKillNumChanged(numberOfKills);
     }
 
     private void OnDestroy()
     {
+        CustomLobbyManager.OnSceneChangeComplete -= SetReferenceInServer;
         OnLevelEnd -= RunEndLevel;
     }
 
     private void Update()
     {
+        if (!isServer) return;
         
-        if (Input.GetKeyDown(KeyCode.L) && isServer)
+        if (Input.GetKeyDown(KeyCode.L))
             CmdSpawn();
-        //Debug.Log("fucking work... plz");
 
         elapsedTime += Time.deltaTime;
 
         if (elapsedTime > secondsBetweenSpawn)
         {
             elapsedTime = 0;
-            if (numberofAi < maxAI) CmdSpawn();
+            if (numberOfAi < maxAI) CmdSpawn();
         }
 
-        if (numberofKills <= 0 && !levelEnded) OnLevelEnd?.Invoke();
+        if (numberOfKills <= 0 && !levelEnded) OnLevelEnd?.Invoke();
     }
 
     private void SetReferenceInServer()
@@ -125,7 +133,19 @@ public class AIManager : NetworkBehaviour
         return aiToSpawn;
     }
 
+    public void AiHasDied()
+    {
+        numberOfAi--;
+        numberOfKills--;
+        if (isServer) RpcKillNumChanged(numberOfKills);
+    }
 
+    [ClientRpc]
+    void RpcKillNumChanged(int i)
+    {
+        EventKillNumberChanged?.Invoke(i);
+    }
+    
     [Command]
     public void CmdSpawn()
     {
@@ -138,7 +158,7 @@ public class AIManager : NetworkBehaviour
                     return;
                 if (toSpawn == airAi) spawningLocation.y = spawningLocation.y + 15;
 
-                numberofAi++;
+                numberOfAi++;
                 //Debug.Log("spawn" + toSpawn);
                 var ai = Instantiate(toSpawn, spawningLocation, Quaternion.identity);
                 NetworkServer.Spawn(ai);
@@ -148,7 +168,6 @@ public class AIManager : NetworkBehaviour
     [Command]
     public void CmdGotKillCount()
     {
-        
         NetworkManager.singleton.StopClient();
         NetworkManager.singleton.StopHost();
         CustomLobbyManager.players.Clear();

@@ -10,7 +10,7 @@ public class Health : NetworkBehaviour
     public int health;
     [HideInInspector] public int maxHealth;
     public int baseHealthRegen;
-    public int healthRegen;
+    [HideInInspector] public int healthRegen;
     public float regenTick = 1;
     
     //Events
@@ -28,6 +28,7 @@ public class Health : NetworkBehaviour
 
     private void Start()
     {
+        healthRegen = baseHealthRegen;
         maxHealth = baseMaxHealth;
         health = baseMaxHealth;
         if (NetworkClient.active)
@@ -55,6 +56,8 @@ public class Health : NetworkBehaviour
     
     private void Death()
     {
+        if (!isServer) return;
+        
         if (GetComponent<PlayerModel>())
         {
             CustomLobbyManager.players.Remove(gameObject);
@@ -63,11 +66,10 @@ public class Health : NetworkBehaviour
                 CustomLobbyManager.aiManager.CmdGotKillCount();
             }
         }
-
+        
         if (GetComponent<AIBaseModel>())
         {
-            CustomLobbyManager.aiManager.numberofAi--;
-            CustomLobbyManager.aiManager.numberofKills--;
+            CustomLobbyManager.aiManager.AiHasDied();
         }
         
         NetworkServer.Destroy(gameObject);
@@ -77,7 +79,6 @@ public class Health : NetworkBehaviour
     [Command]
     public void CmdDoDamage(int amount)
     {
-        if (!isServer) return;
         EventTakeDamage?.Invoke(amount);
     }
 

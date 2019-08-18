@@ -207,6 +207,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0c0c75b58ad84542a88f30748e6c9ca, type: 3}
+--- !u!114 &150041037 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6541306208932040739, guid: f0c0c75b58ad84542a88f30748e6c9ca,
+    type: 3}
+  m_PrefabInstance: {fileID: 150041036}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f211ff307debebc40b9b4ab13d6bd0c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &187557997
 GameObject:
   m_ObjectHideFlags: 0
@@ -3778,9 +3790,17 @@ PrefabInstance:
       propertyPath: m_SceneId
       value: 3718649916
       objectReference: {fileID: 0}
+    - target: {fileID: 1997026931, guid: b893609586a989f47a64720eced53d9d, type: 3}
+      propertyPath: serverOnly
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1997026931, guid: b893609586a989f47a64720eced53d9d, type: 3}
+      propertyPath: localPlayerAuthority
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1997026928, guid: b893609586a989f47a64720eced53d9d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1108139707282709381, guid: b893609586a989f47a64720eced53d9d,
         type: 3}
@@ -3788,6 +3808,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 81faf846db257cb4999c2a218cfedb5a,
         type: 3}
+    - target: {fileID: 1997026929, guid: b893609586a989f47a64720eced53d9d, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 276.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1997026932, guid: b893609586a989f47a64720eced53d9d, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1997026932, guid: b893609586a989f47a64720eced53d9d, type: 3}
+      propertyPath: m_Text
+      value: 'Empty
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1997026930, guid: b893609586a989f47a64720eced53d9d, type: 3}
+      propertyPath: aiManager
+      value: 
+      objectReference: {fileID: 150041037}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b893609586a989f47a64720eced53d9d, type: 3}
 --- !u!1 &1947436485

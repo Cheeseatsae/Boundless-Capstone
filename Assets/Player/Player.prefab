@@ -74,7 +74,7 @@ MonoBehaviour:
   ability2: {fileID: 0}
   ability3: {fileID: 0}
   ability4: {fileID: 0}
-  baseAttackSpeed: 5000000
+  baseAttackSpeed: 25
   attackSpeed: 0
   baseAttackRange: 5
   attackRange: 0
@@ -138,8 +138,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   serverOnly: 0
   localPlayerAuthority: 1
-  m_AssetId: 
-  m_SceneId: 246654358
+  m_AssetId: 58c3dce607ee80247991f80241eb2b1c
+  m_SceneId: 0
 --- !u!114 &9134880087942267290
 MonoBehaviour:
   m_ObjectHideFlags: 0
