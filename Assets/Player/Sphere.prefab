@@ -108,6 +108,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   syncInterval: 0.1
+  hitParticle: {fileID: 833679091538558860, guid: 1c68d8ec50a58cf41820de710a444d78,
+    type: 3}
 --- !u!114 &7055809306936718785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,7 +125,7 @@ MonoBehaviour:
   serverOnly: 0
   localPlayerAuthority: 0
   m_AssetId: 
-  m_SceneId: 990670429
+  m_SceneId: 2202427950
 --- !u!54 &-6450712206844845959
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -154,3 +156,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncInterval: 0.1
   damage: 10
+  useCollider: 1
+  destroyOnDamage: 1

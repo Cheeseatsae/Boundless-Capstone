@@ -57,13 +57,13 @@ MonoBehaviour:
   syncInterval: 0.1
   baseSpeed: 500
   speed: 0
-  baseMaxSpeed: 7
+  baseMaxSpeed: 8
   maxSpeed: 0
-  baseSprintSpeedMult: 1.5
+  baseSprintSpeedMult: 1.75
   sprintSpeedMult: 0
   baseJumps: 2
   jumps: 0
-  baseJumpHeight: 10
+  baseJumpHeight: 12
   jumpHeight: 0
   body: {fileID: 0}
   controller: {fileID: 9134880087942267290}
@@ -74,7 +74,7 @@ MonoBehaviour:
   ability2: {fileID: 0}
   ability3: {fileID: 0}
   ability4: {fileID: 0}
-  baseAttackSpeed: 25
+  baseAttackSpeed: 30
   attackSpeed: 0
   baseAttackRange: 5
   attackRange: 0
@@ -138,8 +138,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   serverOnly: 0
   localPlayerAuthority: 1
-  m_AssetId: 58c3dce607ee80247991f80241eb2b1c
-  m_SceneId: 0
+  m_AssetId: 
+  m_SceneId: 758626928
 --- !u!114 &9134880087942267290
 MonoBehaviour:
   m_ObjectHideFlags: 0

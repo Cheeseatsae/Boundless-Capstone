@@ -9,6 +9,9 @@ public class Damager : NetworkBehaviour
     public int damage;
     public bool useCollider = true;
     public bool destroyOnDamage = true;
+
+    public delegate void HitEvent();
+    public event HitEvent OnHitEvent;
     
     //effects
     
@@ -16,9 +19,10 @@ public class Damager : NetworkBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (!useCollider) return;
-        
-        if (!other.GetComponent<Health>() || !other.GetComponent<AIBaseModel>()) return;
         if (other.isTrigger) return;
+        
+        OnHitEvent?.Invoke();
+        if (!other.GetComponent<Health>() || !other.GetComponent<AIBaseModel>()) return;
         
         Health healthComp = other.GetComponent<Health>();
         if (isServer)
@@ -29,7 +33,7 @@ public class Damager : NetworkBehaviour
         if (!destroyOnDamage) return;
         NetworkServer.Destroy(this.gameObject);
         Destroy(this.gameObject);
-
+        
     }
     
     [ClientRpc]

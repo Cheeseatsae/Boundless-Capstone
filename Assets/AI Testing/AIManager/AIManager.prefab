@@ -60,7 +60,7 @@ MonoBehaviour:
   minEnemySpawnDistance: 15
   numberOfAi: 0
   numberOfKills: 0
-  secondsBetweenSpawn: 5
+  secondsBetweenSpawn: 10
   numberofplayers: 0
   spawningLocation: {x: 0, y: 0, z: 0}
   toSpawn: {fileID: 0}
@@ -79,4 +79,4 @@ MonoBehaviour:
   serverOnly: 0
   localPlayerAuthority: 0
   m_AssetId: 
-  m_SceneId: 3635528253
+  m_SceneId: 3906024599
