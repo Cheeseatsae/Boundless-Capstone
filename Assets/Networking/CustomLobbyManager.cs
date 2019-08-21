@@ -78,10 +78,12 @@ public class CustomLobbyManager : NetworkLobbyManager
 
             RecalculateLobbyPlayerIndices();
             
-
-            NetworkServer.AddPlayerForConnection(conn, newLobbyGameObject); 
-            //conns.Add(conn.playerController.gameObject);
             
+            NetworkServer.AddPlayerForConnection(conn, newLobbyGameObject);
+        }
+        else
+        {
+            aiManager.RpcKillNumChanged(aiManager.numberOfKills);
         }
         
     }
@@ -145,7 +147,7 @@ public class CustomLobbyManager : NetworkLobbyManager
             }
         }
 
-        if (SceneManager.GetActiveScene().name == "LobbyTest")
+        if (SceneManager.GetActiveScene().name == "LobbyTest" && aiSlider != null)
         {
             ai = (int) aiSlider.value;
             kills = (int)killsSlider.value;

@@ -11,12 +11,14 @@ public class ServerBrain : NetworkBehaviour
     private CustomLobbyManager lobbyManager;
     
     public SyncListPrefabs playerPrefabs;
-    public static ServerBrain server;
+    public static ServerBrain instance;
     
     private void Awake()
     {
+        if (instance != null) Destroy(this.gameObject);
+        
         DontDestroyOnLoad(this.gameObject);
-        server = this;
+        instance = this;
         lobbyManager = FindObjectOfType<CustomLobbyManager>();
 
         lobbyManager.OnPlayerSpawn += SetupPlayerReferences;

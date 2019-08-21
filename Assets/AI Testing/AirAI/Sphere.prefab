@@ -32,7 +32,7 @@ Transform:
   m_GameObject: {fileID: 618036274288355436}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3.729178, y: 18.659319, z: -57.080826}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -125,8 +125,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   serverOnly: 0
   localPlayerAuthority: 0
-  m_AssetId: 
-  m_SceneId: 3438101440
+  m_AssetId: c5cd417bd5d7ab74d9ffe714db74b040
+  m_SceneId: 0
 --- !u!114 &-4943143259617360016
 MonoBehaviour:
   m_ObjectHideFlags: 0

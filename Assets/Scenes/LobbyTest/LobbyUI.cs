@@ -13,10 +13,16 @@ public class LobbyUI : NetworkBehaviour
     public Slider aiSlider;
 
     public Text aiText;
+
+    private CustomLobbyManager manager;
+    
     // Start is called before the first frame update
     void Start()
     {
+        manager = FindObjectOfType<CustomLobbyManager>();
 
+        manager.aiSlider = aiSlider;
+        manager.killsSlider = killsSlider;
     }
 
     // Update is called once per frame

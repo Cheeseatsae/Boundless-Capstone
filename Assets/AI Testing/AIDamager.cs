@@ -6,8 +6,6 @@ using UnityEngine;
 
 public class AIDamager : NetworkBehaviour
 {
-    public List<GameObject> PlayerList = new List<GameObject>();
-
     public GameObject owner;
     
     public Vector3 knockupDirection;
@@ -32,22 +30,6 @@ public class AIDamager : NetworkBehaviour
         if (!isServer) return;
         NetworkServer.Destroy(this.gameObject);
         Destroy(this.gameObject);
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.GetComponent<PlayerModel>())
-        {
-            PlayerList.Add(other.gameObject);
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (PlayerList.Contains(other.gameObject))
-        {
-            PlayerList.Remove(other.gameObject);
-        }
     }
 
     public LayerMask layer;
@@ -94,12 +76,15 @@ public class AIDamager : NetworkBehaviour
 
     public void ExplosionDamage()
     {
-        foreach (GameObject players in PlayerList)
+        transform.localScale = Vector3.one * damageRadius;
+        Collider[] cols = Physics.OverlapSphere(gameObject.transform.position, damageRadius, layer);
+
+        foreach (Collider col in cols)
         {
-            Health health = players.GetComponent<Health>();
+            Health health = col.gameObject.GetComponent<Health>();
             health.CmdDoDamage(explosionDamage);
-            
-        }        
+        }
+
         CmdDeleteExplosion();
     }
 

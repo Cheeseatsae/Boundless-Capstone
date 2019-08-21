@@ -63,8 +63,6 @@ public class AIBullet : NetworkBehaviour
             NetworkServer.Destroy(this.gameObject);
             Destroy(this.gameObject);
         }
-        
-
     }
 
     [Command]

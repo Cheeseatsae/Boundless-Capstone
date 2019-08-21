@@ -86,7 +86,6 @@ public class Ability4 : AbilityBase
     IEnumerator Hold(GameObject l)
     {
         float time = 0;
-        float speed = 120f;
         while (time < abilityDuration)
         {
             time += Time.deltaTime;
