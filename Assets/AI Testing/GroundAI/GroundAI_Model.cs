@@ -23,6 +23,8 @@ public class GroundAI_Model : AIBaseModel
     public float projectileSpeed;
     public bool cantFire = false;
 
+    public float chargeDuration = 2;
+    
     private NavMeshAgent navmesh;
     // Start is called before the first frame update
 
@@ -122,7 +124,7 @@ public class GroundAI_Model : AIBaseModel
     
     public IEnumerator MeleeCharge()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(chargeDuration);
         CmdGroundSlam();
     }
     

@@ -110,7 +110,7 @@ MonoBehaviour:
   serverOnly: 0
   localPlayerAuthority: 0
   m_AssetId: 
-  m_SceneId: 2721142137
+  m_SceneId: 3384880503
 --- !u!114 &174342011044700145
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,11 +124,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   syncInterval: 0.1
-  PlayerList: []
   owner: {fileID: 0}
   knockupDirection: {x: 0, y: 0, z: 0}
   damageRadius: 8
+  knockupStrength: 22
   slamDamage: 20
+  explosionDamage: 0
   layer:
     serializedVersion: 2
     m_Bits: 512

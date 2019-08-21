@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientSkyColor: {r: 0.9433962, g: 0.746701, b: 0.61409754, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
@@ -50,7 +50,7 @@ LightmapSettings:
     m_BounceScale: 1
     m_IndirectOutputScale: 1
     m_AlbedoBoost: 1
-    m_EnvironmentLightingMode: 0
+    m_EnvironmentLightingMode: 1
     m_EnableBakedLightmaps: 1
     m_EnableRealtimeLightmaps: 1
   m_LightmapEditorSettings:
@@ -71,7 +71,7 @@ LightmapSettings:
     m_FinalGatherFiltering: 1
     m_FinalGatherRayCount: 256
     m_ReflectionCompression: 2
-    m_MixedBakeMode: 2
+    m_MixedBakeMode: 1
     m_BakeBackend: 1
     m_PVRSampling: 1
     m_PVRDirectSampleCount: 32
@@ -1584,6 +1584,46 @@ PrefabInstance:
         type: 3}
       propertyPath: maxDist
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 66740816930166278, guid: 3cea5fecf712f9c439ddbc6da6d17cf7,
+        type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 0.22614811
+      objectReference: {fileID: 0}
+    - target: {fileID: 66740816930166278, guid: 3cea5fecf712f9c439ddbc6da6d17cf7,
+        type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 0.53320843
+      objectReference: {fileID: 0}
+    - target: {fileID: 66740816930166278, guid: 3cea5fecf712f9c439ddbc6da6d17cf7,
+        type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 0.7264151
+      objectReference: {fileID: 0}
+    - target: {fileID: 66740816930166278, guid: 3cea5fecf712f9c439ddbc6da6d17cf7,
+        type: 3}
+      propertyPath: m_ClearFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 66740816930166278, guid: 3cea5fecf712f9c439ddbc6da6d17cf7,
+        type: 3}
+      propertyPath: field of view
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 66740816930166278, guid: 3cea5fecf712f9c439ddbc6da6d17cf7,
+        type: 3}
+      propertyPath: m_HDR
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 66740816930166278, guid: 3cea5fecf712f9c439ddbc6da6d17cf7,
+        type: 3}
+      propertyPath: m_OcclusionCulling
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 66740816930166278, guid: 3cea5fecf712f9c439ddbc6da6d17cf7,
+        type: 3}
+      propertyPath: m_BackGroundColor.a
+      value: 0.7019608
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3cea5fecf712f9c439ddbc6da6d17cf7, type: 3}
@@ -3810,7 +3850,11 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 1997026929, guid: b893609586a989f47a64720eced53d9d, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 276.8
+      value: 436.92
+      objectReference: {fileID: 0}
+    - target: {fileID: 1997026929, guid: b893609586a989f47a64720eced53d9d, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1997026932, guid: b893609586a989f47a64720eced53d9d, type: 3}
       propertyPath: m_RaycastTarget
@@ -3822,10 +3866,34 @@ PrefabInstance:
 
 '
       objectReference: {fileID: 0}
+    - target: {fileID: 1997026932, guid: b893609586a989f47a64720eced53d9d, type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1997026930, guid: b893609586a989f47a64720eced53d9d, type: 3}
       propertyPath: aiManager
       value: 
       objectReference: {fileID: 150041037}
+    - target: {fileID: 1108139706786631962, guid: b893609586a989f47a64720eced53d9d,
+        type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108139706786631962, guid: b893609586a989f47a64720eced53d9d,
+        type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108139706786631962, guid: b893609586a989f47a64720eced53d9d,
+        type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
+    - target: {fileID: 1108139706786631962, guid: b893609586a989f47a64720eced53d9d,
+        type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b893609586a989f47a64720eced53d9d, type: 3}
 --- !u!1 &1947436485

@@ -10,6 +10,7 @@ public class AIDamager : NetworkBehaviour
     
     public Vector3 knockupDirection;
     public float damageRadius;
+    public float knockupStrength = 15;
     
     
     
@@ -49,9 +50,9 @@ public class AIDamager : NetworkBehaviour
             dir = dir.normalized;
             dir.y = knockupDirection.y;
 
-            CmdApplyKnockback(col.gameObject, dir);
+            CmdApplyKnockback(col.gameObject, dir * knockupStrength);
 
-            targetRb.velocity = dir * 15;
+            targetRb.velocity = dir * knockupStrength;
             Health health = col.gameObject.GetComponent<Health>();
             health.CmdDoDamage(slamDamage);
         }

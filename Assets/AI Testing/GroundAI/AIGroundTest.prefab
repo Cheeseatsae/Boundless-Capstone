@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: d700b887d0b50f74ca56af52331c0acd, type: 2}
+  - {fileID: 2100000, guid: 78f703de159cf114c8b2d1bbed60a4b6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -111,7 +111,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   syncInterval: 0.1
   target: {fileID: 0}
-  aiManager: {fileID: 0}
+  rb: {fileID: 0}
   damageZone: {fileID: 13196669011458187, guid: adaf53882ed59974baf78de0d35c349e,
     type: 3}
   meleeCooldown: 0
@@ -119,11 +119,13 @@ MonoBehaviour:
   meleeCoolDown: 5
   slamDamager: {fileID: 0}
   damage: {fileID: 0}
-  rangedCoolDown: 3
+  rangedCoolDown: 2.5
   bulletPref: {fileID: 7704365907161935278, guid: 9a8824215a3e86e4082d0b64d45ffe27,
     type: 3}
   rangedCooldown: 0
   projectileSpeed: 50
+  cantFire: 0
+  chargeDuration: 1.5
 --- !u!195 &5747712285712444258
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -177,7 +179,7 @@ MonoBehaviour:
   serverOnly: 0
   localPlayerAuthority: 0
   m_AssetId: 
-  m_SceneId: 0
+  m_SceneId: 3077104954
 --- !u!114 &-2946629245046867974
 MonoBehaviour:
   m_ObjectHideFlags: 0
