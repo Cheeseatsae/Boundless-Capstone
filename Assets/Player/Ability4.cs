@@ -9,7 +9,8 @@ public class Ability4 : AbilityBase
     public Collider[] cols;
     public float damageRadius;
     public float damageTimer;
-    public int damagePerTick;
+    public int baseDamagePerTick;
+    private int damagePerTick;
     public bool onCooldown;
     public float amountofTicks;
     public float cooldown;
@@ -58,12 +59,14 @@ public class Ability4 : AbilityBase
     
     IEnumerator Cooldown()
     {
+        PlayerUI.instance.RCooldown();
         yield return new WaitForSeconds(cooldown);
         onCooldown = false;
     }
 
     public override void Enter()
     {
+        damagePerTick = baseDamagePerTick + (int)(player.attackDamage / amountofTicks);
         CmdBlaster();
     }
 

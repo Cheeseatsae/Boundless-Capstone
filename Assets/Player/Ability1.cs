@@ -64,7 +64,7 @@ public class Ability1 : AbilityBase
     public override void Enter()
     {
         if(!isLocalPlayer) return;
-
+        
         firing = true;
         
         
@@ -82,6 +82,7 @@ public class Ability1 : AbilityBase
         if (onCooldown) return;
         if (!firing) return;
 
+        PlayerUI.instance.LMouseCooldown();
         onCooldown = true;
         cooldown = baseCooldown / (0.1f * player.attackSpeed);
         

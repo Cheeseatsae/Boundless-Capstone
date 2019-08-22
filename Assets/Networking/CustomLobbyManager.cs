@@ -205,9 +205,6 @@ public class CustomLobbyManager : NetworkLobbyManager
         players.Add(conn.playerController.gameObject); // add players to list 
         SetupPlayer(conn.playerController.gameObject);
         
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-
     }
 
 }

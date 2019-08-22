@@ -33,7 +33,7 @@ public class Pickup : NetworkBehaviour
         
         SetupItemVisuals();
     }
-    
+        
     public void SetupItemVisuals()
     {
         transform.localScale = item.objectToAdd.transform.localScale;

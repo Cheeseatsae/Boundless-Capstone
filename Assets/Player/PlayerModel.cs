@@ -119,12 +119,21 @@ public class PlayerModel : NetworkBehaviour
 
     private void Start()
     {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        
         view = viewObject.transform;
         myCam = CameraControl.playerCam.GetComponentInChildren<Camera>();
-
+        
         if (isLocalPlayer)
         {
+            PlayerUI.instance.player = this;
+            PlayerUI.instance.playerHealth = GetComponent<Health>();
+            PlayerUI.instance.Setup(gameObject);
+            GetComponent<Health>().OnHealthChange += PlayerUI.instance.UpdateHealth;
+            
             CameraControl.playerCam.followObj = this.gameObject;
+            
             StartCoroutine(MarkPreviousPosition());
             SetupPlayFab();
         }
@@ -240,6 +249,8 @@ public class PlayerModel : NetworkBehaviour
         
         if (ray.point != Vector3.zero) // if ray hits
         {
+            fallbackAimDistance = Vector3.Distance(transform.position, ray.point);
+            
             if (Vector3.Distance(ray.point, sphere.point) > aimingThreshold)
             { // if ray and sphere are too far apart use ray
                 target = ray.point;
@@ -276,6 +287,7 @@ public class PlayerModel : NetworkBehaviour
 
             Debug.DrawLine(transform.position, target, Color.red, 0.05f);
         }
+        
     }
 
     private void OnCollisionEnter(Collision other)
@@ -402,6 +414,8 @@ public class PlayerModel : NetworkBehaviour
         controller.OnInteractInput -= OnInteractInput;
         controller.OnQKeyInput -= OnQKeyInput;
         controller.OnRKeyInput -= OnRKeyInput;
+        
+        GetComponent<Health>().OnHealthChange -= PlayerUI.instance.UpdateHealth;
     }
 
     // PLAYFAB TESTING

@@ -9,10 +9,11 @@ public class KillCounter : NetworkBehaviour
 {
     public AIManager aiManager;
     public Text text;
-
+    
     private void Awake()
     {
         text = GetComponent<Text>();
+        text.text = "";
         aiManager.EventKillNumberChanged += UpdateNumberOfEventKills;
     }
 

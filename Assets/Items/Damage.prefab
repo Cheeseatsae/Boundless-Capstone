@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6845270850232723180}
   - component: {fileID: 2958078875417893333}
   - component: {fileID: 5158161903894054324}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Damage
   m_TagString: Untagged
   m_Icon: {fileID: 0}

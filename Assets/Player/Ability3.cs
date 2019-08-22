@@ -58,6 +58,7 @@ public class Ability3 : AbilityBase
 
     IEnumerator StartCooldown()
     {
+        PlayerUI.instance.QCooldown();
         yield return new WaitForSecondsRealtime(cooldown);
         onCooldown = false;
     }

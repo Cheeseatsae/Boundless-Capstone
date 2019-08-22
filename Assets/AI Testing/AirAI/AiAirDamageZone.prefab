@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6732034411932096409}
   - component: {fileID: 452588996184771263}
   - component: {fileID: 3928124668562556586}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: AiAirDamageZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,7 +108,7 @@ MonoBehaviour:
   serverOnly: 0
   localPlayerAuthority: 0
   m_AssetId: 
-  m_SceneId: 519508657
+  m_SceneId: 3938417053
 --- !u!114 &3928124668562556586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125,6 +125,7 @@ MonoBehaviour:
   owner: {fileID: 0}
   knockupDirection: {x: 0, y: 0, z: 0}
   damageRadius: 3.5
+  knockupStrength: 15
   slamDamage: 0
   explosionDamage: 5
   layer:

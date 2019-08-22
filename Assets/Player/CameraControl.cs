@@ -28,9 +28,12 @@ public class CameraControl : MonoBehaviour
 
     public static CameraControl playerCam;
 
+    private float step;
+    
     private void Awake()
     {
         playerCam = this;
+        
     }
 
     // Start is called before the first frame update
@@ -39,6 +42,8 @@ public class CameraControl : MonoBehaviour
         Vector3 rotation = transform.rotation.eulerAngles;
         rotX = rotation.x;
         rotY = rotation.y;
+        transform.position = Vector3.Lerp(transform.position, followObj.transform.position, 0.9f);
+        step = 1;
     }
 
     // Update is called once per frame
@@ -76,7 +81,8 @@ public class CameraControl : MonoBehaviour
         Vector3 target = followObj.transform.position + followOffset;
         float dis = Vector3.Distance(target, transform.position);
         
-        float step = cameraSpeed * Time.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, target, step);
+        step = cameraSpeed * Time.deltaTime;
     }
+    
 }

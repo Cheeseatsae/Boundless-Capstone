@@ -81,11 +81,11 @@ MonoBehaviour:
   baseAttackDamage: 10
   attackDamage: 0
   target: {x: 0, y: 0, z: 0}
-  sphereRadius: 1
+  sphereRadius: 0.75
   maxRayDistance: 10000
-  aimingThreshold: 3
-  playerDistanceThreshold: 2
-  fallbackAimDistance: 50
+  aimingThreshold: 2
+  playerDistanceThreshold: 3
+  fallbackAimDistance: 30
   mask:
     serializedVersion: 2
     m_Bits: 1843
@@ -139,7 +139,7 @@ MonoBehaviour:
   serverOnly: 0
   localPlayerAuthority: 1
   m_AssetId: 
-  m_SceneId: 2128557456
+  m_SceneId: 3920217507
 --- !u!114 &9134880087942267290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -223,7 +223,7 @@ MonoBehaviour:
   player: {fileID: 8086389977643893697}
   explosionPref: {fileID: 4382888929563306306, guid: e7b6c058815bf464c8dcb8ff2324e87c,
     type: 3}
-  boostDir: {x: 150, y: 700, z: 0}
+  boostDir: {x: 150, y: 1050, z: 0}
   explosionRadius: 8
   damage: 25
   cooldown: 3
@@ -244,7 +244,7 @@ MonoBehaviour:
   cols: []
   damageRadius: 1
   damageTimer: 0
-  damagePerTick: 5
+  baseDamagePerTick: 3
   onCooldown: 0
   amountofTicks: 20
   cooldown: 3

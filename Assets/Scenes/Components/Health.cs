@@ -14,8 +14,11 @@ public class Health : NetworkBehaviour
     public float regenTick = 1;
     
     //Events
+    public delegate void HealthChange();
     public delegate void TakeDamageDelegate(int amount);
     public delegate void OnDeath();
+
+    public event HealthChange OnHealthChange;
     
     [SyncEvent] 
     public event TakeDamageDelegate EventTakeDamage;
@@ -72,6 +75,7 @@ public class Health : NetworkBehaviour
     private void TakeDamage(int amount)
     {
         health -= amount;
+        OnHealthChange?.Invoke();
         CheckForDeath();
     }
 
@@ -82,7 +86,8 @@ public class Health : NetworkBehaviour
             yield return new WaitForSecondsRealtime(regenTick);
             health += healthRegen;
             health = Mathf.Clamp(health, 0, maxHealth);
-            // send event
+            
+            OnHealthChange?.Invoke();
         }
     }
 

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5475232514579099374}
   - component: {fileID: 4924068012797170652}
   - component: {fileID: 4916623888190967191}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: AttackSpeed
   m_TagString: Untagged
   m_Icon: {fileID: 0}

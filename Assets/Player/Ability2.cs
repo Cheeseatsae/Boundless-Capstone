@@ -121,6 +121,7 @@ public class Ability2 : AbilityBase
     {
         if (!isLocalPlayer) return;
         if (onCooldown) return;
+        PlayerUI.instance.RMouseCooldown();
         onCooldown = true;
         chargeTime = 0;
 
