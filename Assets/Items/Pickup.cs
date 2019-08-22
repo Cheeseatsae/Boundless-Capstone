@@ -1,25 +1,34 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using Mirror;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class Pickup : MonoBehaviour
+public class Pickup : NetworkBehaviour
 {
     public DropTable table;
     public DropTable.ItemContainer item;
 
-    private void Awake()
+    public void PickItem(int i)
     {
-        item = table.commonItems[Random.Range(0,table.commonItems.Length - 1)];
+        item = table.Items[i];
     }
-
+    
+    public void SetupItemVisuals()
+    {
+        transform.localScale = item.objectToAdd.transform.localScale;
+        transform.rotation = item.objectToAdd.transform.rotation;
+        GetComponent<MeshRenderer>().material = item.objectToAdd.GetComponent<MeshRenderer>().sharedMaterial;
+        GetComponent<MeshFilter>().mesh = item.objectToAdd.GetComponent<MeshFilter>().sharedMesh;
+        GetComponent<Light>().color = item.lightColour;
+    }
+    
     private void OnTriggerEnter(Collider other)
     {
         if (!other.GetComponent<PlayerModel>()) return;
         
         TakeItem(other.gameObject);
-        item = table.commonItems[Random.Range(0,table.commonItems.Length - 1)];
     }
 
     public void TakeItem(GameObject other)
@@ -40,5 +49,8 @@ public class Pickup : MonoBehaviour
             ItemBase ib = (ItemBase)other.AddComponent(t);
             ib.StackEffect();
         }
+        
+        NetworkServer.Destroy(this.gameObject);
+        Destroy(this.gameObject);
     }
 }

@@ -12,14 +12,12 @@ public class DropTable : ScriptableObject
     {
         public int itemId;
         public bool physical;
+        public Color lightColour;
         public GameObject objectToAdd;
         public ItemBase scriptToAdd;
     }
     
-    [SerializeField] public ItemContainer[] commonItems = new ItemContainer[0];
-    [SerializeField] public ItemContainer[] uncommonItems = new ItemContainer[0];
-    [SerializeField] public ItemContainer[] uniqueItems = new ItemContainer[0];
-    [SerializeField] public ItemContainer[] legendaryItems = new ItemContainer[0];
+    [SerializeField] public ItemContainer[] Items = new ItemContainer[0];
 
 }
 

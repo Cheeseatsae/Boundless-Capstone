@@ -139,7 +139,7 @@ MonoBehaviour:
   serverOnly: 0
   localPlayerAuthority: 1
   m_AssetId: 
-  m_SceneId: 758626928
+  m_SceneId: 2128557456
 --- !u!114 &9134880087942267290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,7 +204,7 @@ MonoBehaviour:
   baseDamage: 15
   chargeDuration: 2
   projectileSpeed: 50
-  baseExplosionRadius: 3
+  baseExplosionRadius: 4
   cooldown: 3
   currentProjectile: {fileID: 0}
 --- !u!114 &-4823980990555307367

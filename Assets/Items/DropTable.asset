@@ -12,27 +12,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ea5e8705cf72a64aaf3098e8858e818, type: 3}
   m_Name: DropTable
   m_EditorClassIdentifier: 
-  commonItems:
+  Items:
   - itemId: 1
     physical: 0
-    objectToAdd: {fileID: 0}
+    lightColour: {r: 0.998315, g: 1, b: 0, a: 1}
+    objectToAdd: {fileID: 1537708457151682335, guid: 78bb2f8dae192534e8560f6a4c231d7a,
+      type: 3}
     scriptToAdd: {fileID: 5330577577913039135, guid: 78bb2f8dae192534e8560f6a4c231d7a,
       type: 3}
   - itemId: 2
     physical: 0
-    objectToAdd: {fileID: 0}
-    scriptToAdd: {fileID: 607568160957606051, guid: 23aedd6a63aee524f96ee151421c50ad,
+    lightColour: {r: 0.9150943, g: 0.37264895, b: 0.017265918, a: 1}
+    objectToAdd: {fileID: 6845270850232723181, guid: cc4b8b5c4b8268b42b23c22aa9c7a71f,
+      type: 3}
+    scriptToAdd: {fileID: -1006211642068631070, guid: cc4b8b5c4b8268b42b23c22aa9c7a71f,
       type: 3}
   - itemId: 3
     physical: 0
-    objectToAdd: {fileID: 0}
+    lightColour: {r: 0.990566, g: 0.990566, b: 0.990566, a: 1}
+    objectToAdd: {fileID: 6845270850232723181, guid: 5aac0882082707c4fbea3e9fd6e3dd21,
+      type: 3}
     scriptToAdd: {fileID: 6845270850232723180, guid: 5aac0882082707c4fbea3e9fd6e3dd21,
       type: 3}
   - itemId: 4
     physical: 0
-    objectToAdd: {fileID: 0}
-    scriptToAdd: {fileID: -1006211642068631070, guid: cc4b8b5c4b8268b42b23c22aa9c7a71f,
+    lightColour: {r: 0.09506961, g: 0.8584906, b: 0, a: 1}
+    objectToAdd: {fileID: 2911844935363657405, guid: 23aedd6a63aee524f96ee151421c50ad,
       type: 3}
-  uncommonItems: []
-  uniqueItems: []
-  legendaryItems: []
+    scriptToAdd: {fileID: 607568160957606051, guid: 23aedd6a63aee524f96ee151421c50ad,
+      type: 3}

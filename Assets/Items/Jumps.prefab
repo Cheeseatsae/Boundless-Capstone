@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6845270850232723183}
   - component: {fileID: -1006211642068631070}
+  - component: {fileID: 3041005272750370258}
+  - component: {fileID: 6141178439623524872}
   m_Layer: 0
   m_Name: Jumps
   m_TagString: Untagged
@@ -24,13 +26,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6845270850232723181}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.39353383, y: -0.101397306, z: 0.21536677, w: 0.8879566}
+  m_LocalPosition: {x: -0.000000006465213, y: 0.378, z: -6.2701844e-10}
+  m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 47.95, y: -0.90400004, z: 26.865002}
 --- !u!114 &-1006211642068631070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45,3 +47,48 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stackCount: 0
   player: {fileID: 0}
+--- !u!23 &3041005272750370258
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6845270850232723181}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 39f63bf8d86e6ff4fbddb13f082de918, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!33 &6141178439623524872
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6845270850232723181}
+  m_Mesh: {fileID: 3440512215375525725, guid: 88095ba656888734bbdd217416b126c6, type: 3}
