@@ -61,7 +61,7 @@ MonoBehaviour:
   maxSpeed: 0
   baseSprintSpeedMult: 1.75
   sprintSpeedMult: 0
-  baseJumps: 2
+  baseJumps: 1
   jumps: 0
   baseJumpHeight: 12
   jumpHeight: 0
@@ -139,7 +139,7 @@ MonoBehaviour:
   serverOnly: 0
   localPlayerAuthority: 1
   m_AssetId: 
-  m_SceneId: 3920217507
+  m_SceneId: 1893192276
 --- !u!114 &9134880087942267290
 MonoBehaviour:
   m_ObjectHideFlags: 0

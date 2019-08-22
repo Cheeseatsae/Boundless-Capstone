@@ -7,7 +7,7 @@ using UnityEngine;
 public class AttackSpeed : ItemBase
 {
 
-    private const float AttackSpeedBoost = 4;
+    private const float AttackSpeedBoost = 6;
     
     public override void StackEffect()
     {

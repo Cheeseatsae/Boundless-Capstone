@@ -7,7 +7,7 @@ using UnityEngine;
 public class Damage : ItemBase
 {
 
-    private const float DamageBoost = 3;
+    private const float DamageBoost = 5;
     
     public override void StackEffect()
     {

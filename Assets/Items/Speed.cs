@@ -8,7 +8,7 @@ public class Speed : ItemBase
 {
 
     private const float HardSpeedCap = 65;
-    private const float SpeedBoost = 2.5f;
+    private const float SpeedBoost = 5f;
     
     
     public override void StackEffect()
