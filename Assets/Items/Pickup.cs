@@ -24,11 +24,11 @@ public class Pickup : NetworkBehaviour
 
     IEnumerator Setup()
     {
-        yield return new WaitForSecondsRealtime(1);
+        yield return new WaitForSecondsRealtime(0.2f);
 
         foreach (ItemSpawner.NetworkItem i in ItemSpawner.instance.spawnedItems)
         {
-            if (i.item == gameObject) item = table.Items[i.itemId];
+            if (i.netId == GetComponent<NetworkIdentity>().netId) item = table.Items[i.itemId];
         }
         
         SetupItemVisuals();
@@ -54,7 +54,6 @@ public class Pickup : NetworkBehaviour
 
     public void TakeItem(GameObject other)
     {
-        // get type of script
         ItemBase i = item.scriptToAdd;
         Type t = i.GetType();
 
@@ -78,7 +77,7 @@ public class Pickup : NetworkBehaviour
 
     void ItemPickedUp()
     {
-        ItemSpawner.instance.RemoveNetworkItem(this.gameObject, spawnPoint);
+        ItemSpawner.instance.RemoveNetworkItem(GetComponent<NetworkIdentity>().netId, spawnPoint);
     }
     
 }

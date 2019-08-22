@@ -96,18 +96,19 @@ public class ItemSpawner : NetworkBehaviour
     void AddToNetworkItems(GameObject obj)
     {
         NetworkItem i = new NetworkItem();
-        i.item = obj;
+        i.netId = obj.GetComponent<NetworkIdentity>().netId;
         i.itemId = obj.GetComponent<Pickup>().item.itemId;
+        
         spawnedItems.Add(i);
     }
 
-    public void RemoveNetworkItem(GameObject obj, GameObject s)
+    public void RemoveNetworkItem(uint id, GameObject s)
     {
         NetworkItem toRemove = new NetworkItem();
         
         foreach (NetworkItem item in spawnedItems)
         {
-            if (item.item == obj)
+            if (item.netId == id)
             {
                 toRemove = item;
                 break;
@@ -116,11 +117,13 @@ public class ItemSpawner : NetworkBehaviour
 
         spawnedItems.Remove(toRemove);
         usedSpawnPoints.Remove(s);
+        
+            
     }
     
     public struct NetworkItem
     {
-        public GameObject item;
+        public uint netId;
         public int itemId;
     }
 
