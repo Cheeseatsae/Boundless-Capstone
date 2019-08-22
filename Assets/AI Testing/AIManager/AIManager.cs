@@ -49,7 +49,7 @@ public class AIManager : NetworkBehaviour
     {
         aiList.Add(groundAI);
         aiList.Add(airAi);
-        RpcKillNumChanged(numberOfKills);
+        if (isServer) RpcKillNumChanged(numberOfKills);
     }
 
     private void OnDestroy()

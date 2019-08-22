@@ -7,6 +7,7 @@ using Random = UnityEngine.Random;
 
 public class Pickup : NetworkBehaviour
 {
+    [HideInInspector] public GameObject spawnPoint;
     public DropTable table;
     public DropTable.ItemContainer item;
 
@@ -14,11 +15,30 @@ public class Pickup : NetworkBehaviour
     {
         item = table.Items[i];
     }
+
+    private void Start()
+    {
+        StartCoroutine(Setup());
+    }
+
+
+    IEnumerator Setup()
+    {
+        yield return new WaitForSecondsRealtime(1);
+
+        foreach (ItemSpawner.NetworkItem i in ItemSpawner.instance.spawnedItems)
+        {
+            if (i.item == gameObject) item = table.Items[i.itemId];
+        }
+        
+        SetupItemVisuals();
+    }
     
     public void SetupItemVisuals()
     {
         transform.localScale = item.objectToAdd.transform.localScale;
         transform.rotation = item.objectToAdd.transform.rotation;
+
         GetComponent<MeshRenderer>().material = item.objectToAdd.GetComponent<MeshRenderer>().sharedMaterial;
         GetComponent<MeshFilter>().mesh = item.objectToAdd.GetComponent<MeshFilter>().sharedMesh;
         GetComponent<Light>().color = item.lightColour;
@@ -26,6 +46,7 @@ public class Pickup : NetworkBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
+        if (!isServer) return;
         if (!other.GetComponent<PlayerModel>()) return;
         
         TakeItem(other.gameObject);
@@ -50,7 +71,14 @@ public class Pickup : NetworkBehaviour
             ib.StackEffect();
         }
         
+        ItemPickedUp();
         NetworkServer.Destroy(this.gameObject);
         Destroy(this.gameObject);
     }
+
+    void ItemPickedUp()
+    {
+        ItemSpawner.instance.RemoveNetworkItem(this.gameObject, spawnPoint);
+    }
+    
 }

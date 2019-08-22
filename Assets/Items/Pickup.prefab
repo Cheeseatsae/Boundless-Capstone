@@ -107,6 +107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   syncInterval: 0.1
+  spawnPoint: {fileID: 0}
   table: {fileID: 11400000, guid: 23355081488f80f428fd5d1754faeb42, type: 2}
   item:
     itemId: 0
@@ -189,4 +190,4 @@ MonoBehaviour:
   serverOnly: 0
   localPlayerAuthority: 0
   m_AssetId: 
-  m_SceneId: 1759577128
+  m_SceneId: 2657485114
