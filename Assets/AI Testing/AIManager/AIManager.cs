@@ -39,7 +39,6 @@ public class AIManager : NetworkBehaviour
     
     private void Awake()
     {
-        CustomLobbyManager.OnSceneChangeComplete += SetReferenceInServer;
         OnLevelEnd += RunEndLevel;
     }
     
@@ -54,7 +53,6 @@ public class AIManager : NetworkBehaviour
 
     private void OnDestroy()
     {
-        CustomLobbyManager.OnSceneChangeComplete -= SetReferenceInServer;
         OnLevelEnd -= RunEndLevel;
     }
 
@@ -76,10 +74,7 @@ public class AIManager : NetworkBehaviour
         if (numberOfKills <= 0 && !levelEnded) OnLevelEnd?.Invoke();
     }
 
-    private void SetReferenceInServer()
-    {
-        CustomLobbyManager.aiManager = this;
-    }
+
 
     public Vector3 GetLocation(GameObject player)
     {

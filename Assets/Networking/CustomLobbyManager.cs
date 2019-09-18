@@ -42,21 +42,7 @@ public class CustomLobbyManager : NetworkLobbyManager
             if (lobbyPlayer != null && lobbyPlayer.GetComponent<NetworkLobbyPlayer>() != null)
                 SceneLoadedForPlayer(conn, lobbyPlayer);
         }
-        
     }
-
-    public override void OnLobbyStartHost()
-    {
-        
-        //killsSlider.enabled = true;
-    }
-    public override void OnLobbyStartServer()
-    {
-        
-        //killsSlider.enabled = true;
-    }
-        
-        
 
     public override void OnServerAddPlayer(NetworkConnection conn, AddPlayerMessage extraMessage)
     {
@@ -107,6 +93,7 @@ public class CustomLobbyManager : NetworkLobbyManager
             for (int i = 0; i < lobbySlots.Count; i++)
             {
                 lobbySlots[i].Index = i;
+
             }
         }
     }
@@ -152,7 +139,6 @@ public class CustomLobbyManager : NetworkLobbyManager
             ai = (int) aiSlider.value;
             kills = (int)killsSlider.value;
         }
-
 
     }
     
@@ -204,7 +190,5 @@ public class CustomLobbyManager : NetworkLobbyManager
         NetworkServer.ReplacePlayerForConnection(conn, gamePlayer);
         players.Add(conn.playerController.gameObject); // add players to list 
         SetupPlayer(conn.playerController.gameObject);
-        
     }
-
 }
