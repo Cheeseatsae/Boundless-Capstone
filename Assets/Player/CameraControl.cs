@@ -32,13 +32,14 @@ public class CameraControl : MonoBehaviour
     
     private void Awake()
     {
-        playerCam = this;
+        
         
     }
 
     // Start is called before the first frame update
     void Start()
     {
+        playerCam = this;
         Vector3 rotation = transform.rotation.eulerAngles;
         rotX = rotation.x;
         rotY = rotation.y;

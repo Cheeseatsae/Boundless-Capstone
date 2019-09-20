@@ -51,7 +51,7 @@ public class AIManager : MonoBehaviour
     {
         aiList.Add(groundAI);
         aiList.Add(airAi);
-        KillNumChanged(numberOfKills);
+        //KillNumChanged(numberOfKills);
     }
 
     private void OnDestroy()
@@ -76,10 +76,10 @@ public class AIManager : MonoBehaviour
 
     public Vector3 GetLocation(GameObject player)
     {
-        //Debug.Log("Run Location");
+        Debug.Log("Run Location");
         var returnLocation = new Vector3(0, 0, 0);
 
-        if (player != null) return Vector3.zero;
+        if (player == null) return Vector3.zero;
 
         var angle = new float();
         var dir = new Vector3();
@@ -150,8 +150,8 @@ public class AIManager : MonoBehaviour
             if (toSpawn == airAi) spawningLocation.y = spawningLocation.y + 15;
 
             numberOfAi++;
-            //Debug.Log("spawn" + toSpawn);
-            var ai = Instantiate(toSpawn, spawningLocation, Quaternion.identity);
+            Debug.Log("spawn" + toSpawn);
+            Instantiate(toSpawn, spawningLocation, Quaternion.identity);
                 
         }
             

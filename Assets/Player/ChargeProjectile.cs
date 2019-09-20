@@ -52,6 +52,5 @@ public class ChargeProjectile : MonoBehaviour
             if (h != null) h.DoDamage(damage);
         }
         Destroy(gameObject);
-        NetworkServer.Destroy(gameObject);
     }
 }

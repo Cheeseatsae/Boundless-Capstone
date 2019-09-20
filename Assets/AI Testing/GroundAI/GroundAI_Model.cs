@@ -93,7 +93,6 @@ public class GroundAI_Model : AIBaseModel
 
         Vector3 dir = (target.transform.position - transform.position).normalized;
         bulletRb.velocity = dir * projectileSpeed;
-        NetworkServer.Spawn(bullet);
     }
     
     public void GroundSlam()
