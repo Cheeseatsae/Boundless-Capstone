@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 6885583639152210180}
   - component: {fileID: 7082978473467663006}
   - component: {fileID: 6732034411932096409}
-  - component: {fileID: 452588996184771263}
   - component: {fileID: 3928124668562556586}
   m_Layer: 2
   m_Name: AiAirDamageZone
@@ -68,6 +67,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -93,22 +93,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &452588996184771263
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 152085436202727555}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serverOnly: 0
-  localPlayerAuthority: 0
-  m_AssetId: 
-  m_SceneId: 3938417053
 --- !u!114 &3928124668562556586
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -121,7 +105,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f311ffa34789c58498bfde4a1d700205, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  syncInterval: 0.1
   owner: {fileID: 0}
   knockupDirection: {x: 0, y: 0, z: 0}
   damageRadius: 3.5

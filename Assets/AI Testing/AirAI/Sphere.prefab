@@ -13,8 +13,6 @@ GameObject:
   - component: {fileID: 1612045434956220099}
   - component: {fileID: 1893794073838380599}
   - component: {fileID: 912747378589774596}
-  - component: {fileID: 3445319033321714661}
-  - component: {fileID: -4943143259617360016}
   - component: {fileID: 7569203746401732933}
   m_Layer: 2
   m_Name: Sphere
@@ -70,6 +68,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -111,36 +110,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &3445319033321714661
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 618036274288355436}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serverOnly: 0
-  localPlayerAuthority: 0
-  m_AssetId: 
-  m_SceneId: 2528121349
---- !u!114 &-4943143259617360016
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 618036274288355436}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f74aedd71d9a4f55b3ce499326d45fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  syncInterval: 0
-  compressRotation: 1
 --- !u!114 &7569203746401732933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,7 +122,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e3aa3d504c0b58428f68a025a09a783, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  syncInterval: 0.1
   damage: 5
   damageZone: {fileID: 152085436202727555, guid: 847f3d82a1522cc4dabca1eebe750f21,
     type: 3}

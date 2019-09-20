@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6336877779567276794}
   - component: {fileID: 6541306208932040739}
-  - component: {fileID: 25954648}
   m_Layer: 0
   m_Name: AIManager
   m_TagString: Untagged
@@ -44,10 +43,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f211ff307debebc40b9b4ab13d6bd0c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  syncInterval: 0.1
   aiList: []
   airAi: {fileID: 1299756857714876720, guid: ed2444e4643baca488fa1319912d55af, type: 3}
   amountToSpawn: 3
+  player: {fileID: 0}
   distanceCheck: 5
   elapsedTime: 0
   groundAI: {fileID: 5747712285712444256, guid: 0aebd788854327043a9d57f442db9703,
@@ -64,19 +63,3 @@ MonoBehaviour:
   numberofplayers: 0
   spawningLocation: {x: 0, y: 0, z: 0}
   toSpawn: {fileID: 0}
---- !u!114 &25954648
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8273263837249964237}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serverOnly: 0
-  localPlayerAuthority: 0
-  m_AssetId: 
-  m_SceneId: 2285376051
