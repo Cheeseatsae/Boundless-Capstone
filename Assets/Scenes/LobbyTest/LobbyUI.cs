@@ -1,10 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using Mirror;
+
 using UnityEngine;
 using UnityEngine.UI;
 
-public class LobbyUI : NetworkBehaviour
+public class LobbyUI : MonoBehaviour
 {
     public Slider killsSlider;
 
@@ -14,7 +14,7 @@ public class LobbyUI : NetworkBehaviour
 
     public Text aiText;
 
-    private CustomLobbyManager manager;
+    
     
     // Start is called before the first frame update
     void Start()

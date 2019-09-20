@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using Mirror;
+
 using UnityEngine;
 
 public class AIBaseModel : MonoBehaviour
@@ -28,7 +28,11 @@ public class AIBaseModel : MonoBehaviour
     
     private void Targeting()
     {
-        target = LevelManager.instance.player;
+        if (LevelManager.instance.player != null)
+        {
+            target = LevelManager.instance.player;
+        }
+        
 
     }
 }
