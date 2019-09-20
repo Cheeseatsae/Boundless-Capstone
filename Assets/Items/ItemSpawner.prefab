@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 307803244265066586}
-  - component: {fileID: 4600586039952902434}
   - component: {fileID: 8549324508043141334}
   m_Layer: 0
   m_Name: ItemSpawner
@@ -32,22 +31,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4600586039952902434
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3471873355963485277}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serverOnly: 0
-  localPlayerAuthority: 0
-  m_AssetId: 
-  m_SceneId: 1582919222
 --- !u!114 &8549324508043141334
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60,9 +43,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15a32ae2271969c49a42a0fae1b793c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  syncInterval: 0.1
   pickup: {fileID: 8350349965704806691, guid: d0f810870645b4e4eb08f00b9c2703a4, type: 3}
   table: {fileID: 11400000, guid: 23355081488f80f428fd5d1754faeb42, type: 2}
   toSpawnOnStart: 0
+  offset: {x: 0, y: 0, z: 0}
+  killRequirement: 0
   itemSpawnPoints: []
   usedSpawnPoints: []
