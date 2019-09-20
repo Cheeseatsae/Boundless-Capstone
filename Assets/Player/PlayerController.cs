@@ -4,20 +4,20 @@ using System.Collections.Generic;
 using Mirror;
 using UnityEngine;
 
-public class PlayerController : NetworkBehaviour
+public class PlayerController : MonoBehaviour
 {
     
-    public KeyCode jump {get; set;}
-    public KeyCode forward {get; set;}
-    public KeyCode backward {get; set;}
-    public KeyCode left {get; set;}
-    public KeyCode right {get; set;}
-    public KeyCode mouse0 { get; set; }
-    public KeyCode mouse1 { get; set; }
-    public KeyCode shift { get; set; }
-    public KeyCode interact { get; set; }
-    public KeyCode qkey { get; set; }
-    public KeyCode rkey { get; set; }
+    KeyCode jump {get; set;}
+    KeyCode forward {get; set;}
+    KeyCode backward {get; set;}
+    KeyCode left {get; set;}
+    KeyCode right {get; set;}
+    KeyCode mouse0 { get; set; }
+    KeyCode mouse1 { get; set; }
+    KeyCode shift { get; set; }
+    KeyCode interact { get; set; }
+    KeyCode qkey { get; set; }
+    KeyCode rkey { get; set; }
     
     public string sJump = "Space";
     public string sForward = "W";
@@ -69,10 +69,6 @@ public class PlayerController : NetworkBehaviour
 
     public void Update()
     {
-        
-        if(!isLocalPlayer)
-            return;
-
         // Button Push
         if (Input.GetKeyDown(jump))
             OnJumpInput?.Invoke();
