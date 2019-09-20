@@ -23,15 +23,8 @@ public class Ability3 : AbilityBase
         body = GetComponent<Rigidbody>();
         lifetime = explosionPref.GetComponent<ParticleSystem>().main.startLifetime.constant;
     }
-
-    [Command]
-    void CmdBlastOff()
-    {   
-        RpcBlastOff();
-    }
-
-    [ClientRpc]
-    void RpcBlastOff()
+    
+    void BlastOff()
     {
         if (onCooldown) return;
         damage = (int)(player.attackDamage * 2.2f);
@@ -50,7 +43,7 @@ public class Ability3 : AbilityBase
             if (c.GetComponent<PlayerModel>()) continue;
 
             Health h = c.GetComponent<Health>();
-            if (h != null) h.CmdDoDamage(damage);
+            if (h != null) h.DoDamage(damage);
         }
         
         Destroy(p, lifetime);        
@@ -65,8 +58,6 @@ public class Ability3 : AbilityBase
     
     public override void Enter()
     {
-        if(!isLocalPlayer) return; 
-        
-        CmdBlastOff();
+        BlastOff();
     }
 }

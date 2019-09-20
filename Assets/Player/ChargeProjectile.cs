@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Mirror;
 using UnityEngine;
 
-public class ChargeProjectile : NetworkBehaviour
+public class ChargeProjectile : MonoBehaviour
 {
 
     public GameObject explosion;
@@ -22,16 +22,11 @@ public class ChargeProjectile : NetworkBehaviour
     {
         lifetime = explosion.GetComponent<ParticleSystem>().main.startLifetime.constant;
     }
-
-    [ClientRpc]
-    public void RpcFire(Vector3 v)
+    
+    public void Fire(float range)
     {
         fired = true;
-        Rigidbody r = GetComponent<Rigidbody>();
-        if (r != null) r.velocity = v;
-        else Destroy(this.gameObject);
-        
-        Destroy(gameObject, 15f);
+        Destroy(gameObject, range);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -54,7 +49,7 @@ public class ChargeProjectile : NetworkBehaviour
             if (col.GetComponent<PlayerModel>()) continue;
 
             Health h = col.GetComponent<Health>();
-            if (h != null) h.CmdDoDamage(damage);
+            if (h != null) h.DoDamage(damage);
         }
         Destroy(gameObject);
         NetworkServer.Destroy(gameObject);

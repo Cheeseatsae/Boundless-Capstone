@@ -23,9 +23,8 @@ public class Ability1 : AbilityBase
         firing = false;
         onCooldown = false;
     }
-
-    [Command]
-    public void CmdFire(float lifeTime, Vector3 target)
+    
+    public void Fire(float lifeTime, Vector3 target)
     {
         GameObject bullet = Instantiate(bulletPref, transform.position + transform.forward, Quaternion.Euler(90,90,0));
         
@@ -35,26 +34,10 @@ public class Ability1 : AbilityBase
         
         Destroy(bullet, lifeTime);
         
-        NetworkServer.Spawn(bullet);
-        
-        bullet.GetComponent<Projectile>().RpcSetVelocity(bulletRb.velocity);
-        bullet.GetComponent<Damager>().RpcSetDamage((int)player.attackDamage);
-        //Debug.Log("test");
+        bullet.GetComponent<Projectile>().SetVelocity(bulletRb.velocity);
+        bullet.GetComponent<Damager>().SetDamage((int)player.attackDamage);
     }
 
-    [Command]
-    public void CmdColourChange()
-    {
-        RpcColourChange();
-    }
-
-    [ClientRpc]
-    private void RpcColourChange()
-    {
-        bulletPref.AddComponent<BoxCollider>();
-        bulletPref.transform.localScale *= 2;
-    }
-    
     IEnumerator StartCooldown()
     {
         yield return new WaitForSecondsRealtime(cooldown);
@@ -63,17 +46,11 @@ public class Ability1 : AbilityBase
     
     public override void Enter()
     {
-        if(!isLocalPlayer) return;
-        
         firing = true;
-        
-        
     }
 
     public override void Exit()
     {
-        if(!isLocalPlayer) return;
-
         firing = false;
     }
 
@@ -86,7 +63,7 @@ public class Ability1 : AbilityBase
         onCooldown = true;
         cooldown = baseCooldown / (0.1f * player.attackSpeed);
         
-        CmdFire(player.attackRange, player.target);
+        Fire(player.attackRange, player.target);
         StartCoroutine(StartCooldown());
     }
 }

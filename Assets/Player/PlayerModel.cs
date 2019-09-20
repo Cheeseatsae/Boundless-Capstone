@@ -5,7 +5,7 @@ using System.Net.NetworkInformation;
 using Mirror;
 using UnityEngine;
 
-public class PlayerModel : NetworkBehaviour
+public class PlayerModel : MonoBehaviour
 {
     [Header("Movement Variables")]
     public float baseSpeed;
@@ -125,18 +125,16 @@ public class PlayerModel : NetworkBehaviour
         view = viewObject.transform;
         myCam = CameraControl.playerCam.GetComponentInChildren<Camera>();
         
-        if (isLocalPlayer)
-        {
-            PlayerUI.instance.player = this;
-            PlayerUI.instance.playerHealth = GetComponent<Health>();
-            PlayerUI.instance.Setup(gameObject);
-            GetComponent<Health>().OnHealthChange += PlayerUI.instance.UpdateHealth;
-            
-            CameraControl.playerCam.followObj = this.gameObject;
-            
-            StartCoroutine(MarkPreviousPosition());
-            SetupPlayFab();
-        }
+        PlayerUI.instance.player = this;
+        PlayerUI.instance.playerHealth = GetComponent<Health>();
+        PlayerUI.instance.Setup(gameObject);
+        GetComponent<Health>().OnHealthChange += PlayerUI.instance.UpdateHealth;
+        
+        CameraControl.playerCam.followObj = this.gameObject;
+        
+        StartCoroutine(MarkPreviousPosition());
+        SetupPlayFab();
+        
     }
 
     private IEnumerator MarkPreviousPosition()
@@ -195,7 +193,7 @@ public class PlayerModel : NetworkBehaviour
 
     private void Update()
     {
-        if (isLocalPlayer) Targeting();
+        Targeting();
     }
 
     private void FixedUpdate()
@@ -221,22 +219,9 @@ public class PlayerModel : NetworkBehaviour
 
     public float camOffset;
     
-    [Command]
-    void CmdUpdateViewRotation(Quaternion q)
-    {
-        RpcUpdateViewRotation(q);
-    }
-
-    [ClientRpc]
-    void RpcUpdateViewRotation(Quaternion q)
-    {
-        view.rotation = q;
-    }
-    
     private void Targeting()
     {
         view.LookAt(target);
-        CmdUpdateViewRotation(view.rotation);
 
         Transform camTransform = myCam.transform;
         Vector3 camPos = camTransform.position;
@@ -328,23 +313,10 @@ public class PlayerModel : NetworkBehaviour
     {
         if (remainingJumps <= 0) return;
         
-        CmdJump();
         body.velocity = new Vector3(body.velocity.x, jumpHeight, body.velocity.z);
         remainingJumps--;
     }
 
-    [Command]
-    private void CmdJump()
-    {
-        RpcJump();
-    }
-
-    [ClientRpc]
-    private void RpcJump()
-    {
-        body.velocity = new Vector3(body.velocity.x, jumpHeight, body.velocity.z);
-    }
-    
     private void ShiftInputDown()
     {
         speed *= sprintSpeedMult;
@@ -370,7 +342,6 @@ public class PlayerModel : NetworkBehaviour
     private void OnMouse1Down()
     {
         ability2.Enter();
-        // GetComponent<Ability1>().CmdColourChange();
     }
     
     private void OnMouse1Up()
@@ -428,7 +399,6 @@ public class PlayerModel : NetworkBehaviour
     private void SetupPlayFab()
     {
         playfabUser = Instantiate(playFabUserObj, Vector3.zero, Quaternion.identity).GetComponent<PlayFabUser>();
-        playfabUser.player = GetComponent<NetworkIdentity>();
     }
 
 }

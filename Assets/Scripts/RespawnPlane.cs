@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Mirror;
 using UnityEngine;
 
-public class RespawnPlane : NetworkBehaviour
+public class RespawnPlane : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
@@ -16,13 +16,13 @@ public class RespawnPlane : NetworkBehaviour
             else
             {
                 int dmg = h.health * 2;
-                h.CmdDoDamage(dmg);
+                h.DoDamage(dmg);
             }
         }
         else
         {
             int dmg = (int)(h.health * 0.2f);
-            h.CmdDoDamage(dmg);
+            h.DoDamage(dmg);
             p.MovePlayerToSolidGround();
         }
 

@@ -16,13 +16,10 @@ public class Ability4 : AbilityBase
     public float cooldown;
 
     public GameObject laser;
-    public Transform laserPoint;
     public int abilityDuration;
-    public Vector3 dir;
     public GameObject newLaser;
-
-    [Command]
-    public void CmdBlaster()
+    
+    public void Blaster()
     {
         if (onCooldown) return;
         onCooldown = true;
@@ -30,9 +27,8 @@ public class Ability4 : AbilityBase
 
         StartCoroutine(RunBlaster());
         newLaser = Instantiate(laser, player.transform.forward, Quaternion.identity);
-        //newLaser.transform.parent = laserPoint.transform;
-        NetworkServer.Spawn(newLaser);
-        RpcVisuals(newLaser);
+
+        Visuals(newLaser);
     }
 
     IEnumerator RunBlaster()
@@ -46,12 +42,11 @@ public class Ability4 : AbilityBase
                 if (c.GetComponent<PlayerModel>()) continue;
 
                 Health h = c.GetComponent<Health>();
-                if (h != null) h.CmdDoDamage(damagePerTick);
+                if (h != null) h.DoDamage(damagePerTick);
             }
 
             yield return new WaitForSeconds(damageTimer);
         }
-        NetworkServer.Destroy(newLaser);
         Destroy(newLaser, abilityDuration);
         StartCoroutine(Cooldown());
     }
@@ -67,25 +62,14 @@ public class Ability4 : AbilityBase
     public override void Enter()
     {
         damagePerTick = baseDamagePerTick + (int)(player.attackDamage / amountofTicks);
-        CmdBlaster();
+        Blaster();
     }
-
-    [ClientRpc]
-    public void RpcVisuals(GameObject las)
+    
+    public void Visuals(GameObject las)
     {
         StartCoroutine(Hold(las));
+    }
 
-    }
-    [Command]
-    public void CmdVisuals()
-    {
-        if (newLaser != null)
-        {
-            newLaser.transform.position = player.transform.localPosition;
-        }
-        //RpcVisuals();
-    }
-  
     IEnumerator Hold(GameObject l)
     {
         float time = 0;

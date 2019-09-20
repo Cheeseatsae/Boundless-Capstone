@@ -9,7 +9,6 @@ public class PlayFabUser : MonoBehaviour
 {
     private PlayFabUserManager playfab;
     public string playerID;
-    public NetworkIdentity player;
     
     private void Start()
     {

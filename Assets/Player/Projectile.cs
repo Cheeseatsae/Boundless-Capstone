@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Mirror;
 using UnityEngine;
 
-public class Projectile : NetworkBehaviour
+public class Projectile : MonoBehaviour
 {
     public GameObject hitParticle;
     private Damager damager;
@@ -19,9 +19,8 @@ public class Projectile : NetworkBehaviour
     {
         damager.OnHitEvent -= SpawnParticle;
     }
-
-    [ClientRpc]
-    public void RpcSetVelocity(Vector3 v)
+    
+    public void SetVelocity(Vector3 v)
     {
         Rigidbody r = GetComponent<Rigidbody>();
         if (r != null) r.velocity = v;

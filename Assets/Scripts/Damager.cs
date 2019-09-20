@@ -32,7 +32,6 @@ public class Damager : MonoBehaviour
         
     }
     
-
     public void SetDamage(int d)
     {
         damage = d;

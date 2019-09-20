@@ -42,25 +42,14 @@ public class Ability2 : AbilityBase
     {
         player.controller.OnMouse1Up -=ReleaseInput;
     }
-
-    [Command]
-    void CmdCharge(Vector3 target)
+    
+    void Charge()
     {
-        
         currentProjectile = Instantiate(projectilePref, transform.position + transform.forward, Quaternion.identity);
-        NetworkServer.Spawn(currentProjectile);
-        RpcCharge(currentProjectile);
-        
-    }
-
-    [ClientRpc]
-    void RpcCharge(GameObject c)
-    {
         chargeTime = 0;
-        currentProjectile = c;
         StartCoroutine(Hold());
     }
-    
+
     IEnumerator StartCooldown()
     {
         yield return new WaitForSecondsRealtime(cooldown);
@@ -90,36 +79,30 @@ public class Ability2 : AbilityBase
     
     private void ReleaseInput()
     {
-        if (isLocalPlayer) CmdLaunch(player.target);
+        Launch(player.target);
     }
-
-    [Command]
-    private void CmdLaunch(Vector3 target)
+    
+    private void Launch(Vector3 target)
     {
         if (currentProjectile == null) return;
-        RpcLaunch();
+
+        chargeTime = chargeDuration + 1;
+        StartCoroutine(StartCooldown());
         
         Rigidbody bulletRb = currentProjectile.GetComponent<Rigidbody>();
         Vector3 dir = (target - transform.position).normalized;
         bulletRb.velocity = dir * projectileSpeed;
 
         ChargeProjectile c = currentProjectile.GetComponent<ChargeProjectile>();
-
+        
         c.damage = damage;
         c.explosionRadius = explosionRadius;
-        c.RpcFire(bulletRb.velocity);
+        c.Fire(player.attackRange);
+        
     }
-    
-    [ClientRpc]
-    private void RpcLaunch()
-    {
-        chargeTime = chargeDuration + 1;
-        StartCoroutine(StartCooldown());
-    }
-    
+
     public override void Enter()
     {
-        if (!isLocalPlayer) return;
         if (onCooldown) return;
         PlayerUI.instance.RMouseCooldown();
         onCooldown = true;
@@ -131,6 +114,6 @@ public class Ability2 : AbilityBase
         
         currentProjectile = null;
         
-        CmdCharge(player.target);
+        Charge();
     }
 }
