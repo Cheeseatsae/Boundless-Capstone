@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Mirror;
 using UnityEngine;
 
-public class Damager : NetworkBehaviour
+public class Damager : MonoBehaviour
 {
     
     public int damage;
@@ -25,19 +25,15 @@ public class Damager : NetworkBehaviour
         if (!other.GetComponent<Health>() || !other.GetComponent<AIBaseModel>()) return;
         
         Health healthComp = other.GetComponent<Health>();
-        if (isServer)
-        {
-            healthComp.CmdDoDamage(damage);
-        }
 
+        healthComp.DoDamage(damage);
         if (!destroyOnDamage) return;
-        NetworkServer.Destroy(this.gameObject);
         Destroy(this.gameObject);
         
     }
     
-    [ClientRpc]
-    public void RpcSetDamage(int d)
+
+    public void SetDamage(int d)
     {
         damage = d;
     }
@@ -47,13 +43,9 @@ public class Damager : NetworkBehaviour
         if (!other.GetComponent<Health>() || !other.GetComponent<AIBaseModel>()) return;
 
         Health healthComp = other.GetComponent<Health>();
-        if (isServer)
-        {
-            healthComp.CmdDoDamage(damage);
-        }
+        healthComp.DoDamage(damage);
         
         if (!destroyOnDamage) return;
-        NetworkServer.Destroy(gameObject);
         Destroy(gameObject);
     }
     

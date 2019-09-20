@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Mirror;
 using UnityEngine;
 
-public class AIAirBullet : NetworkBehaviour
+public class AIAirBullet : MonoBehaviour
 {
     public int damage = 20;
     
@@ -14,19 +14,14 @@ public class AIAirBullet : NetworkBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!isServer) return;
-        
+
         if (other.GetComponent<PlayerModel>())
         {   
             damager = Instantiate(damageZone, gameObject.transform.position, Quaternion.identity);
             aiDamager = damager.GetComponent<AIDamager>();
-            NetworkServer.Spawn(damager);
-            CmdExplosion();
-            
+            Explosion();
             Health healthComp = other.GetComponent<Health>();
-            healthComp.CmdDoDamage(damage);
-            
-            NetworkServer.Destroy(this.gameObject);
+            healthComp.DoDamage(damage);
             Destroy(this.gameObject);
             
         } 
@@ -36,18 +31,14 @@ public class AIAirBullet : NetworkBehaviour
             {
                 damager = Instantiate(damageZone, gameObject.transform.position, Quaternion.identity);
                 aiDamager = damager.GetComponent<AIDamager>();
-                NetworkServer.Spawn(damager);
-                CmdExplosion();
+                Explosion();
             }
-            NetworkServer.Destroy(this.gameObject);
             Destroy(this.gameObject);
         }
 
     }
-
     
-    [Command]
-    public void CmdExplosion()
+    public void Explosion()
     {
         aiDamager.ExplosionDamage();
     }

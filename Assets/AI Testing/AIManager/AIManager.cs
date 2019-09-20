@@ -6,11 +6,13 @@ using Mirror;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class AIManager : NetworkBehaviour
+public class AIManager : MonoBehaviour
 {
     public List<GameObject> aiList = new List<GameObject>();
     public GameObject airAi;
     public int amountToSpawn;
+
+    public GameObject player;
 
     public float distanceCheck;
     public float elapsedTime;
@@ -40,6 +42,7 @@ public class AIManager : NetworkBehaviour
     private void Awake()
     {
         OnLevelEnd += RunEndLevel;
+        
     }
     
     private bool levelEnded = false;
@@ -48,7 +51,7 @@ public class AIManager : NetworkBehaviour
     {
         aiList.Add(groundAI);
         aiList.Add(airAi);
-        RpcKillNumChanged(numberOfKills);
+        KillNumChanged(numberOfKills);
     }
 
     private void OnDestroy()
@@ -58,17 +61,12 @@ public class AIManager : NetworkBehaviour
 
     private void Update()
     {
-        if (!isServer) return;
-        
-        if (Input.GetKeyDown(KeyCode.L))
-            CmdSpawn();
-
         elapsedTime += Time.deltaTime;
 
         if (elapsedTime > secondsBetweenSpawn)
         {
             elapsedTime = 0;
-            if (numberOfAi < maxAI) CmdSpawn();
+            if (numberOfAi < maxAI) Spawn();
         }
 
         if (numberOfKills <= 0 && !levelEnded) OnLevelEnd?.Invoke();
@@ -81,7 +79,7 @@ public class AIManager : NetworkBehaviour
         //Debug.Log("Run Location");
         var returnLocation = new Vector3(0, 0, 0);
 
-        if (CustomLobbyManager.players.Count < 1) return Vector3.zero;
+        if (player != null) return Vector3.zero;
 
         var angle = new float();
         var dir = new Vector3();
@@ -132,40 +130,39 @@ public class AIManager : NetworkBehaviour
     {
         numberOfAi--;
         numberOfKills--;
-        if (isServer) RpcKillNumChanged(numberOfKills);
+        KillNumChanged(numberOfKills);
     }
     
-    [ClientRpc]
-    public void RpcKillNumChanged(int i)
+
+    public void KillNumChanged(int i)
     {
         EventKillNumberChanged?.Invoke(i);
     }
     
-    [Command]
-    public void CmdSpawn()
+    public void Spawn()
     {
-        foreach (var player in CustomLobbyManager.players)
-            for (var i = 0; i < amountToSpawn; i++)
-            {
-                toSpawn = PickWhatToSpawn();
-                spawningLocation = GetLocation(player);
-                if (spawningLocation == Vector3.zero)
-                    return;
-                if (toSpawn == airAi) spawningLocation.y = spawningLocation.y + 15;
+        for (var i = 0; i < amountToSpawn; i++)
+        {
+            toSpawn = PickWhatToSpawn();
+            spawningLocation = GetLocation(player);
+            if (spawningLocation == Vector3.zero)
+                return;
+            if (toSpawn == airAi) spawningLocation.y = spawningLocation.y + 15;
 
-                numberOfAi++;
-                //Debug.Log("spawn" + toSpawn);
-                var ai = Instantiate(toSpawn, spawningLocation, Quaternion.identity);
-                NetworkServer.Spawn(ai);
-            }
+            numberOfAi++;
+            //Debug.Log("spawn" + toSpawn);
+            var ai = Instantiate(toSpawn, spawningLocation, Quaternion.identity);
+                
+        }
+            
     }
 
-    [Command]
-    public void CmdGotKillCount()
+    
+    public void GotKillCount()
     {
-        NetworkManager.singleton.StopClient();
-        NetworkManager.singleton.StopHost();
-        CustomLobbyManager.players.Clear();
+        //AddEndGame thing
+        Debug.Log("Kill achieved");
+
     }
 
     private void RunEndLevel()
@@ -177,6 +174,6 @@ public class AIManager : NetworkBehaviour
     private IEnumerator EndLevelCoroutine()
     {
         yield return new WaitForSeconds(2);
-        CmdGotKillCount();
+        GotKillCount();
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Mirror;
 using UnityEngine;
 
-public class AIAbilityBase : NetworkBehaviour
+public class AIAbilityBase : MonoBehaviour
 {
     public virtual void Enter()
     {

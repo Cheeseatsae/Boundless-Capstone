@@ -54,7 +54,6 @@ public class AirAiModel : AIBaseModel
     public override void Update()
     {
         base.Update();
-        if (!isServer) return;
         //Movement
         
 
@@ -146,8 +145,7 @@ public class AirAiModel : AIBaseModel
         }
     }
     
-    [Command]
-    public void CmdFlakCannon(int cannon)
+    public void FlakCannon(int cannon)
     {
         
         if (cannon == 1)
@@ -161,14 +159,14 @@ public class AirAiModel : AIBaseModel
         GameObject flak = Instantiate(projectilePref, currentSpawnPos.position, Quaternion.identity);
         Rigidbody flakRb = flak.GetComponent<Rigidbody>();
         flakRb.velocity = targetDirection * projSpeed;
-        NetworkServer.Spawn(flak);
+
     }
 
     public IEnumerator FlakAttack()
     {
-        CmdFlakCannon(1);
+        FlakCannon(1);
         yield return new WaitForSeconds(0.5f);
-        CmdFlakCannon(2);
+        FlakCannon(2);
         
 
     }

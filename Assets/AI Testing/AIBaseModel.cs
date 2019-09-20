@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Mirror;
 using UnityEngine;
 
-public class AIBaseModel : NetworkBehaviour
+public class AIBaseModel : MonoBehaviour
 {
     
     public GameObject target;
@@ -18,7 +18,6 @@ public class AIBaseModel : NetworkBehaviour
     // Update is called once per frame
     public virtual void Update()
     {
-        if (!isServer) return;
         Targeting();
     }
 
@@ -29,20 +28,7 @@ public class AIBaseModel : NetworkBehaviour
     
     private void Targeting()
     {
-        
-        GameObject newTarget = gameObject;
-        maxDistance = Mathf.Infinity;
-        foreach (GameObject player in CustomLobbyManager.players)
-        {
-            
-            float distance = Vector3.Distance(player.transform.position, transform.position);
-            if (distance < maxDistance)
-            {
-                newTarget = player;
-                maxDistance = distance;
-            }
-        }
+        target = LevelManager.instance.player;
 
-        target = newTarget;
     }
 }

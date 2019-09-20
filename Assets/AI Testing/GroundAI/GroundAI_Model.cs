@@ -37,8 +37,6 @@ public class GroundAI_Model : AIBaseModel
     public override void Update()
     {
         base.Update();
-        if (!isServer) return;
-
         if (target != null)
         {
             navmesh.destination = target.transform.position;
@@ -72,7 +70,7 @@ public class GroundAI_Model : AIBaseModel
                     navmesh.isStopped = true;
                     navmesh.velocity = new Vector3(0,0,0);
                     meleeCooldown = true;
-                    CmdSpawnDamager();
+                    SpawnDamager();
                     
                     StartCoroutine(MeleeCooldown());
                 }
@@ -84,8 +82,8 @@ public class GroundAI_Model : AIBaseModel
 
     
     
-    [Command]
-    public void CmdFire()
+
+    public void Fire()
     {
         if (target == null) return;
         
@@ -98,8 +96,7 @@ public class GroundAI_Model : AIBaseModel
         NetworkServer.Spawn(bullet);
     }
     
-    [Command]
-    public void CmdGroundSlam()
+    public void GroundSlam()
     {
         
         slamDamager.SlamDamage();
@@ -125,11 +122,11 @@ public class GroundAI_Model : AIBaseModel
     public IEnumerator MeleeCharge()
     {
         yield return new WaitForSeconds(chargeDuration);
-        CmdGroundSlam();
+        GroundSlam();
     }
     
-    [Command]
-    public void CmdSpawnDamager()
+
+    public void SpawnDamager()
     {
         damage = Instantiate(damageZone, transform.position, Quaternion.identity);
         
@@ -137,7 +134,6 @@ public class GroundAI_Model : AIBaseModel
         slamDamager.owner = this.gameObject;
         GetComponent<Health>().EventDeath += slamDamager.Delete;
         damage.transform.localScale = Vector3.one * slamDamager.damageRadius * 2;
-        NetworkServer.Spawn(damage);
         StartCoroutine(MeleeCharge());
         //RpcRunCharge();
     }
@@ -146,7 +142,7 @@ public class GroundAI_Model : AIBaseModel
     IEnumerator RangedWait()
     {
         yield return new WaitForSeconds(0.5f);
-        CmdFire();
+        Fire();
         navmesh.isStopped = false;
     }
 

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Mirror;
 using UnityEngine;
 
-public class AIDamager : NetworkBehaviour
+public class AIDamager : MonoBehaviour
 {
     public GameObject owner;
     
@@ -28,8 +28,6 @@ public class AIDamager : NetworkBehaviour
     
     public void Delete()
     {
-        if (!isServer) return;
-        NetworkServer.Destroy(this.gameObject);
         Destroy(this.gameObject);
     }
 
@@ -50,11 +48,11 @@ public class AIDamager : NetworkBehaviour
             dir = dir.normalized;
             dir.y = knockupDirection.y;
 
-            CmdApplyKnockback(col.gameObject, dir * knockupStrength);
+            ApplyKnockback(col.gameObject, dir * knockupStrength);
 
             targetRb.velocity = dir * knockupStrength;
             Health health = col.gameObject.GetComponent<Health>();
-            health.CmdDoDamage(slamDamage);
+            health.DoDamage(slamDamage);
         }
 
         owner.GetComponent<Health>().EventDeath -= Delete;
@@ -62,14 +60,7 @@ public class AIDamager : NetworkBehaviour
 
     }
     
-    [Command]
-    public void CmdApplyKnockback(GameObject player , Vector3 dir)
-    {
-        RpcApplyKnockback(player, dir);
-    }
-
-    [ClientRpc]
-    public void RpcApplyKnockback(GameObject player, Vector3 dir)
+    public void ApplyKnockback(GameObject player, Vector3 dir)
     {
         Rigidbody targetRb = player.GetComponent<Rigidbody>();
         targetRb.velocity =  dir *15;
@@ -83,15 +74,13 @@ public class AIDamager : NetworkBehaviour
         foreach (Collider col in cols)
         {
             Health health = col.gameObject.GetComponent<Health>();
-            health.CmdDoDamage(explosionDamage);
+            health.DoDamage(explosionDamage);
         }
 
-        CmdDeleteExplosion();
+        DeleteExplosion();
     }
-
-
-    [Command]
-    public void CmdDeleteExplosion()
+    
+    public void DeleteExplosion()
     {
         StartCoroutine(WaitASec());
     }

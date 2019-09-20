@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Mirror;
 using UnityEngine;
 
-public class Health : NetworkBehaviour
+public class Health : MonoBehaviour
 {
     public int baseMaxHealth;
     public int health;
@@ -20,10 +20,8 @@ public class Health : NetworkBehaviour
 
     public event HealthChange OnHealthChange;
     
-    [SyncEvent] 
     public event TakeDamageDelegate EventTakeDamage;
-
-    [SyncEvent] 
+    
     public event OnDeath EventDeath;
 
     private void Start()
@@ -45,29 +43,21 @@ public class Health : NetworkBehaviour
    
     private void Death()
     {
-        if (!isServer) return;
-        
         if (GetComponent<PlayerModel>())
         {
-            CustomLobbyManager.players.Remove(gameObject);
-            
-            if (CustomLobbyManager.players.Count < 1)
-            {
-                CustomLobbyManager.aiManager.CmdGotKillCount();
-            }
+            //Do Da Death things
         }
         
         if (GetComponent<AIBaseModel>())
         {
-            CustomLobbyManager.aiManager.AiHasDied();
+            LevelManager.aiManager.AiHasDied();
         }
         
-        NetworkServer.Destroy(gameObject);
         Destroy(gameObject);
     }
 
-    [Command]
-    public void CmdDoDamage(int amount)
+
+    public void DoDamage(int amount)
     {
         EventTakeDamage?.Invoke(amount);
     }
@@ -93,7 +83,6 @@ public class Health : NetworkBehaviour
 
     public void CheckForDeath()
     {
-        if (!isServer) return;
         if (health <= 0)
         {
             

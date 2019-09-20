@@ -22,11 +22,10 @@ public class GroundAiShoot : AIAbilityBase
         
     }
 
-    [Command]
-    public void CmdFire()
+
+    public void Fire()
     {
         GameObject bullet = Instantiate(bulletPref, transform.position + transform.forward, Quaternion.identity);
-
         Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
         bulletRb.velocity = transform.forward * projectileSpeed;
         
@@ -35,6 +34,6 @@ public class GroundAiShoot : AIAbilityBase
     IEnumerator Cooldown()
     {
         yield return new WaitForSeconds(coolDown);
-        CmdFire();
+        Fire();
     }
 }
