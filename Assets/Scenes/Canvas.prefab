@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 216706219}
   - component: {fileID: 216706218}
   m_Layer: 5
-  m_Name: Image (1)
+  m_Name: RMouse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -167,7 +167,7 @@ GameObject:
   - component: {fileID: 1062972194}
   - component: {fileID: 1062972193}
   m_Layer: 5
-  m_Name: Image (3)
+  m_Name: RButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -322,7 +322,7 @@ GameObject:
   - component: {fileID: 1356533447}
   - component: {fileID: 1356533446}
   m_Layer: 5
-  m_Name: Image
+  m_Name: LMouse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -473,7 +473,7 @@ GameObject:
   - component: {fileID: 1568605648}
   - component: {fileID: 1568605647}
   m_Layer: 5
-  m_Name: Image (2)
+  m_Name: QButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1123,6 +1123,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3778324223205604819, guid: f51b4e6f67fcbb94b8ac7ab8be58d601,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3778324223205604819, guid: f51b4e6f67fcbb94b8ac7ab8be58d601,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7825737780138113753, guid: f51b4e6f67fcbb94b8ac7ab8be58d601,
         type: 3}

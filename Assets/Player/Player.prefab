@@ -71,7 +71,7 @@ MonoBehaviour:
   ability2: {fileID: 0}
   ability3: {fileID: 0}
   ability4: {fileID: 0}
-  baseAttackSpeed: 30
+  baseAttackSpeed: 3000
   attackSpeed: 0
   baseAttackRange: 5
   attackRange: 0

@@ -17,14 +17,14 @@
     {
         float2 fragCoord = (i.texcoordStereo.xy) * _ScreenParams.xy;
 		float4 c = 0;
-		
+        
 		float2 uv = fragCoord.xy / _ScreenParams.xy;
 		float2 size = 1.0 / float2(_ScreenParams.x, _ScreenParams.y) * _TileSize;
-
+        
 		float2 Pbase = uv - fmod(uv, size);
 		float2 PCenter = Pbase + size / 2.0;
 		float2 st = (uv - Pbase) / size;
-
+        
 		float4 tileColor = SAMPLE_TEXTURE2D(_MainTex, sampler_MainTex, PCenter);
 		c = tileColor;
 
