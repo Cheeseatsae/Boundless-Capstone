@@ -366,8 +366,6 @@ public class PlayerModel : MonoBehaviour
     
     private void OnDestroy()
     {
-        CustomLobbyManager.players.Remove(gameObject);
-        
         controller.OnJumpInput -= JumpInputDown;
         controller.OnShiftInputDown -= ShiftInputDown;
         controller.OnShiftInputUp -= ShiftInputUp;
