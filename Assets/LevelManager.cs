@@ -14,7 +14,7 @@ public class LevelManager : MonoBehaviour
     
     public List<GameObject> spawnPoints = new List<GameObject>();
 
-    private GameObject player;
+    public GameObject player;
     
     private void Awake()
     {
@@ -29,6 +29,7 @@ public class LevelManager : MonoBehaviour
         player = Instantiate(playerPrefab, spawn.transform.position, spawn.transform.rotation);
 
         player.GetComponent<Ability1>().bulletPref = SetupPlayer();
+        aiManager.player = player;
     }
 
     public GameObject SetupPlayer()

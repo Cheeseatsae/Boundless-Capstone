@@ -5,7 +5,7 @@ using Mirror;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class Pickup : NetworkBehaviour
+public class Pickup : MonoBehaviour
 {
     [HideInInspector] public GameObject spawnPoint;
     public DropTable table;
@@ -18,22 +18,9 @@ public class Pickup : NetworkBehaviour
 
     private void Start()
     {
-        StartCoroutine(Setup());
-    }
-
-
-    IEnumerator Setup()
-    {
-        yield return new WaitForSecondsRealtime(0.2f);
-
-        foreach (ItemSpawner.NetworkItem i in ItemSpawner.instance.spawnedItems)
-        {
-            if (i.netId == GetComponent<NetworkIdentity>().netId) item = table.Items[i.itemId];
-        }
-        
         SetupItemVisuals();
     }
-        
+
     public void SetupItemVisuals()
     {
         transform.localScale = item.objectToAdd.transform.localScale;
@@ -46,7 +33,6 @@ public class Pickup : NetworkBehaviour
     
     private void OnTriggerEnter(Collider other)
     {
-        if (!isServer) return;
         if (!other.GetComponent<PlayerModel>()) return;
         
         TakeItem(other.gameObject);
@@ -71,13 +57,12 @@ public class Pickup : NetworkBehaviour
         }
         
         ItemPickedUp();
-        NetworkServer.Destroy(this.gameObject);
         Destroy(this.gameObject);
     }
 
     void ItemPickedUp()
     {
-        ItemSpawner.instance.RemoveNetworkItem(GetComponent<NetworkIdentity>().netId, spawnPoint);
+        // Effects or some shit
     }
     
 }

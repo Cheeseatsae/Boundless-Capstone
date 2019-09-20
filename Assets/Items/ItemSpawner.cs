@@ -6,7 +6,7 @@ using Mirror;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class ItemSpawner : NetworkBehaviour
+public class ItemSpawner : MonoBehaviour
 {
     public static ItemSpawner instance;
     
@@ -21,8 +21,6 @@ public class ItemSpawner : NetworkBehaviour
     
     public List<GameObject> itemSpawnPoints;
     public List<GameObject> usedSpawnPoints;
-
-    public SyncListItems spawnedItems;
     
     private void Awake()
     {
@@ -31,34 +29,14 @@ public class ItemSpawner : NetworkBehaviour
 
     private void Start()
     {
-        if (!isServer) return;
-
-        CustomLobbyManager.aiManager.EventKillNumberChanged += SpawnOnEnemyDeath;
-        
         for (int i = 0; i < toSpawnOnStart; i++)
         {
             SpawnPickup();
         }
     }
 
-    private void OnDestroy()
-    {
-        CustomLobbyManager.aiManager.EventKillNumberChanged -= SpawnOnEnemyDeath;
-    }
-
-    void SpawnOnEnemyDeath(int i)
-    {
-        killCount++;
-
-        if (killCount < killRequirement) return;
-        
-        killCount = 0;
-        SpawnPickup();
-    }
-    
     void SpawnPickup()
     {
-        if (!isServer) return;
         if (usedSpawnPoints.Count >= itemSpawnPoints.Count) return;
 
         GameObject spawn = GetSpawnPoint();
@@ -73,9 +51,6 @@ public class ItemSpawner : NetworkBehaviour
         p.spawnPoint = spawn;
         p.PickItem(Random.Range(0,table.Items.Length));
         p.SetupItemVisuals();
-
-        NetworkServer.Spawn(obj);
-        AddToNetworkItems(obj);
     }
 
     GameObject GetSpawnPoint()
@@ -93,41 +68,6 @@ public class ItemSpawner : NetworkBehaviour
         return i >= itemSpawnPoints.Count ? null : obj;
     }
 
-    void AddToNetworkItems(GameObject obj)
-    {
-        NetworkItem i = new NetworkItem();
-        i.netId = obj.GetComponent<NetworkIdentity>().netId;
-        i.itemId = obj.GetComponent<Pickup>().item.itemId;
-        
-        spawnedItems.Add(i);
-    }
-
-    public void RemoveNetworkItem(uint id, GameObject s)
-    {
-        NetworkItem toRemove = new NetworkItem();
-        
-        foreach (NetworkItem item in spawnedItems)
-        {
-            if (item.netId == id)
-            {
-                toRemove = item;
-                break;
-            }
-        }
-
-        spawnedItems.Remove(toRemove);
-        usedSpawnPoints.Remove(s);
-        
-            
-    }
-    
-    public struct NetworkItem
-    {
-        public uint netId;
-        public int itemId;
-    }
-
-    public class SyncListItems : SyncList<NetworkItem> {}
 }
 
 
