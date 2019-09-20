@@ -29,12 +29,10 @@ public class Health : MonoBehaviour
         healthRegen = baseHealthRegen;
         maxHealth = baseMaxHealth;
         health = baseMaxHealth;
-        if (NetworkClient.active)
-        {
-            EventTakeDamage += TakeDamage;
-            EventDeath += Death;
-            
-        }
+        
+        EventTakeDamage += TakeDamage;
+        EventDeath += Death;
+        
         if (healthRegen > 0)
         {
             StartCoroutine(Regen());
