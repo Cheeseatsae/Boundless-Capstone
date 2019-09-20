@@ -12,13 +12,11 @@ GameObject:
   - component: {fileID: 8086389977643893697}
   - component: {fileID: 8086389977643893696}
   - component: {fileID: 8086389977643893701}
-  - component: {fileID: 9064367217528433733}
   - component: {fileID: 9134880087942267290}
   - component: {fileID: -2392807555510866843}
   - component: {fileID: 8037546844118699840}
   - component: {fileID: -4823980990555307367}
   - component: {fileID: -2313572668704378061}
-  - component: {fileID: -5048125680820625554}
   - component: {fileID: 1772594557683322157}
   m_Layer: 9
   m_Name: Player
@@ -54,7 +52,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8844a1ff56d108f4085765ec50910958, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  syncInterval: 0.1
   baseSpeed: 500
   speed: 0
   baseMaxSpeed: 8
@@ -124,22 +121,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 1
---- !u!114 &9064367217528433733
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8086389977643893722}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b91ecbcc199f4492b9a91e820070131, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  serverOnly: 0
-  localPlayerAuthority: 1
-  m_AssetId: 
-  m_SceneId: 1893192276
 --- !u!114 &9134880087942267290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,7 +133,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d08ac6dcf9f28444bb35ddd32c42266a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  syncInterval: 0.1
   sJump: Space
   sForward: W
   sBack: S
@@ -176,7 +156,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e39dd518f88e5646b4c5185d635018b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  syncInterval: 0.1
   player: {fileID: 8086389977643893697}
   bulletPref: {fileID: 3695492489222300511, guid: fc7ded4b216793047a2651587c217a80,
     type: 3}
@@ -197,7 +176,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 477dd2f26759aa047a53bf46680b6518, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  syncInterval: 0.1
   player: {fileID: 0}
   projectilePref: {fileID: 4270748845602874235, guid: 9042d922e3dbf0047be8b46899c9834b,
     type: 3}
@@ -219,7 +197,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c96885f3f68584e47adc39d7379a043f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  syncInterval: 0.1
   player: {fileID: 8086389977643893697}
   explosionPref: {fileID: 4382888929563306306, guid: e7b6c058815bf464c8dcb8ff2324e87c,
     type: 3}
@@ -239,7 +216,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0ed520df11f5d24ab71afd73b18594d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  syncInterval: 0.1
   player: {fileID: 8086389977643893697}
   cols: []
   damageRadius: 1
@@ -249,24 +225,8 @@ MonoBehaviour:
   amountofTicks: 20
   cooldown: 3
   laser: {fileID: 5760947994300614520, guid: da3c2bb279609db46888e9d76eab1167, type: 3}
-  laserPoint: {fileID: 8086389977643893702}
   abilityDuration: 3
-  dir: {x: 0, y: 0, z: 0}
   newLaser: {fileID: 0}
---- !u!114 &-5048125680820625554
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8086389977643893722}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f74aedd71d9a4f55b3ce499326d45fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  syncInterval: 0
-  compressRotation: 1
 --- !u!114 &1772594557683322157
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -279,7 +239,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b54b534b3f0f2534ca26d3b3855d7a7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  syncInterval: 0.1
   baseMaxHealth: 100
   health: 100
   maxHealth: 0
@@ -343,6 +302,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
