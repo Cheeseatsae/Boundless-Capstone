@@ -5,7 +5,7 @@ using Mirror;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class KillCounter : NetworkBehaviour
+public class KillCounter : MonoBehaviour
 {
     public AIManager aiManager;
     public Text text;
