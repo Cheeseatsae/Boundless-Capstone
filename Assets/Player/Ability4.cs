@@ -26,12 +26,13 @@ public class Ability4 : AbilityBase
 
         StartCoroutine(RunBlaster());
         newLaser = Instantiate(laser, player.transform.forward, Quaternion.identity);
-
+        Destroy(newLaser, abilityDuration);
         Visuals(newLaser);
     }
 
     IEnumerator RunBlaster()
     {
+        
         for (int i = 0; i < amountofTicks; i++)
         {
             cols = Physics.OverlapCapsule(transform.forward, player.target, damageRadius);
@@ -46,7 +47,6 @@ public class Ability4 : AbilityBase
 
             yield return new WaitForSeconds(damageTimer);
         }
-        Destroy(newLaser, abilityDuration);
         StartCoroutine(Cooldown());
     }
     
@@ -78,12 +78,6 @@ public class Ability4 : AbilityBase
             l.transform.position = player.transform.localPosition;
             l.transform.rotation = player.view.rotation;
             
-//            Vector3 targetDir = player.target - transform.position;
-//            float step = speed * Time.deltaTime;
-//            Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, step, 0.0f);
-//            
-//            l.transform.rotation = Quaternion.LookRotation(newDir);
-//            
             yield return null;
         }               
     }
