@@ -107,7 +107,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   owner: {fileID: 0}
   knockupDirection: {x: 0, y: 0, z: 0}
-  damageRadius: 3.5
+  damageRadius: 2.5
   knockupStrength: 15
   slamDamage: 0
   explosionDamage: 5

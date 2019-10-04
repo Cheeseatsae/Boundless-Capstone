@@ -11,10 +11,7 @@ public class AIDamager : MonoBehaviour
     public float damageRadius;
     public float knockupStrength = 15;
     
-    
-    
     //Damage Types
-    
     public int slamDamage;
 
     public int explosionDamage;
@@ -22,7 +19,6 @@ public class AIDamager : MonoBehaviour
     void Start()
     {
         knockupDirection = new Vector3(0,0.5f,0);
-        
     }
     
     public void Delete()
@@ -67,7 +63,7 @@ public class AIDamager : MonoBehaviour
 
     public void ExplosionDamage()
     {
-        transform.localScale = Vector3.one * damageRadius;
+        transform.localScale = Vector3.one * damageRadius * 2;
         Collider[] cols = Physics.OverlapSphere(gameObject.transform.position, damageRadius, layer);
 
         foreach (Collider col in cols)

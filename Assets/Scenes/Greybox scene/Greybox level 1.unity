@@ -5303,6 +5303,11 @@ PrefabInstance:
       propertyPath: itemSpawnPoints.Array.data[25]
       value: 
       objectReference: {fileID: 972047302}
+    - target: {fileID: 6871666997646057134, guid: ae4c99816cf290942968586bc426353f,
+        type: 3}
+      propertyPath: numberOfKills
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae4c99816cf290942968586bc426353f, type: 3}
 --- !u!1 &1899593420387131003

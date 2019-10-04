@@ -50,7 +50,7 @@ public class AIManager : MonoBehaviour
     {
         aiList.Add(groundAI);
         aiList.Add(airAi);
-        //KillNumChanged(numberOfKills);
+        KillNumChanged(numberOfKills);
     }
 
     private void OnDestroy()
@@ -133,7 +133,7 @@ public class AIManager : MonoBehaviour
     }
     
 
-    public void KillNumChanged(int i)
+    void KillNumChanged(int i)
     {
         EventKillNumberChanged?.Invoke(i);
     }
