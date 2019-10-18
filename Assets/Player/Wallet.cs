@@ -30,4 +30,20 @@ public class Wallet : MonoBehaviour
 
         if (pickupsInRange.Contains(obj)) pickupsInRange.Remove(obj);
     }
+
+    public void AttemptPickup(Vector3 point)
+    {
+        if (pickupsInRange.Count <= 0) return;
+        
+        if (pickupsInRange.Count == 1)
+        {
+            pickupsInRange[0].OpenBox();
+        }
+        else
+        {
+            
+        }
+        
+        
+    }
 }

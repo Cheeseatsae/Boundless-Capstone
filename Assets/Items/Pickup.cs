@@ -37,6 +37,11 @@ public class Pickup : MonoBehaviour
         TakeItem(other.gameObject);
     }
 
+    public void OpenBox()
+    {
+        
+    }
+    
     public void TakeItem(GameObject other)
     {
         ItemBase i = item.scriptToAdd;
