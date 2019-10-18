@@ -29,7 +29,7 @@ public class PlayerModel : MonoBehaviour
     [HideInInspector] public AbilityBase ability2;
     [HideInInspector] public AbilityBase ability3;
     [HideInInspector] public AbilityBase ability4;
-    [HideInInspector] public Wallet wallet;
+    [HideInInspector] public Interaction interaction;
 
     private float _forwardInput;
     private float _backInput;
@@ -115,7 +115,8 @@ public class PlayerModel : MonoBehaviour
         ability2 = GetComponent<Ability2>();
         ability3 = GetComponent<Ability3>();
         ability4 = GetComponent<Ability4>();
-        wallet = GetComponent<Wallet>();
+        interaction = GetComponentInChildren<Interaction>();
+        interaction.player = this;
     }
 
     private void Start()
@@ -352,7 +353,7 @@ public class PlayerModel : MonoBehaviour
 
     private void OnInteractInput()
     {
-        
+        interaction.AttemptInteract();
     }
 
     private void OnQKeyInput()

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class Pickup : MonoBehaviour
+public class Pickup : Interactable
 {
     [HideInInspector] public GameObject spawnPoint;
     public DropTable table;
@@ -29,7 +29,13 @@ public class Pickup : MonoBehaviour
         GetComponent<MeshFilter>().mesh = item.objectToAdd.GetComponent<MeshFilter>().sharedMesh;
         GetComponent<Light>().color = item.lightColour;
     }
-    
+
+    private void OnCollisionEnter(Collision other)
+    {
+        GetComponent<BoxCollider>().isTrigger = true;
+        Destroy(GetComponent<Rigidbody>());
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (!other.GetComponent<PlayerModel>()) return;
@@ -37,11 +43,11 @@ public class Pickup : MonoBehaviour
         TakeItem(other.gameObject);
     }
 
-    public void OpenBox()
+    public override void Interact(GameObject other)
     {
-        
+        TakeItem(other);
     }
-    
+
     public void TakeItem(GameObject other)
     {
         ItemBase i = item.scriptToAdd;
