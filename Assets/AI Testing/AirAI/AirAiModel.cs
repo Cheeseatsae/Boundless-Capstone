@@ -17,7 +17,8 @@ public class AirAiModel : AIBaseModel
     //Avoidance
     public List<GameObject> NearMe = new List<GameObject>();
     public float toClose;
-    
+
+    public float rayDist;
     //Abilities
     public GameObject projectilePref;
     public Transform bulletPos1;
@@ -35,6 +36,20 @@ public class AirAiModel : AIBaseModel
 
     public Vector3 targetDirection;
 
+    public Health health;
+    
+    //Dodge
+    public bool dodgeCD;
+    public Vector3 dodgeDirection;
+    public float dodgeDistance;
+    public float dodgeSelect;
+    
+    private void Awake()
+    {
+        health = GetComponent<Health>();
+        health.OnHealthChange += Dodge;
+    }
+
     // Update is called once per frame
     public override void Update()
     {
@@ -42,23 +57,29 @@ public class AirAiModel : AIBaseModel
         
         //Movement
         RaycastHit hit;
-        if (Physics.Raycast(gameObject.transform.position, Vector3.down, out hit))
+        
+        if (Physics.Raycast(gameObject.transform.position, Vector3.down, out hit, rayDist ))
         {
             Debug.DrawLine(gameObject.transform.position, hit.point, Color.red);
-            //distance = Vector3.Distance(transform.position, hit.point);
+            distance = Vector3.Distance(transform.position, hit.point);
             //To close to ground
-            if(Vector3.Distance(transform.position, hit.point) <= minGroundDistance)
+            if (distance >= 100)
+            {
+                direction = new Vector3(0,0,0);
+            }
+            else if(distance <= minGroundDistance)
             {
                 //Debug.Log("moveup");
                 direction = new Vector3(0,1,0);
                 //rb.velocity = -upDir * speed;
             }
-            else if (Vector3.Distance(transform.position, hit.point) >= maxGroundDistance)
+            else if (distance >= maxGroundDistance)
             {
                 //Debug.Log("movedown");
                 direction = new Vector3(0,-1,0);
                 //rb.velocity = downDir * speed;
             }
+
              
         }
         
@@ -68,7 +89,8 @@ public class AirAiModel : AIBaseModel
             targetDir.y = targetDir.y + direction.y;
         }
         //Get Target Direction and look at rotation
-        rb.velocity = targetDir * speed;
+        rb.velocity = (targetDir + dodgeDirection) * speed;
+        dodgeDirection = Vector3.Lerp(dodgeDirection, Vector3.zero, Time.deltaTime);
         if (target != null)
         {
             transform.LookAt(target.transform);
@@ -156,6 +178,22 @@ public class AirAiModel : AIBaseModel
     {
         yield return new WaitForSeconds(flakCooldown);
         onCd = false;
+    }
+
+    public void Dodge()
+    {
+        Debug.Log("do dodge");
+        dodgeSelect = Random.Range(1f, 50f);
+        Vector3 verticalVariation = Vector3.up * Random.Range(-0.2f, 0.5f);
+            
+        if (dodgeSelect < 25)
+        {
+            dodgeDirection = (transform.right + verticalVariation) * dodgeDistance;
+        }
+        else 
+        {
+            dodgeDirection = (-transform.right + verticalVariation) * dodgeDistance;
+        }
     }
 
 

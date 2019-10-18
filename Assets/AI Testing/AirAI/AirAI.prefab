@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 1713774545939617423}
   - component: {fileID: -7287694471871927166}
   - component: {fileID: 7293549280160946370}
-  - component: {fileID: 4441924358602806087}
   - component: {fileID: 235032150809878350}
   m_Layer: 0
   m_Name: AirAI
@@ -116,12 +115,11 @@ MonoBehaviour:
   minGroundDistance: 10
   maxGroundDistance: 20
   targetDir: {x: 0, y: 0, z: 0}
-  upDir: {x: 0, y: 0, z: 0}
-  downDir: {x: 0, y: 0, z: 0}
   distance: 0
   direction: {x: 0, y: 0, z: 0}
   NearMe: []
   toClose: 2
+  rayDist: 500
   projectilePref: {fileID: 618036274288355436, guid: c5cd417bd5d7ab74d9ffe714db74b040,
     type: 3}
   bulletPos1: {fileID: 9218589154600623579}
@@ -132,6 +130,11 @@ MonoBehaviour:
   onCd: 0
   flakCooldown: 3
   targetDirection: {x: 0, y: 0, z: 0}
+  health: {fileID: 0}
+  dodgeCD: 0
+  dodgeDirection: {x: 0, y: 0, z: 0}
+  dodgeDistance: 10
+  dodgeSelect: 0
 --- !u!54 &7293549280160946370
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -148,19 +151,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!135 &4441924358602806087
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1299756857714876720}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 2.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &235032150809878350
 MonoBehaviour:
   m_ObjectHideFlags: 0
