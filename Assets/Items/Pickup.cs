@@ -30,19 +30,20 @@ public class Pickup : Interactable
         GetComponent<Light>().color = item.lightColour;
     }
 
+    // for turning off physics on contact
     private void OnCollisionEnter(Collision other)
     {
         GetComponent<BoxCollider>().isTrigger = true;
         Destroy(GetComponent<Rigidbody>());
     }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (!other.GetComponent<PlayerModel>()) return;
-        
-        TakeItem(other.gameObject);
-    }
-
+//
+//    private void OnTriggerEnter(Collider other)
+//    {
+//        if (!other.GetComponent<PlayerModel>()) return;
+//        
+//        TakeItem(other.gameObject);
+//    }
+//
     public override void Interact(GameObject other)
     {
         TakeItem(other);
