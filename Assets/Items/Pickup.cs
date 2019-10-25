@@ -14,6 +14,11 @@ public class Pickup : Interactable
     {
         item = table.Items[i];
     }
+    
+    public void PickItem()
+    {
+        item = table.Items[Random.Range(0,table.Items.Length)];
+    }
 
     private void Start()
     {

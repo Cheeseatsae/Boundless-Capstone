@@ -8,13 +8,16 @@ public class Interaction : MonoBehaviour
     [HideInInspector] public PlayerModel player;
     private static int currency;
 
-    private List<Interactable> interactablesInRange = new List<Interactable>();
+    public List<Interactable> interactablesInRange = new List<Interactable>();
 
     private void OnTriggerEnter(Collider other)
     {
         Interactable obj = other.GetComponent<Interactable>();
         
-        if (obj != null) interactablesInRange.Add(obj);
+        if (obj == null) return;
+        if (interactablesInRange.Contains(obj)) return;
+        
+        interactablesInRange.Add(obj);
     }
 
     private void OnTriggerExit(Collider other)

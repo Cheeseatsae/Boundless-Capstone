@@ -5,7 +5,7 @@ using UnityEngine;
 public class ItemBox : Interactable
 {
     public GameObject pickup;
-    private int cost;
+    public int cost;
     private bool activated;
     
     public override void Interact(int currency)
@@ -20,9 +20,11 @@ public class ItemBox : Interactable
         
         activated = true;
         Interaction.ChangeMoney(-cost);
-        GameObject p = Instantiate(pickup, transform.position, Quaternion.identity);
+        GameObject p = Instantiate(pickup, transform.position + Vector3.up, Quaternion.identity);
+        p.GetComponent<Pickup>().PickItem();
         
-        p.GetComponent<Rigidbody>().AddForce((Vector3.forward + Vector3.up) * 3);
+        p.GetComponent<Rigidbody>().AddForce((Vector3.forward + Vector3.up) * 100);
         
+        Destroy(this);
     }
 }
