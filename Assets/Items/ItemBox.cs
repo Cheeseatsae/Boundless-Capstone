@@ -18,6 +18,7 @@ public class ItemBox : Interactable
     {
         if (currency < cost) return;
         
+        VisualEffect();
         activated = true;
         Interaction.ChangeMoney(-cost);
         GameObject p = Instantiate(pickup, transform.position + Vector3.up, Quaternion.identity);
@@ -26,5 +27,10 @@ public class ItemBox : Interactable
         p.GetComponent<Rigidbody>().AddForce((Vector3.forward + Vector3.up) * 100);
         
         Destroy(this);
+    }
+
+    private void VisualEffect()
+    {
+        GetComponent<Renderer>().material.color = Color.grey;   
     }
 }
