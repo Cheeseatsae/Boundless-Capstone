@@ -10,10 +10,17 @@ public class LavaFountain : Boss_Ability_Base
     public Transform fountainSpawnPoint;
     public GameObject followFountain;
     private GameObject follower;
+    private GameObject follower2;
+    private GameObject follower3;
     public Vector3 targetDir;
-    public Rigidbody rb;
+    public Vector3 targetDir2;
+    public Vector3 targetDir3;
+    public Rigidbody rb1;
+    public Rigidbody rb2;
+    public Rigidbody rb3;
     public float followSpeed;
     public float waitTime;
+    public float betweenCast;
 
 
     public override void Awake()
@@ -27,10 +34,28 @@ public class LavaFountain : Boss_Ability_Base
         {
             if (model.target != null)
             {
-                targetDir = (model.target.transform.position - follower.transform.position).normalized;
+                if (follower != null)
+                {
+                    targetDir = (model.target.transform.position - follower.transform.position).normalized;
+                    rb1.velocity = targetDir * followSpeed;
+                    follower.GetComponent<FollowerMerge>().isLeader = true;
+                }
+                
+                if (follower2 != null)
+                {
+                    targetDir2 = (model.target.transform.position - follower2.transform.position).normalized;
+                    rb2.velocity = targetDir2 * followSpeed;
+                }
+
+                if (follower3 != null)
+                {
+                    targetDir3 = (model.target.transform.position - follower3.transform.position).normalized;
+                    rb3.velocity = targetDir3 * followSpeed;
+                }
             }
             
-            rb.velocity = targetDir * followSpeed;
+
+           
         }
     }
 
@@ -49,9 +74,18 @@ public class LavaFountain : Boss_Ability_Base
     {
         yield return new WaitForSeconds(waitTime);
         follower = Instantiate(followFountain, positionAtCast,Quaternion.identity);
-        rb = follower.GetComponent<Rigidbody>();
+        rb1 = follower.GetComponent<Rigidbody>();
+        positionAtCast = model.target.transform.position;
+        yield return new WaitForSeconds(betweenCast);
+        follower2 = Instantiate(followFountain, positionAtCast,Quaternion.identity);
+        rb2 = follower2.GetComponent<Rigidbody>();
+        positionAtCast = model.target.transform.position;
+        yield return new WaitForSeconds(betweenCast);
+        follower3 = Instantiate(followFountain, positionAtCast,Quaternion.identity);
+        rb3 = follower3.GetComponent<Rigidbody>();
         StartCoroutine(Casting());
     }
+    
     
     
 }
