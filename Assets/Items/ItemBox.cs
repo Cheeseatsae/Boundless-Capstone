@@ -24,7 +24,7 @@ public class ItemBox : Interactable
         GameObject p = Instantiate(pickup, transform.position + Vector3.up, Quaternion.identity);
         p.GetComponent<Pickup>().PickItem();
         
-        p.GetComponent<Rigidbody>().AddForce((Vector3.forward + Vector3.up) * 100);
+        p.GetComponent<Rigidbody>().AddForce((Vector3.forward + Vector3.up) * 300);
         
         Destroy(this);
     }

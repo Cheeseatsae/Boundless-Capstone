@@ -13,10 +13,9 @@ public class AttackSpeed : ItemBase
     {
         base.StackEffect();
 
-        var p = GetComponent<PlayerModel>();
-        if (p == null) return;
+        if (player == null) return;
 
-        p.attackSpeed = p.baseAttackSpeed + (stackCount * AttackSpeedBoost);
+        player.attackSpeed = player.baseAttackSpeed + (stackCount * AttackSpeedBoost);
 
     }
 

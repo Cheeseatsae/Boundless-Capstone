@@ -15,12 +15,11 @@ public class Speed : ItemBase
     {
         base.StackEffect();
 
-        var p = GetComponent<PlayerModel>();
-        if (p == null) return;
+        if (player == null) return;
 
-        if (p.maxSpeed > HardSpeedCap) return;
-        p.speed = p.baseSpeed + (stackCount * SpeedBoost * 10);
-        p.maxSpeed = p.baseMaxSpeed + (stackCount * SpeedBoost);
+        if (player.maxSpeed > HardSpeedCap) return;
+        player.speed = player.baseSpeed + (stackCount * SpeedBoost * 10);
+        player.maxSpeed = player.baseMaxSpeed + (stackCount * SpeedBoost);
 
     }
 

@@ -158,7 +158,7 @@ public class PlayerModel : MonoBehaviour
             if (floorCheck.point == Vector3.zero) continue;
             if (floorCheck.collider.gameObject.layer != floor) continue;
 
-        if (crumbTrail.Count < 5)
+            if (crumbTrail.Count < 5)
             {
                 Crumb newC = new Crumb { pos = transform.position, obj = floorCheck.collider.gameObject.transform };
                 crumbTrail.Insert(0, newC);

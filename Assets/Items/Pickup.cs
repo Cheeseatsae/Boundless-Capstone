@@ -69,6 +69,7 @@ public class Pickup : Interactable
         else
         {
             ItemBase ib = (ItemBase)other.AddComponent(t);
+            ib.player = other.GetComponent<PlayerModel>();
             ib.StackEffect();
         }
         
