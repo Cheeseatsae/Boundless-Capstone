@@ -11,7 +11,11 @@ public class RespawnPlane : MonoBehaviour
 
         if (p == null)
         {
-            if (h == null) Destroy(other.gameObject);
+            if (h == null)
+            {
+                if (other.GetComponentInParent<PlayerModel>()) return;
+                Destroy(other.gameObject);
+            }
             else
             {
                 int dmg = h.health * 2;

@@ -11,10 +11,9 @@ public class Jumps : ItemBase
     {
         base.StackEffect();
 
-        var p = GetComponent<PlayerModel>();
-        if (p == null) return;
+        if (player == null) return;
 
-        p.jumps = p.baseJumps + stackCount;
+        player.jumps = player.baseJumps + stackCount;
 
     }
 

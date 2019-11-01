@@ -6,7 +6,7 @@ public class ItemBase : MonoBehaviour
 {
 
     public int stackCount = 0;
-    [HideInInspector] public GameObject player;
+    [HideInInspector] public PlayerModel player;
     
     // on item pickup - must include stacking effect
     public virtual void StackEffect()

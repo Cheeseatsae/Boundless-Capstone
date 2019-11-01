@@ -79,7 +79,7 @@ public class Interaction : MonoBehaviour
         {
             i.Interact();
         }
-
+        
         interactablesInRange.Remove(i);
     }
 }

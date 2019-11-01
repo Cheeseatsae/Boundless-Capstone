@@ -12,11 +12,10 @@ public class Damage : ItemBase
     public override void StackEffect()
     {
         base.StackEffect();
+        
+        if (player == null) return;
 
-        var p = GetComponent<PlayerModel>();
-        if (p == null) return;
-
-        p.attackDamage = p.baseAttackDamage + (stackCount * DamageBoost);
+        player.attackDamage = player.baseAttackDamage + (stackCount * DamageBoost);
 
     }
 
