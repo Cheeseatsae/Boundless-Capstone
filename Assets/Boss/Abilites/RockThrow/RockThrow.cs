@@ -8,7 +8,7 @@ public class RockThrow : Boss_Ability_Base
     // Start is called before the first frame update
 
     public GameObject spawnPoint;
-    public float distance;
+    public float maxHeight = 25f;
     public float gravity = -15f;
     public GameObject rock;
     Vector3 CalculateLaunchVelocity()
@@ -16,14 +16,13 @@ public class RockThrow : Boss_Ability_Base
         Vector3 origin = spawnPoint.transform.position;
         target = model.target;
         Vector3 endPoint = target.transform.position;
-        distance = Vector3.Distance(origin, endPoint);
+        //distance = Vector3.Distance(origin, endPoint);
         float displacementY = endPoint.y - origin.y;
         Vector3 displacementXY = new Vector3(endPoint.x - origin.x, 0f, endPoint.z - origin.z);
-
-        Vector3 velocityY = Vector3.up * Mathf.Sqrt(-2 * gravity * distance);
-        Vector3 velocityXZ = displacementXY /
-                             (Mathf.Sqrt(-2 * distance / gravity) +
-                              Mathf.Sqrt(2 * (displacementY - distance) / gravity));
+        float time = Mathf.Sqrt(-2 * maxHeight / gravity) +
+                      Mathf.Sqrt(2 * (displacementY - maxHeight) / gravity);
+        Vector3 velocityY = Vector3.up * Mathf.Sqrt(-2 * gravity * maxHeight);
+        Vector3 velocityXZ = displacementXY  / time;
         return velocityXZ + velocityY;
     }
 
