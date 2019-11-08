@@ -608,6 +608,7 @@ MonoBehaviour:
   abilityCD: 7
   damage: 50
   onCd: 0
+  target: {fileID: 0}
   castTime: 10
   isCasting: 0
   model: {fileID: 0}
@@ -640,7 +641,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  currentAbility: {fileID: 265910205}
+  currentAbility: {fileID: 0}
   lavaFountain: {fileID: 265910203}
   fireBreath: {fileID: 265910205}
   rockWall: {fileID: 0}
@@ -651,7 +652,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 265910202}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 294b1ed4797591a48ab769c82263e51b, type: 3}
   m_Name: 
@@ -659,6 +660,7 @@ MonoBehaviour:
   abilityCD: 0
   damage: 0
   onCd: 0
+  target: {fileID: 0}
   castTime: 0
   isCasting: 0
   model: {fileID: 0}
@@ -677,6 +679,29 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 332278341328567705}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &265910210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 265910202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8a819517c5b11140bd57957fa41af6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilityCD: 0
+  damage: 0
+  onCd: 0
+  target: {fileID: 0}
+  castTime: 0
+  isCasting: 0
+  model: {fileID: 0}
+  spawnPoint: {fileID: 963350684}
+  distance: 0
+  gravity: -15
+  rock: {fileID: 894585997510529651, guid: 68b3d90b1bcf5b2478dbb684b0c55c4f, type: 3}
 --- !u!1 &293230272
 GameObject:
   m_ObjectHideFlags: 0
@@ -5301,7 +5326,7 @@ PrefabInstance:
     - target: {fileID: 6871666997646057134, guid: ae4c99816cf290942968586bc426353f,
         type: 3}
       propertyPath: amountToSpawn
-      value: 10
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6871666997646057134, guid: ae4c99816cf290942968586bc426353f,
         type: 3}

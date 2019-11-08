@@ -35,7 +35,7 @@ public class Boss_Model : MonoBehaviour
     public IEnumerator TestCast()
     {
         yield return new WaitForSeconds(5);
-        currentAbility.Cast();
+        //currentAbility.Cast();
     }
     
     private void Targeting()

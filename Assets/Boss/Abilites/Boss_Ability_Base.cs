@@ -11,7 +11,7 @@ public class Boss_Ability_Base : MonoBehaviour
 
     public bool onCd;
 
-    
+    public GameObject target;
 
     public float castTime;
 
@@ -22,6 +22,12 @@ public class Boss_Ability_Base : MonoBehaviour
     public virtual void Awake()
     {
         model = gameObject.GetComponent<Boss_Model>();
+        
+    }
+
+    public void Start()
+    {
+        target = model.target;
     }
 
 
