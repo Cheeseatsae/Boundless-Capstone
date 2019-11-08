@@ -11,7 +11,7 @@ public class Boss_Ability_Base : MonoBehaviour
 
     public bool onCd;
 
-    public GameObject target;
+    
 
     public float castTime;
 
@@ -30,6 +30,11 @@ public class Boss_Ability_Base : MonoBehaviour
         
     }
 
+    public virtual void FinishCast()
+    {
+        
+    }
+
     public IEnumerator Cooldown()
     {
         onCd = true;
@@ -42,6 +47,7 @@ public class Boss_Ability_Base : MonoBehaviour
         yield return new WaitForSeconds(castTime);
         isCasting = false;
         StartCoroutine(Cooldown());
+        FinishCast();
     }
 
 

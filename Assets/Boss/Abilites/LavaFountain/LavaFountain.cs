@@ -95,7 +95,13 @@ public class LavaFountain : Boss_Ability_Base
         rb3 = follower3.GetComponent<Rigidbody>();
         StartCoroutine(Casting());
     }
-    
-    
-    
+
+    public override void FinishCast()
+    {
+        base.FinishCast();
+        Destroy(follower);
+        Destroy(follower2);
+        Destroy(follower3);
+
+    }
 }

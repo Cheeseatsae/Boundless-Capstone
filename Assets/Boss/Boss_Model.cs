@@ -21,7 +21,7 @@ public class Boss_Model : MonoBehaviour
     void Start()
     {
         
-        currentAbility = lavaFountain;
+        //currentAbility = lavaFountain;
         StartCoroutine(TestCast());
     }
 
