@@ -18,6 +18,8 @@ public class Ability4 : AbilityBase
     public int abilityDuration;
     public GameObject newLaser;
     
+    private Vector3 aimTarget;
+    
     public void Blaster()
     {
         if (onCooldown) return;
@@ -43,6 +45,7 @@ public class Ability4 : AbilityBase
 
                 Health h = c.GetComponent<Health>();
                 if (h != null) h.DoDamage(damagePerTick);
+                PlayerEvents.CallPlayerDamageEvent(c.gameObject, damagePerTick, c.ClosestPointOnBounds(transform.position));
             }
 
             yield return new WaitForSeconds(damageTimer);
@@ -68,7 +71,7 @@ public class Ability4 : AbilityBase
     {
         StartCoroutine(Hold(las));
     }
-
+    
     IEnumerator Hold(GameObject l)
     {
         float time = 0;

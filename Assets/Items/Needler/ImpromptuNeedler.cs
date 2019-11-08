@@ -29,13 +29,26 @@ public class ImpromptuNeedler : ItemBase
 
     private void AttachNeedle(GameObject obj, float dmg, Vector3 loc)
     {
-        // will need to make a needle manager scrip
-        //
+        // will need to make a needle manager script
+        // 
         // attach script to enemy if they dont have it already
         // spawn visual needle to sit there and explode
         // have needle script check for number of needles
         // detonate after time or when hit max needles
         // do bonus damage to enemy from needle script
+
+        Pincushion cushion = obj.GetComponent<Pincushion>();
+        
+        if (cushion == null)
+        {
+            // add pincushion
+            obj.AddComponent<Pincushion>();
+        }
+        
+        // attach needle
+        // set damage & number to explode
+        // start coroutine for needle
+        
     }
     
     public override void RemoveStack()

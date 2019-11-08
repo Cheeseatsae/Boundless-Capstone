@@ -7,7 +7,7 @@ public class ChargeProjectile : MonoBehaviour
 {
 
     public GameObject explosion;
-    private float lifetime;
+    private float particleLifetime;
     [HideInInspector] public float explosionRadius;
     [HideInInspector] public int damage;
     [HideInInspector] public bool fired = false;
@@ -19,7 +19,7 @@ public class ChargeProjectile : MonoBehaviour
 
     private void Start()
     {
-        lifetime = explosion.GetComponent<ParticleSystem>().main.startLifetime.constant;
+        particleLifetime = explosion.GetComponent<ParticleSystem>().main.startLifetime.constant;
     }
     
     public void Fire(float range)
@@ -39,16 +39,21 @@ public class ChargeProjectile : MonoBehaviour
     private void Explode()
     {
         GameObject e = Instantiate(explosion, transform.position, Quaternion.identity);
-        Destroy(e, lifetime);
+        Destroy(e, particleLifetime);
 
         Collider[] cols = Physics.OverlapSphere(transform.position, explosionRadius);
 
-        foreach (Collider col in cols)
+        foreach (Collider c in cols)
         {
-            if (col.GetComponent<PlayerModel>()) continue;
+            // skipping player
+            if (c.GetComponent<PlayerModel>()) continue;
 
-            Health h = col.GetComponent<Health>();
-            if (h != null) h.DoDamage(damage);
+            Health h = c.GetComponent<Health>();
+            if (h != null)
+            {
+                h.DoDamage(damage);
+                PlayerEvents.CallPlayerDamageEvent(h.gameObject, damage, c.ClosestPointOnBounds(transform.position));
+            }
         }
         Destroy(gameObject);
     }

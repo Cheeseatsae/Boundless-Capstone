@@ -38,6 +38,8 @@ public class Pickup : Interactable
     // for turning off physics on contact
     private void OnCollisionEnter(Collision other)
     {
+        if (other.gameObject.layer != 10) return;
+        
         GetComponent<BoxCollider>().isTrigger = true;
         Destroy(GetComponent<Rigidbody>());
     }

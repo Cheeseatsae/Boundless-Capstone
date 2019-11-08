@@ -19,7 +19,7 @@ public class Damager : MonoBehaviour
         
         OnHitEvent?.Invoke();
         
-        DoDamage(other.gameObject);
+        DoDamage(other);
     }
     
     public void SetDamage(int d)
@@ -27,7 +27,7 @@ public class Damager : MonoBehaviour
         damage = d;
     }
 
-    public void DoDamage(GameObject other)
+    public void DoDamage(Collider other)
     {
         if (!other.GetComponent<Health>() || !other.GetComponent<AIBaseModel>())
         {
@@ -37,6 +37,7 @@ public class Damager : MonoBehaviour
 
         Health healthComp = other.GetComponent<Health>();
         healthComp.DoDamage(damage);
+        PlayerEvents.CallPlayerDamageEvent(other.gameObject, damage, other.ClosestPointOnBounds(transform.position));
         
         if (!destroyOnDamage) return;
         Destroy(this.gameObject);
