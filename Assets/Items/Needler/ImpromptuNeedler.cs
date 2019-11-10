@@ -4,7 +4,7 @@ using UnityEngine;
 [Serializable]
 public class ImpromptuNeedler : ItemBase
 {
-    private int _baseExplosionDmg = 8;
+    private int _baseExplosionDmg = 3;
     private int _explosionDmg;
 
     private void Start()
@@ -27,7 +27,7 @@ public class ImpromptuNeedler : ItemBase
         else _explosionDmg = _baseExplosionDmg;
     }
 
-    private void AttachNeedle(GameObject obj, float dmg, Vector3 loc)
+    private void AttachNeedle(GameObject obj, int dmg, Vector3 loc)
     {
         // will need to make a needle manager script
         // 
@@ -42,13 +42,12 @@ public class ImpromptuNeedler : ItemBase
         if (cushion == null)
         {
             // add pincushion
-            obj.AddComponent<Pincushion>();
+            cushion = obj.AddComponent<Pincushion>();
         }
-        
         // attach needle
         // set damage & number to explode
         // start coroutine for needle
-        
+        cushion.AttachNeedle(_explosionDmg,loc);
     }
     
     public override void RemoveStack()
