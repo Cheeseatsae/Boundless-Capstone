@@ -47,7 +47,7 @@ public class ImpromptuNeedler : ItemBase
         // attach needle
         // set damage & number to explode
         // start coroutine for needle
-        cushion.AttachNeedle(_explosionDmg,loc);
+        cushion.AttachNeedle(_explosionDmg, loc);
     }
     
     public override void RemoveStack()

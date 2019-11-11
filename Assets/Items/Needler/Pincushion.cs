@@ -2,10 +2,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 public class Pincushion : MonoBehaviour
 {
-    private GameObject needle;
+    public GameObject needle;
     private List<NeedleScript> activeNeedles = new List<NeedleScript>();
 
     private int damage;
@@ -15,8 +16,8 @@ public class Pincushion : MonoBehaviour
 
     private void Awake()
     {
-        // Resource is not being loaded correctly and will need to be instantiated or saved somewhere else or with another method
-        needle = Resources.Load("Assets/Items/Needler/Needle.prefab") as GameObject;
+        needle = Resources.Load("Needle", typeof(GameObject)) as GameObject;
+
         health = GetComponent<Health>();
     }
 

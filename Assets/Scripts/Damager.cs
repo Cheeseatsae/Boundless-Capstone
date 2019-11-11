@@ -37,7 +37,7 @@ public class Damager : MonoBehaviour
 
         Health healthComp = other.GetComponent<Health>();
         healthComp.DoDamage(damage);
-        PlayerEvents.CallPlayerDamageEvent(other.gameObject, damage, other.ClosestPointOnBounds(transform.position));
+        PlayerEvents.CallPlayerDamageEvent(other.gameObject, damage, other.ClosestPoint(transform.position));
         
         if (!destroyOnDamage) return;
         Destroy(this.gameObject);
