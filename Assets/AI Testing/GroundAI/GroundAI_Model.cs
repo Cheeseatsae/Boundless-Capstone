@@ -6,8 +6,11 @@ using UnityEngine.AI;
 public class GroundAI_Model : AIBaseModel
 {
     public GameObject damageZone;
+
+    public Animator anim;
     
     //Ground Slam Variables
+    public bool melee = false;
     public bool meleeCooldown = false;
     public float targetDistance;
     public float meleeCoolDown;
@@ -15,6 +18,7 @@ public class GroundAI_Model : AIBaseModel
     public GameObject damage;
     
     //Ranged Ability Variables
+    public bool ranged = false;
     public float rangedCoolDown;
     public GameObject bulletPref;
     public bool rangedCooldown = false;
@@ -46,8 +50,9 @@ public class GroundAI_Model : AIBaseModel
             
                 if (hit.collider.gameObject == target)
                 {
-                    if (rangedCooldown == false)
+                    if (rangedCooldown == false && melee == false)
                     {
+                        ranged = true;
                         navmesh.isStopped = true;
                         navmesh.velocity = new Vector3(0,0,0);
                         StartCoroutine(RangedWait());
@@ -55,6 +60,7 @@ public class GroundAI_Model : AIBaseModel
                         rangedCooldown = true;
                         cantFire = false;
                         StartCoroutine(RangedCooldown());
+                        
                     }               
                 }
             }
@@ -62,8 +68,9 @@ public class GroundAI_Model : AIBaseModel
             targetDistance = Vector3.Distance(transform.position, target.transform.position);
             if (targetDistance < 5)
             {
-                if (meleeCooldown == false)
+                if (meleeCooldown == false && ranged == false)
                 {
+                    melee = true;
                     cantFire = true;
                     navmesh.isStopped = true;
                     navmesh.velocity = new Vector3(0,0,0);
@@ -98,11 +105,13 @@ public class GroundAI_Model : AIBaseModel
         
         slamDamager.SlamDamage();
         navmesh.isStopped = false;
-
+        anim.SetTrigger("BackToMovement");
+        StartCoroutine(CanRanged());
     }
     
     public IEnumerator RangedCooldown()
     {
+        anim.SetTrigger("BackToMovement");
         yield return new WaitForSeconds(rangedCoolDown);
         rangedCooldown = false;
 
@@ -110,6 +119,7 @@ public class GroundAI_Model : AIBaseModel
     
     public IEnumerator MeleeCooldown()
     {
+        
         yield return new WaitForSeconds(meleeCoolDown);
         meleeCooldown = false;
 
@@ -118,8 +128,10 @@ public class GroundAI_Model : AIBaseModel
     
     public IEnumerator MeleeCharge()
     {
+        anim.SetTrigger("GroundSlam");
         yield return new WaitForSeconds(chargeDuration);
         GroundSlam();
+        melee = false;
     }
     
 
@@ -138,9 +150,21 @@ public class GroundAI_Model : AIBaseModel
 
     IEnumerator RangedWait()
     {
+        
+        anim.SetBool("CanRanged", true);
         yield return new WaitForSeconds(0.5f);
+        anim.SetTrigger("Ranged");
         Fire();
         navmesh.isStopped = false;
+        anim.SetBool("CanRanged", false);
+        ranged = false;
+    }
+
+    public IEnumerator CanRanged()
+    {
+        yield return new WaitForSeconds(1);
+        melee = false;
+        
     }
 
 }
