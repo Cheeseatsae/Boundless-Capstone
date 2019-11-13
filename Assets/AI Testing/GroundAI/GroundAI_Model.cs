@@ -27,7 +27,7 @@ public class GroundAI_Model : AIBaseModel
 
     public float chargeDuration = 2;
     
-    private NavMeshAgent navmesh;
+    public NavMeshAgent navmesh;
     // Start is called before the first frame update
 
     private void Awake()
@@ -55,8 +55,9 @@ public class GroundAI_Model : AIBaseModel
                         ranged = true;
                         navmesh.isStopped = true;
                         navmesh.velocity = new Vector3(0,0,0);
-                        StartCoroutine(RangedWait());
-                        
+                        //StartCoroutine(RangedWait());
+                        anim.SetBool("CanRanged", true);
+                        anim.SetTrigger("Ranged");
                         rangedCooldown = true;
                         cantFire = false;
                         StartCoroutine(RangedCooldown());
@@ -91,13 +92,14 @@ public class GroundAI_Model : AIBaseModel
     public void Fire()
     {
         if (target == null) return;
-        
+
         GameObject bullet = Instantiate(bulletPref, transform.position + transform.forward, Quaternion.identity);
         
         Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
 
         Vector3 dir = (target.transform.position - transform.position).normalized;
         bulletRb.velocity = dir * projectileSpeed;
+        
     }
     
     public void GroundSlam()
@@ -111,7 +113,7 @@ public class GroundAI_Model : AIBaseModel
     
     public IEnumerator RangedCooldown()
     {
-        anim.SetTrigger("BackToMovement");
+        
         yield return new WaitForSeconds(rangedCoolDown);
         rangedCooldown = false;
 
@@ -150,14 +152,11 @@ public class GroundAI_Model : AIBaseModel
 
     IEnumerator RangedWait()
     {
-        
+        yield return new WaitForSeconds(0f);
         anim.SetBool("CanRanged", true);
-        yield return new WaitForSeconds(0.5f);
         anim.SetTrigger("Ranged");
-        Fire();
-        navmesh.isStopped = false;
-        anim.SetBool("CanRanged", false);
-        ranged = false;
+        //Fire();
+
     }
 
     public IEnumerator CanRanged()

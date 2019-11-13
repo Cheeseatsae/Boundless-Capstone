@@ -114,11 +114,13 @@ MonoBehaviour:
   damageZone: {fileID: 13196669011458187, guid: adaf53882ed59974baf78de0d35c349e,
     type: 3}
   anim: {fileID: 3413295195208933622}
+  melee: 0
   meleeCooldown: 0
   targetDistance: 0
   meleeCoolDown: 5
   slamDamager: {fileID: 0}
   damage: {fileID: 0}
+  ranged: 0
   rangedCoolDown: 2.5
   bulletPref: {fileID: 7704365907161935278, guid: 9a8824215a3e86e4082d0b64d45ffe27,
     type: 3}
@@ -182,6 +184,19 @@ MonoBehaviour:
   baseHealthRegen: 0
   healthRegen: 0
   regenTick: 1
+--- !u!114 &3344034455392607235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8615157371670085535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc9d8fc341ac6bc4e8d81a115b996d27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  model: {fileID: 6281114775514621437}
 --- !u!1001 &337421334129993366
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -256,6 +271,12 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: a813daef79ec498448b177249a2a00e9, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee8aa535af3dbdd42bb53364ef648bd5, type: 3}
+--- !u!1 &8615157371670085535 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: ee8aa535af3dbdd42bb53364ef648bd5,
+    type: 3}
+  m_PrefabInstance: {fileID: 337421334129993366}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4743546208443518348 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: ee8aa535af3dbdd42bb53364ef648bd5,

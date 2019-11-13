@@ -43,14 +43,26 @@ public class Health : MonoBehaviour
         if (GetComponent<PlayerModel>())
         {
             //Do Da Death things
+            Destroy(gameObject);
         }
         
         if (GetComponent<AIBaseModel>())
         {
             LevelManager.aiManager.AiHasDied();
         }
+
+        if (GetComponent<AirAiModel>())
+        {
+            Destroy(gameObject);
+        }
+
+        if (GetComponent<GroundAI_Model>())
+        {
+            GroundAI_Model model = GetComponent<GroundAI_Model>();
+            model.anim.SetTrigger("Dead");
+
+        }
         
-        Destroy(gameObject);
     }
 
 
