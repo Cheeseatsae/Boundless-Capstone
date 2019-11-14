@@ -44,8 +44,11 @@ public class Ability4 : AbilityBase
                 if (c.GetComponent<PlayerModel>()) continue;
 
                 Health h = c.GetComponent<Health>();
-                if (h != null) h.DoDamage(damagePerTick);
-                PlayerEvents.CallPlayerDamageEvent(c.gameObject, damagePerTick, c.ClosestPointOnBounds(transform.position));
+                if (h != null)
+                {
+                    h.DoDamage(damagePerTick);
+                    PlayerEvents.CallPlayerDamageEvent(c.gameObject, damagePerTick, c.ClosestPointOnBounds(transform.position));
+                }
             }
 
             yield return new WaitForSeconds(damageTimer);

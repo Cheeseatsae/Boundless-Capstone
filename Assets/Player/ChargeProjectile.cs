@@ -40,11 +40,12 @@ public class ChargeProjectile : MonoBehaviour
     {
         GameObject e = Instantiate(explosion, transform.position, Quaternion.identity);
         Destroy(e, particleLifetime);
-
+        
         Collider[] cols = Physics.OverlapSphere(transform.position, explosionRadius);
 
         foreach (Collider c in cols)
         {
+            
             // skipping player
             if (c.GetComponent<PlayerModel>()) continue;
 
@@ -52,6 +53,8 @@ public class ChargeProjectile : MonoBehaviour
             if (h != null)
             {
                 h.DoDamage(damage);
+                
+                
                 PlayerEvents.CallPlayerDamageEvent(h.gameObject, damage, c.ClosestPointOnBounds(transform.position));
             }
         }

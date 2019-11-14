@@ -42,8 +42,11 @@ public class Ability3 : AbilityBase
             if (c.GetComponent<PlayerModel>()) continue;
 
             Health h = c.GetComponent<Health>();
-            if (h != null) h.DoDamage(damage);
-            PlayerEvents.CallPlayerDamageEvent(c.gameObject, damage, c.ClosestPointOnBounds(transform.position));
+            if (h != null)
+            {
+                h.DoDamage(damage);
+                PlayerEvents.CallPlayerDamageEvent(c.gameObject, damage, c.ClosestPointOnBounds(transform.position));
+            }
         }
         
         Destroy(p, lifetime);        

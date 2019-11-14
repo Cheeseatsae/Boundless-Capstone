@@ -19,6 +19,12 @@ public class Pincushion : MonoBehaviour
         needle = Resources.Load("Needle", typeof(GameObject)) as GameObject;
 
         health = GetComponent<Health>();
+        health.EventDeath += DestroyNeedlesOnDeath;
+    }
+
+    private void OnDestroy()
+    {
+        health.EventDeath -= DestroyNeedlesOnDeath;
     }
 
     public void AttachNeedle(int dmg, Vector3 loc)
@@ -32,7 +38,7 @@ public class Pincushion : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (activeNeedles.Count > 9)
+        if (activeNeedles.Count > 5)
         {
             foreach (NeedleScript n in activeNeedles)
             {
@@ -44,12 +50,20 @@ public class Pincushion : MonoBehaviour
             activeNeedles.Clear();
         }
     }
+
+    private void DestroyNeedlesOnDeath()
+    {
+        foreach (NeedleScript n in activeNeedles)
+        {
+            n.Detonate();
+        }
+    }
     
     private IEnumerator NeedleTimer(NeedleScript n)
     {
         yield return new WaitForSeconds(DetonationTime);
         activeNeedles.Remove(n);
         n.Detonate();
-        health.DoDamage(damage);
+        if (health != null) health.DoDamage(damage);
     }
 }

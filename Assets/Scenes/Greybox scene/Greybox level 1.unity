@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.19058037, g: 0.004607207, b: 0.0009238714, a: 1}
+  m_IndirectSpecularColor: {r: 0.05155488, g: 0.0024370914, b: 0.00033948643, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1708,7 +1708,7 @@ PrefabInstance:
     - target: {fileID: 66740816703162724, guid: 3cea5fecf712f9c439ddbc6da6d17cf7,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 66740816703162724, guid: 3cea5fecf712f9c439ddbc6da6d17cf7,
         type: 3}
@@ -2432,7 +2432,7 @@ Transform:
   m_LocalScale: {x: 46, y: 10, z: 46}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 3.2630002, y: -17.541, z: -1.9440001}
 --- !u!1 &1069996007
 GameObject:
@@ -2488,7 +2488,7 @@ Transform:
   - {fileID: 263928120}
   - {fileID: 972047303}
   m_Father: {fileID: 0}
-  m_RootOrder: 37
+  m_RootOrder: 38
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1150111447
 GameObject:
@@ -4814,7 +4814,7 @@ Transform:
   m_LocalScale: {x: 40, y: 10, z: 40}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 1.23, y: 15.245001, z: -4.5020003}
 --- !u!1 &2114949800
 GameObject:
@@ -4958,7 +4958,7 @@ PrefabInstance:
     - target: {fileID: 5938962754750135415, guid: ae4c99816cf290942968586bc426353f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5938962754750135415, guid: ae4c99816cf290942968586bc426353f,
         type: 3}
@@ -5227,7 +5227,7 @@ PrefabInstance:
     - target: {fileID: 1014268428942412922, guid: aa62b112352d72545a77db92cc1fe83f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 38
+      value: 37
       objectReference: {fileID: 0}
     - target: {fileID: 1014268428942412922, guid: aa62b112352d72545a77db92cc1fe83f,
         type: 3}
@@ -5243,6 +5243,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4812842040980639237, guid: aa62b112352d72545a77db92cc1fe83f,
+        type: 3}
+      propertyPath: cost
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa62b112352d72545a77db92cc1fe83f, type: 3}

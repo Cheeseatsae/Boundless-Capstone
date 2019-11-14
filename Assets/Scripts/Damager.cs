@@ -13,9 +13,9 @@ public class Damager : MonoBehaviour
     public event HitEvent OnHitEvent;
     
     //effects
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision other)
     {
-        if (other.isTrigger) return;
+        if (other.collider.isTrigger) return;
         
         OnHitEvent?.Invoke();
         
@@ -27,17 +27,17 @@ public class Damager : MonoBehaviour
         damage = d;
     }
 
-    public void DoDamage(Collider other)
+    public void DoDamage(Collision other)
     {
-        if (!other.GetComponent<Health>() || !other.GetComponent<AIBaseModel>())
+        if (!other.gameObject.GetComponent<Health>() || !other.gameObject.GetComponent<AIBaseModel>())
         {
             Destroy(this.gameObject);
             return;
         }
 
-        Health healthComp = other.GetComponent<Health>();
+        Health healthComp = other.gameObject.GetComponent<Health>();
         healthComp.DoDamage(damage);
-        PlayerEvents.CallPlayerDamageEvent(other.gameObject, damage, other.ClosestPoint(transform.position));
+        PlayerEvents.CallPlayerDamageEvent(other.gameObject, damage, other.contacts[0].point);
         
         if (!destroyOnDamage) return;
         Destroy(this.gameObject);
