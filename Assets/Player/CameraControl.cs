@@ -28,21 +28,19 @@ public class CameraControl : MonoBehaviour
     public static CameraControl playerCam;
 
     private float step;
-    
+
     private void Awake()
     {
-        
-        
+        playerCam = this;
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        playerCam = this;
-        Vector3 rotation = transform.rotation.eulerAngles;
-        rotX = rotation.x;
-        rotY = rotation.y;
-        transform.position = Vector3.Lerp(transform.position, followObj.transform.position, 0.9f);
+//        Vector3 rotation = transform.rotation.eulerAngles;
+//        rotX = rotation.x;
+//        rotY = rotation.y;
+//        transform.position = Vector3.Lerp(transform.position, followObj.transform.position, 0.9f);
         step = 1;
     }
 
