@@ -182,7 +182,6 @@ public class AirAiModel : AIBaseModel
 
     public void Dodge()
     {
-        Debug.Log("do dodge");
         dodgeSelect = Random.Range(1f, 50f);
         Vector3 verticalVariation = Vector3.up * Random.Range(-0.2f, 0.5f);
             

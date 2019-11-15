@@ -44,11 +44,7 @@ public class Health : MonoBehaviour
         {
             //Do Da Death things
             Destroy(gameObject);
-        }
-        
-        if (GetComponent<AIBaseModel>())
-        {
-            LevelManager.aiManager.AiHasDied();
+            return;
         }
 
         if (GetComponent<AirAiModel>())
@@ -60,8 +56,11 @@ public class Health : MonoBehaviour
         {
             GroundAI_Model model = GetComponent<GroundAI_Model>();
             model.anim.SetTrigger("Dead");
-
+            model.GetComponent<Collider>().enabled = false;
         }
+        
+        LevelManager.aiManager.AiHasDied();
+        
         
     }
 

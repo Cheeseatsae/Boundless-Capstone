@@ -130,6 +130,7 @@ public class AIManager : MonoBehaviour
         numberOfAi--;
         numberOfKills--;
         KillNumChanged(numberOfKills);
+        PlayerInteraction.ChangeMoney(Random.Range(3,8));
     }
     
 

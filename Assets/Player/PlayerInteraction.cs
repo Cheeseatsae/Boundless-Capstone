@@ -1,8 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using PlayFab.ClientModels;
 using UnityEngine;
 
-public class Interaction : MonoBehaviour
+public class PlayerInteraction : MonoBehaviour
 {
 
     [HideInInspector] public PlayerModel player;
@@ -10,6 +11,9 @@ public class Interaction : MonoBehaviour
 
     public List<Interactable> interactablesInRange = new List<Interactable>();
 
+    public delegate void CurrencyUpdate();
+    public static CurrencyUpdate OnCurrencyUpdate;
+    
     private void OnTriggerEnter(Collider other)
     {
         Interactable obj = other.GetComponent<Interactable>();
@@ -31,6 +35,7 @@ public class Interaction : MonoBehaviour
     public static void ChangeMoney(int amount)
     {
         currency += amount;
+        OnCurrencyUpdate?.Invoke();
     }
     
     public static int GetMoney()

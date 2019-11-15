@@ -20,7 +20,7 @@ public class ItemBox : Interactable
         
         VisualEffect();
         activated = true;
-        Interaction.ChangeMoney(-cost);
+        PlayerInteraction.ChangeMoney(-cost);
         GameObject p = Instantiate(pickup, transform.position + Vector3.up, Quaternion.identity);
         p.GetComponent<Pickup>().PickItem();
         

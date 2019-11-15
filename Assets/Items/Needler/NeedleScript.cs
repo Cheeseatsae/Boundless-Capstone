@@ -8,6 +8,8 @@ public class NeedleScript : MonoBehaviour
     
     public void Detonate()
     {
+        if (needle == null && explosion == null) return;
+        
         needle.Stop();
         explosion.Play();
         Destroy(gameObject, explosion.main.duration);

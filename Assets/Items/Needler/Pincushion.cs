@@ -13,6 +13,7 @@ public class Pincushion : MonoBehaviour
     private Health health;
 
     private const float DetonationTime = 2.75f;
+    private const int DetonationRequirement = 5;
 
     private void Awake()
     {
@@ -36,16 +37,16 @@ public class Pincushion : MonoBehaviour
         StartCoroutine(NeedleTimer(n));
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
-        if (activeNeedles.Count > 5)
+        if (activeNeedles.Count > DetonationRequirement)
         {
             foreach (NeedleScript n in activeNeedles)
             {
                 n.Detonate();
             }
 
-            health.DoDamage(damage * 11);
+            health.DoDamage(damage * (DetonationRequirement + 1));
             StopAllCoroutines();
             activeNeedles.Clear();
         }

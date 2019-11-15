@@ -20,11 +20,21 @@ public class PlayerUI : MonoBehaviour
     
     public Slider health;
 
-    public Text healthText;
+    public Text healthText, currencyText;
     
     private void Awake()
     {
         instance = this;
+    }
+
+    private void Start()
+    {
+        PlayerInteraction.OnCurrencyUpdate += UpdateCurrency;
+    }
+
+    private void OnDestroy()
+    {
+        PlayerInteraction.OnCurrencyUpdate -= UpdateCurrency;
     }
 
     public void Setup(GameObject p)
@@ -42,6 +52,11 @@ public class PlayerUI : MonoBehaviour
         healthText.text = playerHealth.health.ToString();
     }
 
+    public void UpdateCurrency()
+    {
+        currencyText.text = PlayerInteraction.GetMoney().ToString();
+    }
+    
     public void LMouseCooldown()
     {
         StartCoroutine(RunCooldown(lMouse, ability1.cooldown));

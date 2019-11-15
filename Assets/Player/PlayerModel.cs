@@ -29,7 +29,7 @@ public class PlayerModel : MonoBehaviour
     [HideInInspector] public AbilityBase ability2;
     [HideInInspector] public AbilityBase ability3;
     [HideInInspector] public AbilityBase ability4;
-    [HideInInspector] public Interaction interaction;
+    [HideInInspector] public PlayerInteraction playerInteraction;
 
     private float _forwardInput;
     private float _backInput;
@@ -115,8 +115,8 @@ public class PlayerModel : MonoBehaviour
         ability2 = GetComponent<Ability2>();
         ability3 = GetComponent<Ability3>();
         ability4 = GetComponent<Ability4>();
-        interaction = GetComponentInChildren<Interaction>();
-        interaction.player = this;
+        playerInteraction = GetComponentInChildren<PlayerInteraction>();
+        playerInteraction.player = this;
     }
 
     private void Start()
@@ -353,7 +353,7 @@ public class PlayerModel : MonoBehaviour
 
     private void OnInteractInput()
     {
-        interaction.AttemptInteract();
+        playerInteraction.AttemptInteract();
     }
 
     private void OnQKeyInput()
