@@ -53,6 +53,7 @@ public class Ability4 : AbilityBase
 
             yield return new WaitForSeconds(damageTimer);
         }
+        player.attackOccupied = false;
         StartCoroutine(Cooldown());
     }
     
@@ -66,6 +67,8 @@ public class Ability4 : AbilityBase
 
     public override void Enter()
     {
+        if (player.attackOccupied) return;
+        player.attackOccupied = true;
         damagePerTick = baseDamagePerTick + (int)(player.attackDamage / amountofTicks);
         Blaster();
     }

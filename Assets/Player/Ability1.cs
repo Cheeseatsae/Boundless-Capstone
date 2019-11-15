@@ -57,7 +57,8 @@ public class Ability1 : AbilityBase
     {
         if (onCooldown) return;
         if (!firing) return;
-
+        if (player.attackOccupied) return;
+        
         PlayerUI.instance.LMouseCooldown();
         onCooldown = true;
         cooldown = baseCooldown / (0.1f * player.attackSpeed);

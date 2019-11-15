@@ -60,8 +60,6 @@ public class Health : MonoBehaviour
         }
         
         LevelManager.aiManager.AiHasDied();
-        
-        
     }
 
 

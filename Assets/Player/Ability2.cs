@@ -85,6 +85,7 @@ public class Ability2 : AbilityBase
     {
         if (currentProjectile == null) return;
 
+        player.attackOccupied = false;
         chargeTime = chargeDuration + 1;
         StartCoroutine(StartCooldown());
         
@@ -102,7 +103,9 @@ public class Ability2 : AbilityBase
 
     public override void Enter()
     {
+        if (player.attackOccupied) return;
         if (onCooldown) return;
+        player.attackOccupied = true;
         PlayerUI.instance.RMouseCooldown();
         onCooldown = true;
         chargeTime = 0;

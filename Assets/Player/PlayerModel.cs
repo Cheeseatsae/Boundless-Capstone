@@ -60,6 +60,8 @@ public class PlayerModel : MonoBehaviour
     public float fallbackAimDistance;
     public LayerMask mask;
 
+    [HideInInspector] public bool attackOccupied = false;
+    
     // Floor checking variables  
     [Serializable]
     public struct Crumb
@@ -137,6 +139,7 @@ public class PlayerModel : MonoBehaviour
         StartCoroutine(MarkPreviousPosition());
         SetupPlayFab();
         
+        attackOccupied = false;
     }
 
     private IEnumerator MarkPreviousPosition()
