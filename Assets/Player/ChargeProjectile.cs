@@ -49,7 +49,7 @@ public class ChargeProjectile : MonoBehaviour
             // skipping player
             if (c.GetComponent<PlayerModel>()) continue;
 
-            Health h = c.GetComponent<Health>();
+            Health h = c.GetComponentInParent<Health>();
             if (h != null)
             {
                 h.DoDamage(damage);

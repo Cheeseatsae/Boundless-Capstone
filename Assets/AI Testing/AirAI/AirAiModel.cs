@@ -43,11 +43,27 @@ public class AirAiModel : AIBaseModel
     public Vector3 dodgeDirection;
     public float dodgeDistance;
     public float dodgeSelect;
+
+    private ColliderScript myCols;
     
     private void Awake()
     {
         health = GetComponent<Health>();
         health.OnHealthChange += Dodge;
+
+        myCols = GetComponentInChildren<ColliderScript>();
+        
+        // I converted the trigger functions on this script to use the collider script
+        // but it was never being used in the first place so
+        
+//        myCols.EnterTrigger += AddObjectNearMe;
+//        myCols.ExitTrigger += RemoveObjectNearMe;
+    }
+
+    private void OnDestroy()
+    {
+//        myCols.EnterTrigger -= AddObjectNearMe;
+//        myCols.ExitTrigger -= RemoveObjectNearMe;
     }
 
     // Update is called once per frame
@@ -88,12 +104,14 @@ public class AirAiModel : AIBaseModel
             targetDir = (target.transform.position - transform.position).normalized;
             targetDir.y = targetDir.y + direction.y;
         }
+        
         //Get Target Direction and look at rotation
         rb.velocity = (targetDir + dodgeDirection) * speed;
         dodgeDirection = Vector3.Lerp(dodgeDirection, Vector3.zero, Time.deltaTime);
+        
         if (target != null)
         {
-            transform.LookAt(target.transform);
+            
             targetDirection = (target.transform.position - transform.position).normalized;
         }
         
@@ -118,7 +136,15 @@ public class AirAiModel : AIBaseModel
         return new Vector3(x,y,z);
     }
 
-    private void OnTriggerEnter(Collider other)
+//    private void OnTriggerEnter(Collider other)
+//    {
+//        if (other.GetComponent<AirAiModel>())
+//        {
+//            NearMe.Add(other.gameObject);
+//        }
+//    }
+
+    private void AddObjectNearMe(Collider other)
     {
         if (other.GetComponent<AirAiModel>())
         {
@@ -126,7 +152,15 @@ public class AirAiModel : AIBaseModel
         }
     }
 
-    private void OnTriggerExit(Collider other)
+//    private void OnTriggerExit(Collider other)
+//    {
+//        if (NearMe.Contains(other.gameObject))
+//        {
+//            NearMe.Remove(other.gameObject);
+//        }
+//    }
+    
+    private void RemoveObjectNearMe(Collider other)
     {
         if (NearMe.Contains(other.gameObject))
         {
@@ -183,7 +217,7 @@ public class AirAiModel : AIBaseModel
     public void Dodge()
     {
         dodgeSelect = Random.Range(1f, 50f);
-        Vector3 verticalVariation = Vector3.up * Random.Range(-0.2f, 0.5f);
+        Vector3 verticalVariation = Vector3.up * Random.Range(-0.4f, 0.8f);
             
         if (dodgeSelect < 25)
         {

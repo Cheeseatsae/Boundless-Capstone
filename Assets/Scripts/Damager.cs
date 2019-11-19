@@ -29,7 +29,7 @@ public class Damager : MonoBehaviour
 
     public void DoDamage(Collision other)
     {
-        if (!other.gameObject.GetComponent<Health>() || !other.gameObject.GetComponent<AIBaseModel>())
+        if (!other.gameObject.GetComponentInParent<Health>() || !other.gameObject.GetComponent<AIBaseModel>())
         {
             Destroy(this.gameObject);
             return;

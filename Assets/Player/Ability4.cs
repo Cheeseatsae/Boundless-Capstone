@@ -43,7 +43,7 @@ public class Ability4 : AbilityBase
             {
                 if (c.GetComponent<PlayerModel>()) continue;
 
-                Health h = c.GetComponent<Health>();
+                Health h = c.GetComponentInParent<Health>();
                 if (h != null)
                 {
                     h.DoDamage(damagePerTick);

@@ -131,7 +131,7 @@ MonoBehaviour:
   ability2: {fileID: 0}
   ability3: {fileID: 0}
   ability4: {fileID: 0}
-  interaction: {fileID: 0}
+  playerInteraction: {fileID: 0}
   baseAttackSpeed: 3000
   attackSpeed: 0
   baseAttackRange: 5
@@ -147,6 +147,7 @@ MonoBehaviour:
   mask:
     serializedVersion: 2
     m_Bits: 1843
+  attackOccupied: 0
   floor: 10
   crumbTrail: []
   camOffset: 2
@@ -261,7 +262,7 @@ MonoBehaviour:
   player: {fileID: 8086389977643893697}
   explosionPref: {fileID: 4382888929563306306, guid: e7b6c058815bf464c8dcb8ff2324e87c,
     type: 3}
-  boostDir: {x: 150, y: 1050, z: 0}
+  boostDir: {x: 0, y: 1250, z: 0}
   explosionRadius: 8
   damage: 25
   cooldown: 3
