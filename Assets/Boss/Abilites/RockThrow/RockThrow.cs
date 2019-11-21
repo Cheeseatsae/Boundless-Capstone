@@ -7,39 +7,75 @@ public class RockThrow : Boss_Ability_Base
 {
     // Start is called before the first frame update
 
-    public GameObject spawnPoint;
+    public GameObject spawnPoint1;
+    public GameObject spawnPoint2;
+    public GameObject spawnPoint3;
     public float maxHeight = 25f;
-    public float gravity = -15f;
+    public float gravity = -5f;
     public GameObject rock;
-    Vector3 CalculateLaunchVelocity()
+
+    public Vector3 leftDiviation;
+    public Vector3 rightDiviation;
+    
+    Vector3 CalculateLaunchVelocity(Vector3 target, Vector3 spawn)
     {
-        Vector3 origin = spawnPoint.transform.position;
-        target = model.target;
-        Vector3 endPoint = target.transform.position;
+        Vector3 origin = spawn;
+        
+        Vector3 endPoint = target;
         //distance = Vector3.Distance(origin, endPoint);
         float displacementY = endPoint.y - origin.y;
-        Vector3 displacementXY = new Vector3(endPoint.x - origin.x, 0f, endPoint.z - origin.z);
+        Vector3 displacementXZ = new Vector3(endPoint.x - origin.x, 0f, endPoint.z - origin.z);
         float time = Mathf.Sqrt(-2 * maxHeight / gravity) +
-                      Mathf.Sqrt(2 * (displacementY - maxHeight) / gravity);
+                      Mathf.Sqrt(2 * (displacementY - maxHeight) / gravity) ;
         Vector3 velocityY = Vector3.up * Mathf.Sqrt(-2 * gravity * maxHeight);
-        Vector3 velocityXZ = displacementXY  / time;
+        Vector3 velocityXZ = displacementXZ / time;
         return velocityXZ + velocityY;
     }
 
-    public void LaunchRock()
+    public void LaunchRock(Vector3 pos, Vector3 spawnPoint)
     {
-        GameObject newRock = Instantiate(rock, spawnPoint.transform.position, Quaternion.identity);
+        GameObject newRock = Instantiate(rock, spawnPoint, Quaternion.identity);
         Rigidbody rb = newRock.GetComponent<Rigidbody>();
+        RockExplode rockExplode = newRock.GetComponent<RockExplode>();
+        rockExplode.player = model.target;
+        
         rb.useGravity = true;
-        rb.velocity = CalculateLaunchVelocity();
-        print(CalculateLaunchVelocity());
+        rb.velocity = CalculateLaunchVelocity(pos, spawnPoint);
+        //print(CalculateLaunchVelocity());
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.T))
         {
-            LaunchRock();
+            RunRockThrow();
+        }
+    }
+
+    public void RunRockThrow()
+    {
+        Vector3 position = new Vector3();
+        Vector3 spawnPos = new Vector3();
+        for (var i = 0; i < 3; i++)
+        {
+            if (i == 0)
+            {
+                position = model.target.transform.position;
+                spawnPos = spawnPoint1.transform.position;
+                
+                
+                
+            }else if (i == 1)
+            {
+                position = model.target.transform.position + leftDiviation;
+                spawnPos = spawnPoint3.transform.position;
+            }else if (i == 2)
+            {
+                position = model.target.transform.position + rightDiviation;
+                spawnPos = spawnPoint2.transform.position;
+            }
+            LaunchRock(position, spawnPos);
+
         }
     }
 }
