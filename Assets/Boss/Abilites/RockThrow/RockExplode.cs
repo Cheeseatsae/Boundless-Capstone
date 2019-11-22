@@ -1,13 +1,16 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class RockExplode : MonoBehaviour
 {
 
     public GameObject player;
     public float triggerDistance;
-    
+    public Rigidbody rigidbody;
+    public float explodeTimer;
     //Location
     public float minDisplacement;
     public float maxDisplacement;
@@ -15,6 +18,7 @@ public class RockExplode : MonoBehaviour
     public float currentDistance;
     
     //Shards
+    public GameObject[] shards;
     public GameObject shard;
     public int numberOfShards;
     public float projectileSpeed;
@@ -31,16 +35,21 @@ public class RockExplode : MonoBehaviour
             if (currentDistance <= triggerDistance)
             {
                 //Explode
-                Spawn();
-                Destroy(this.gameObject);
+                Explode();
             }
         }
 
     }
+
+    public void Explode()
+    {
+        Spawn();
+        Destroy(this.gameObject);
+    }
     
     public Vector3 GetLocation(GameObject target)
     {
-        Debug.Log("Run Location");
+        //Debug.Log("Run Location");
         var returnLocation = new Vector3(0, 0, 0);
 
         if (target == null) return Vector3.zero;
@@ -59,18 +68,18 @@ public class RockExplode : MonoBehaviour
             angle = Random.Range(0.0f, Mathf.PI * 2);
             dir = new Vector3(Mathf.Sin(angle), 0, Mathf.Cos(angle));
             dir *= Random.Range(minDisplacement, maxDisplacement);
-            location = new Vector3(target.transform.position.x + dir.x, 100, target.transform.position.z + dir.z);
+            location = new Vector3(target.transform.position.x + dir.x, target.transform.position.y, target.transform.position.z + dir.z);
             
-            Physics.Raycast(location, Vector3.down, out hit, 200, layer);
+            //Physics.Raycast(location, Vector3.down, out hit, 200, layer);
             Debug.DrawRay(location, Vector3.down, Color.red, 5);
             
 
             iterations++;
         }
 
-        if (hit.point != Vector3.zero)
+        if (location != Vector3.zero)
             
-            returnLocation = hit.point;
+            returnLocation = location;
         
 
         else
@@ -101,7 +110,8 @@ public class RockExplode : MonoBehaviour
         for (var i = 0; i < numberOfShards; i++)
         {
             Vector3 location = GetSpawn(gameObject);
-            GameObject newShard = Instantiate(shard, location, Quaternion.identity);
+            int whichShard = Random.Range(0, shards.Length);
+            GameObject newShard = Instantiate(shards[whichShard], location, Quaternion.identity);
             Rigidbody rb = newShard.GetComponent<Rigidbody>();
             ShardScript shardScript = newShard.GetComponent<ShardScript>();
             shardScript.player = player;
@@ -110,5 +120,25 @@ public class RockExplode : MonoBehaviour
             rb.velocity = dir * projectileSpeed;
         }
             
+    }
+
+    private void FixedUpdate()
+    {
+        if (rigidbody != null)
+        {
+            transform.LookAt(rigidbody.velocity + transform.position);
+        }
+    }
+
+    public void Start()
+    {
+        StartCoroutine(Detonate());
+    }
+
+    public IEnumerator Detonate()
+    {
+        yield return new WaitForSeconds(explodeTimer);
+        Explode();
+
     }
 }

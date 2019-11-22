@@ -9,17 +9,13 @@ public class FireBreath : Boss_Ability_Base
     public ParticleSystem fireParticle;
     public Transform fireStartPos;
     public float precast;
-
+    public GameObject flame;
     public int amountOfTicks;
     public int damagePerTick;
     public float damageTimer;
     public ColliderScript cols;
 
-    public void Start()
-    {
-        
 
-    }
 
     public override void Cast()
     {
@@ -37,10 +33,10 @@ public class FireBreath : Boss_Ability_Base
     
     public void Flame()
     {
-        GameObject flame = Instantiate(fireBreath, fireStartPos.position, Quaternion.identity);
+        flame = Instantiate(fireBreath, fireStartPos.position, Quaternion.identity);
         cols = flame.GetComponentInChildren<ColliderScript>();
         cols.EnterTrigger += DoDamage;
-        //cols.ExitTrigger += DoDamage;
+        cols.ExitTrigger += StopDamage;
         StartCoroutine(Casting());
     }
 
@@ -65,7 +61,7 @@ public class FireBreath : Boss_Ability_Base
         }
         
     }
-    private void OnTriggerExit(Collider other)
+    private void StopDamage(Collider other)
     {
         if (other.GetComponent<PlayerModel>())
         {
@@ -76,5 +72,6 @@ public class FireBreath : Boss_Ability_Base
     public override void FinishCast()
     {
         base.FinishCast();
+        Destroy(flame);
     }
 }

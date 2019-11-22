@@ -3,7 +3,12 @@ guid: 0838438005a54064f95f48262299275d
 ModelImporter:
   serializedVersion: 26
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BossRockCrystalsAlt
+    second: {fileID: 2100000, guid: f639a1ae091435843a47dc9e82b5ba09, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

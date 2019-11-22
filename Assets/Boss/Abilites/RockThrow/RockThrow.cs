@@ -16,13 +16,19 @@ public class RockThrow : Boss_Ability_Base
 
     public Vector3 leftDiviation;
     public Vector3 rightDiviation;
-    
+
+
+    public override void Cast()
+    {
+        base.Cast();
+        RunRockThrow();
+    }
+
     Vector3 CalculateLaunchVelocity(Vector3 target, Vector3 spawn)
     {
         Vector3 origin = spawn;
         
         Vector3 endPoint = target;
-        //distance = Vector3.Distance(origin, endPoint);
         float displacementY = endPoint.y - origin.y;
         Vector3 displacementXZ = new Vector3(endPoint.x - origin.x, 0f, endPoint.z - origin.z);
         float time = Mathf.Sqrt(-2 * maxHeight / gravity) +
@@ -35,20 +41,20 @@ public class RockThrow : Boss_Ability_Base
     public void LaunchRock(Vector3 pos, Vector3 spawnPoint)
     {
         GameObject newRock = Instantiate(rock, spawnPoint, Quaternion.identity);
-        Rigidbody rb = newRock.GetComponent<Rigidbody>();
         RockExplode rockExplode = newRock.GetComponent<RockExplode>();
+        Rigidbody rb = newRock.GetComponent<Rigidbody>();
         rockExplode.player = model.target;
         
         rb.useGravity = true;
         rb.velocity = CalculateLaunchVelocity(pos, spawnPoint);
-        //print(CalculateLaunchVelocity());
+        
     }
 
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.T))
         {
-            RunRockThrow();
+            //RunRockThrow();
         }
     }
 
@@ -78,4 +84,9 @@ public class RockThrow : Boss_Ability_Base
 
         }
     }
+
+
+
+
+
 }

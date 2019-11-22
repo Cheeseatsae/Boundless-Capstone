@@ -25,7 +25,7 @@ public class Boss_Ability_Base : MonoBehaviour
         
     }
 
-    public void Start()
+    public virtual void Start()
     {
         target = model.target;
     }
@@ -33,12 +33,12 @@ public class Boss_Ability_Base : MonoBehaviour
 
     public virtual void Cast()
     {
-        
+        StartCoroutine(Casting());
     }
 
     public virtual void FinishCast()
     {
-        
+        model.StartCoroutine(model.CastDelay());
     }
 
     public IEnumerator Cooldown()
@@ -52,8 +52,9 @@ public class Boss_Ability_Base : MonoBehaviour
         isCasting = true;
         yield return new WaitForSeconds(castTime);
         isCasting = false;
-        StartCoroutine(Cooldown());
         FinishCast();
+        //StartCoroutine(Cooldown());
+        
     }
 
 

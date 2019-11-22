@@ -78,6 +78,7 @@ public class LavaFountain : Boss_Ability_Base
 
     public IEnumerator BeamDelay()
     {
+        //StartCoroutine(Casting());
         Vector3 pos = model.target.transform.position;
         targetRb = model.target.gameObject.GetComponent<Rigidbody>();
         yield return new WaitForSeconds(waitTime);
@@ -85,15 +86,15 @@ public class LavaFountain : Boss_Ability_Base
         follower.GetComponent<FollowerMerge>().isLeader = true;
         rb1 = follower.GetComponent<Rigidbody>();
         positionAtCast1 = model.target.transform.position + targetRb.velocity;
-        //yield return new WaitForSeconds(betweenCast);
+        yield return new WaitForSeconds(betweenCast);
         follower2 = Instantiate(followFountain, positionAtCast1,Quaternion.identity);
         rb2 = follower2.GetComponent<Rigidbody>();
         positionAtCast2 = new Vector3(pos.x - 10f, pos.y,
             pos.z);
-        //yield return new WaitForSeconds(betweenCast);
+        yield return new WaitForSeconds(betweenCast);
         follower3 = Instantiate(followFountain, positionAtCast2,Quaternion.identity);
         rb3 = follower3.GetComponent<Rigidbody>();
-        StartCoroutine(Casting());
+        //StartCoroutine(Casting());
     }
 
     public override void FinishCast()
