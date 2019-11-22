@@ -35,7 +35,7 @@ public class Damager : MonoBehaviour
             return;
         }
 
-        Health healthComp = other.gameObject.GetComponent<Health>();
+        Health healthComp = other.gameObject.GetComponentInParent<Health>();
         healthComp.DoDamage(damage);
         PlayerEvents.CallPlayerDamageEvent(other.gameObject, damage, other.contacts[0].point);
         

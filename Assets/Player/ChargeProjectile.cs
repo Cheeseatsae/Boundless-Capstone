@@ -47,14 +47,12 @@ public class ChargeProjectile : MonoBehaviour
         {
             
             // skipping player
-            if (c.GetComponent<PlayerModel>()) continue;
+            if (c.GetComponentInParent<PlayerModel>()) continue;
 
             Health h = c.GetComponentInParent<Health>();
             if (h != null)
             {
                 h.DoDamage(damage);
-                
-                
                 PlayerEvents.CallPlayerDamageEvent(h.gameObject, damage, c.ClosestPointOnBounds(transform.position));
             }
         }

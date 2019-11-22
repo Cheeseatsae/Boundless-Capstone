@@ -39,7 +39,7 @@ public class Ability3 : AbilityBase
 
         foreach (Collider c in cols)
         {
-            if (c.GetComponent<PlayerModel>()) continue;
+            if (c.GetComponentInParent<PlayerModel>()) continue;
 
             Health h = c.GetComponentInParent<Health>();
             if (h != null)
