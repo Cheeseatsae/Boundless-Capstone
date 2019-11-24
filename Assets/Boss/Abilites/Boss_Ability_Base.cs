@@ -38,7 +38,9 @@ public class Boss_Ability_Base : MonoBehaviour
 
     public virtual void FinishCast()
     {
+        model.anim.SetTrigger("Transistion");
         model.StartCoroutine(model.CastDelay());
+        StartCoroutine(Cooldown());
     }
 
     public IEnumerator Cooldown()

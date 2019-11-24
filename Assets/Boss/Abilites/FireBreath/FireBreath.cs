@@ -34,6 +34,7 @@ public class FireBreath : Boss_Ability_Base
     public void Flame()
     {
         flame = Instantiate(fireBreath, fireStartPos.position, Quaternion.identity);
+        flame.transform.parent = fireStartPos;
         cols = flame.GetComponentInChildren<ColliderScript>();
         cols.EnterTrigger += DoDamage;
         cols.ExitTrigger += StopDamage;
@@ -67,6 +68,11 @@ public class FireBreath : Boss_Ability_Base
         {
             StopCoroutine(co);
         }
+    }
+
+    public void StopFire()
+    {
+        fireParticle.Stop();
     }
 
     public override void FinishCast()

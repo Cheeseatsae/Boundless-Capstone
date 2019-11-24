@@ -78,7 +78,7 @@ public class LavaFountain : Boss_Ability_Base
 
     public IEnumerator BeamDelay()
     {
-        //StartCoroutine(Casting());
+        StartCoroutine(Casting());
         Vector3 pos = model.target.transform.position;
         targetRb = model.target.gameObject.GetComponent<Rigidbody>();
         yield return new WaitForSeconds(waitTime);
@@ -103,6 +103,7 @@ public class LavaFountain : Boss_Ability_Base
         Destroy(follower);
         Destroy(follower2);
         Destroy(follower3);
+        
 
     }
 }

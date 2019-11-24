@@ -12,7 +12,7 @@ public class Boss_Model : MonoBehaviour
     
     //Abilities
     public Boss_Ability_Base currentAbility;
-
+    public Animator anim;
     public Boss_Ability_Base[] abilities;
     public LavaFountain lavaFountain;
     public FireBreath fireBreath;
@@ -33,14 +33,11 @@ public class Boss_Model : MonoBehaviour
     void Update()
     {
         Targeting();
+        
         if (canCast && !abilityCheck)
         {
-            if (playerDist <= flameDist)
-            {
-                fireBreath.Cast();
-                abilityCheck = true;
-            }else AbilitySelect();
-            
+
+            AbilitySelect();
         }
     }
     
@@ -57,7 +54,12 @@ public class Boss_Model : MonoBehaviour
         {
             target = LevelManager.instance.player;
             playerDist = Vector3.Distance(gameObject.transform.position, target.transform.position);
+            Vector3 dir = target.transform.position - gameObject.transform.position;
+            
+            dir.y = 0;
+            transform.rotation = Quaternion.LookRotation(dir);
         }
+        
         
 
     }
@@ -65,14 +67,27 @@ public class Boss_Model : MonoBehaviour
     public void AbilitySelect()
     {
         abilityCheck = true;
-        int abilitySelection = Random.Range(0, abilities.Length);
-        currentAbility = abilities[abilitySelection];
-        if (!currentAbility.onCd)
+        if (playerDist <= flameDist && !fireBreath.onCd)
         {
-            currentAbility.Cast();
-            Debug.Log("im casting" + currentAbility);
-            canCast = false;
-        }//else AbilitySelect();
+            //fireBreath.Cast();
+            anim.SetTrigger("FireBreathStart");
+            Debug.Log("im casting fire breath");
+        }
+        else
+        {
+            int abilitySelection = Random.Range(0, abilities.Length);
+            currentAbility = abilities[abilitySelection];
+            if (!currentAbility.onCd)
+            {
+                currentAbility.Cast();
+                Debug.Log("im casting" + currentAbility);
+                
+            } else AbilitySelect();
+        }
+
+        
+        canCast = false;
+
     }
 
     public IEnumerator CastDelay()

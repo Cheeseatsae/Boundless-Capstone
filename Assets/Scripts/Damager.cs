@@ -29,13 +29,15 @@ public class Damager : MonoBehaviour
 
     public void DoDamage(Collision other)
     {
-        if (!other.gameObject.GetComponentInParent<Health>() || !other.gameObject.GetComponent<AIBaseModel>())
+        if (!other.gameObject.GetComponentInParent<Health>())
         {
+            //Debug.Log("No health");
             Destroy(this.gameObject);
             return;
         }
 
         Health healthComp = other.gameObject.GetComponentInParent<Health>();
+        //Debug.Log(other.gameObject.name + healthComp.health);
         healthComp.DoDamage(damage);
         PlayerEvents.CallPlayerDamageEvent(other.gameObject, damage, other.contacts[0].point);
         
