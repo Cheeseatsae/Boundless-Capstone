@@ -15,13 +15,26 @@ public class FireBreath : Boss_Ability_Base
     public float damageTimer;
     public ColliderScript cols;
 
+    public override void Start()
+    {
+        base.Start();
+    }
 
 
     public override void Cast()
     {
         base.Cast();
-        StartCoroutine(PreCast());
+        
+        Flame();
 
+    }
+
+    public void Update()
+    {
+        if (flame != null)
+        {
+            flame.transform.LookAt(model.target.transform);
+        }
     }
 
 
@@ -36,6 +49,8 @@ public class FireBreath : Boss_Ability_Base
         flame = Instantiate(fireBreath, fireStartPos.position, Quaternion.identity);
         flame.transform.parent = fireStartPos;
         cols = flame.GetComponentInChildren<ColliderScript>();
+        fireParticle = flame.GetComponentInChildren<ParticleSystem>();
+        
         cols.EnterTrigger += DoDamage;
         cols.ExitTrigger += StopDamage;
         StartCoroutine(Casting());

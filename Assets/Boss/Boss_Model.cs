@@ -67,7 +67,7 @@ public class Boss_Model : MonoBehaviour
     public void AbilitySelect()
     {
         abilityCheck = true;
-        if (playerDist <= flameDist && !fireBreath.onCd)
+        if (playerDist <= flameDist)
         {
             //fireBreath.Cast();
             anim.SetTrigger("FireBreathStart");
