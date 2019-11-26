@@ -50,6 +50,10 @@ public class PlayerController : MonoBehaviour
     public event InputAction OnInteractInput;
     public event InputAction OnQKeyInput;
     public event InputAction OnRKeyInput;
+    public event InputAction OnLeftInputUp;
+    public event InputAction OnRightInputUp;
+    public event InputAction OnForwardInputUp;
+    public event InputAction OnBackInputUp;
     
     private void Awake()
     {
@@ -100,6 +104,18 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(rkey))
             OnRKeyInput?.Invoke();
             
+        if (Input.GetKeyUp(left))
+            OnLeftInputUp?.Invoke();
+        
+        if (Input.GetKeyUp(right))
+            OnRightInputUp?.Invoke();
+        
+        if (Input.GetKeyUp(forward))
+            OnForwardInputUp?.Invoke();
+        
+        if (Input.GetKeyUp(backward))
+            OnBackInputUp?.Invoke();
+        
         // Axis
         if (Input.GetKey(forward)) 
             OnForwardInput?.Invoke(1);
