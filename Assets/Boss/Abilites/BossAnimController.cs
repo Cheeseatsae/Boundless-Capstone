@@ -16,6 +16,16 @@ public class BossAnimController : MonoBehaviour
     {
         model.fireBreath.StopFire();
     }
+
+    public void Throw()
+    {
+        model.rockThrow.Cast();
+    }
+
+    public void Venting()
+    {
+        model.lavaFountain.Cast();
+    }
     
     
 

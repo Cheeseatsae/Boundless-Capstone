@@ -58,7 +58,15 @@ public class Health : MonoBehaviour
             model.anim.SetTrigger("Dead");
             model.GetComponent<Collider>().enabled = false;
         }
-        
+
+        if (GetComponent<Boss_Model>())
+        {
+            Boss_Model model = GetComponent<Boss_Model>();
+            model.anim.SetTrigger("Dead");
+            model.canCast = false;
+            model.alive = false;
+        }
+
         LevelManager.aiManager.AiHasDied();
     }
 

@@ -21,6 +21,8 @@ public class Boss_Model : MonoBehaviour
     public float postCastTime;
     public bool abilityCheck = false;
     public bool canCast = false;
+
+    public bool alive = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -50,7 +52,7 @@ public class Boss_Model : MonoBehaviour
     
     private void Targeting()
     {
-        if (LevelManager.instance.player != null)
+        if (LevelManager.instance.player != null && alive )
         {
             target = LevelManager.instance.player;
             playerDist = Vector3.Distance(gameObject.transform.position, target.transform.position);
@@ -79,7 +81,13 @@ public class Boss_Model : MonoBehaviour
             currentAbility = abilities[abilitySelection];
             if (!currentAbility.onCd)
             {
-                currentAbility.Cast();
+                if (currentAbility == rockThrow)
+                {
+                    anim.SetTrigger("Throw");
+                }else if (currentAbility == lavaFountain)
+                {
+                    anim.SetTrigger("Vent");
+                }
                 Debug.Log("im casting" + currentAbility);
                 
             } else AbilitySelect();
