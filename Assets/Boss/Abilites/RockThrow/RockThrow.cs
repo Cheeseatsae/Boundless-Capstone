@@ -13,15 +13,22 @@ public class RockThrow : Boss_Ability_Base
     public float maxHeight = 25f;
     public float gravity = -5f;
     public GameObject rock;
-
+    public Animator anim;
     public Vector3 leftDiviation;
     public Vector3 rightDiviation;
 
+    public override void Start()
+    {
+        base.Start();
+        
+    }
 
     public override void Cast()
     {
         base.Cast();
         RunRockThrow();
+        
+        
     }
 
     Vector3 CalculateLaunchVelocity(Vector3 target, Vector3 spawn)

@@ -67,10 +67,11 @@ public class LavaFountain : Boss_Ability_Base
 
     public override void Cast()
     {
+        base.Cast();
         positionAtCast = model.target.transform.position;
         //Instantiate(fountainSpawn, fountainSpawnPoint);
         StartCoroutine(BeamDelay());
-        base.Cast();
+        
     }
 
 
