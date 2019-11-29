@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UiManager : MonoBehaviour
 {
     public GameObject settings;
     public Animator settingsAnim;
+
+    public ItemLogger textLogger;
     // Start is called before the first frame update
     void Start()
     {

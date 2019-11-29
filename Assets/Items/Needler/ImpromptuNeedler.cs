@@ -6,7 +6,7 @@ public class ImpromptuNeedler : ItemBase
 {
     private int _baseExplosionDmg = 3;
     private int _explosionDmg;
-
+    const string effect = "Your attacks are infused with power?";
     private void Start()
     {
         PlayerEvents.OnPlayerDamageInstance += AttachNeedle;
@@ -25,6 +25,7 @@ public class ImpromptuNeedler : ItemBase
 
         if (stackCount > 1) _explosionDmg = _baseExplosionDmg * (stackCount / 3);
         else _explosionDmg = _baseExplosionDmg;
+        LevelManager.instance.LogText(effect);
     }
 
     private void AttachNeedle(GameObject obj, int dmg, Vector3 loc)

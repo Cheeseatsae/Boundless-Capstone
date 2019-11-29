@@ -5,6 +5,7 @@ using UnityEngine;
 public class ItemBase : MonoBehaviour
 {
 
+    
     public int stackCount = 0;
     [HideInInspector] public PlayerModel player;
     

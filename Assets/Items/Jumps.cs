@@ -7,6 +7,7 @@ using UnityEngine;
 public class Jumps : ItemBase
 {
 
+    const string effect = "Number of Jumps increased";
     public override void StackEffect()
     {
         base.StackEffect();
@@ -14,7 +15,7 @@ public class Jumps : ItemBase
         if (player == null) return;
 
         player.jumps = player.baseJumps + stackCount;
-
+        LevelManager.instance.LogText(effect);
     }
 
     public override void RemoveStack()

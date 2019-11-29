@@ -46,20 +46,7 @@ public class LevelManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.P))
         {
-            if (Cursor.lockState == CursorLockMode.Locked)
-            {
-                Cursor.lockState = CursorLockMode.None;
-                Cursor.visible = true;
-                Pause();
-            }
-            else
-            {
-                Cursor.lockState = CursorLockMode.Locked;
-                Cursor.visible = false;
-                Pause();
-            }
-
-            
+            Pause();
         }
     }
     
@@ -67,6 +54,8 @@ public class LevelManager : MonoBehaviour
     {
         if (paused == false)
         {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
             //uiManager.settingsAnim.SetBool("Open", true);
             uiManager.settings.SetActive(true);
             Time.timeScale = 0f;
@@ -75,11 +64,18 @@ public class LevelManager : MonoBehaviour
         }
         else
         {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
             //uiManager.settingsAnim.SetBool("Open", false);
             uiManager.settings.SetActive(false);
             Time.timeScale = 1f;
             paused = false;
         }
         
+    }
+
+    public void LogText(string text)
+    {
+        uiManager.textLogger.NewLog(text);
     }
 }

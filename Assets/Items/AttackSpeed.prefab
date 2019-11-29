@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c28e9fba8a3394b4d89c59a993cc8274, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  effect: Attack Speed has been increased
   stackCount: 0
   player: {fileID: 0}
 --- !u!33 &4924068012797170652
@@ -80,6 +81,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0

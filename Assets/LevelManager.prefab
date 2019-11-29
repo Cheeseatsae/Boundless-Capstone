@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8595958045922215491}
   - component: {fileID: 6871666997646057134}
   - component: {fileID: 6934361639926962298}
+  - component: {fileID: 7565998191770093400}
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: Untagged
@@ -55,7 +56,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  player: {fileID: 0}
+  uiManager: {fileID: 0}
+  player: {fileID: 8086389977643893722, guid: 58c3dce607ee80247991f80241eb2b1c, type: 3}
+  paused: 0
 --- !u!114 &6871666997646057134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71,7 +74,7 @@ MonoBehaviour:
   aiList: []
   airAi: {fileID: 1299756857714876720, guid: ed2444e4643baca488fa1319912d55af, type: 3}
   amountToSpawn: 3
-  player: {fileID: 0}
+  player: {fileID: 8086389977643893722, guid: 58c3dce607ee80247991f80241eb2b1c, type: 3}
   distanceCheck: 5
   elapsedTime: 0
   groundAI: {fileID: 5747712285712444256, guid: 0aebd788854327043a9d57f442db9703,
@@ -83,7 +86,7 @@ MonoBehaviour:
   maxEnemySpawnDistance: 20
   minEnemySpawnDistance: 15
   numberOfAi: 0
-  numberOfKills: 0
+  numberOfKills: 10
   secondsBetweenSpawn: 10
   numberofplayers: 0
   spawningLocation: {x: 0, y: 0, z: 0}
@@ -133,3 +136,17 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   usedSpawnPoints: []
+--- !u!114 &7565998191770093400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8595958045922215488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eedd32804463db849b8b3ceb6301ffed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  settings: {fileID: 0}
+  settingsAnim: {fileID: 0}

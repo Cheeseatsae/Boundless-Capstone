@@ -26,12 +26,9 @@ public class AIAirBullet : MonoBehaviour
         } 
         else if (other.gameObject.layer == 10)
         {
-            if (gameObject.CompareTag("AirAi"))
-            {
-                damager = Instantiate(damageZone, gameObject.transform.position, Quaternion.identity);
-                aiDamager = damager.GetComponent<AIDamager>();
-                Explosion();
-            }
+            damager = Instantiate(damageZone, gameObject.transform.position, Quaternion.identity);
+            aiDamager = damager.GetComponent<AIDamager>();
+            Explosion();
             Destroy(this.gameObject);
         }
 

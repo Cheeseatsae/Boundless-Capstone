@@ -20,5 +20,13 @@ public class SceneLoader : MonoBehaviour
     public void LoadPlayScene()
     {
         SceneManager.LoadScene(1);
+        LevelManager.instance.Pause();
+    }
+
+    public void LoadMainScene()
+    {
+        SceneManager.LoadScene(0);
+
+
     }
 }
