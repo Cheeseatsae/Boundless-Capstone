@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class Ability4 : AbilityBase
@@ -19,6 +21,8 @@ public class Ability4 : AbilityBase
     public GameObject newLaser;
     
     private Vector3 aimTarget;
+
+    public Transform aimTransform;
     
     public void Blaster()
     {
@@ -37,7 +41,7 @@ public class Ability4 : AbilityBase
         
         for (int i = 0; i < amountofTicks; i++)
         {
-            cols = Physics.OverlapCapsule(transform.forward, player.target, damageRadius);
+            cols = Physics.OverlapCapsule(aimTransform.position, player.target, damageRadius);
 
             foreach (Collider c in cols)
             {
@@ -47,7 +51,7 @@ public class Ability4 : AbilityBase
                 if (h != null)
                 {
                     h.DoDamage(damagePerTick);
-                    PlayerEvents.CallPlayerDamageEvent(c.gameObject, damagePerTick, c.ClosestPointOnBounds(transform.position));
+                    PlayerEvents.CallPlayerDamageEvent(c.gameObject, damagePerTick, c.ClosestPointOnBounds(aimTransform.position));
                 }
             }
 
@@ -84,11 +88,30 @@ public class Ability4 : AbilityBase
         while (time < abilityDuration)
         {
             time += Time.deltaTime;
-            l.transform.position = player.transform.localPosition;
-            l.transform.rotation = player.view.rotation;
+            
+            l.transform.position = aimTransform.position;
+            RotateTowards(l.transform, player.target);
             
             yield return null;
         }               
     }
 
+    private const float turnSpeed = 50;
+    private void RotateTowards(Transform t, Vector3 p)
+    {
+        Vector3 targetDir = p - t.position;
+
+        // The step size is equal to speed times frame time.
+        float step = turnSpeed * Time.deltaTime;
+
+        Vector3 newDir = Vector3.RotateTowards(t.forward, targetDir, step, 0.0f);
+
+        // Move our position a step closer to the target.
+        Vector3 newRot = Quaternion.LookRotation(newDir).eulerAngles;
+        
+        //Vector3 newRot = transform.rotation.eulerAngles;
+        Quaternion y = Quaternion.Euler(newRot.x,newRot.y,newRot.z);
+        
+        t.rotation = y;
+    }
 }

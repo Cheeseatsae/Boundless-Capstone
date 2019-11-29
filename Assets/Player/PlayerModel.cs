@@ -225,7 +225,7 @@ public class PlayerModel : MonoBehaviour
     
     private void Targeting()
     {
-        view.LookAt(target);
+        // view.LookAt(target);
 
         Transform camTransform = myCam.transform;
         Vector3 camPos = camTransform.position;

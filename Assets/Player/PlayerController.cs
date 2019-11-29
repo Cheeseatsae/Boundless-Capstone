@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour
     public event InputAction OnInteractInput;
     public event InputAction OnQKeyInput;
     public event InputAction OnRKeyInput;
-    
+
     private void Awake()
     {
         jump = (KeyCode) Enum.Parse(typeof(KeyCode), PlayerPrefs.GetString("jumpKey", sJump));
