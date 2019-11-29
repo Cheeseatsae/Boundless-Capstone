@@ -4,7 +4,7 @@ using UnityEngine;
 [RequireComponent(typeof(Animator))]
 public class PlayerAnimator : MonoBehaviour
 {
-    protected Animator animator;
+    private Animator animator;
     private PlayerModel model;
 
     public bool IKActive = true;
@@ -16,35 +16,27 @@ public class PlayerAnimator : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         model = GetComponentInParent<PlayerModel>();
-
-        model.controller.OnLeftInput += InputLeft;
-        model.controller.OnRightInput += InputRight;
-        model.controller.OnForwardInput += InputForward;
-        model.controller.OnBackwardInput += InputBackward;
-
-        model.controller.OnLeftInputUp += InputLeftUp;
-        model.controller.OnRightInputUp += InputRightUp;
-        model.controller.OnForwardInputUp += InputForwardUp;
-        model.controller.OnBackInputUp += InputBackUp;
     }
 
-    private void OnDestroy()
+    private void OnDrawGizmos()
     {
-        model.controller.OnLeftInput -= InputLeft;
-        model.controller.OnRightInput -= InputRight;
-        model.controller.OnForwardInput -= InputForward;
-        model.controller.OnBackwardInput -= InputBackward;
-
-        model.controller.OnLeftInputUp -= InputLeftUp;
-        model.controller.OnRightInputUp -= InputRightUp;
-        model.controller.OnForwardInputUp -= InputForwardUp;
-        model.controller.OnBackInputUp -= InputBackUp;
+        Gizmos.color = Color.green;
+        Vector3 vel = model.body.velocity;
+        vel.y = 0;
+        Gizmos.DrawSphere(transform.position + vel, 1);
     }
 
+    
     void OnAnimatorIK()
     {
+        Vector3 vel = model.body.velocity;
+        vel.y = 0;
 
-        RotateTowards(transform.position + projectedDir);
+//        float myAngle = Mathf.Atan2 (Input.GetAxis ("Horizontal"),Input.GetAxis ("Vertical")) * Mathf.Rad2Deg;
+//        float bodyRotation = myAngle + Camera.main.transform.eulerAngles.y;
+//        transform.rotation = Quaternion.Euler(0, bodyRotation, 0);
+
+        RotateTowards(transform.position + vel);
         
         if (!IKActive)
         {
@@ -68,12 +60,13 @@ public class PlayerAnimator : MonoBehaviour
         // rotate bottom half
         Transform spineTransform = animator.GetBoneTransform(HumanBodyBones.Spine);
 
-
-        animator.SetBoneLocalRotation(HumanBodyBones.Spine, spineTransform.localRotation);
+        // based on model.view.forward rotate torso towards with a clamp
+        
+        animator.SetBoneLocalRotation(HumanBodyBones.Spine, Quaternion.Euler(180+45,0,0));
 
     }
 
-    private const float turnSpeed = 10;
+    private const float turnSpeed = 25;
     
     private void RotateTowards(Vector3 t)
     {
@@ -82,73 +75,15 @@ public class PlayerAnimator : MonoBehaviour
         // The step size is equal to speed times frame time.
         float step = turnSpeed * Time.deltaTime;
 
-        // Move our position a step closer to the target.
         Vector3 newDir = Vector3.RotateTowards(transform.forward, targetDir, step, 0.0f);
+
+        // Move our position a step closer to the target.
         Vector3 newRot = Quaternion.LookRotation(newDir).eulerAngles;
         
-        float counterXRot = -model.view.rotation.eulerAngles.x;
-        transform.localRotation = Quaternion.Euler(counterXRot,newRot.y,0);
-//        
-//        Quaternion rot = Quaternion.Euler(0,newRot.y,0);
-//
-//        transform.rotation = rot;
-    }
+        //Vector3 newRot = transform.rotation.eulerAngles;
+        Quaternion y = Quaternion.Euler(0,newRot.y,0);
 
-    // taking our inputs and getting a projected direction to turn towards
-    private void InputLeft(float i)
-    {
-        if (i > 0) projectedDir -= transform.right;
-        
-        ClampProjectedDir();
-    }
-
-    private void InputRight(float i)
-    {
-        if (i > 0) projectedDir += transform.right;
-        
-        ClampProjectedDir();
-    }
-
-    private void InputForward(float i)
-    {
-        if (i > 0) projectedDir += transform.forward;
-        
-        ClampProjectedDir();
-    }
-
-    private void InputBackward(float i)
-    {
-        if (i > 0) projectedDir -= transform.forward;
-
-        ClampProjectedDir();
-    }
-
-    private void InputLeftUp()
-    {
-        projectedDir += transform.right;
+        transform.rotation = y;
     }
     
-    private void InputRightUp()
-    {
-        projectedDir -= transform.right;
-    }
-    
-    private void InputForwardUp()
-    {
-        projectedDir -= transform.forward;
-    }
-    
-    private void InputBackUp()
-    {
-        projectedDir += transform.forward;
-    }
-    
-    private void ClampProjectedDir()
-    {
-        projectedDir.x = Mathf.Clamp(projectedDir.x, -1,1);
-        projectedDir.z = Mathf.Clamp(projectedDir.z, -1,1);
-        
-        // because we arent using vertical projection
-        projectedDir.y = 0;
-    }
 }
