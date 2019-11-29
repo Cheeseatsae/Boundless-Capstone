@@ -60,10 +60,16 @@ public class PlayerAnimator : MonoBehaviour
         // rotate bottom half
         Transform spineTransform = animator.GetBoneTransform(HumanBodyBones.Spine);
         
-        
-//        animator.SetBoneLocalRotation(HumanBodyBones.Spine, Quaternion.Euler(180+45,0,0));
+        // In this example, worldSpaceRotation is the rotation of the camera
+        // Then just use localSpaceRotation as the rotation for the spine component
+//        Quaternion newRot = Quaternion.Inverse(parentObj.rotation) * world.rotation;
+
+
+        animator.SetBoneLocalRotation(HumanBodyBones.Spine, Quaternion.Euler(wow, 0,0));
     }
 
+    public float wow = 180;
+    
     private const float turnSpeed = 25;
     
     private void RotateTowards(Vector3 t)
