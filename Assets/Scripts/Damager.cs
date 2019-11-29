@@ -16,6 +16,7 @@ public class Damager : MonoBehaviour
     private void OnCollisionEnter(Collision other)
     {
         if (other.collider.isTrigger) return;
+        if (other.gameObject.GetComponentInParent<PlayerModel>()) return;
         
         OnHitEvent?.Invoke();
         
@@ -27,7 +28,7 @@ public class Damager : MonoBehaviour
         damage = d;
     }
 
-    public void DoDamage(Collision other)
+    private void DoDamage(Collision other)
     {
         if (!other.gameObject.GetComponentInParent<Health>())
         {
