@@ -31,11 +31,16 @@ public class Health : MonoBehaviour
         
         EventTakeDamage += TakeDamage;
         EventDeath += Death;
-        
         if (healthRegen > 0)
         {
-            StartCoroutine(Regen());
-        }       
+            if (!LevelManager.instance.paused)
+            {
+                StartCoroutine(Regen());
+            }
+        }  
+            
+        
+     
     }
    
     private void Death()
@@ -85,7 +90,7 @@ public class Health : MonoBehaviour
 
     private IEnumerator Regen()
     {
-        while (true)
+        while (true && !LevelManager.instance.paused)
         {
             yield return new WaitForSecondsRealtime(regenTick);
             health += healthRegen;

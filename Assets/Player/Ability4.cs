@@ -72,9 +72,13 @@ public class Ability4 : AbilityBase
     public override void Enter()
     {
         if (player.attackOccupied) return;
-        player.attackOccupied = true;
-        damagePerTick = baseDamagePerTick + (int)(player.attackDamage / amountofTicks);
-        Blaster();
+        if (!onCooldown)
+        {
+            player.attackOccupied = true;
+            damagePerTick = baseDamagePerTick + (int)(player.attackDamage / amountofTicks);
+            Blaster();
+        }
+        
     }
     
     public void Visuals(GameObject las)

@@ -14,12 +14,14 @@ public class LevelManager : MonoBehaviour
     
     public List<GameObject> spawnPoints = new List<GameObject>();
 
+    public UiManager uiManager;
     public GameObject player;
-    
+    public bool paused = false;
     private void Awake()
     {
         instance = this;
         aiManager = GetComponent<AIManager>();
+        uiManager = GetComponent<UiManager>();
     }
 
     // Start is called before the first frame update
@@ -48,12 +50,36 @@ public class LevelManager : MonoBehaviour
             {
                 Cursor.lockState = CursorLockMode.None;
                 Cursor.visible = true;
+                Pause();
             }
             else
             {
                 Cursor.lockState = CursorLockMode.Locked;
                 Cursor.visible = false;
+                Pause();
             }
+
+            
         }
+    }
+    
+    public void Pause()
+    {
+        if (paused == false)
+        {
+            //uiManager.settingsAnim.SetBool("Open", true);
+            uiManager.settings.SetActive(true);
+            Time.timeScale = 0f;
+            paused = true;
+            
+        }
+        else
+        {
+            //uiManager.settingsAnim.SetBool("Open", false);
+            uiManager.settings.SetActive(false);
+            Time.timeScale = 1f;
+            paused = false;
+        }
+        
     }
 }

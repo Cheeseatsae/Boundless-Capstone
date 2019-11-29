@@ -138,7 +138,7 @@ CapsuleCollider:
   m_Height: 1.64
   m_Direction: 1
   m_Center: {x: 0, y: 0.29, z: 0}
---- !u!114 &3344034455392607235
+--- !u!114 &6973755178922910720
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -147,11 +147,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 8615157371670085535}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc9d8fc341ac6bc4e8d81a115b996d27, type: 3}
+  m_Script: {fileID: 11500000, guid: a844fc21613baee4f81f2fc3aae0a942, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   model: {fileID: 6281114775514621437}
-  health: {fileID: 0}
+  health: {fileID: -9194247105183948250}
 --- !u!1001 &337421334129993366
 PrefabInstance:
   m_ObjectHideFlags: 0
