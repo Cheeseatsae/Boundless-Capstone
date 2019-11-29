@@ -67,7 +67,7 @@ public class Ability2 : AbilityBase
             chargeTime += Time.deltaTime;
             float chargeAmount = chargeTime / chargeDuration;
             
-            currentProjectile.transform.position = aimTransform.position + aimTransform.forward;
+            currentProjectile.transform.position = aimTransform.position + aimTransform.forward + (aimTransform.up * 0.3f) + (aimTransform.right * 0.3f);
             currentProjectile.transform.localScale = Vector3.Lerp(oldScale, newScale, chargeAmount);
             damage = (int)Mathf.Lerp(baseDamage, baseDamage * 2, chargeAmount);
             explosionRadius = Mathf.Lerp(baseExplosionRadius, baseExplosionRadius * 2, chargeAmount);
