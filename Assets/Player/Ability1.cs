@@ -16,6 +16,7 @@ public class Ability1 : AbilityBase
     public bool firing;
     
     public float projectileSpeed;
+    public Transform aimTransform;
 
     private void Start()
     {
@@ -25,10 +26,10 @@ public class Ability1 : AbilityBase
     
     public void Fire(float lifeTime, Vector3 target)
     {
-        GameObject bullet = Instantiate(bulletPref, transform.position + transform.forward, Quaternion.Euler(90,90,0));
+        GameObject bullet = Instantiate(bulletPref, aimTransform.position, Quaternion.Euler(90,90,0));
         
         Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
-        Vector3 dir = (target - transform.position).normalized;
+        Vector3 dir = (target - bullet.transform.position).normalized;
         bulletRb.velocity = dir * projectileSpeed;
         
         Destroy(bullet, lifeTime);

@@ -24,6 +24,8 @@ public class Ability2 : AbilityBase
     
     public float cooldown;
     private bool onCooldown;
+
+    public Transform aimTransform;
     
     public GameObject currentProjectile;
     
@@ -44,7 +46,7 @@ public class Ability2 : AbilityBase
     
     void Charge()
     {
-        currentProjectile = Instantiate(projectilePref, transform.position + transform.forward, Quaternion.identity);
+        currentProjectile = Instantiate(projectilePref, aimTransform.position + aimTransform.forward, Quaternion.identity);
         chargeTime = 0;
         StartCoroutine(Hold());
     }
@@ -65,7 +67,7 @@ public class Ability2 : AbilityBase
             chargeTime += Time.deltaTime;
             float chargeAmount = chargeTime / chargeDuration;
             
-            currentProjectile.transform.position = player.view.position + player.view.forward;
+            currentProjectile.transform.position = aimTransform.position + aimTransform.forward;
             currentProjectile.transform.localScale = Vector3.Lerp(oldScale, newScale, chargeAmount);
             damage = (int)Mathf.Lerp(baseDamage, baseDamage * 2, chargeAmount);
             explosionRadius = Mathf.Lerp(baseExplosionRadius, baseExplosionRadius * 2, chargeAmount);

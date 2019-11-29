@@ -59,11 +59,9 @@ public class PlayerAnimator : MonoBehaviour
 
         // rotate bottom half
         Transform spineTransform = animator.GetBoneTransform(HumanBodyBones.Spine);
-
-        // based on model.view.forward rotate torso towards with a clamp
         
-        animator.SetBoneLocalRotation(HumanBodyBones.Spine, Quaternion.Euler(180+45,0,0));
-
+        
+//        animator.SetBoneLocalRotation(HumanBodyBones.Spine, Quaternion.Euler(180+45,0,0));
     }
 
     private const float turnSpeed = 25;
