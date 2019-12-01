@@ -17,8 +17,12 @@ public class PlayerInteraction : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Interactable obj = other.GetComponent<Interactable>();
-        
+
         if (obj == null) return;
+        if (obj.active)
+        {
+            LevelManager.instance.uiManager.interaction.SetActive(true);
+        }
         if (interactablesInRange.Contains(obj)) return;
         
         interactablesInRange.Add(obj);
@@ -27,6 +31,7 @@ public class PlayerInteraction : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         Interactable obj = other.GetComponent<Interactable>();
+        LevelManager.instance.uiManager.interaction.SetActive(false);
 
         if (interactablesInRange.Contains(obj)) interactablesInRange.Remove(obj);
         

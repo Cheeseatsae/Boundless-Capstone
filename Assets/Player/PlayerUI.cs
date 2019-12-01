@@ -19,8 +19,13 @@ public class PlayerUI : MonoBehaviour
     public Image lMouse, rMouse, q, r;
     
     public Slider health;
+    public Slider bHealth;
+    public GameObject bossHealthBar;
+    
+    public Text healthText, currencyText, bHealthText;
 
-    public Text healthText, currencyText;
+    public Boss_Model bossModel;
+    public Health bossHealth;
     
     private void Awake()
     {
@@ -30,6 +35,8 @@ public class PlayerUI : MonoBehaviour
     private void Start()
     {
         PlayerInteraction.OnCurrencyUpdate += UpdateCurrency;
+        LevelManager.instance.portal.PortalActivate += ActivateBossBar;
+        
     }
 
     private void OnDestroy()
@@ -50,6 +57,12 @@ public class PlayerUI : MonoBehaviour
         health.maxValue = playerHealth.maxHealth;
         health.value = playerHealth.health;
         healthText.text = playerHealth.health.ToString();
+    }
+    public void UpdateBossHealth()
+    {
+        bHealth.maxValue = bossHealth.maxHealth;
+        bHealth.value = bossHealth.health;
+        bHealthText.text = bossHealth.health.ToString();
     }
 
     public void UpdateCurrency()
@@ -89,5 +102,11 @@ public class PlayerUI : MonoBehaviour
         }
 
         i.fillAmount = 1;
+    }
+
+    public void ActivateBossBar()
+    {
+        bossHealthBar.SetActive(true);
+        bHealthText.text = bossHealth.health.ToString();
     }
 }

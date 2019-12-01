@@ -7,7 +7,7 @@ public class UiManager : MonoBehaviour
 {
     public GameObject settings;
     public Animator settingsAnim;
-
+    public GameObject interaction;
     public ItemLogger textLogger;
     // Start is called before the first frame update
     void Start()

@@ -1,6 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Boss_Model : MonoBehaviour
 {
@@ -26,7 +28,7 @@ public class Boss_Model : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        GetComponent<Health>().OnHealthChange += PlayerUI.instance.UpdateBossHealth;
         //currentAbility = lavaFountain;
         StartCoroutine(TestCast());
     }
@@ -106,4 +108,9 @@ public class Boss_Model : MonoBehaviour
         abilityCheck = false;
     }
 
+    private void OnDestroy()
+    {
+        
+        GetComponent<Health>().OnHealthChange -= PlayerUI.instance.UpdateBossHealth;
+    }
 }

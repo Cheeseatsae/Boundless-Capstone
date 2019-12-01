@@ -1830,12 +1830,12 @@ GameObject:
   - component: {fileID: 265910210}
   - component: {fileID: 2035762749}
   m_Layer: 10
-  m_Name: BossTest
+  m_Name: AgniBaal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5846305591354062703
 Transform:
   m_ObjectHideFlags: 0
@@ -1961,6 +1961,7 @@ MonoBehaviour:
   postCastTime: 5
   abilityCheck: 0
   canCast: 0
+  alive: 1
 --- !u!114 &265910205
 MonoBehaviour:
   m_ObjectHideFlags: 0

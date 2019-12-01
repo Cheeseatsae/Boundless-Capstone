@@ -12,7 +12,7 @@ public class ActivatePortal : Interactable
     public bool firstActive = false;
     public override void Interact()
     {
-        if (firstActive)
+        if (active)
         {
             base.Interact();
             PortalActivate?.Invoke();
@@ -23,10 +23,11 @@ public class ActivatePortal : Interactable
     public void Start()
     {
         LevelManager.aiManager.KillLimitMet += Objective1Complete;
+        active = false;
     }
 
     public void Objective1Complete()
     {
-        firstActive = true;
+        active = true;
     }
 }

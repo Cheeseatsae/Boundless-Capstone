@@ -51,7 +51,7 @@ public class Objective : MonoBehaviour
 
     public void ChangeObjective()
     {
-        Debug.Log("run cunt");
+        //Debug.Log("run cunt");
         _objectiveNumber++;
         text.text = objectiveList[_objectiveNumber];
     }
