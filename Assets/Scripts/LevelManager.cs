@@ -17,16 +17,21 @@ public class LevelManager : MonoBehaviour
     public UiManager uiManager;
     public GameObject player;
     public bool paused = false;
+
+    public GameObject agni;
+    public ActivatePortal portal;
     private void Awake()
     {
         instance = this;
         aiManager = GetComponent<AIManager>();
         uiManager = GetComponent<UiManager>();
+        
     }
 
     // Start is called before the first frame update
     void Start()
     {
+        portal.PortalActivate += ActivateBoss;
         GameObject spawn = spawnPoints[Random.Range(0, spawnPoints.Count)];
         player = Instantiate(playerPrefab, spawn.transform.position, spawn.transform.rotation);
 
@@ -77,5 +82,16 @@ public class LevelManager : MonoBehaviour
     public void LogText(string text)
     {
         uiManager.textLogger.NewLog(text);
+    }
+
+    public void ActivateBoss()
+    {
+        StartCoroutine(Boss());
+    }
+
+    public IEnumerator Boss()
+    {
+        yield return new WaitForSeconds(3);
+        agni.SetActive(true);
     }
 }

@@ -27,36 +27,30 @@ public class AIManager : MonoBehaviour
     public event KillNumberChanged EventKillNumberChanged;
 
     public int numberOfKills;
-
+    public int killLimit;
     public float secondsBetweenSpawn;
+    public bool currentObjective = true;
 
     public int numberofplayers;
     //AI Spawning Variables
     public Vector3 spawningLocation;
     public GameObject toSpawn;
 
-    public delegate void LevelEnd();
-    public static event LevelEnd OnLevelEnd;
+    public delegate void KillObjective();
+    public event KillObjective KillLimitMet;
     
-    private void Awake()
-    {
-        OnLevelEnd += RunEndLevel;
-        
-    }
+
     
-    private bool levelEnded = false;
+    private bool limitHit = false;
     
     private void Start()
     {
         aiList.Add(groundAI);
         aiList.Add(airAi);
-        KillNumChanged(numberOfKills);
+        //KillNumChanged(numberOfKills);
     }
 
-    private void OnDestroy()
-    {
-        OnLevelEnd -= RunEndLevel;
-    }
+
 
     private void Update()
     {
@@ -67,8 +61,18 @@ public class AIManager : MonoBehaviour
             elapsedTime = 0;
             if (numberOfAi < maxAI) Spawn();
         }
+        
+        if (numberOfKills >= killLimit)
+        {
+            //Debug.Log("hit the limit change the things");
+            if (limitHit == false)
+            {
+                KillLimitMet?.Invoke();
+                currentObjective = false;
+                limitHit = true;
+            }
 
-        if (numberOfKills <= 0 && !levelEnded) OnLevelEnd?.Invoke();
+        }
     }
 
 
@@ -128,7 +132,7 @@ public class AIManager : MonoBehaviour
     public void AiHasDied()
     {
         numberOfAi--;
-        numberOfKills--;
+        numberOfKills++;
         KillNumChanged(numberOfKills);
         PlayerInteraction.ChangeMoney(Random.Range(3,8));
     }
@@ -136,7 +140,11 @@ public class AIManager : MonoBehaviour
 
     void KillNumChanged(int i)
     {
-        EventKillNumberChanged?.Invoke(i);
+        if (currentObjective)
+        {
+            EventKillNumberChanged?.Invoke(i);
+        }
+        
     }
     
     public void Spawn()
@@ -167,7 +175,7 @@ public class AIManager : MonoBehaviour
 
     private void RunEndLevel()
     {
-        levelEnded = true;
+        
         StartCoroutine(EndLevelCoroutine());
     }
     

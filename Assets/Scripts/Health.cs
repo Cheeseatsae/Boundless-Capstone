@@ -16,12 +16,17 @@ public class Health : MonoBehaviour
     public delegate void HealthChange();
     public delegate void TakeDamageDelegate(int amount);
     public delegate void OnDeath();
+    public delegate void BossDeath();
 
     public event HealthChange OnHealthChange;
     
     public event TakeDamageDelegate EventTakeDamage;
     
     public event OnDeath EventDeath;
+    
+    public event BossDeath BossDead;
+    
+    
 
     private void Start()
     {
@@ -70,6 +75,8 @@ public class Health : MonoBehaviour
             model.anim.SetTrigger("Dead");
             model.canCast = false;
             model.alive = false;
+            BossDead?.Invoke();
+            
         }
 
         LevelManager.aiManager.AiHasDied();
