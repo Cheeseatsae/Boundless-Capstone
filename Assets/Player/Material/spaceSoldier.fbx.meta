@@ -1,0 +1,406 @@
+fileFormatVersion: 2
+guid: 6e0b4ab82dc1408499baa02fb4e5f8a3
+ModelImporter:
+  serializedVersion: 26
+  internalIDToNameTable: []
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: "Avatar creation failed:\n\tTransform 'SpaceSoldier_v2_animations_R:root_jnt'
+      for human bone 'Hips' not found\n"
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 12
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton:
+    - name: SpaceSoldier_Final(Clone)
+      parentName: 
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SpaceSoldier_v2_animations_R:AstroBoy
+      parentName: SpaceSoldier_Final(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SpaceSoldier_v2_animations_R:IKs
+      parentName: SpaceSoldier_Final(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SpaceSoldier_v2_animations_R:ikHandle1
+      parentName: SpaceSoldier_v2_animations_R:IKs
+      position: {x: 0.42436388, y: 0.986122, z: 0.094205}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SpaceSoldier_v2_animations_R:ikHandle2
+      parentName: SpaceSoldier_v2_animations_R:IKs
+      position: {x: -0.4260276, y: 0.9861216, z: 0.09420504}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SpaceSoldier_v2_animations_R:world_ctrl
+      parentName: SpaceSoldier_Final(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SpaceSoldier_v2_animations_R:foot_L_ctrl
+      parentName: SpaceSoldier_v2_animations_R:world_ctrl
+      position: {x: -0.08671164, y: 0, z: 0.047991466}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SpaceSoldier_v2_animations_R:Heel_Pivot_L
+      parentName: SpaceSoldier_v2_animations_R:foot_L_ctrl
+      position: {x: -0.0056748283, y: 0, z: -0.047991466}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SpaceSoldier_v2_animations_R:Stand_Tip_L
+      parentName: SpaceSoldier_v2_animations_R:Heel_Pivot_L
+      position: {x: -0.0018390754, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SpaceSoldier_v2_animations_R:Peel_Heel_L
+      parentName: SpaceSoldier_v2_animations_R:Stand_Tip_L
+      position: {x: 0.0002280204, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SpaceSoldier_v2_animations_R:ik_legL
+      parentName: SpaceSoldier_v2_animations_R:Peel_Heel_L
+      position: {x: 0.006031401, y: 0.054208197, z: -0.010765836}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SpaceSoldier_v2_animations_R:Toe_Tap_L
+      parentName: SpaceSoldier_v2_animations_R:Stand_Tip_L
+      position: {x: 0.0062594204, y: 0.016809985, z: 0.110573396}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SpaceSoldier_v2_animations_R:ik_footL
+      parentName: SpaceSoldier_v2_animations_R:Toe_Tap_L
+      position: {x: -0, y: -0.003303985, z: -0.017887924}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SpaceSoldier_v2_animations_R:ik_toesL
+      parentName: SpaceSoldier_v2_animations_R:Toe_Tap_L
+      position: {x: -0, y: -0.004999909, z: 0.043165796}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SpaceSoldier_v2_animations_R:knee_L_ctrl
+      parentName: SpaceSoldier_v2_animations_R:foot_L_ctrl
+      position: {x: -0.0012544829, y: 0.493452, z: -0.007879546}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SpaceSoldier_v2_animations_R:foot_R_ctrl
+      parentName: SpaceSoldier_v2_animations_R:world_ctrl
+      position: {x: 0.092222735, y: 0, z: 0.047991466}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SpaceSoldier_v2_animations_R:Heel_Pivot_R
+      parentName: SpaceSoldier_v2_animations_R:foot_R_ctrl
+      position: {x: -0.092222735, y: 0, z: -0.047991466}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SpaceSoldier_v2_animations_R:Stand_Tip_R
+      parentName: SpaceSoldier_v2_animations_R:Heel_Pivot_R
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SpaceSoldier_v2_animations_R:Peel_Heel_R
+      parentName: SpaceSoldier_v2_animations_R:Stand_Tip_R
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SpaceSoldier_v2_animations_R:ik_legR
+      parentName: SpaceSoldier_v2_animations_R:Peel_Heel_R
+      position: {x: 0.08796613, y: 0.054208156, z: -0.010765836}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SpaceSoldier_v2_animations_R:Toe_Tap_R
+      parentName: SpaceSoldier_v2_animations_R:Stand_Tip_R
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SpaceSoldier_v2_animations_R:ik_footR
+      parentName: SpaceSoldier_v2_animations_R:Toe_Tap_R
+      position: {x: 0.08796613, y: 0.013505999, z: 0.092685476}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SpaceSoldier_v2_animations_R:ik_toesR
+      parentName: SpaceSoldier_v2_animations_R:Toe_Tap_R
+      position: {x: 0.08796613, y: 0.011810076, z: 0.1537387}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SpaceSoldier_v2_animations_R:knee_R_ctrl
+      parentName: SpaceSoldier_v2_animations_R:foot_R_ctrl
+      position: {x: -0.0042565977, y: 0.49345222, z: -0.007879606}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SpaceSoldier_v2_animations_R:root_ctrl
+      parentName: SpaceSoldier_v2_animations_R:world_ctrl
+      position: {x: -0, y: 1.0892555, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SpaceSoldier_v2_animations_R:torso_ctrl
+      parentName: SpaceSoldier_v2_animations_R:root_ctrl
+      position: {x: 0.0004970911, y: 0.29100424, z: -6.661338e-18}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SpaceSoldier_v2_animations_R:elbow_L_ctrl
+      parentName: SpaceSoldier_v2_animations_R:torso_ctrl
+      position: {x: -0.33085465, y: -0.14483574, z: 0.011010647}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SpaceSoldier_v2_animations_R:elbow_R_ctrl
+      parentName: SpaceSoldier_v2_animations_R:torso_ctrl
+      position: {x: 0.3281978, y: -0.1448322, z: 0.011010647}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SpaceSoldier_v2_animations_R:hand_L_ctrl
+      parentName: SpaceSoldier_v2_animations_R:torso_ctrl
+      position: {x: -0.4265247, y: -0.3941382, z: 0.09420504}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SpaceSoldier_v2_animations_R:hand_R_ctrl
+      parentName: SpaceSoldier_v2_animations_R:torso_ctrl
+      position: {x: 0.42386678, y: -0.3941377, z: 0.094205}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SpaceSoldier_v2_animations_R:fingers_R_ctrl
+      parentName: SpaceSoldier_v2_animations_R:hand_R_ctrl
+      position: {x: 0.10714203, y: -0.08274171, z: -0.034113124}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SpaceSoldier_v2_animations_R:head_ctrl
+      parentName: SpaceSoldier_v2_animations_R:torso_ctrl
+      position: {x: -0, y: 0.21924144, z: 4.9960034e-18}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SpaceSoldier_v2_animations_R:root_jnt
+      parentName: SpaceSoldier_v2_animations_R:world_ctrl
+      position: {x: -0, y: 1.0892555, z: 0}
+      rotation: {x: 0.31746352, y: 0.9121606, z: 0.08519528, w: 0.24478944}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SpaceSoldier_v2_animations_R:hip_L_jnt
+      parentName: SpaceSoldier_v2_animations_R:root_jnt
+      position: {x: 0.010193187, y: -0.110740446, z: -0.043006912}
+      rotation: {x: 0.77582294, y: 0.3852693, z: 0.21284163, w: 0.45206735}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SpaceSoldier_v2_animations_R:knee_L_jnt
+      parentName: SpaceSoldier_v2_animations_R:hip_L_jnt
+      position: {x: -0.5143456, y: -0.052061822, z: 7.635947e-16}
+      rotation: {x: 2.4255733e-30, y: 5.555196e-30, z: -0.047196474, w: 0.99888563}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SpaceSoldier_v2_animations_R:foot1_L_jnt
+      parentName: SpaceSoldier_v2_animations_R:knee_L_jnt
+      position: {x: -0.44218054, y: 2.6642963e-16, z: 4.1556982e-16}
+      rotation: {x: 0.7926604, y: 0.60966337, z: 3.7331108e-17, w: 4.853646e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SpaceSoldier_v2_animations_R:foot2_L_jnt
+      parentName: SpaceSoldier_v2_animations_R:foot1_L_jnt
+      position: {x: -0.11117034, y: -1.3591414e-16, z: 6.8962815e-17}
+      rotation: {x: -1.2062533e-16, y: 2.1145443e-17, z: -0.17266564, w: 0.9849805}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SpaceSoldier_v2_animations_R:foot3_L_jnt
+      parentName: SpaceSoldier_v2_animations_R:foot2_L_jnt
+      position: {x: -0.061077267, y: 8.6852624e-18, z: -1.9990705e-10}
+      rotation: {x: 0.70703864, y: -0.009817996, z: 0.70703864, w: 0.009817996}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SpaceSoldier_v2_animations_R:hip_R_jnt
+      parentName: SpaceSoldier_v2_animations_R:root_jnt
+      position: {x: -0.10919297, y: -0.016186787, z: 0.04507662}
+      rotation: {x: 0.77582294, y: 0.38526937, z: 0.2128416, w: 0.45206735}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SpaceSoldier_v2_animations_R:knee_R_jnt
+      parentName: SpaceSoldier_v2_animations_R:hip_R_jnt
+      position: {x: -0.5143449, y: -0.052061822, z: -1.05280365e-16}
+      rotation: {x: -4.3003166e-32, y: 1.3988153e-29, z: -0.04719632, w: 0.99888563}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SpaceSoldier_v2_animations_R:foot1_R_jnt
+      parentName: SpaceSoldier_v2_animations_R:knee_R_jnt
+      position: {x: -0.44218087, y: 2.1316282e-16, z: -1.352374e-16}
+      rotation: {x: 0.7926604, y: 0.6096634, z: -3.7331114e-17, w: -4.8536454e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SpaceSoldier_v2_animations_R:foot2_R_jnt
+      parentName: SpaceSoldier_v2_animations_R:foot1_R_jnt
+      position: {x: -0.11117032, y: -9.325873e-17, z: 4.677307e-19}
+      rotation: {x: 0.000000007338677, y: -0.0000000012864573, z: -0.17266537, w: 0.9849805}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SpaceSoldier_v2_animations_R:foot3_R_jnt
+      parentName: SpaceSoldier_v2_animations_R:foot2_R_jnt
+      position: {x: -0.061076786, y: -3.7470024e-18, z: -1.25725175e-17}
+      rotation: {x: -0.009818087, y: -0.70703864, z: -0.009818087, w: 0.70703864}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SpaceSoldier_v2_animations_R:stomach_jnt
+      parentName: SpaceSoldier_v2_animations_R:root_jnt
+      position: {x: 0.08636767, y: 0.10789009, z: -0.00041637736}
+      rotation: {x: 0.11183461, y: -0.23382282, z: 0.86763906, w: -0.42429054}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SpaceSoldier_v2_animations_R:torso1_jnt
+      parentName: SpaceSoldier_v2_animations_R:stomach_jnt
+      position: {x: -0.15281042, y: -6.994405e-17, z: -4.5859502e-17}
+      rotation: {x: 0.9999625, y: -0.008657847, z: 2.8378595e-16, w: -5.877757e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SpaceSoldier_v2_animations_R:torso2_jnt
+      parentName: SpaceSoldier_v2_animations_R:torso1_jnt
+      position: {x: -0.15413912, y: 8.792966e-16, z: 9.242216e-17}
+      rotation: {x: -0.532736, y: 0.79538596, z: 0.23876797, w: 0.16292179}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SpaceSoldier_v2_animations_R:clavicle_L_jnt
+      parentName: SpaceSoldier_v2_animations_R:torso2_jnt
+      position: {x: 0.018747417, y: -0.046194676, z: -0.08236122}
+      rotation: {x: 0.23143223, y: 0.9554725, z: 0.026309896, w: -0.18116081}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SpaceSoldier_v2_animations_R:shoulder_L_jnt
+      parentName: SpaceSoldier_v2_animations_R:clavicle_L_jnt
+      position: {x: -0.17084354, y: 0.000017476268, z: 0.0000027641654}
+      rotation: {x: 0.0054154606, y: 0.09985291, z: -0.039032377, w: 0.9942216}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SpaceSoldier_v2_animations_R:elbow_L_jnt
+      parentName: SpaceSoldier_v2_animations_R:shoulder_L_jnt
+      position: {x: -0.26272926, y: 0.000010403441, z: 0.00000041117892}
+      rotation: {x: 0.314808, y: -0.007017736, z: -0.014836355, w: 0.9490135}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SpaceSoldier_v2_animations_R:wrist_L_jnt
+      parentName: SpaceSoldier_v2_animations_R:elbow_L_jnt
+      position: {x: -0.27968866, y: -4.6629366e-17, z: -5.3290704e-17}
+      rotation: {x: 0.27191907, y: 0.16267294, z: -0.065068915, w: 0.94623655}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SpaceSoldier_v2_animations_R:clavicle_R_jnt
+      parentName: SpaceSoldier_v2_animations_R:torso2_jnt
+      position: {x: -0.09627257, y: -1.09912074e-16, z: 1.3322676e-17}
+      rotation: {x: 0.07332895, y: 0.27960062, z: -0.11970893, w: 0.9497979}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SpaceSoldier_v2_animations_R:shoulder_R_jnt
+      parentName: SpaceSoldier_v2_animations_R:clavicle_R_jnt
+      position: {x: -0.16671245, y: 0.0059011853, z: 0.036833588}
+      rotation: {x: -0, y: -0, z: -0.14075133, w: 0.990045}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SpaceSoldier_v2_animations_R:elbow_R_jnt
+      parentName: SpaceSoldier_v2_animations_R:shoulder_R_jnt
+      position: {x: -0.25970006, y: -0.039671388, z: 0.0016014688}
+      rotation: {x: -0.015401499, y: 0.1791778, z: 0.08424451, w: 0.98008215}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SpaceSoldier_v2_animations_R:wrist_R_jnt
+      parentName: SpaceSoldier_v2_animations_R:elbow_R_jnt
+      position: {x: -0.26681313, y: 0.010796555, z: -0.08319434}
+      rotation: {x: -0.53229237, y: -0.36968803, z: -0.21124777, w: 0.7316898}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SpaceSoldier_v2_animations_R:gun_R_jnt
+      parentName: SpaceSoldier_v2_animations_R:wrist_R_jnt
+      position: {x: -0.15035553, y: -0.04338216, z: 0.0044247946}
+      rotation: {x: 0.40606734, y: 0.50508785, z: -0.004219867, w: 0.7615627}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SpaceSoldier_v2_animations_R:hand1_R_jnt
+      parentName: SpaceSoldier_v2_animations_R:wrist_R_jnt
+      position: {x: -0.08432077, y: -0.15514025, z: -0.027362373}
+      rotation: {x: -0.025980184, y: 0.76113117, z: 0.42577526, w: -0.48858964}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SpaceSoldier_v2_animations_R:hand2_R_jnt
+      parentName: SpaceSoldier_v2_animations_R:hand1_R_jnt
+      position: {x: -0.061380085, y: -3.9968027e-17, z: -2.1934512e-17}
+      rotation: {x: 0.3284106, y: 0.9445351, z: -7.794544e-17, w: 3.7726745e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SpaceSoldier_v2_animations_R:thumb1_R_jnt
+      parentName: SpaceSoldier_v2_animations_R:wrist_R_jnt
+      position: {x: -0.06853558, y: -0.018654548, z: -0.09633049}
+      rotation: {x: -0.05670081, y: -0.80188334, z: 0.13220389, w: 0.57990545}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SpaceSoldier_v2_animations_R:thumb2_R_jnt
+      parentName: SpaceSoldier_v2_animations_R:thumb1_R_jnt
+      position: {x: -0.00085588597, y: -0.017758679, z: 0.0698164}
+      rotation: {x: 0.073543236, y: 0.7032719, z: -0.06580788, w: 0.70403785}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SpaceSoldier_v2_animations_R:thumb3_R_jnt
+      parentName: SpaceSoldier_v2_animations_R:thumb2_R_jnt
+      position: {x: -0.059362244, y: 0.0020168119, z: -1.1006992e-17}
+      rotation: {x: 0.46390188, y: 0.5336619, z: 0.45800743, w: 0.53872925}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SpaceSoldier_v2_animations_R:neck_jnt
+      parentName: SpaceSoldier_v2_animations_R:torso2_jnt
+      position: {x: 0.023235468, y: 0.0608309, z: 0.00073536835}
+      rotation: {x: -0.53305733, y: 0.7951706, z: 0.23883374, w: -0.16282526}
+      scale: {x: 1, y: 1, z: 1}
+    - name: SpaceSoldier_v2_animations_R:head_jnt
+      parentName: SpaceSoldier_v2_animations_R:neck_jnt
+      position: {x: -0.1700834, y: -1.3322676e-17, z: 2.8177054e-17}
+      rotation: {x: -0.5285249, y: 0.84891784, z: -1.0419351e-14, w: 6.4869476e-15}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 12
+    rootMotionBoneName: 
+    hasTranslationDoF: 1
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
