@@ -17,6 +17,8 @@ public class Ability3 : AbilityBase
     private bool onCooldown;
     private float lifetime;
     
+    public PlayerModel.AnimationAction AnimationEventAbility3;
+    
     private void Start()
     {
         body = GetComponent<Rigidbody>();
@@ -26,6 +28,7 @@ public class Ability3 : AbilityBase
     void BlastOff()
     {
         if (onCooldown) return;
+        AnimationEventAbility3?.Invoke();
         damage = (int)(player.attackDamage * 2.2f);
         
         onCooldown = true;

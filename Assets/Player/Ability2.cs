@@ -30,6 +30,8 @@ public class Ability2 : AbilityBase
     public GameObject currentProjectile;
     
     private float chargeTime = 0;
+    
+    public PlayerModel.AnimationAction AnimationEventAbility2;
 
     private void Start()
     {
@@ -107,6 +109,7 @@ public class Ability2 : AbilityBase
     {
         if (player.attackOccupied) return;
         if (onCooldown) return;
+        AnimationEventAbility2?.Invoke();
         player.attackOccupied = true;
         PlayerUI.instance.RMouseCooldown();
         onCooldown = true;

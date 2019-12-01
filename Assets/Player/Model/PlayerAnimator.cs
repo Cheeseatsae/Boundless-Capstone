@@ -1,11 +1,17 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.Experimental.PlayerLoop;
 
 [RequireComponent(typeof(Animator))]
 public class PlayerAnimator : MonoBehaviour
 {
     private Animator animator;
     private PlayerModel model;
+
+    private Ability1 a1;
+    private Ability2 a2;
+    private Ability3 a3;
+    private Ability4 a4;
 
     public bool IKActive = true;
     
@@ -16,17 +22,40 @@ public class PlayerAnimator : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         model = GetComponentInParent<PlayerModel>();
-        animator.SetBoneLocalRotation(HumanBodyBones.Spine, Quaternion.Euler(180, 0,0));
+//        animator.SetBoneLocalRotation(HumanBodyBones.Spine, Quaternion.Euler(180, 0, 0));
+
+        model.AnimationEventJump += PlayAnimJump;
+        model.AnimationEventLand += PlayAnimLand;
+        model.AnimationEventSprint += PlayAnimSprint;
+        model.AnimationEventRun += PlayAnimRun;
+
+        a1 = model.ability1 as Ability1;
+        a1.AnimationEventAbility1 += PlayAnimAbility1;
+        a2 = model.ability2 as Ability2;
+        a2.AnimationEventAbility2 += PlayAnimAbility2;
+        a3 = model.ability3 as Ability3;
+        a3.AnimationEventAbility3 += PlayAnimAbility3;
+        a4 = model.ability4 as Ability4;
+        a4.AnimationEventAbility4 += PlayAnimAbility4;
+        
+    }
+
+    private void OnDestroy()
+    {
+        model.AnimationEventJump -= PlayAnimJump;
+        model.AnimationEventLand -= PlayAnimLand;
+        model.AnimationEventSprint -= PlayAnimSprint;
+        model.AnimationEventRun -= PlayAnimRun;
+        a1.AnimationEventAbility1 -= PlayAnimAbility1;
+        a2.AnimationEventAbility2 -= PlayAnimAbility2;
+        a3.AnimationEventAbility3 -= PlayAnimAbility3;
+        a4.AnimationEventAbility4 -= PlayAnimAbility4;
     }
 
     void OnAnimatorIK()
     {
         Vector3 vel = model.body.velocity;
         vel.y = 0;
-
-//        float myAngle = Mathf.Atan2 (Input.GetAxis ("Horizontal"),Input.GetAxis ("Vertical")) * Mathf.Rad2Deg;
-//        float bodyRotation = myAngle + Camera.main.transform.eulerAngles.y;
-//        transform.rotation = Quaternion.Euler(0, bodyRotation, 0);
 
         RotateTowards(transform.position + vel);
         
@@ -52,15 +81,36 @@ public class PlayerAnimator : MonoBehaviour
         RotateTorso(vel);
     }
 
+    private const float animTimerMark = 4;
+    private float animTimer;
+    private void FixedUpdate()
+    {
+        animTimer -= Time.fixedDeltaTime;
+
+        // Logic for turning off ik temporarily to have idle anims
+        if (model.body.velocity.magnitude > 0.1f)
+        {
+            animTimer = animTimerMark;
+        }
+        
+        if (animTimer < 0)
+        {
+            IKActive = false;
+            // play idle animation loop 
+        }
+        else
+        {
+            IKActive = true;
+        }
+    }
+
     private void RotateTorso(Vector3 velocity)
     {
-        // rotate bottom half
-        Transform spineTransform = animator.GetBoneTransform(HumanBodyBones.Spine);
-        
         // -90 for right, 90 for left
         float angle = Vector3.SignedAngle(velocity, model.view.forward, Vector3.up);
-        Debug.Log(angle + " and " + spineTransform.rotation.eulerAngles);
        
+        // For some goddam reason the spine transform is not only backwards it is also sideways so
+        // x-axis = y-axis and 180 degrees = 0 degrees
         if (angle > 15) yRotation = Mathf.Lerp(180, 90, angle / 60);
         else if (angle < -15) yRotation = Mathf.Lerp(180, 270, Mathf.Abs(angle) / 60);
         else yRotation = Mathf.Lerp(yRotation, 180, Time.fixedDeltaTime * 8);
@@ -86,5 +136,51 @@ public class PlayerAnimator : MonoBehaviour
 
         transform.rotation = y;
     }
+
+    private void PlayAnimJump()
+    {
+        animTimer = animTimerMark;
+        animator.SetTrigger("Jump");
+    }
     
+    private void PlayAnimLand()
+    {
+        animator.SetTrigger("Land");
+    }
+    
+    private void PlayAnimSprint()
+    {
+        animTimer = animTimerMark;
+        //animator.
+    }
+    
+    private void PlayAnimRun()
+    {
+        animTimer = animTimerMark;
+        
+    }
+    
+    private void PlayAnimAbility1()
+    {
+        animTimer = animTimerMark;
+        
+    }
+    
+    private void PlayAnimAbility2()
+    {
+        animTimer = animTimerMark;
+        
+    }
+    
+    private void PlayAnimAbility3()
+    {
+        animTimer = animTimerMark;
+        animator.SetTrigger("Jump");
+    }
+    
+    private void PlayAnimAbility4()
+    {
+        animTimer = animTimerMark;
+        
+    }
 }

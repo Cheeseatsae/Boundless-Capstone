@@ -18,6 +18,8 @@ public class Ability1 : AbilityBase
     public float projectileSpeed;
     public Transform aimTransform;
 
+    public PlayerModel.AnimationAction AnimationEventAbility1;
+    
     private void Start()
     {
         firing = false;
@@ -26,6 +28,7 @@ public class Ability1 : AbilityBase
     
     public void Fire(float lifeTime, Vector3 target)
     {
+        AnimationEventAbility1?.Invoke();
         GameObject bullet = Instantiate(bulletPref, aimTransform.position, Quaternion.Euler(90,90,0));
         
         Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();

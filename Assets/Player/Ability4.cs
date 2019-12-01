@@ -24,6 +24,8 @@ public class Ability4 : AbilityBase
 
     public Transform aimTransform;
     
+    public PlayerModel.AnimationAction AnimationEventAbility4;
+    
     public void Blaster()
     {
         if (onCooldown) return;
@@ -74,6 +76,7 @@ public class Ability4 : AbilityBase
         if (player.attackOccupied) return;
         if (!onCooldown)
         {
+            AnimationEventAbility4?.Invoke();
             player.attackOccupied = true;
             damagePerTick = baseDamagePerTick + (int)(player.attackDamage / amountofTicks);
             Blaster();

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &52425515560892275
+--- !u!1 &521547598750617426
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,220 +8,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 643538648988542877}
-  m_Layer: 0
-  m_Name: SpaceSoldier_v2_animations_R:ik_footR
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &643538648988542877
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 52425515560892275}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.08796613, y: 0.013505999, z: 0.092685476}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1139941087516743885}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &769026850090016313
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 216690861619195935}
-  m_Layer: 0
-  m_Name: SpaceSoldier_v2_animations_R:elbow_R_ctrl
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &216690861619195935
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 769026850090016313}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.3281978, y: -0.1448322, z: 0.011010647}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2186329325734158831}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &974442678409335287
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1139941087516743885}
-  m_Layer: 0
-  m_Name: SpaceSoldier_v2_animations_R:Toe_Tap_R
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1139941087516743885
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 974442678409335287}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 643538648988542877}
-  - {fileID: 2251810367762172771}
-  m_Father: {fileID: 6493008564423830705}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &978039118649220054
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2618904648836996594}
-  m_Layer: 0
-  m_Name: SpaceSoldier_v2_animations_R:thumb3_R_jnt
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2618904648836996594
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 978039118649220054}
-  m_LocalRotation: {x: 0.46390188, y: 0.5336619, z: 0.45800743, w: 0.53872925}
-  m_LocalPosition: {x: -0.059362244, y: 0.0020168119, z: -1.1006992e-17}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 7352194868459532446}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0.62985325, y: 89.99999, z: 81.369736}
---- !u!1 &1035637913081293414
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2251810367762172771}
-  m_Layer: 0
-  m_Name: SpaceSoldier_v2_animations_R:ik_toesR
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2251810367762172771
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1035637913081293414}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.08796613, y: 0.011810076, z: 0.1537387}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1139941087516743885}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1234594695295655179
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7240692182773807105}
-  m_Layer: 0
-  m_Name: SpaceSoldier_v2_animations_R:foot3_L_jnt
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7240692182773807105
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1234594695295655179}
-  m_LocalRotation: {x: 0.70703864, y: -0.009817996, z: 0.70703864, w: 0.009817996}
-  m_LocalPosition: {x: -0.061077267, y: 8.6852624e-18, z: -1.9990705e-10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1594156206849975104}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1589169094873841315
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6807491227629827268}
-  m_Layer: 0
-  m_Name: SpaceSoldier_v2_animations_R:neck_jnt
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6807491227629827268
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1589169094873841315}
-  m_LocalRotation: {x: -0.53305733, y: 0.7951706, z: 0.23883374, w: -0.16282526}
-  m_LocalPosition: {x: 0.023235468, y: 0.0608309, z: 0.00073536835}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 4101029028071119713}
-  m_Father: {fileID: 1832410655473882395}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: -25.862232, y: -153.5002, z: -69.37809}
---- !u!1 &1660969565319323278
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1397120558085546437}
+  - component: {fileID: 1074121901053312921}
   m_Layer: 0
   m_Name: SpaceSoldier_v2_animations_R:Heel_Pivot_L
   m_TagString: Untagged
@@ -229,22 +16,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1397120558085546437
+--- !u!4 &1074121901053312921
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1660969565319323278}
+  m_GameObject: {fileID: 521547598750617426}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.0056748283, y: 0, z: -0.047991466}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 8626282157596027217}
-  m_Father: {fileID: 3276576049554055709}
+  - {fileID: 7044500599999623408}
+  m_Father: {fileID: 4863371341746649880}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1898334327652977346
+--- !u!1 &767248821381026638
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -252,7 +39,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7037181664571353999}
+  - component: {fileID: 1991968736860853494}
+  m_Layer: 0
+  m_Name: SpaceSoldier_v2_animations_R:thumb2_R_jnt
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1991968736860853494
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 767248821381026638}
+  m_LocalRotation: {x: 0.07354323, y: 0.7032719, z: -0.06580787, w: 0.70403785}
+  m_LocalPosition: {x: -0.00085588597, y: -0.017758679, z: 0.0698164}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 3039510572863021052}
+  m_Father: {fileID: 7966829569259611661}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 11.30993, y: 90, z: 0.629853}
+--- !u!1 &815441403536699437
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8093213861488211406}
   m_Layer: 0
   m_Name: SpaceSoldier_v2_animations_R:foot1_L_jnt
   m_TagString: Untagged
@@ -260,22 +78,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7037181664571353999
+--- !u!4 &8093213861488211406
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1898334327652977346}
+  m_GameObject: {fileID: 815441403536699437}
   m_LocalRotation: {x: 0.7926604, y: 0.60966337, z: 3.7331108e-17, w: 4.853646e-17}
   m_LocalPosition: {x: -0.44218054, y: 2.6642963e-16, z: 4.1556982e-16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1594156206849975104}
-  m_Father: {fileID: 3600098149110901280}
+  - {fileID: 2183508191119325655}
+  m_Father: {fileID: 1761988150844035509}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -6.7930713, y: -179.76378, z: 81.189514}
---- !u!1 &1936311010195713240
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &821394767709640081
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -283,29 +101,157 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8368023333766455184}
+  - component: {fileID: 5113155409108058434}
   m_Layer: 0
-  m_Name: SpaceSoldier_v2_animations_R:elbow_L_ctrl
+  m_Name: SpaceSoldier_v2_animations_R:hip_R_jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8368023333766455184
+--- !u!4 &5113155409108058434
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1936311010195713240}
+  m_GameObject: {fileID: 821394767709640081}
+  m_LocalRotation: {x: 0.77582294, y: 0.38526937, z: 0.2128416, w: 0.45206735}
+  m_LocalPosition: {x: -0.10919297, y: -0.016186787, z: 0.04507662}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4864151996515841844}
+  m_Father: {fileID: 7624183592674942928}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1291034821110062985
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7960760536082375876}
+  m_Layer: 0
+  m_Name: SpaceSoldier_v2_animations_R:torso2_jnt
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7960760536082375876
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1291034821110062985}
+  m_LocalRotation: {x: -0.532736, y: 0.79538596, z: 0.23876797, w: 0.16292179}
+  m_LocalPosition: {x: -0.15413912, y: 8.792966e-16, z: 9.242216e-17}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1040569166311239144}
+  - {fileID: 5399714210666576202}
+  - {fileID: 3952500138245340375}
+  m_Father: {fileID: 8576738989039410055}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1415006472430508030
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 73917250393396791}
+  m_Layer: 0
+  m_Name: SpaceSoldier_v2_animations_R:IKs
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &73917250393396791
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1415006472430508030}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.33085465, y: -0.14483574, z: 0.011010647}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4117915364027119827}
+  - {fileID: 2780022665652225784}
+  m_Father: {fileID: 7723901564078487809}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1426395879061790950
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1207474702414943420}
+  m_Layer: 0
+  m_Name: SpaceSoldier_v2_animations_R:Stand_Tip_R
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1207474702414943420
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1426395879061790950}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1252478870264465973}
+  - {fileID: 3960490558230156851}
+  m_Father: {fileID: 8651801909147453175}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1549756252722582952
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3039510572863021052}
+  m_Layer: 0
+  m_Name: SpaceSoldier_v2_animations_R:thumb3_R_jnt
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3039510572863021052
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1549756252722582952}
+  m_LocalRotation: {x: 0.46390188, y: 0.5336619, z: 0.45800743, w: 0.53872925}
+  m_LocalPosition: {x: -0.059362244, y: 0.0020168119, z: -1.1006992e-17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 2186329325734158831}
+  m_Father: {fileID: 1991968736860853494}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1962979102884639579
+  m_LocalEulerAnglesHint: {x: 0.6298537, y: 89.99999, z: 81.369736}
+--- !u!1 &1570699347536026632
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -313,130 +259,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 282766691000982843}
-  m_Layer: 0
-  m_Name: SpaceSoldier_v2_animations_R:torso1_jnt
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &282766691000982843
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1962979102884639579}
-  m_LocalRotation: {x: 0.9999625, y: -0.008657847, z: 2.8378595e-16, w: -5.877757e-17}
-  m_LocalPosition: {x: -0.15281042, y: -6.994405e-17, z: -4.5859502e-17}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1832410655473882395}
-  m_Father: {fileID: 6028655469952299562}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -3.8040051, y: 175.87013, z: 24.366653}
---- !u!1 &2018781946231272299
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1187780947451220103}
-  m_Layer: 0
-  m_Name: SpaceSoldier_v2_animations_R:hip_L_jnt
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1187780947451220103
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2018781946231272299}
-  m_LocalRotation: {x: 0.77582294, y: 0.3852693, z: 0.21284163, w: 0.45206735}
-  m_LocalPosition: {x: 0.010193187, y: -0.110740446, z: -0.043006912}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 3600098149110901280}
-  m_Father: {fileID: 1264984191548955806}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 30.246405, y: 118.91036, z: 121.32145}
---- !u!1 &2348067206046150516
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4572100024221903352}
-  m_Layer: 0
-  m_Name: SpaceSoldier_v2_animations_R:Heel_Pivot_R
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4572100024221903352
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2348067206046150516}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.092222735, y: 0, z: -0.047991466}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 6493008564423830705}
-  m_Father: {fileID: 4340854829867415207}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2424541685304762054
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3110683700674278250}
-  m_Layer: 0
-  m_Name: SpaceSoldier_v2_animations_R:ik_footL
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3110683700674278250
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2424541685304762054}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: -0.003303985, z: -0.017887924}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2717135934794555997}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2459855518279778461
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 330008581615596576}
+  - component: {fileID: 4977607011199800997}
   m_Layer: 0
   m_Name: SpaceSoldier_v2_animations_R:gun_R_jnt
   m_TagString: Untagged
@@ -444,22 +267,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &330008581615596576
+--- !u!4 &4977607011199800997
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2459855518279778461}
+  m_GameObject: {fileID: 1570699347536026632}
   m_LocalRotation: {x: 0.40606734, y: 0.50508785, z: -0.004219867, w: 0.7615627}
   m_LocalPosition: {x: -0.15035553, y: -0.04338216, z: 0.0044247946}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8880595029185543584}
-  m_Father: {fileID: 3028242225552156170}
+  m_Father: {fileID: 167308386805071856}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 38.517544, y: 78.20076, z: 31.06813}
---- !u!1 &2541689428117436272
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1717933226233181681
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -467,29 +290,150 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2514536921526096969}
+  - component: {fileID: 8015742644526494854}
   m_Layer: 0
-  m_Name: SpaceSoldier_v2_animations_R:root_ctrl
+  m_Name: SpaceSoldier_v2_animations_R:foot3_L_jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2514536921526096969
+--- !u!4 &8015742644526494854
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2541689428117436272}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 1.0892555, z: 0}
+  m_GameObject: {fileID: 1717933226233181681}
+  m_LocalRotation: {x: 0.70703864, y: -0.009817996, z: 0.70703864, w: 0.009817996}
+  m_LocalPosition: {x: -0.061077267, y: 8.6852624e-18, z: -1.9990705e-10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2183508191119325655}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 1.5911255, y: 90, z: 180}
+--- !u!1 &2206290831004108933
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2183508191119325655}
+  m_Layer: 0
+  m_Name: SpaceSoldier_v2_animations_R:foot2_L_jnt
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2183508191119325655
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2206290831004108933}
+  m_LocalRotation: {x: -1.2062533e-16, y: 2.1145443e-17, z: -0.17266564, w: 0.9849805}
+  m_LocalPosition: {x: -0.11117034, y: -1.3591414e-16, z: 6.8962815e-17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 2186329325734158831}
-  m_Father: {fileID: 2651044019148957443}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 3.0265512, y: 0, z: 0}
+  - {fileID: 8015742644526494854}
+  m_Father: {fileID: 8093213861488211406}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2469304900365078573
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8651801909147453175}
+  m_Layer: 0
+  m_Name: SpaceSoldier_v2_animations_R:Heel_Pivot_R
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8651801909147453175
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2469304900365078573}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.092222735, y: 0, z: -0.047991466}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1207474702414943420}
+  m_Father: {fileID: 6956965269973140781}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2487501835976228469
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7820058134423516260}
+  m_Layer: 0
+  m_Name: SpaceSoldier_v2_animations_R:foot3_R_jnt
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7820058134423516260
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2487501835976228469}
+  m_LocalRotation: {x: -0.009818087, y: -0.70703864, z: -0.009818087, w: 0.70703864}
+  m_LocalPosition: {x: -0.061076786, y: -3.7470024e-18, z: -1.25725175e-17}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8063774544939393801}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: -1.59114, y: -90, z: 0}
+--- !u!1 &2506100146816720422
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3721717254316971041}
+  m_Layer: 0
+  m_Name: SpaceSoldier_v2_animations_R:hand2_R_jnt
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3721717254316971041
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2506100146816720422}
+  m_LocalRotation: {x: 0.3284106, y: 0.9445351, z: -7.794544e-17, w: 3.7726745e-17}
+  m_LocalPosition: {x: -0.061380085, y: -3.9968027e-17, z: -2.1934512e-17}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4336152330709224675}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 1.2236246e-14, y: 180, z: 38.34466}
 --- !u!1 &2556241236672809084
 GameObject:
   m_ObjectHideFlags: 0
@@ -500,7 +444,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2427448102811232607}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: SpawnPoint1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -517,10 +461,10 @@ Transform:
   m_LocalPosition: {x: -0.139, y: -0.196, z: -0.054}
   m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children: []
-  m_Father: {fileID: 4410358902234154784}
+  m_Father: {fileID: 7737103725865655854}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 31.766, y: -99.295006, z: 80.243004}
---- !u!1 &2567294308474038485
+--- !u!1 &2641670880203906780
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -528,30 +472,65 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 91037730685965500}
+  - component: {fileID: 167308386805071856}
   m_Layer: 0
-  m_Name: SpaceSoldier_v2_animations_R:hand_R_ctrl
+  m_Name: SpaceSoldier_v2_animations_R:wrist_R_jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &91037730685965500
+--- !u!4 &167308386805071856
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2567294308474038485}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.42386678, y: -0.3941377, z: 0.094205}
+  m_GameObject: {fileID: 2641670880203906780}
+  m_LocalRotation: {x: -0.53229237, y: -0.36968803, z: -0.21124777, w: 0.7316898}
+  m_LocalPosition: {x: -0.26681313, y: 0.010796555, z: -0.08319434}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 5358308316242555077}
-  m_Father: {fileID: 2186329325734158831}
+  - {fileID: 4977607011199800997}
+  - {fileID: 4336152330709224675}
+  - {fileID: 7966829569259611661}
+  m_Father: {fileID: 8309028489896041124}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2733705962357336772
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7624183592674942928}
+  m_Layer: 0
+  m_Name: SpaceSoldier_v2_animations_R:root_jnt
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7624183592674942928
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2733705962357336772}
+  m_LocalRotation: {x: 0.31746352, y: 0.9121606, z: 0.08519528, w: 0.24478944}
+  m_LocalPosition: {x: -0, y: 1.0892555, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 7612130837374526297}
+  - {fileID: 5113155409108058434}
+  - {fileID: 5420054224728292425}
+  m_Father: {fileID: 5081786577334845011}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2570405549584471008
+--- !u!1 &2973757312369414426
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -559,150 +538,89 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 187230830905919350}
+  - component: {fileID: 2129027179694154352}
   m_Layer: 0
-  m_Name: SpaceSoldier_v2_animations_R:hand_L_ctrl
+  m_Name: SpaceSoldier_v2_animations_R:elbow_L_jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &187230830905919350
+--- !u!4 &2129027179694154352
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2570405549584471008}
+  m_GameObject: {fileID: 2973757312369414426}
+  m_LocalRotation: {x: 0.3292121, y: 0.1423805, z: -0.05808889, w: 0.93165064}
+  m_LocalPosition: {x: -0.2627148, y: 4.065758e-18, z: 1.040834e-18}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 7737103725865655854}
+  m_Father: {fileID: 5545359645163362802}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3037952318724376392
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7612130837374526297}
+  m_Layer: 0
+  m_Name: SpaceSoldier_v2_animations_R:hip_L_jnt
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7612130837374526297
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3037952318724376392}
+  m_LocalRotation: {x: 0.77582294, y: 0.3852693, z: 0.21284163, w: 0.45206735}
+  m_LocalPosition: {x: 0.010193187, y: -0.110740446, z: -0.043006912}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1761988150844035509}
+  m_Father: {fileID: 7624183592674942928}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3160064746300039204
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4199229541785587936}
+  m_Layer: 0
+  m_Name: SpaceSoldier_v2_animations_R:knee_L_ctrl
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4199229541785587936
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3160064746300039204}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.4265247, y: -0.3941382, z: 0.09420504}
+  m_LocalPosition: {x: -0.0012544829, y: 0.493452, z: -0.007879546}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 2186329325734158831}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2576465517307233948
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1594156206849975104}
-  m_Layer: 0
-  m_Name: SpaceSoldier_v2_animations_R:foot2_L_jnt
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1594156206849975104
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2576465517307233948}
-  m_LocalRotation: {x: -1.2062533e-16, y: 2.1145443e-17, z: -0.17266564, w: 0.9849805}
-  m_LocalPosition: {x: -0.11117034, y: -1.3591414e-16, z: 6.8962815e-17}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 7240692182773807105}
-  m_Father: {fileID: 7037181664571353999}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -0.00008533817, y: 0.000029988987, z: -19.88568}
---- !u!1 &2608600722891072115
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5164542713267938617}
-  m_Layer: 0
-  m_Name: SpaceSoldier_v2_animations_R:knee_R_ctrl
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5164542713267938617
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2608600722891072115}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0042565977, y: 0.49345222, z: -0.007879606}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4340854829867415207}
+  m_Father: {fileID: 4863371341746649880}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2730419527612011296
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1677168753220651735}
-  m_Layer: 0
-  m_Name: SpaceSoldier_v2_animations_R:clavicle_R_jnt
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1677168753220651735
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2730419527612011296}
-  m_LocalRotation: {x: 0.07332895, y: 0.27960062, z: -0.11970893, w: 0.9497979}
-  m_LocalPosition: {x: -0.09627257, y: -1.09912074e-16, z: 1.3322676e-17}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 3095520412906132561}
-  m_Father: {fileID: 1832410655473882395}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2734626599831664546
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2780707984503618831}
-  m_Layer: 0
-  m_Name: SpaceSoldier_v2_animations_R:Peel_Heel_L
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2780707984503618831
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2734626599831664546}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0002280204, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 8855177980319376738}
-  m_Father: {fileID: 8626282157596027217}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3187717309710599745
 GameObject:
@@ -763,7 +681,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   interactablesInRange: []
---- !u!1 &3298332619663860067
+--- !u!1 &3260169424040757526
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -771,29 +689,60 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6196380644081702360}
+  - component: {fileID: 8298368627028993130}
   m_Layer: 0
-  m_Name: SpaceSoldier_v2_animations_R:hand2_R_jnt
+  m_Name: SpaceSoldier_v2_animations_R:shoulder_R_jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6196380644081702360
+--- !u!4 &8298368627028993130
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3298332619663860067}
-  m_LocalRotation: {x: 0.3284106, y: 0.9445351, z: -7.794544e-17, w: 3.7726745e-17}
-  m_LocalPosition: {x: -0.061380085, y: -3.9968027e-17, z: -2.1934512e-17}
+  m_GameObject: {fileID: 3260169424040757526}
+  m_LocalRotation: {x: -9.9045396e-17, y: -6.957004e-17, z: 0.45387712, w: 0.8910643}
+  m_LocalPosition: {x: -0.16671161, y: 0.0059010806, z: 0.036833398}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 8309028489896041124}
+  m_Father: {fileID: 5399714210666576202}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3266907016371508219
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8368341501408739354}
+  m_Layer: 0
+  m_Name: SpaceSoldier_v2_animations_R:elbow_L_ctrl
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8368341501408739354
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3266907016371508219}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.33085465, y: -0.14483574, z: 0.011010647}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 4000915186006466509}
+  m_Father: {fileID: 8326542786986882722}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 8.334039e-15, y: 180, z: 38.34466}
---- !u!1 &3454869510478255025
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3287753403208782814
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -801,36 +750,283 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7096908655636050391}
-  - component: {fileID: 5763329895456223}
+  - component: {fileID: 4383862305328671121}
   m_Layer: 0
-  m_Name: SpaceSoldier_v2_animations_R:AstroBoy
+  m_Name: SpaceSoldier_v2_animations_R:ik_legR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7096908655636050391
+--- !u!4 &4383862305328671121
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3454869510478255025}
+  m_GameObject: {fileID: 3287753403208782814}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.08796613, y: 0.054208156, z: -0.010765836}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1252478870264465973}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3325488555405716533
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5236458786879850086}
+  m_Layer: 0
+  m_Name: SpaceSoldier_v2_animations_R:hand_R_ctrl
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5236458786879850086
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3325488555405716533}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.42386678, y: -0.3941377, z: 0.094205}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 7596690956902670514}
+  m_Father: {fileID: 8326542786986882722}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: -68.770996, y: -32.186, z: 12.638978}
+--- !u!1 &3338719464740004078
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4864151996515841844}
+  m_Layer: 0
+  m_Name: SpaceSoldier_v2_animations_R:knee_R_jnt
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4864151996515841844
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3338719464740004078}
+  m_LocalRotation: {x: -4.3003166e-32, y: 1.3988153e-29, z: -0.04719632, w: 0.99888563}
+  m_LocalPosition: {x: -0.5143449, y: -0.052061822, z: -1.05280365e-16}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 215512894649429198}
+  m_Father: {fileID: 5113155409108058434}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3469890365066457097
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7055663135207281748}
+  m_Layer: 0
+  m_Name: SpaceSoldier_v2_animations_R:Toe_Tap_L
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7055663135207281748
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3469890365066457097}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.0062594204, y: 0.016809985, z: 0.110573396}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 3880400411719840198}
+  - {fileID: 5702592360733112879}
+  m_Father: {fileID: 7044500599999623408}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: -0.0000045314955, y: 0, z: 0}
+--- !u!1 &3625565504501261471
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7044500599999623408}
+  m_Layer: 0
+  m_Name: SpaceSoldier_v2_animations_R:Stand_Tip_L
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7044500599999623408
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3625565504501261471}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.0018390754, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4821767956260589991}
+  - {fileID: 7055663135207281748}
+  m_Father: {fileID: 1074121901053312921}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3736924549713238006
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7966829569259611661}
+  m_Layer: 0
+  m_Name: SpaceSoldier_v2_animations_R:thumb1_R_jnt
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7966829569259611661
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3736924549713238006}
+  m_LocalRotation: {x: -0.32441345, y: -0.6890222, z: -0.15571502, w: 0.62909245}
+  m_LocalPosition: {x: -0.068465374, y: -0.018593078, z: -0.0963079}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1991968736860853494}
+  m_Father: {fileID: 167308386805071856}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: -38.517548, y: -101.79924, z: 18.722002}
+--- !u!1 &4024047341638026811
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6255457579159222849}
+  m_Layer: 0
+  m_Name: SpaceSoldier_v2_animations_R:head_ctrl
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6255457579159222849
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4024047341638026811}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0, y: 0.21924144, z: 4.9960034e-18}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8326542786986882722}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: -14.73048, y: 0, z: 0}
+--- !u!1 &4871067841800727726
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5611053225742798101}
+  m_Layer: 0
+  m_Name: SpaceSoldier_v2_animations_R:hand_L_ctrl
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5611053225742798101
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4871067841800727726}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.4265247, y: -0.3941382, z: 0.09420504}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8326542786986882722}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5034874726319569374
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9055150837970511133}
+  - component: {fileID: 2101316797959837981}
+  m_Layer: 0
+  m_Name: AstroBoy
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9055150837970511133
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5034874726319569374}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 6838427782646105409}
+  m_Father: {fileID: 7723901564078487809}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!137 &5763329895456223
+--- !u!137 &2101316797959837981
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3454869510478255025}
+  m_GameObject: {fileID: 5034874726319569374}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -841,7 +1037,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5561349426305759274, guid: cf3947e4cddd9314abd8c6d5906ecf88, type: 3}
+  - {fileID: 2100000, guid: c677b3200d3bc8d46bd01e3f494918d4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -866,45 +1062,45 @@ SkinnedMeshRenderer:
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
   m_SkinnedMotionVectors: 1
-  m_Mesh: {fileID: 892438826079366058, guid: cf3947e4cddd9314abd8c6d5906ecf88, type: 3}
+  m_Mesh: {fileID: -4638238194579519594, guid: 1411077bfea01e14fb6f2fb13423e5c7, type: 3}
   m_Bones:
-  - {fileID: 1264984191548955806}
-  - {fileID: 1027619323771296173}
-  - {fileID: 4889406566363413242}
-  - {fileID: 3761134073572695445}
-  - {fileID: 2300818427646220278}
-  - {fileID: 2654461730975617194}
-  - {fileID: 6028655469952299562}
-  - {fileID: 282766691000982843}
-  - {fileID: 1832410655473882395}
-  - {fileID: 1677168753220651735}
-  - {fileID: 3095520412906132561}
-  - {fileID: 3757819276845379953}
-  - {fileID: 3028242225552156170}
-  - {fileID: 330008581615596576}
-  - {fileID: 4000915186006466509}
-  - {fileID: 6196380644081702360}
-  - {fileID: 8443631494407172915}
-  - {fileID: 7352194868459532446}
-  - {fileID: 2618904648836996594}
-  - {fileID: 6807491227629827268}
-  - {fileID: 4101029028071119713}
-  - {fileID: 7994010725068664622}
-  - {fileID: 8945086898151251345}
-  - {fileID: 5248598159253285481}
-  - {fileID: 4410358902234154784}
-  - {fileID: 1187780947451220103}
-  - {fileID: 3600098149110901280}
-  - {fileID: 7037181664571353999}
-  - {fileID: 1594156206849975104}
-  - {fileID: 7240692182773807105}
+  - {fileID: 7624183592674942928}
+  - {fileID: 5113155409108058434}
+  - {fileID: 4864151996515841844}
+  - {fileID: 215512894649429198}
+  - {fileID: 8063774544939393801}
+  - {fileID: 7820058134423516260}
+  - {fileID: 5420054224728292425}
+  - {fileID: 8576738989039410055}
+  - {fileID: 7960760536082375876}
+  - {fileID: 5399714210666576202}
+  - {fileID: 8298368627028993130}
+  - {fileID: 8309028489896041124}
+  - {fileID: 167308386805071856}
+  - {fileID: 4977607011199800997}
+  - {fileID: 4336152330709224675}
+  - {fileID: 3721717254316971041}
+  - {fileID: 7966829569259611661}
+  - {fileID: 1991968736860853494}
+  - {fileID: 3039510572863021052}
+  - {fileID: 3952500138245340375}
+  - {fileID: 383219882837036602}
+  - {fileID: 1040569166311239144}
+  - {fileID: 5545359645163362802}
+  - {fileID: 2129027179694154352}
+  - {fileID: 7737103725865655854}
+  - {fileID: 7612130837374526297}
+  - {fileID: 1761988150844035509}
+  - {fileID: 8093213861488211406}
+  - {fileID: 2183508191119325655}
+  - {fileID: 8015742644526494854}
   m_BlendShapeWeights: []
-  m_RootBone: {fileID: 1264984191548955806}
+  m_RootBone: {fileID: 7624183592674942928}
   m_AABB:
-    m_Center: {x: -0.14911973, y: -0.1514253, z: 0.029757977}
-    m_Extent: {x: 0.9280517, y: 1.0006638, z: 1.0504935}
+    m_Center: {x: -0.045264512, y: -0.1288155, z: -0.050660744}
+    m_Extent: {x: 0.82987106, y: 0.9799236, z: 0.51881933}
   m_DirtyAABB: 0
---- !u!1 &3510706734890683681
+--- !u!1 &5041577606937262814
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -912,30 +1108,33 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6028655469952299562}
+  - component: {fileID: 5081786577334845011}
   m_Layer: 0
-  m_Name: SpaceSoldier_v2_animations_R:stomach_jnt
+  m_Name: SpaceSoldier_v2_animations_R:world_ctrl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6028655469952299562
+--- !u!4 &5081786577334845011
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3510706734890683681}
-  m_LocalRotation: {x: 0.11183461, y: -0.23382282, z: 0.86763906, w: -0.42429054}
-  m_LocalPosition: {x: 0.08636767, y: 0.10789009, z: -0.00041637736}
+  m_GameObject: {fileID: 5041577606937262814}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 282766691000982843}
-  m_Father: {fileID: 1264984191548955806}
+  - {fileID: 4863371341746649880}
+  - {fileID: 6956965269973140781}
+  - {fileID: 3534384392649151732}
+  - {fileID: 7624183592674942928}
+  m_Father: {fileID: 7723901564078487809}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &3603828001949654947
+--- !u!1 &5072436831678710620
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -943,91 +1142,29 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8443631494407172915}
+  - component: {fileID: 6896970205556851965}
   m_Layer: 0
-  m_Name: SpaceSoldier_v2_animations_R:thumb1_R_jnt
+  m_Name: SpaceSoldier_v2_animations_R:ik_toesR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8443631494407172915
+--- !u!4 &6896970205556851965
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3603828001949654947}
-  m_LocalRotation: {x: -0.32441345, y: -0.6890222, z: -0.15571502, w: 0.62909245}
-  m_LocalPosition: {x: -0.068465374, y: -0.018593078, z: -0.0963079}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 7352194868459532446}
-  m_Father: {fileID: 3028242225552156170}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: -38.517544, y: -101.79924, z: 18.722006}
---- !u!1 &3902586861986409203
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7352194868459532446}
-  m_Layer: 0
-  m_Name: SpaceSoldier_v2_animations_R:thumb2_R_jnt
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7352194868459532446
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3902586861986409203}
-  m_LocalRotation: {x: 0.07354323, y: 0.7032719, z: -0.06580787, w: 0.70403785}
-  m_LocalPosition: {x: -0.00085588597, y: -0.017758679, z: 0.0698164}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 2618904648836996594}
-  m_Father: {fileID: 8443631494407172915}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 11.309927, y: 90, z: 0.6298528}
---- !u!1 &4034861229731499390
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6704750698500203796}
-  m_Layer: 0
-  m_Name: SpaceSoldier_v2_animations_R:ik_toesL
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6704750698500203796
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4034861229731499390}
+  m_GameObject: {fileID: 5072436831678710620}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: -0.004999909, z: 0.043165796}
+  m_LocalPosition: {x: 0.08796613, y: 0.011810076, z: 0.1537387}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 2717135934794555997}
+  m_Father: {fileID: 3960490558230156851}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &4042957737190475604
+--- !u!1 &5247122406459079582
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1035,71 +1172,354 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8723007094589514063}
+  - component: {fileID: 1252478870264465973}
   m_Layer: 0
-  m_Name: SpaceSoldier_v2_animations_R:ik_legR
+  m_Name: SpaceSoldier_v2_animations_R:Peel_Heel_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8723007094589514063
+--- !u!4 &1252478870264465973
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4042957737190475604}
+  m_GameObject: {fileID: 5247122406459079582}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.08796613, y: 0.054208156, z: -0.010765836}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 7607967845252280149}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &4116650356680670982
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6838427782646105409}
-  - component: {fileID: 425406474507993306}
-  - component: {fileID: 7892734576115724416}
-  m_Layer: 0
-  m_Name: SpaceSoldier_Final
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6838427782646105409
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4116650356680670982}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.50099945, z: 0}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 7096908655636050391}
-  - {fileID: 9074471675672235822}
-  - {fileID: 2651044019148957443}
+  - {fileID: 4383862305328671121}
+  m_Father: {fileID: 1207474702414943420}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5384938399472290892
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8063774544939393801}
+  m_Layer: 0
+  m_Name: SpaceSoldier_v2_animations_R:foot2_R_jnt
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8063774544939393801
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5384938399472290892}
+  m_LocalRotation: {x: 0.000000007338677, y: -0.0000000012864573, z: -0.17266537,
+    w: 0.9849805}
+  m_LocalPosition: {x: -0.11117032, y: -9.325873e-17, z: 4.677307e-19}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 7820058134423516260}
+  m_Father: {fileID: 215512894649429198}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5457938424466716034
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6707425874861387312}
+  m_Layer: 0
+  m_Name: SpaceSoldier_v2_animations_R:ik_legL
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6707425874861387312
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5457938424466716034}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.006031401, y: 0.054208197, z: -0.010765836}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4821767956260589991}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5593578188872410975
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8576738989039410055}
+  m_Layer: 0
+  m_Name: SpaceSoldier_v2_animations_R:torso1_jnt
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8576738989039410055
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5593578188872410975}
+  m_LocalRotation: {x: 0.9999625, y: -0.008657847, z: 2.8378595e-16, w: -5.877757e-17}
+  m_LocalPosition: {x: -0.15281042, y: -6.994405e-17, z: -4.5859502e-17}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 7960760536082375876}
+  m_Father: {fileID: 5420054224728292425}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5624304713024727674
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3960490558230156851}
+  m_Layer: 0
+  m_Name: SpaceSoldier_v2_animations_R:Toe_Tap_R
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3960490558230156851
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5624304713024727674}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4421302230611497097}
+  - {fileID: 6896970205556851965}
+  m_Father: {fileID: 1207474702414943420}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5673997133464294151
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4421302230611497097}
+  m_Layer: 0
+  m_Name: SpaceSoldier_v2_animations_R:ik_footR
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4421302230611497097
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5673997133464294151}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.08796613, y: 0.013505999, z: 0.092685476}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3960490558230156851}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6049857966491548236
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4821767956260589991}
+  m_Layer: 0
+  m_Name: SpaceSoldier_v2_animations_R:Peel_Heel_L
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4821767956260589991
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6049857966491548236}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.0002280204, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 6707425874861387312}
+  m_Father: {fileID: 7044500599999623408}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6214690973901813934
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8326542786986882722}
+  m_Layer: 0
+  m_Name: SpaceSoldier_v2_animations_R:torso_ctrl
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8326542786986882722
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6214690973901813934}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.0004970911, y: 0.29100424, z: -6.661338e-18}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 8368341501408739354}
+  - {fileID: 2063068438434738173}
+  - {fileID: 5611053225742798101}
+  - {fileID: 5236458786879850086}
+  - {fileID: 6255457579159222849}
+  m_Father: {fileID: 3534384392649151732}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 3.9778986, y: -1.4760294, z: -0.65917194}
+--- !u!1 &6483470952073252828
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8309028489896041124}
+  m_Layer: 0
+  m_Name: SpaceSoldier_v2_animations_R:elbow_R_jnt
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8309028489896041124
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6483470952073252828}
+  m_LocalRotation: {x: 0.0000000073326674, y: -0.00000011190194, z: 0.08564066, w: 0.9963261}
+  m_LocalPosition: {x: -0.2596917, y: -0.039666485, z: 0.0015988348}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 167308386805071856}
+  m_Father: {fileID: 8298368627028993130}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6522570212707562985
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4117915364027119827}
+  m_Layer: 0
+  m_Name: SpaceSoldier_v2_animations_R:ikHandle1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4117915364027119827
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6522570212707562985}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.42436388, y: 0.986122, z: 0.094205}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 73917250393396791}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6731639356654455570
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7723901564078487809}
+  - component: {fileID: 1668871937776676741}
+  - component: {fileID: 660048942}
+  m_Layer: 0
+  m_Name: CharacterSoldierTest
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7723901564078487809
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6731639356654455570}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.521, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 9055150837970511133}
+  - {fileID: 73917250393396791}
+  - {fileID: 5081786577334845011}
   m_Father: {fileID: 3629170492538489294}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &425406474507993306
+--- !u!95 &1668871937776676741
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4116650356680670982}
+  m_GameObject: {fileID: 6731639356654455570}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: cf3947e4cddd9314abd8c6d5906ecf88, type: 3}
   m_Controller: {fileID: 9100000, guid: 7cfda563b6a5e0b419fb5fd0d840d337, type: 2}
@@ -1111,20 +1531,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &7892734576115724416
+--- !u!114 &660048942
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4116650356680670982}
+  m_GameObject: {fileID: 6731639356654455570}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fda0d8f7ab2f9fe429500fdeca80e1ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   IKActive: 1
---- !u!1 &4363235042097184049
+--- !u!1 &6809951967281821423
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1132,62 +1552,31 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4410358902234154784}
+  - component: {fileID: 4863371341746649880}
   m_Layer: 0
-  m_Name: SpaceSoldier_v2_animations_R:wrist_L_jnt
+  m_Name: SpaceSoldier_v2_animations_R:foot_L_ctrl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4410358902234154784
+--- !u!4 &4863371341746649880
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4363235042097184049}
-  m_LocalRotation: {x: 0.27191907, y: 0.16267294, z: -0.065068915, w: 0.94623655}
-  m_LocalPosition: {x: -0.27968866, y: -4.6629366e-17, z: -5.3290704e-17}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 2427448102811232607}
-  m_Father: {fileID: 5248598159253285481}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 32.396103, y: 18.825628, z: -2.3534856}
---- !u!1 &4463629841255048494
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8626282157596027217}
-  m_Layer: 0
-  m_Name: SpaceSoldier_v2_animations_R:Stand_Tip_L
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8626282157596027217
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4463629841255048494}
+  m_GameObject: {fileID: 6809951967281821423}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0018390754, y: 0, z: 0}
+  m_LocalPosition: {x: -0.08671164, y: 0, z: 0.047991466}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 2780707984503618831}
-  - {fileID: 2717135934794555997}
-  m_Father: {fileID: 1397120558085546437}
+  - {fileID: 1074121901053312921}
+  - {fileID: 4199229541785587936}
+  m_Father: {fileID: 5081786577334845011}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &4489033823450866099
+  m_LocalEulerAnglesHint: {x: 80.3381, y: 133.33315, z: 133.33315}
+--- !u!1 &6859234915499967153
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1195,592 +1584,26 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3600098149110901280}
+  - component: {fileID: 3880400411719840198}
   m_Layer: 0
-  m_Name: SpaceSoldier_v2_animations_R:knee_L_jnt
+  m_Name: SpaceSoldier_v2_animations_R:ik_footL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3600098149110901280
+--- !u!4 &3880400411719840198
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4489033823450866099}
-  m_LocalRotation: {x: 2.4255733e-30, y: 5.555196e-30, z: -0.047196474, w: 0.99888563}
-  m_LocalPosition: {x: -0.5143456, y: -0.052061822, z: 7.635947e-16}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 7037181664571353999}
-  m_Father: {fileID: 1187780947451220103}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -1.4175808e-13, y: -4.36962e-14, z: -54.679546}
---- !u!1 &4567247453080120527
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2300818427646220278}
-  m_Layer: 0
-  m_Name: SpaceSoldier_v2_animations_R:foot2_R_jnt
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2300818427646220278
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4567247453080120527}
-  m_LocalRotation: {x: 0.000000007338677, y: -0.0000000012864573, z: -0.17266537,
-    w: 0.9849805}
-  m_LocalPosition: {x: -0.11117032, y: -9.325873e-17, z: 4.677307e-19}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 2654461730975617194}
-  m_Father: {fileID: 3761134073572695445}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -2.357027e-16, y: 8.525642e-17, z: -19.88565}
---- !u!1 &4572117198585811800
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3757819276845379953}
-  m_Layer: 0
-  m_Name: SpaceSoldier_v2_animations_R:elbow_R_jnt
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3757819276845379953
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4572117198585811800}
-  m_LocalRotation: {x: 0.0000000073326674, y: -0.00000011190194, z: 0.08564066, w: 0.9963261}
-  m_LocalPosition: {x: -0.2596917, y: -0.039666485, z: 0.0015988348}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 3028242225552156170}
-  m_Father: {fileID: 3095520412906132561}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 3.9196777, y: -60.417603, z: 2.9177356}
---- !u!1 &4607516946294431118
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2717135934794555997}
-  m_Layer: 0
-  m_Name: SpaceSoldier_v2_animations_R:Toe_Tap_L
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2717135934794555997
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4607516946294431118}
+  m_GameObject: {fileID: 6859234915499967153}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0062594204, y: 0.016809985, z: 0.110573396}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 3110683700674278250}
-  - {fileID: 6704750698500203796}
-  m_Father: {fileID: 8626282157596027217}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &4851227812370970657
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4000915186006466509}
-  m_Layer: 0
-  m_Name: SpaceSoldier_v2_animations_R:hand1_R_jnt
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4000915186006466509
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4851227812370970657}
-  m_LocalRotation: {x: -0.025980184, y: 0.76113117, z: 0.42577526, w: -0.48858964}
-  m_LocalPosition: {x: -0.08432077, y: -0.15514025, z: -0.027362373}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 6196380644081702360}
-  m_Father: {fileID: 3028242225552156170}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: -38.517548, y: -101.79925, z: -35.61299}
---- !u!1 &4854203187836536581
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2651044019148957443}
-  m_Layer: 0
-  m_Name: SpaceSoldier_v2_animations_R:world_ctrl
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2651044019148957443
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4854203187836536581}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 3276576049554055709}
-  - {fileID: 4340854829867415207}
-  - {fileID: 2514536921526096969}
-  - {fileID: 1264984191548955806}
-  m_Father: {fileID: 6838427782646105409}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &4872678462660560789
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1509503330221624005}
-  m_Layer: 0
-  m_Name: SpaceSoldier_v2_animations_R:ikHandle2
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1509503330221624005
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4872678462660560789}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.4260276, y: 0.9861216, z: 0.09420504}
+  m_LocalPosition: {x: -0, y: -0.003303985, z: -0.017887924}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 9074471675672235822}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &4989365177463833957
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4340854829867415207}
-  m_Layer: 0
-  m_Name: SpaceSoldier_v2_animations_R:foot_R_ctrl
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4340854829867415207
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4989365177463833957}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.092222735, y: 0, z: 0.047991466}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 4572100024221903352}
-  - {fileID: 5164542713267938617}
-  m_Father: {fileID: 2651044019148957443}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 15.489117, y: 0, z: 0}
---- !u!1 &5122746931639282765
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 9074471675672235822}
-  m_Layer: 0
-  m_Name: SpaceSoldier_v2_animations_R:IKs
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &9074471675672235822
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5122746931639282765}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1804051875136605039}
-  - {fileID: 1509503330221624005}
-  m_Father: {fileID: 6838427782646105409}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &5281022343373792265
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4889406566363413242}
-  m_Layer: 0
-  m_Name: SpaceSoldier_v2_animations_R:knee_R_jnt
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4889406566363413242
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5281022343373792265}
-  m_LocalRotation: {x: -4.3003166e-32, y: 1.3988153e-29, z: -0.04719632, w: 0.99888563}
-  m_LocalPosition: {x: -0.5143449, y: -0.052061822, z: -1.05280365e-16}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 3761134073572695445}
-  m_Father: {fileID: 1027619323771296173}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -1.4029125e-14, y: -2.7632532e-14, z: -58.542873}
---- !u!1 &5360828856520379512
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4101029028071119713}
-  m_Layer: 0
-  m_Name: SpaceSoldier_v2_animations_R:head_jnt
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &4101029028071119713
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5360828856520379512}
-  m_LocalRotation: {x: -0.5285249, y: 0.84891784, z: -1.0419351e-14, w: 6.4869476e-15}
-  m_LocalPosition: {x: -0.1700834, y: -1.3322676e-17, z: 2.8177054e-17}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 6807491227629827268}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &5427068123364160651
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5358308316242555077}
-  m_Layer: 0
-  m_Name: SpaceSoldier_v2_animations_R:fingers_R_ctrl
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5358308316242555077
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5427068123364160651}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.10714203, y: -0.08274171, z: -0.034113124}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 91037730685965500}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &5929115258933245968
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3095520412906132561}
-  m_Layer: 0
-  m_Name: SpaceSoldier_v2_animations_R:shoulder_R_jnt
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3095520412906132561
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5929115258933245968}
-  m_LocalRotation: {x: -9.9045396e-17, y: -6.957004e-17, z: 0.45387712, w: 0.8910643}
-  m_LocalPosition: {x: -0.16671161, y: 0.0059010806, z: 0.036833398}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 3757819276845379953}
-  m_Father: {fileID: 1677168753220651735}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 13.939991, y: -6.888575, z: 53.36618}
---- !u!1 &5930786046919989502
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3028242225552156170}
-  m_Layer: 0
-  m_Name: SpaceSoldier_v2_animations_R:wrist_R_jnt
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &3028242225552156170
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5930786046919989502}
-  m_LocalRotation: {x: -0.53229237, y: -0.36968803, z: -0.21124777, w: 0.7316898}
-  m_LocalPosition: {x: -0.26681313, y: 0.010796555, z: -0.08319434}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 330008581615596576}
-  - {fileID: 4000915186006466509}
-  - {fileID: 8443631494407172915}
-  m_Father: {fileID: 3757819276845379953}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -58.03864, y: -59.048336, z: -9.903482}
---- !u!1 &6006547144024665761
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 5248598159253285481}
-  m_Layer: 0
-  m_Name: SpaceSoldier_v2_animations_R:elbow_L_jnt
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &5248598159253285481
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6006547144024665761}
-  m_LocalRotation: {x: 0.3292121, y: 0.1423805, z: -0.05808889, w: 0.93165064}
-  m_LocalPosition: {x: -0.2627148, y: 4.065758e-18, z: 1.040834e-18}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 4410358902234154784}
-  m_Father: {fileID: 8945086898151251345}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 55.954617, y: 90.42782, z: 12.802572}
---- !u!1 &6193707616387750888
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7607967845252280149}
-  m_Layer: 0
-  m_Name: SpaceSoldier_v2_animations_R:Peel_Heel_R
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7607967845252280149
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6193707616387750888}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 8723007094589514063}
-  m_Father: {fileID: 6493008564423830705}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &6737659836991642165
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8945086898151251345}
-  m_Layer: 0
-  m_Name: SpaceSoldier_v2_animations_R:shoulder_L_jnt
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8945086898151251345
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6737659836991642165}
-  m_LocalRotation: {x: 0.06124388, y: 0.0790513, z: 0.53334117, w: 0.8399686}
-  m_LocalPosition: {x: -0.17083377, y: -9.575673e-17, z: -5.995204e-17}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 5248598159253285481}
-  m_Father: {fileID: 7994010725068664622}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 32.288074, y: 0.5382805, z: 61.132217}
---- !u!1 &6859543281016447736
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2654461730975617194}
-  m_Layer: 0
-  m_Name: SpaceSoldier_v2_animations_R:foot3_R_jnt
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2654461730975617194
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6859543281016447736}
-  m_LocalRotation: {x: -0.009818087, y: -0.70703864, z: -0.009818087, w: 0.70703864}
-  m_LocalPosition: {x: -0.061076786, y: -3.7470024e-18, z: -1.25725175e-17}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2300818427646220278}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &6889428164696843306
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1832410655473882395}
-  m_Layer: 0
-  m_Name: SpaceSoldier_v2_animations_R:torso2_jnt
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1832410655473882395
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6889428164696843306}
-  m_LocalRotation: {x: -0.532736, y: 0.79538596, z: 0.23876797, w: 0.16292179}
-  m_LocalPosition: {x: -0.15413912, y: 8.792966e-16, z: 9.242216e-17}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 7994010725068664622}
-  - {fileID: 1677168753220651735}
-  - {fileID: 6807491227629827268}
-  m_Father: {fileID: 282766691000982843}
+  m_Father: {fileID: 7055663135207281748}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6906747638197541717
@@ -1793,7 +1616,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8880595029185543584}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: SpawnPoint2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1810,10 +1633,10 @@ Transform:
   m_LocalPosition: {x: -0.1598, y: -0.2027, z: -0.1297}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children: []
-  m_Father: {fileID: 330008581615596576}
+  m_Father: {fileID: 4977607011199800997}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 12.01, y: -13.387001, z: 47.671}
---- !u!1 &7082976871990400894
+--- !u!1 &6959507891649336859
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1821,34 +1644,30 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2186329325734158831}
+  - component: {fileID: 1761988150844035509}
   m_Layer: 0
-  m_Name: SpaceSoldier_v2_animations_R:torso_ctrl
+  m_Name: SpaceSoldier_v2_animations_R:knee_L_jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &2186329325734158831
+--- !u!4 &1761988150844035509
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7082976871990400894}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0004970911, y: 0.29100424, z: -6.661338e-18}
+  m_GameObject: {fileID: 6959507891649336859}
+  m_LocalRotation: {x: 2.4255733e-30, y: 5.555196e-30, z: -0.047196474, w: 0.99888563}
+  m_LocalPosition: {x: -0.5143456, y: -0.052061822, z: 7.635947e-16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 8368023333766455184}
-  - {fileID: 216690861619195935}
-  - {fileID: 187230830905919350}
-  - {fileID: 91037730685965500}
-  - {fileID: 2502548091009987632}
-  m_Father: {fileID: 2514536921526096969}
+  - {fileID: 8093213861488211406}
+  m_Father: {fileID: 7612130837374526297}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -4.8785596, y: 1.2319076, z: -0.49611652}
---- !u!1 &7230796750410836224
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6979096921302235339
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1856,30 +1675,30 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7994010725068664622}
+  - component: {fileID: 3952500138245340375}
   m_Layer: 0
-  m_Name: SpaceSoldier_v2_animations_R:clavicle_L_jnt
+  m_Name: SpaceSoldier_v2_animations_R:neck_jnt
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7994010725068664622
+--- !u!4 &3952500138245340375
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7230796750410836224}
-  m_LocalRotation: {x: 0.23143223, y: 0.9554725, z: 0.026309896, w: -0.18116081}
-  m_LocalPosition: {x: 0.018747417, y: -0.046194676, z: -0.08236122}
+  m_GameObject: {fileID: 6979096921302235339}
+  m_LocalRotation: {x: -0.53305733, y: 0.7951706, z: 0.23883374, w: -0.16282526}
+  m_LocalPosition: {x: 0.023235468, y: 0.0608309, z: 0.00073536835}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 8945086898151251345}
-  m_Father: {fileID: 1832410655473882395}
-  m_RootOrder: 0
+  - {fileID: 383219882837036602}
+  m_Father: {fileID: 7960760536082375876}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &7437722639822514709
+--- !u!1 &7019168047168543376
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1887,67 +1706,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2502548091009987632}
-  m_Layer: 0
-  m_Name: SpaceSoldier_v2_animations_R:head_ctrl
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2502548091009987632
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7437722639822514709}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0.21924144, z: 4.9960034e-18}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2186329325734158831}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &7485393821192383676
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 8855177980319376738}
-  m_Layer: 0
-  m_Name: SpaceSoldier_v2_animations_R:ik_legL
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &8855177980319376738
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7485393821192383676}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.006031401, y: 0.054208197, z: -0.010765836}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2780707984503618831}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &7560432931038363337
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 3761134073572695445}
+  - component: {fileID: 215512894649429198}
   m_Layer: 0
   m_Name: SpaceSoldier_v2_animations_R:foot1_R_jnt
   m_TagString: Untagged
@@ -1955,113 +1714,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3761134073572695445
+--- !u!4 &215512894649429198
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7560432931038363337}
+  m_GameObject: {fileID: 7019168047168543376}
   m_LocalRotation: {x: 0.7926604, y: 0.6096634, z: -3.7331114e-17, w: -4.8536454e-17}
   m_LocalPosition: {x: -0.44218087, y: 2.1316282e-16, z: -1.352374e-16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 2300818427646220278}
-  m_Father: {fileID: 4889406566363413242}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 6.8456497, y: 179.80284, z: 90.15238}
---- !u!1 &7616595724153813633
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6501786830685401722}
-  m_Layer: 0
-  m_Name: SpaceSoldier_v2_animations_R:knee_L_ctrl
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6501786830685401722
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7616595724153813633}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.0012544829, y: 0.493452, z: -0.007879546}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 3276576049554055709}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &7658050729753645398
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1027619323771296173}
-  m_Layer: 0
-  m_Name: SpaceSoldier_v2_animations_R:hip_R_jnt
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1027619323771296173
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7658050729753645398}
-  m_LocalRotation: {x: 0.77582294, y: 0.38526937, z: 0.2128416, w: 0.45206735}
-  m_LocalPosition: {x: -0.10919297, y: -0.016186787, z: 0.04507662}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 4889406566363413242}
-  m_Father: {fileID: 1264984191548955806}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 33.524105, y: 134.49976, z: 140.60524}
---- !u!1 &7682450649561363379
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1804051875136605039}
-  m_Layer: 0
-  m_Name: SpaceSoldier_v2_animations_R:ikHandle1
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1804051875136605039
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7682450649561363379}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.42436388, y: 0.986122, z: 0.094205}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 9074471675672235822}
+  - {fileID: 8063774544939393801}
+  m_Father: {fileID: 4864151996515841844}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &7687132654922183145
+--- !u!1 &7574471052113851547
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2069,61 +1737,117 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1264984191548955806}
+  - component: {fileID: 5702592360733112879}
   m_Layer: 0
-  m_Name: SpaceSoldier_v2_animations_R:root_jnt
+  m_Name: SpaceSoldier_v2_animations_R:ik_toesL
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1264984191548955806
+--- !u!4 &5702592360733112879
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7687132654922183145}
-  m_LocalRotation: {x: 0.31746352, y: 0.9121606, z: 0.08519528, w: 0.24478944}
-  m_LocalPosition: {x: -0, y: 1.0892555, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1187780947451220103}
-  - {fileID: 1027619323771296173}
-  - {fileID: 6028655469952299562}
-  m_Father: {fileID: 2651044019148957443}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: -2.6327958, y: 149.96107, z: 39.850777}
---- !u!1 &7880973402816176413
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 6493008564423830705}
-  m_Layer: 0
-  m_Name: SpaceSoldier_v2_animations_R:Stand_Tip_R
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &6493008564423830705
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7880973402816176413}
+  m_GameObject: {fileID: 7574471052113851547}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: -0, y: -0.004999909, z: 0.043165796}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 7055663135207281748}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7782858736767835440
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5399714210666576202}
+  m_Layer: 0
+  m_Name: SpaceSoldier_v2_animations_R:clavicle_R_jnt
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5399714210666576202
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7782858736767835440}
+  m_LocalRotation: {x: 0.07332896, y: 0.27960065, z: -0.11970895, w: 0.949798}
+  m_LocalPosition: {x: -0.09627265, y: -0.000000016763806, z: 0.000000007450581}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 7607967845252280149}
-  - {fileID: 1139941087516743885}
-  m_Father: {fileID: 4572100024221903352}
+  - {fileID: 8298368627028993130}
+  m_Father: {fileID: 7960760536082375876}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7880517597196380376
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 383219882837036602}
+  m_Layer: 0
+  m_Name: SpaceSoldier_v2_animations_R:head_jnt
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &383219882837036602
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7880517597196380376}
+  m_LocalRotation: {x: -0.5285249, y: 0.84891784, z: -1.0419351e-14, w: 6.4869476e-15}
+  m_LocalPosition: {x: -0.1700834, y: -1.3322676e-17, z: 2.8177054e-17}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3952500138245340375}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7950931625579132204
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7596690956902670514}
+  m_Layer: 0
+  m_Name: SpaceSoldier_v2_animations_R:fingers_R_ctrl
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7596690956902670514
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7950931625579132204}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.10714203, y: -0.08274171, z: -0.034113124}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 5236458786879850086}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8086389977643893722
@@ -2377,6 +2101,223 @@ MonoBehaviour:
   baseHealthRegen: 1
   healthRegen: 1
   regenTick: 1
+--- !u!1 &8089994840450464914
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5545359645163362802}
+  m_Layer: 0
+  m_Name: SpaceSoldier_v2_animations_R:shoulder_L_jnt
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5545359645163362802
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8089994840450464914}
+  m_LocalRotation: {x: 0.06124388, y: 0.0790513, z: 0.53334117, w: 0.8399686}
+  m_LocalPosition: {x: -0.17083377, y: -9.575673e-17, z: -5.995204e-17}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2129027179694154352}
+  m_Father: {fileID: 1040569166311239144}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8165906738603337307
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1040569166311239144}
+  m_Layer: 0
+  m_Name: SpaceSoldier_v2_animations_R:clavicle_L_jnt
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1040569166311239144
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8165906738603337307}
+  m_LocalRotation: {x: 0.23143223, y: 0.9554725, z: 0.026309894, w: -0.1811608}
+  m_LocalPosition: {x: 0.018747445, y: -0.046194658, z: -0.08236129}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 5545359645163362802}
+  m_Father: {fileID: 7960760536082375876}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8246630719586113855
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6956965269973140781}
+  m_Layer: 0
+  m_Name: SpaceSoldier_v2_animations_R:foot_R_ctrl
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6956965269973140781
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8246630719586113855}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.092222735, y: 0, z: 0.047991466}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 8651801909147453175}
+  - {fileID: 5255056575444993338}
+  m_Father: {fileID: 5081786577334845011}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 6.568757, y: 0, z: 0}
+--- !u!1 &8447243263247801242
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4336152330709224675}
+  m_Layer: 0
+  m_Name: SpaceSoldier_v2_animations_R:hand1_R_jnt
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4336152330709224675
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8447243263247801242}
+  m_LocalRotation: {x: -0.025980184, y: 0.76113117, z: 0.42577526, w: -0.48858964}
+  m_LocalPosition: {x: -0.08432077, y: -0.15514025, z: -0.027362373}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 3721717254316971041}
+  m_Father: {fileID: 167308386805071856}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: -38.517548, y: -101.79925, z: -35.61299}
+--- !u!1 &8526134783333703176
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7737103725865655854}
+  m_Layer: 0
+  m_Name: SpaceSoldier_v2_animations_R:wrist_L_jnt
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7737103725865655854
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8526134783333703176}
+  m_LocalRotation: {x: 0.27191907, y: 0.16267294, z: -0.065068915, w: 0.94623655}
+  m_LocalPosition: {x: -0.27968866, y: -4.6629366e-17, z: -5.3290704e-17}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2427448102811232607}
+  m_Father: {fileID: 2129027179694154352}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8626192362617741562
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3534384392649151732}
+  m_Layer: 0
+  m_Name: SpaceSoldier_v2_animations_R:root_ctrl
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3534384392649151732
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8626192362617741562}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0, y: 1.0892555, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 8326542786986882722}
+  m_Father: {fileID: 5081786577334845011}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 30.95057, y: 0, z: 0}
+--- !u!1 &8754922548867742860
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2780022665652225784}
+  m_Layer: 0
+  m_Name: SpaceSoldier_v2_animations_R:ikHandle2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2780022665652225784
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8754922548867742860}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.4260276, y: 0.9861216, z: 0.09420504}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 73917250393396791}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8826769825250883112
 GameObject:
   m_ObjectHideFlags: 0
@@ -2404,11 +2345,11 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 6838427782646105409}
+  - {fileID: 7723901564078487809}
   m_Father: {fileID: 8086389977643893702}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &8862671227336441907
+--- !u!1 &8893670687068447318
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2416,27 +2357,86 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3276576049554055709}
+  - component: {fileID: 2063068438434738173}
   m_Layer: 0
-  m_Name: SpaceSoldier_v2_animations_R:foot_L_ctrl
+  m_Name: SpaceSoldier_v2_animations_R:elbow_R_ctrl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3276576049554055709
+--- !u!4 &2063068438434738173
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8862671227336441907}
+  m_GameObject: {fileID: 8893670687068447318}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.08671164, y: 0, z: 0.047991466}
+  m_LocalPosition: {x: 0.3281978, y: -0.1448322, z: 0.011010647}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8326542786986882722}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 48.27775, y: 0, z: 0}
+--- !u!1 &8928962578807526310
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5255056575444993338}
+  m_Layer: 0
+  m_Name: SpaceSoldier_v2_animations_R:knee_R_ctrl
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5255056575444993338
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8928962578807526310}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.0042565977, y: 0.49345222, z: -0.007879606}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6956965269973140781}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &9136462463333056905
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5420054224728292425}
+  m_Layer: 0
+  m_Name: SpaceSoldier_v2_animations_R:stomach_jnt
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5420054224728292425
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9136462463333056905}
+  m_LocalRotation: {x: 0.11183461, y: -0.23382282, z: 0.86763895, w: -0.4242906}
+  m_LocalPosition: {x: 0.086367674, y: 0.107890055, z: -0.00041638932}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1397120558085546437}
-  - {fileID: 6501786830685401722}
-  m_Father: {fileID: 2651044019148957443}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 13.617654, y: 0, z: 0}
+  - {fileID: 8576738989039410055}
+  m_Father: {fileID: 7624183592674942928}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

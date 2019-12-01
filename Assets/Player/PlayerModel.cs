@@ -35,13 +35,6 @@ public class PlayerModel : MonoBehaviour
     private float _leftInput;
     private float _rightInput;
 
-//    public float baseHealth;
-//    public float health;
-//    public float baseMaxHealth;
-//    public float maxHealth;
-//    public float baseHealthRegen;
-//    public float healthRegen;
-
     [Header("Attacking Variables")]
     public float baseAttackSpeed;
     [HideInInspector] public float attackSpeed;
@@ -76,7 +69,14 @@ public class PlayerModel : MonoBehaviour
     public List<Crumb> crumbTrail = new List<Crumb>();
     
     private Color c;
-    
+
+    public delegate void AnimationAction();
+
+    public AnimationAction AnimationEventJump;
+    public AnimationAction AnimationEventLand;
+    public AnimationAction AnimationEventSprint;
+    public AnimationAction AnimationEventRun;
+
     private void Awake()
     {
 
@@ -139,6 +139,7 @@ public class PlayerModel : MonoBehaviour
         SetupPlayFab();
         
         attackOccupied = false;
+        UpdateForwardInput(1);
     }
 
     private IEnumerator MarkPreviousPosition()
@@ -279,21 +280,23 @@ public class PlayerModel : MonoBehaviour
         
     }
 
+    
     private void OnCollisionEnter(Collision other)
     {
         foreach (ContactPoint c in other.contacts)
         {
-            Debug.DrawRay(c.point, c.normal, Color.red, 2);
-
             if (c.normal.y > 0.4f)
+            {
                 remainingJumps = jumps;
-
+                AnimationEventLand?.Invoke();
+            }
         }
     }
     
     // Actions to perform when input is received 
     
-    private void UpdateForwardInput(float i)
+    // This is public so I can run it once on the animator to cheese an IK bug into not existing
+    public void UpdateForwardInput(float i)
     {
         _forwardInput = i;
     }
@@ -317,6 +320,7 @@ public class PlayerModel : MonoBehaviour
     {
         if (remainingJumps <= 0) return;
         
+        AnimationEventJump?.Invoke();
         body.velocity = new Vector3(body.velocity.x, jumpHeight, body.velocity.z);
         remainingJumps--;
     }
@@ -325,12 +329,14 @@ public class PlayerModel : MonoBehaviour
     {
         speed *= sprintSpeedMult;
         maxSpeed *= sprintSpeedMult;
+        AnimationEventSprint?.Invoke();
     }
     
     private void ShiftInputUp()
     {
         speed /= sprintSpeedMult;
         maxSpeed /= sprintSpeedMult;
+        AnimationEventRun?.Invoke();
     }
 
     private void OnMouse0Down()
