@@ -29,14 +29,14 @@ public class PlayerAnimator : MonoBehaviour
         model.AnimationEventSprint += PlayAnimSprint;
         model.AnimationEventRun += PlayAnimRun;
 
-        a1 = model.ability1 as Ability1;
-        a1.AnimationEventAbility1 += PlayAnimAbility1;
-        a2 = model.ability2 as Ability2;
-        a2.AnimationEventAbility2 += PlayAnimAbility2;
+//        a1 = model.ability1 as Ability1;
+//        a1.AnimationEventAbility1 += PlayAnimAbility1;
+//        a2 = model.ability2 as Ability2;
+//        a2.AnimationEventAbility2 += PlayAnimAbility2;
         a3 = model.ability3 as Ability3;
         a3.AnimationEventAbility3 += PlayAnimAbility3;
-        a4 = model.ability4 as Ability4;
-        a4.AnimationEventAbility4 += PlayAnimAbility4;
+//        a4 = model.ability4 as Ability4;
+//        a4.AnimationEventAbility4 += PlayAnimAbility4;
         
     }
 
@@ -46,10 +46,10 @@ public class PlayerAnimator : MonoBehaviour
         model.AnimationEventLand -= PlayAnimLand;
         model.AnimationEventSprint -= PlayAnimSprint;
         model.AnimationEventRun -= PlayAnimRun;
-        a1.AnimationEventAbility1 -= PlayAnimAbility1;
-        a2.AnimationEventAbility2 -= PlayAnimAbility2;
+//        a1.AnimationEventAbility1 -= PlayAnimAbility1;
+//        a2.AnimationEventAbility2 -= PlayAnimAbility2;
         a3.AnimationEventAbility3 -= PlayAnimAbility3;
-        a4.AnimationEventAbility4 -= PlayAnimAbility4;
+//        a4.AnimationEventAbility4 -= PlayAnimAbility4;
     }
 
     void OnAnimatorIK()
@@ -81,26 +81,18 @@ public class PlayerAnimator : MonoBehaviour
         RotateTorso(vel);
     }
 
-    private const float animTimerMark = 4;
-    private float animTimer;
     private void FixedUpdate()
     {
-        animTimer -= Time.fixedDeltaTime;
 
         // Logic for turning off ik temporarily to have idle anims
         if (model.body.velocity.magnitude > 0.1f)
         {
-            animTimer = animTimerMark;
-        }
-        
-        if (animTimer < 0)
-        {
-            IKActive = false;
-            // play idle animation loop 
+            animator.ResetTrigger("Idle");
+            animator.SetTrigger("Running");
         }
         else
         {
-            IKActive = true;
+            animator.SetTrigger("Idle");
         }
     }
 
@@ -139,48 +131,51 @@ public class PlayerAnimator : MonoBehaviour
 
     private void PlayAnimJump()
     {
-        animTimer = animTimerMark;
         animator.SetTrigger("Jump");
     }
-    
+
+    private bool spawnCompensation = false;
     private void PlayAnimLand()
     {
+        if (!spawnCompensation)
+        {
+            spawnCompensation = true;
+            return;
+        }
+
         animator.SetTrigger("Land");
     }
     
     private void PlayAnimSprint()
     {
-        animTimer = animTimerMark;
-        //animator.
+        animator.SetTrigger("Running");
     }
     
     private void PlayAnimRun()
     {
-        animTimer = animTimerMark;
-        
+        animator.SetTrigger("Running");
     }
     
-    private void PlayAnimAbility1()
-    {
-        animTimer = animTimerMark;
-        
-    }
-    
-    private void PlayAnimAbility2()
-    {
-        animTimer = animTimerMark;
-        
-    }
+//    private void PlayAnimAbility1()
+//    {
+//        animTimer = animTimerMark;
+//        
+//    }
+//    
+//    private void PlayAnimAbility2()
+//    {
+//        animTimer = animTimerMark;
+//        
+//    }
     
     private void PlayAnimAbility3()
     {
-        animTimer = animTimerMark;
         animator.SetTrigger("Jump");
     }
     
-    private void PlayAnimAbility4()
-    {
-        animTimer = animTimerMark;
-        
-    }
+//    private void PlayAnimAbility4()
+//    {
+//        animTimer = animTimerMark;
+//        
+//    }
 }
