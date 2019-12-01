@@ -8,25 +8,17 @@ public class PlayerAnimator : MonoBehaviour
     private PlayerModel model;
 
     public bool IKActive = true;
-
-    private Vector3 projectedDir = Vector3.zero;
+    
+    private float yRotation = 0;
 
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
         model = GetComponentInParent<PlayerModel>();
+        animator.SetBoneLocalRotation(HumanBodyBones.Spine, Quaternion.Euler(180, 0,0));
     }
 
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.green;
-        Vector3 vel = model.body.velocity;
-        vel.y = 0;
-        Gizmos.DrawSphere(transform.position + vel, 1);
-    }
-
-    
     void OnAnimatorIK()
     {
         Vector3 vel = model.body.velocity;
@@ -57,21 +49,26 @@ public class PlayerAnimator : MonoBehaviour
         animator.SetIKPosition(AvatarIKGoal.RightHand,model.target);
         animator.SetIKPosition(AvatarIKGoal.LeftHand,model.target);
 
+        RotateTorso(vel);
+    }
+
+    private void RotateTorso(Vector3 velocity)
+    {
         // rotate bottom half
         Transform spineTransform = animator.GetBoneTransform(HumanBodyBones.Spine);
         
-        // In this example, worldSpaceRotation is the rotation of the camera
-        // Then just use localSpaceRotation as the rotation for the spine component
-//        Quaternion newRot = Quaternion.Inverse(parentObj.rotation) * world.rotation;
-
-
-        animator.SetBoneLocalRotation(HumanBodyBones.Spine, Quaternion.Euler(wow, 0,0));
+        // -90 for right, 90 for left
+        float angle = Vector3.SignedAngle(velocity, model.view.forward, Vector3.up);
+        Debug.Log(angle + " and " + spineTransform.rotation.eulerAngles);
+       
+        if (angle > 15) yRotation = Mathf.Lerp(180, 90, angle / 60);
+        else if (angle < -15) yRotation = Mathf.Lerp(180, 270, Mathf.Abs(angle) / 60);
+        else yRotation = Mathf.Lerp(yRotation, 180, Time.fixedDeltaTime * 8);
+        
+        animator.SetBoneLocalRotation(HumanBodyBones.Spine, Quaternion.Euler(yRotation, 0,0));
     }
 
-    public float wow = 180;
-    
     private const float turnSpeed = 25;
-    
     private void RotateTowards(Vector3 t)
     {
         Vector3 targetDir = t - transform.position;
