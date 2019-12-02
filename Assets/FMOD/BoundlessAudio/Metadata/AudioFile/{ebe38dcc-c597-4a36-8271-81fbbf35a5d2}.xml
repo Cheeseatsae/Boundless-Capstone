@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{ebe38dcc-c597-4a36-8271-81fbbf35a5d2}">
+		<property name="assetPath">
+			<value>Score/2. Title Screen (Second Half Loop).wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>25.771812499999999</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{f0408012-c35e-4460-8758-b9b78ed23ec2}</destination>
+		</relationship>
+	</object>
+</objects>

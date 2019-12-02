@@ -1,5 +1,77 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8250831260813313051
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD/BoundlessAudio/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637108824644791684
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &-6412807121568407353
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD/BoundlessAudio/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637108931955524868
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &-3335139153902689968
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD/BoundlessAudio/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637109119582861865
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-3158927287669243462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD/BoundlessAudio/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637109056378891049
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13,16 +85,34 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 1268736003623448120}
-  - {fileID: 4142193790035497212}
+  - {fileID: 5658508679688700206}
+  - {fileID: -3335139153902689968}
   EditorEvents: []
   EditorParameters: []
   MasterBanks:
-  - {fileID: 4142193790035497212}
+  - {fileID: -3335139153902689968}
   StringsBanks:
-  - {fileID: 1268736003623448120}
-  stringsBankWriteTime: 637108824644831571
+  - {fileID: 5658508679688700206}
+  stringsBankWriteTime: 637109119582901764
   cacheVersion: 3
+--- !u!114 &850115850650829515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD/BoundlessAudio/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637109019948919729
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
 --- !u!114 &1268736003623448120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -43,6 +133,42 @@ MonoBehaviour:
   - Name: Desktop
     Value: 688
   Exists: 1
+--- !u!114 &1483500570285088722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD/BoundlessAudio/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637109056425192576
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &3952190808264372704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD/BoundlessAudio/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637108933379268802
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
 --- !u!114 &4142193790035497212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -61,3 +187,41 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 1
+--- !u!114 &5658508679688700206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD/BoundlessAudio/Build/Desktop/Master.strings.bank
+  SubDir: 
+  lastModified: 637109119582901764
+  LoadResult: 0
+  FileSizes:
+  - Name: Desktop
+    Value: 740
+  Exists: 1
+--- !u!114 &8011809677473052633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD/BoundlessAudio/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637108931985180812
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0

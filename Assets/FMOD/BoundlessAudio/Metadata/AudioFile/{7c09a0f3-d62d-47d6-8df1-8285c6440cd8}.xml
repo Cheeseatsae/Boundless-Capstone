@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{7c09a0f3-d62d-47d6-8df1-8285c6440cd8}">
+		<property name="assetPath">
+			<value>Score/11. Outro.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>51.543624999999999</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{f0408012-c35e-4460-8758-b9b78ed23ec2}</destination>
+		</relationship>
+	</object>
+</objects>
