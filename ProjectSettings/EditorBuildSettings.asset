@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/LobbyTest/LobbyTest.unity
     guid: f72288184198ece41a6a2915827ff5d8
   - enabled: 1
-    path: Assets/Scenes/Greybox scene/Greybox level 1.unity
-    guid: 2e07f1aa4e0ae7241b31cefe934f3d6e
+    path: Assets/Scenes/Greybox scene/Populated Scene/Populated.unity
+    guid: 6fbc82cf9cb348841866e062d1de6969
   m_configObjects: {}

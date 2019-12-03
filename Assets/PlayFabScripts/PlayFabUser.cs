@@ -16,12 +16,12 @@ public class PlayFabUser : MonoBehaviour
         playerID = GetPlayerID();
         playfab.TryLogin(playerID);
 
-        AIManager.OnLevelEnd += SendPlayTime;
+//        AIManager.OnLevelEnd += SendPlayTime;
     }
 
     private void OnDestroy()
     {
-        AIManager.OnLevelEnd -= SendPlayTime;
+//        AIManager.OnLevelEnd -= SendPlayTime;
     }
 
     private void SendPlayTime()

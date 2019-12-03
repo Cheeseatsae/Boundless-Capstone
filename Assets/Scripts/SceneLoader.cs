@@ -20,6 +20,7 @@ public class SceneLoader : MonoBehaviour
     public void LoadPlayScene()
     {
         SceneManager.LoadScene(1);
+        Jukebox.instance.SetProgressionVariable(4);
         LevelManager.instance.Pause();
     }
 

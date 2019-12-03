@@ -60,8 +60,14 @@ public class Jukebox : MonoBehaviour
         GameProgression = i;
     }
     
+    public void IncrementProgressionVariable()
+    {
+        GameProgression += 1;
+    }
+    
     void OnDestroy()
     {
+        StopSoundtrack();
         soundtrack.release();
     }
     
