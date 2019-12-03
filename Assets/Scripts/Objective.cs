@@ -53,7 +53,7 @@ public class Objective : MonoBehaviour
     {
         //Debug.Log("run cunt");
         _objectiveNumber++;
-        Jukebox.instance.IncrementProgressionVariable();
+        Jukebox.instance?.IncrementProgressionVariable();
         text.text = objectiveList[_objectiveNumber];
     }
 }
