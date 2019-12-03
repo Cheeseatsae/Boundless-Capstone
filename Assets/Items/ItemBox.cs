@@ -49,13 +49,17 @@ public class ItemBox : Interactable
 
     private void Update()
     {
-        float playerDistance = Vector3.Distance(LevelManager.instance.player.transform.position, transform.position);
-        if (playerDistance <= minPlayerDistance)
+        if (!LevelManager.instance.player)
         {
-            floatingCost.SetActive(true);
-            Vector3 lookDirection = LevelManager.instance.player.transform.position - transform.position;;
-            lookDirection.y = 0;
-            floatingCost.transform.rotation = Quaternion.LookRotation(-lookDirection);
-        }else floatingCost.SetActive(false);
+            float playerDistance = Vector3.Distance(LevelManager.instance.player.transform.position, transform.position);
+            if (playerDistance <= minPlayerDistance)
+            {
+                floatingCost.SetActive(true);
+                Vector3 lookDirection = LevelManager.instance.player.transform.position - transform.position;;
+                lookDirection.y = 0;
+                floatingCost.transform.rotation = Quaternion.LookRotation(-lookDirection);
+            }else floatingCost.SetActive(false);
+        }
+
     }
 }

@@ -61,7 +61,7 @@ MonoBehaviour:
   damage: {fileID: 0}
   ranged: 0
   rangedCoolDown: 2.5
-  bulletPref: {fileID: 7704365907161935278, guid: 9a8824215a3e86e4082d0b64d45ffe27,
+  bulletPref: {fileID: 1561131534318745845, guid: 0067f1d0e466a1247be8c956c8803f4f,
     type: 3}
   rangedCooldown: 0
   projectileSpeed: 50

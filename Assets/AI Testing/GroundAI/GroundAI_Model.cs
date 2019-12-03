@@ -42,6 +42,10 @@ public class GroundAI_Model : AIBaseModel
         if (target != null)
         {
             navmesh.destination = target.transform.position;
+            if (navmesh.destination == null)
+            {
+                Destroy(this.gameObject);
+            }
             
             RaycastHit hit;
         
@@ -116,7 +120,7 @@ public class GroundAI_Model : AIBaseModel
         
         yield return new WaitForSeconds(rangedCoolDown);
         rangedCooldown = false;
-
+        
     }
     
     public IEnumerator MeleeCooldown()

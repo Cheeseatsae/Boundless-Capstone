@@ -6,6 +6,10 @@ using UnityEngine;
 public class AIGroundBullet : MonoBehaviour
 {
     public int damage = 20;
+    
+    public float waitTime;
+    public GameObject emission;
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -14,13 +18,20 @@ public class AIGroundBullet : MonoBehaviour
         {
             Health healthComp = other.GetComponent<Health>();
             healthComp.DoDamage(damage);
+            Instantiate(emission, transform.position, Quaternion.identity);
+
             Destroy(this.gameObject);
-            
+
         } 
         else if (other.gameObject.layer == 10)
         {
+            Instantiate(emission, transform.position, Quaternion.identity);
+
             Destroy(this.gameObject);
         }
 
     }
+
+    
+
 }
