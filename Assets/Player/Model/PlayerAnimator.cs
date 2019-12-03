@@ -26,8 +26,8 @@ public class PlayerAnimator : MonoBehaviour
 
         model.AnimationEventJump += PlayAnimJump;
         model.AnimationEventLand += PlayAnimLand;
-        model.AnimationEventSprint += PlayAnimSprint;
-        model.AnimationEventRun += PlayAnimRun;
+//        model.AnimationEventSprint += PlayAnimSprint;
+//        model.AnimationEventRun += PlayAnimRun;
 
 //        a1 = model.ability1 as Ability1;
 //        a1.AnimationEventAbility1 += PlayAnimAbility1;
@@ -44,8 +44,8 @@ public class PlayerAnimator : MonoBehaviour
     {
         model.AnimationEventJump -= PlayAnimJump;
         model.AnimationEventLand -= PlayAnimLand;
-        model.AnimationEventSprint -= PlayAnimSprint;
-        model.AnimationEventRun -= PlayAnimRun;
+//        model.AnimationEventSprint -= PlayAnimSprint;
+//        model.AnimationEventRun -= PlayAnimRun;
 //        a1.AnimationEventAbility1 -= PlayAnimAbility1;
 //        a2.AnimationEventAbility2 -= PlayAnimAbility2;
         a3.AnimationEventAbility3 -= PlayAnimAbility3;
@@ -83,8 +83,8 @@ public class PlayerAnimator : MonoBehaviour
 
     private void FixedUpdate()
     {
-
-        // Logic for turning off ik temporarily to have idle anims
+        if (!model.grounded) return;
+        
         if (model.body.velocity.magnitude > 0.1f)
         {
             animator.ResetTrigger("Idle");
@@ -146,15 +146,15 @@ public class PlayerAnimator : MonoBehaviour
         animator.SetTrigger("Land");
     }
     
-    private void PlayAnimSprint()
-    {
-        animator.SetTrigger("Running");
-    }
-    
-    private void PlayAnimRun()
-    {
-        animator.SetTrigger("Running");
-    }
+//    private void PlayAnimSprint()
+//    {
+//        animator.SetTrigger("Running");
+//    }
+//    
+//    private void PlayAnimRun()
+//    {
+//        animator.SetTrigger("Running");
+//    }
     
 //    private void PlayAnimAbility1()
 //    {

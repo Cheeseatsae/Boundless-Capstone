@@ -17,6 +17,8 @@ public class PlayerModel : MonoBehaviour
     private int remainingJumps;
     public float baseJumpHeight;
     [HideInInspector] public float jumpHeight;
+
+    [HideInInspector] public bool grounded = false;
     
     [Header("References")]
     public Rigidbody body;
@@ -288,6 +290,7 @@ public class PlayerModel : MonoBehaviour
             if (c.normal.y > 0.4f)
             {
                 remainingJumps = jumps;
+                grounded = true;
                 AnimationEventLand?.Invoke();
             }
         }
@@ -319,7 +322,8 @@ public class PlayerModel : MonoBehaviour
     private void JumpInputDown()
     {
         if (remainingJumps <= 0) return;
-        
+
+        grounded = false;
         AnimationEventJump?.Invoke();
         body.velocity = new Vector3(body.velocity.x, jumpHeight, body.velocity.z);
         remainingJumps--;
