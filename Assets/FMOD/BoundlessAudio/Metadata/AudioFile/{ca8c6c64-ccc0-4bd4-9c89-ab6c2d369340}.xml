@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{ca8c6c64-ccc0-4bd4-9c89-ab6c2d369340}">
+		<property name="assetPath">
+			<value>Boss/Earthquake_Short_Crack_Rumbles.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>6.6915624999999999</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{f0408012-c35e-4460-8758-b9b78ed23ec2}</destination>
+		</relationship>
+	</object>
+</objects>

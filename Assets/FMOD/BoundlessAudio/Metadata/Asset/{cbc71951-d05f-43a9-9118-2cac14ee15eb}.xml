@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="EncodableAsset" id="{cbc71951-d05f-43a9-9118-2cac14ee15eb}">
+		<property name="assetPath">
+			<value>GroundAI/</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{f0408012-c35e-4460-8758-b9b78ed23ec2}</destination>
+		</relationship>
+	</object>
+</objects>

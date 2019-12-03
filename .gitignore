@@ -39,6 +39,10 @@ sysinfo.txt
 Assets/Plugins/Editor/JetBrains/
 Assets/Plugins/Editor/JetBrains.meta
 
+# Fmod
+.cache/
+
+
 # Misc - Maybe still be needed at some stage!
 Assets/Plugins/Editor.meta
 *.log

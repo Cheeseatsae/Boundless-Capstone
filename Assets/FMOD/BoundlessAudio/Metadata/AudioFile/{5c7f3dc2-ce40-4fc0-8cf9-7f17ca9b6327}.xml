@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="AudioFile" id="{5c7f3dc2-ce40-4fc0-8cf9-7f17ca9b6327}">
+		<property name="assetPath">
+			<value>Environment/Earthquake_GentleBackgroundRumble_Loop.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>11.886666666666667</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{f0408012-c35e-4460-8758-b9b78ed23ec2}</destination>
+		</relationship>
+	</object>
+</objects>

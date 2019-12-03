@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.00.00">
+	<object class="Bank" id="{ddfd250d-6536-4267-9503-d50366154451}">
+		<property name="name">
+			<value>AirAi</value>
+		</property>
+		<relationship name="folder">
+			<destination>{3407fff1-077e-43d9-b420-1ba26087eb5f}</destination>
+		</relationship>
+	</object>
+</objects>
