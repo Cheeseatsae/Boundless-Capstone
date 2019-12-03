@@ -25,6 +25,10 @@ public class Ability2 : AbilityBase
     public float cooldown;
     private bool onCooldown;
 
+    public GameObject particle;
+
+    public GameObject currentParticle;
+
     public Transform aimTransform;
     
     public GameObject currentProjectile;
@@ -49,6 +53,8 @@ public class Ability2 : AbilityBase
     void Charge()
     {
         currentProjectile = Instantiate(projectilePref, aimTransform.position + aimTransform.forward, Quaternion.identity);
+        currentParticle = Instantiate(particle, aimTransform.position, Quaternion.identity);
+        currentParticle.transform.SetParent(aimTransform);
         chargeTime = 0;
         StartCoroutine(Hold());
     }
@@ -83,6 +89,7 @@ public class Ability2 : AbilityBase
     private void ReleaseInput()
     {
         Launch(player.target);
+        Destroy(currentParticle);
     }
     
     private void Launch(Vector3 target)

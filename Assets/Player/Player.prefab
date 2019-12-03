@@ -1913,6 +1913,7 @@ MonoBehaviour:
   jumps: 0
   baseJumpHeight: 12
   jumpHeight: 0
+  grounded: 0
   body: {fileID: 0}
   controller: {fileID: 9134880087942267290}
   myCam: {fileID: 0}
@@ -2013,7 +2014,7 @@ MonoBehaviour:
   bulletPref: {fileID: 3695492489222300511, guid: fc7ded4b216793047a2651587c217a80,
     type: 3}
   rangeInMetres: 0
-  baseCooldown: 0.7
+  baseCooldown: 1
   cooldown: 0.7
   firing: 0
   projectileSpeed: 100
@@ -2038,6 +2039,8 @@ MonoBehaviour:
   projectileSpeed: 50
   baseExplosionRadius: 4
   cooldown: 3
+  particle: {fileID: 187606, guid: 8e197dcc591031548bff44f581ad784e, type: 3}
+  currentParticle: {fileID: 0}
   aimTransform: {fileID: 2427448102811232607}
   currentProjectile: {fileID: 0}
 --- !u!114 &-4823980990555307367
@@ -2101,6 +2104,8 @@ MonoBehaviour:
   baseHealthRegen: 1
   healthRegen: 1
   regenTick: 1
+  airAiDeath: {fileID: 0}
+  airDeath: {fileID: 0}
 --- !u!1 &8089994840450464914
 GameObject:
   m_ObjectHideFlags: 0

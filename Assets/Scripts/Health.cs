@@ -25,7 +25,9 @@ public class Health : MonoBehaviour
     public event OnDeath EventDeath;
     
     public event BossDeath BossDead;
-    
+
+    public GameObject airAiDeath;
+    public ParticleSystem airDeath;
     
 
     private void Start()
@@ -59,6 +61,10 @@ public class Health : MonoBehaviour
 
         if (GetComponent<AirAiModel>())
         {
+            GameObject air = Instantiate(airAiDeath,transform.position, Quaternion.identity);
+            airDeath = air.GetComponent<ParticleSystem>();
+            airDeath.Play();
+            StartCoroutine(DestoryObj(air));
             Destroy(gameObject);
         }
 
@@ -115,8 +121,12 @@ public class Health : MonoBehaviour
             EventDeath?.Invoke();
         }
     }
-    
-    
-    
+
+
+    public IEnumerator DestoryObj(GameObject obj)
+    {
+        yield return new WaitForSeconds(1);
+        Destroy(obj);
+    }
     
 }

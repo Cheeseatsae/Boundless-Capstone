@@ -10,7 +10,8 @@ public class AIDamager : MonoBehaviour
     public Vector3 knockupDirection;
     public float damageRadius;
     public float knockupStrength = 15;
-    
+
+    public ParticleSystem particleSystem;
     //Damage Types
     public int slamDamage;
 
@@ -65,7 +66,7 @@ public class AIDamager : MonoBehaviour
     {
         transform.localScale = Vector3.one * damageRadius * 2;
         Collider[] cols = Physics.OverlapSphere(gameObject.transform.position, damageRadius, layer);
-
+        particleSystem.Play();
         foreach (Collider col in cols)
         {
             Health health = col.gameObject.GetComponent<Health>();

@@ -45,6 +45,10 @@ public class AirAiModel : AIBaseModel
     public float dodgeSelect;
 
     private ColliderScript myCols;
+
+    public ParticleSystem particleSystem;
+
+    public ParticleSystem deathParticleSystem;
     
     private void Awake()
     {
@@ -202,8 +206,10 @@ public class AirAiModel : AIBaseModel
     public IEnumerator FlakAttack()
     {
         FlakCannon(1);
+        particleSystem.Play();
         yield return new WaitForSeconds(0.5f);
         FlakCannon(2);
+        particleSystem.Play();
         
 
     }
