@@ -56,8 +56,10 @@ public class PlayerAnimator : MonoBehaviour
     {
         Vector3 vel = model.body.velocity;
         vel.y = 0;
-
-        RotateTowards(transform.position + vel);
+        
+        if (vel.magnitude > 0.1f) RotateTowards(transform.position + vel);
+        else RotateTowards(model.target);
+        
         
         if (!IKActive)
         {
@@ -125,7 +127,7 @@ public class PlayerAnimator : MonoBehaviour
         
         //Vector3 newRot = transform.rotation.eulerAngles;
         Quaternion y = Quaternion.Euler(0,newRot.y,0);
-
+        
         transform.rotation = y;
     }
 
