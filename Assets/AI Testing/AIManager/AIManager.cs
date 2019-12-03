@@ -101,7 +101,7 @@ public class AIManager : MonoBehaviour
             location = new Vector3(player.transform.position.x + dir.x, 100, player.transform.position.z + dir.z);
             //Debug.Log(location);
             Physics.Raycast(location, Vector3.down, out hit, 200, layer);
-            Debug.DrawRay(location, Vector3.down, Color.red, 5);
+            //Debug.DrawRay(location, Vector3.down, Color.red, 5);
             //Debug.Log(hit.point);
 
             iterations++;

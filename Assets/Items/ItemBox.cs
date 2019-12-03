@@ -49,7 +49,7 @@ public class ItemBox : Interactable
 
     private void Update()
     {
-        if (!LevelManager.instance.player)
+        if (LevelManager.instance.player != null)
         {
             float playerDistance = Vector3.Distance(LevelManager.instance.player.transform.position, transform.position);
             if (playerDistance <= minPlayerDistance)

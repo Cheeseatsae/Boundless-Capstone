@@ -23,7 +23,7 @@ public class AirAi_Animations : MonoBehaviour
         if (localVel.z > 0) zRotation = Mathf.Lerp(zRotation, -8.5f * model.dodgeDirection.magnitude, Time.deltaTime);
         if (localVel.z < 0) zRotation = Mathf.Lerp(zRotation, 8.5f * model.dodgeDirection.magnitude, Time.deltaTime);
 
-        if (!model.target)
+        if (model.target != null)
         {
             RotateTowards(model.target.transform.position);
         }
