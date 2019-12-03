@@ -16,7 +16,9 @@ public class Ability3 : AbilityBase
     public float cooldown;
     private bool onCooldown;
     private float lifetime;
-    
+    public float jumpTime;
+
+    public ParticleSystem particleSystem;
     public PlayerModel.AnimationAction AnimationEventAbility3;
     
     private void Start()
@@ -30,13 +32,14 @@ public class Ability3 : AbilityBase
         if (onCooldown) return;
         AnimationEventAbility3?.Invoke();
         damage = (int)(player.attackDamage * 2.2f);
-        
+        particleSystem.Play();
+        StartCoroutine(TurnOffParticles());
         onCooldown = true;
         StartCoroutine(StartCooldown());
         
         body.velocity = new Vector3(body.velocity.x, 0, body.velocity.z);
         body.AddRelativeForce(boostDir);
-        GameObject p = Instantiate(explosionPref, transform.position, Quaternion.identity);
+        //GameObject p = Instantiate(explosionPref, transform.position, Quaternion.identity);
 
         Collider[] cols = Physics.OverlapSphere(transform.position, explosionRadius);
 
@@ -52,7 +55,7 @@ public class Ability3 : AbilityBase
             }
         }
         
-        Destroy(p, lifetime);        
+        //Destroy(p, lifetime);        
     }
 
     IEnumerator StartCooldown()
@@ -65,5 +68,11 @@ public class Ability3 : AbilityBase
     public override void Enter()
     {
         BlastOff();
+    }
+
+    IEnumerator TurnOffParticles()
+    {
+        yield return new WaitForSeconds(jumpTime);
+        particleSystem.Stop();
     }
 }
