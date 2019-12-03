@@ -1941,7 +1941,7 @@ MonoBehaviour:
   attackOccupied: 0
   floor: 10
   crumbTrail: []
-  camOffset: 2
+  camOffset: 6
   playFabUserObj: {fileID: 2609842523394191113, guid: 96876c159dd002e43a639731b5995faa,
     type: 3}
 --- !u!136 &8086389977643893696
