@@ -42,11 +42,13 @@ public class AIManager : MonoBehaviour
 
     
     private bool limitHit = false;
+    public bool stopSpawn = false;
     
     private void Start()
     {
         aiList.Add(groundAI);
         aiList.Add(airAi);
+        LevelManager.instance.agni.GetComponent<Health>().BossDead += StopSpawn;
         //KillNumChanged(numberOfKills);
     }
 
@@ -54,13 +56,17 @@ public class AIManager : MonoBehaviour
 
     private void Update()
     {
-        elapsedTime += Time.deltaTime;
-
-        if (elapsedTime > secondsBetweenSpawn)
+        if (!stopSpawn)
         {
-            elapsedTime = 0;
-            if (numberOfAi < maxAI) Spawn();
+            elapsedTime += Time.deltaTime;
+
+            if (elapsedTime > secondsBetweenSpawn)
+            {
+                elapsedTime = 0;
+                if (numberOfAi < maxAI) Spawn();
+            }
         }
+
         
         if (numberOfKills >= killLimit)
         {
@@ -183,5 +189,10 @@ public class AIManager : MonoBehaviour
     {
         yield return new WaitForSeconds(2);
         GotKillCount();
+    }
+
+    public void StopSpawn()
+    {
+        stopSpawn = true;
     }
 }

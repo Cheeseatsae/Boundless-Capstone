@@ -25,7 +25,7 @@ public class Health : MonoBehaviour
     public event OnDeath EventDeath;
     
     public event BossDeath BossDead;
-
+    private bool bossDead = false;
     public GameObject airAiDeath;
     public ParticleSystem airDeath;
     
@@ -81,7 +81,12 @@ public class Health : MonoBehaviour
             model.anim.SetTrigger("Dead");
             model.canCast = false;
             model.alive = false;
-            BossDead?.Invoke();
+            if (!bossDead)
+            {
+                BossDead?.Invoke();
+                bossDead = true;
+            }
+            
             
         }
 

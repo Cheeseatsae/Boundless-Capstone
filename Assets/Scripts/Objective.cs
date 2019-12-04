@@ -52,8 +52,13 @@ public class Objective : MonoBehaviour
     public void ChangeObjective()
     {
         //Debug.Log("run cunt");
-        _objectiveNumber++;
-        Jukebox.instance?.IncrementProgressionVariable();
-        text.text = objectiveList[_objectiveNumber];
+        if (_objectiveNumber <= 3)
+        {
+            _objectiveNumber++; 
+            Jukebox.instance?.IncrementProgressionVariable();
+            text.text = objectiveList[_objectiveNumber];
+        }
+        
+        
     }
 }

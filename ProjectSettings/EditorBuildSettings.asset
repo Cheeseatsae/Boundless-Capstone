@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Greybox scene/Populated Scene/Populated.unity
     guid: 6fbc82cf9cb348841866e062d1de6969
+  - enabled: 1
+    path: Assets/Scenes/Greybox scene/Populated Scene/Credits.unity
+    guid: 4bab3189302e378478eddd1e37bfe313
   m_configObjects: {}

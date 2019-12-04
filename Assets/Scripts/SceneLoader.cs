@@ -30,4 +30,9 @@ public class SceneLoader : MonoBehaviour
 
 
     }
+
+    public void LoadCreditsScene()
+    {
+        SceneManager.LoadScene(2);
+    }
 }

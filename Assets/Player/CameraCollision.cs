@@ -18,8 +18,8 @@ public class CameraCollision : MonoBehaviour
     public float distance;
 
     public Camera cam;
-    
-    
+
+    public bool onPlayer = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,15 +33,23 @@ public class CameraCollision : MonoBehaviour
     {
         Vector3 desiredPos = transform.parent.TransformPoint(direction * maxDist);
         RaycastHit hit;
-        if (Physics.Linecast(transform.parent.position, desiredPos, out hit))
+        if (onPlayer)
         {
-            distance = Mathf.Clamp((hit.distance * 0.9f), minDist, maxDist);
+            if (Physics.Linecast(transform.parent.position, desiredPos, out hit))
+            {
+                distance = Mathf.Clamp((hit.distance * 0.9f), minDist, maxDist);
 
+            }
+            else
+            {
+                distance = maxDist;
+            }
         }
         else
         {
-            distance = maxDist;
+            minDist = 0;
         }
+
 
         transform.localPosition =
             Vector3.Lerp(transform.localPosition, direction * distance, Time.deltaTime * smoothing);
