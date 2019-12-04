@@ -51,7 +51,7 @@ MonoBehaviour:
   Path: event:/GroundAi/GroundStep
   guid: 5b563581584bce46802231937415386a
   Banks:
-  - {fileID: -4504663696796179980}
+  - {fileID: 2796522453796471313}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -384,7 +384,7 @@ MonoBehaviour:
   guid: 042a7bd07861b44393daed94f65cb192
   Banks:
   - {fileID: 6571511073129631628}
-  - {fileID: 7891888826456652371}
+  - {fileID: 3091880095714115394}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -427,6 +427,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-6111955139399748541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Environment.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD/BoundlessAudio/Build/Desktop/Environment.bank
+  SubDir: 
+  lastModified: 637110046560270660
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-6096547305825342931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -571,7 +589,7 @@ MonoBehaviour:
   Path: event:/GroundAi/GroundProjectileHit
   guid: a565b781a2d2404b9d6f4c4ddd743801
   Banks:
-  - {fileID: -4504663696796179980}
+  - {fileID: 2796522453796471313}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -596,7 +614,7 @@ MonoBehaviour:
   lastModified: 637110035730420059
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &-4092394935506287158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -917,6 +935,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &-1443311362945028067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Boss.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD/BoundlessAudio/Build/Desktop/Boss.bank
+  SubDir: 
+  lastModified: 637110046560350446
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &-1341025045437665374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1062,12 +1098,12 @@ MonoBehaviour:
   guid: c0fe4502bf0e3f46b553d3afe0b6577b
   Banks:
   - {fileID: 2277889616072650784}
-  - {fileID: 1461731405467810078}
+  - {fileID: 4634978894633098563}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
   Parameters:
-  - {fileID: 5148877292203971682}
+  - {fileID: -166344213602523320}
   MinDistance: 0
   MaxDistance: 0
   Length: 408953
@@ -1088,6 +1124,23 @@ MonoBehaviour:
   lastModified: 637110035730838940
   LoadResult: 0
   FileSizes: []
+  Exists: 0
+--- !u!114 &-166344213602523320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Boundless Score/TrackPoint
+  m_EditorClassIdentifier: 
+  Name: TrackPoint
+  Min: 0
+  Max: 10
+  Default: 0
   Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
@@ -1103,12 +1156,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EditorBanks:
   - {fileID: 5658508679688700206}
-  - {fileID: 7891888826456652371}
-  - {fileID: 6005202133209772830}
-  - {fileID: -515859186030719282}
-  - {fileID: -4504663696796179980}
-  - {fileID: 1461731405467810078}
-  - {fileID: 3673509114075561798}
+  - {fileID: 3091880095714115394}
+  - {fileID: -1443311362945028067}
+  - {fileID: -6111955139399748541}
+  - {fileID: 2796522453796471313}
+  - {fileID: 4634978894633098563}
+  - {fileID: 6135511979237104076}
   EditorEvents:
   - {fileID: -542449435898271240}
   - {fileID: -6271230504461639046}
@@ -1123,10 +1176,10 @@ MonoBehaviour:
   - {fileID: 8585652528256571737}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 1461731405467810078}
+  - {fileID: 4634978894633098563}
   StringsBanks:
   - {fileID: 5658508679688700206}
-  stringsBankWriteTime: 637110035729961275
+  stringsBankWriteTime: 637110046560320531
   cacheVersion: 3
 --- !u!114 &135417983095701568
 MonoBehaviour:
@@ -1143,7 +1196,7 @@ MonoBehaviour:
   Path: event:/GroundAi/GroundArmStomp
   guid: f59b0ff1c691b341a2160dbd7ddc8d25
   Banks:
-  - {fileID: -4504663696796179980}
+  - {fileID: 2796522453796471313}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1238,7 +1291,7 @@ MonoBehaviour:
   Path: event:/Environment/VolcanoFoley
   guid: 20560b76800d0d448afa99bb9391b50e
   Banks:
-  - {fileID: -515859186030719282}
+  - {fileID: -6111955139399748541}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -1337,7 +1390,7 @@ MonoBehaviour:
   lastModified: 637110035729921383
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &1483500570285088722
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1445,6 +1498,42 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &2796522453796471313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/GroundAi.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD/BoundlessAudio/Build/Desktop/GroundAi.bank
+  SubDir: 
+  lastModified: 637110046560370395
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &3091880095714115394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/AirAi.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD/BoundlessAudio/Build/Desktop/AirAi.bank
+  SubDir: 
+  lastModified: 637110046560230772
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &3230020312545014628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1515,7 +1604,7 @@ MonoBehaviour:
   lastModified: 637110035730649461
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &3952190808264372704
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1658,6 +1747,24 @@ MonoBehaviour:
   LoadResult: 0
   FileSizes: []
   Exists: 0
+--- !u!114 &4634978894633098563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD/BoundlessAudio/Build/Desktop/Master.bank
+  SubDir: 
+  lastModified: 637110035729921383
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
 --- !u!114 &4763608754632083131
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1728,7 +1835,7 @@ MonoBehaviour:
   guid: 4cd287dc717fb44bacfd779e22822222
   Banks:
   - {fileID: -2182042406014481794}
-  - {fileID: 6005202133209772830}
+  - {fileID: -1443311362945028067}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1752,7 +1859,7 @@ MonoBehaviour:
   Min: 0
   Max: 10
   Default: 0
-  Exists: 1
+  Exists: 0
 --- !u!114 &5658508679688700206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1767,7 +1874,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: Assets/FMOD/BoundlessAudio/Build/Desktop/Master.strings.bank
   SubDir: 
-  lastModified: 637110035729961275
+  lastModified: 637110046560320531
   LoadResult: 0
   FileSizes:
   - Name: Desktop
@@ -1789,7 +1896,7 @@ MonoBehaviour:
   guid: 49c2c4d7679a774d9110691167df8120
   Banks:
   - {fileID: 6571511073129631628}
-  - {fileID: 7891888826456652371}
+  - {fileID: 3091880095714115394}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1812,6 +1919,24 @@ MonoBehaviour:
   Path: Assets/FMOD/BoundlessAudio/Build/Desktop/Boss.bank
   SubDir: 
   lastModified: 637110035730609543
+  LoadResult: 0
+  FileSizes: []
+  Exists: 0
+--- !u!114 &6135511979237104076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Player.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD/BoundlessAudio/Build/Desktop/Player.bank
+  SubDir: 
+  lastModified: 637110046560330500
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -1920,7 +2045,7 @@ MonoBehaviour:
   Path: event:/GroundAi/GroundDeath
   guid: 11a67dfdf4dd494ea56380ee9c9cb5cf
   Banks:
-  - {fileID: -4504663696796179980}
+  - {fileID: 2796522453796471313}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -1961,7 +2086,7 @@ MonoBehaviour:
   guid: 0b8949e1ef070e4584612ff4b2fe1a9d
   Banks:
   - {fileID: 6571511073129631628}
-  - {fileID: 7891888826456652371}
+  - {fileID: 3091880095714115394}
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
@@ -1986,7 +2111,7 @@ MonoBehaviour:
   lastModified: 637110035730150771
   LoadResult: 0
   FileSizes: []
-  Exists: 1
+  Exists: 0
 --- !u!114 &8011809677473052633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2109,7 +2234,7 @@ MonoBehaviour:
   Path: event:/GroundAi/GroundProjectileThrow
   guid: e14809dd0fa98843806b95ccf032d1b8
   Banks:
-  - {fileID: -4504663696796179980}
+  - {fileID: 2796522453796471313}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
