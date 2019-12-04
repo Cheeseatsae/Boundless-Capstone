@@ -9,6 +9,9 @@ public class ActivatePortal : Interactable
     public delegate void Portal();
     public event Portal PortalActivate;
 
+    
+    public GameObject portal;
+    public GameObject aura;
     public bool firstActive = false;
     public override void Interact()
     {
@@ -16,6 +19,7 @@ public class ActivatePortal : Interactable
         {
             base.Interact();
             PortalActivate?.Invoke();
+            aura.SetActive(false);
 
         }
     }
@@ -23,11 +27,18 @@ public class ActivatePortal : Interactable
     public void Start()
     {
         LevelManager.aiManager.KillLimitMet += Objective1Complete;
+        LevelManager.instance.agni.GetComponent<Health>().BossDead += OpenPortal;
         active = false;
     }
 
     public void Objective1Complete()
     {
         active = true;
+        aura.SetActive(true);
+    }
+
+    public void OpenPortal()
+    {
+        portal.SetActive(true);
     }
 }
