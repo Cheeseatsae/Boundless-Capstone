@@ -40,7 +40,7 @@ public class Ability4 : AbilityBase
 
     IEnumerator RunBlaster()
     {
-        
+        player.audio.PlaySound(3);
         for (int i = 0; i < amountofTicks; i++)
         {
             cols = Physics.OverlapCapsule(aimTransform.position, player.target, damageRadius);
@@ -60,6 +60,8 @@ public class Ability4 : AbilityBase
             yield return new WaitForSeconds(damageTimer);
         }
         player.attackOccupied = false;
+        player.audio.StopSound(3, true);
+        
         StartCoroutine(Cooldown());
     }
     

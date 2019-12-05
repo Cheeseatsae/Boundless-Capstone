@@ -57,6 +57,7 @@ public class Ability2 : AbilityBase
         currentParticle.transform.SetParent(aimTransform);
         chargeTime = 0;
         StartCoroutine(Hold());
+        player.audio.PlaySound(1);
     }
 
     IEnumerator StartCooldown()
@@ -99,6 +100,9 @@ public class Ability2 : AbilityBase
         player.attackOccupied = false;
         chargeTime = chargeDuration + 1;
         StartCoroutine(StartCooldown());
+        
+        player.audio.StopSound(1,false);
+        player.audio.PlaySound(2);
         
         Rigidbody bulletRb = currentProjectile.GetComponent<Rigidbody>();
         Vector3 dir = (target - transform.position).normalized;

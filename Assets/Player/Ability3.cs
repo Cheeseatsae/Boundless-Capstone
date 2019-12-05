@@ -37,6 +37,8 @@ public class Ability3 : AbilityBase
         onCooldown = true;
         StartCoroutine(StartCooldown());
         
+        player.audio.PlaySound(5);
+        
         body.velocity = new Vector3(body.velocity.x, 0, body.velocity.z);
         body.AddRelativeForce(boostDir);
         //GameObject p = Instantiate(explosionPref, transform.position, Quaternion.identity);

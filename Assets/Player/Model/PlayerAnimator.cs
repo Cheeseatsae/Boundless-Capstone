@@ -147,6 +147,11 @@ public class PlayerAnimator : MonoBehaviour
 
         animator.SetTrigger("Land");
     }
+
+    public void PlayStepSound()
+    {
+        model.audio.PlaySound(6);
+    }
     
 //    private void PlayAnimSprint()
 //    {

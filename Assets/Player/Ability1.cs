@@ -29,6 +29,7 @@ public class Ability1 : AbilityBase
     public void Fire(float lifeTime, Vector3 target)
     {
         AnimationEventAbility1?.Invoke();
+        player.audio.PlaySound(0);
         GameObject bullet = Instantiate(bulletPref, aimTransform.position, Quaternion.Euler(90,90,0));
         
         Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();

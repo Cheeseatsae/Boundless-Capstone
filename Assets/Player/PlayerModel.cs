@@ -23,6 +23,7 @@ public class PlayerModel : MonoBehaviour
     [Header("References")]
     public Rigidbody body;
     public PlayerController controller;
+    public CharacterAudio audio;
     public Camera myCam;
     public GameObject viewObject;
     [HideInInspector] public Transform view;
@@ -94,6 +95,8 @@ public class PlayerModel : MonoBehaviour
         
         body = GetComponent<Rigidbody>();
 
+        audio = GetComponentInChildren<CharacterAudio>();
+        
         controller = GetComponent<PlayerController>();
         
         controller.OnJumpInput += JumpInputDown;
@@ -292,6 +295,7 @@ public class PlayerModel : MonoBehaviour
                 remainingJumps = jumps;
                 grounded = true;
                 AnimationEventLand?.Invoke();
+                audio.PlaySound(4);
             }
         }
     }
@@ -323,8 +327,11 @@ public class PlayerModel : MonoBehaviour
     {
         if (remainingJumps <= 0) return;
 
+        if (grounded) audio.PlaySound(4);
+        
         grounded = false;
         AnimationEventJump?.Invoke();
+        
         body.velocity = new Vector3(body.velocity.x, jumpHeight, body.velocity.z);
         remainingJumps--;
     }

@@ -1,20 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.00.00">
-	<object class="AudioFile" id="{5a988a88-4721-4e52-b996-eaa0ba7c8822}">
+	<object class="AudioFile" id="{080e36be-eceb-4144-86f7-81c6d607a7a6}">
 		<property name="assetPath">
-			<value>Boss/boiling-oil-01-sound-effect-102989900_prev.wav</value>
-		</property>
-		<property name="isStreaming">
-			<value>true</value>
+			<value>Boss/Boss Death.wav</value>
 		</property>
 		<property name="frequencyInKHz">
-			<value>48</value>
+			<value>44.0999985</value>
 		</property>
 		<property name="channelCount">
 			<value>2</value>
 		</property>
 		<property name="length">
-			<value>59.094583333333333</value>
+			<value>4.7445351473922903</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{f0408012-c35e-4460-8758-b9b78ed23ec2}</destination>
