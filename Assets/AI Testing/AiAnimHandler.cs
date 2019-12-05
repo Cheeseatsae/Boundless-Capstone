@@ -27,4 +27,9 @@ public class AiAnimHandler : MonoBehaviour
     {
         Destroy(model.gameObject);
     }
+
+    public void Nova()
+    {
+        model.nova.Play();
+    }
 }

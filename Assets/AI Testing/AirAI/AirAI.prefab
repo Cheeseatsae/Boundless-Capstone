@@ -189,6 +189,7 @@ GameObject:
   - component: {fileID: -7287694471871927166}
   - component: {fileID: 7293549280160946370}
   - component: {fileID: 235032150809878350}
+  - component: {fileID: 7963023767620466932}
   m_Layer: 0
   m_Name: AirAI
   m_TagString: AirAi
@@ -225,7 +226,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   rb: {fileID: 0}
-  speed: 3
+  speed: 10
   minGroundDistance: 10
   maxGroundDistance: 20
   targetDir: {x: 0, y: 0, z: 0}
@@ -247,7 +248,7 @@ MonoBehaviour:
   health: {fileID: 0}
   dodgeCD: 0
   dodgeDirection: {x: 0, y: 0, z: 0}
-  dodgeDistance: 10
+  dodgeDistance: 4
   dodgeSelect: 0
   particleSystem: {fileID: 4878158576398404358}
   deathParticleSystem: {fileID: 0}
@@ -287,6 +288,19 @@ MonoBehaviour:
   regenTick: 1
   airAiDeath: {fileID: 133064, guid: 1de8b42c6540de34fb2c324a58c34a18, type: 3}
   airDeath: {fileID: 0}
+--- !u!135 &7963023767620466932
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1299756857714876720}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 4
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1355134456532438835
 GameObject:
   m_ObjectHideFlags: 0
@@ -1072,6 +1086,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: YellowFireMuzzleFlash
       objectReference: {fileID: 0}
+    - target: {fileID: 19847732, guid: ba8d7f7d02a92d9429a17beba429f0ff, type: 3}
+      propertyPath: InitialModule.startSizeY.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 19847732, guid: ba8d7f7d02a92d9429a17beba429f0ff, type: 3}
+      propertyPath: InitialModule.startSizeZ.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 19847732, guid: ba8d7f7d02a92d9429a17beba429f0ff, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 479570, guid: ba8d7f7d02a92d9429a17beba429f0ff, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1128,27 +1154,15 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.5
       objectReference: {fileID: 0}
-    - target: {fileID: 19847732, guid: ba8d7f7d02a92d9429a17beba429f0ff, type: 3}
-      propertyPath: InitialModule.startSizeY.minMaxState
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 19847732, guid: ba8d7f7d02a92d9429a17beba429f0ff, type: 3}
-      propertyPath: InitialModule.startSizeZ.minMaxState
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 19847732, guid: ba8d7f7d02a92d9429a17beba429f0ff, type: 3}
-      propertyPath: playOnAwake
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 19858022, guid: ba8d7f7d02a92d9429a17beba429f0ff, type: 3}
-      propertyPath: playOnAwake
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 19847008, guid: ba8d7f7d02a92d9429a17beba429f0ff, type: 3}
       propertyPath: playOnAwake
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 19883032, guid: ba8d7f7d02a92d9429a17beba429f0ff, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19858022, guid: ba8d7f7d02a92d9429a17beba429f0ff, type: 3}
       propertyPath: playOnAwake
       value: 0
       objectReference: {fileID: 0}

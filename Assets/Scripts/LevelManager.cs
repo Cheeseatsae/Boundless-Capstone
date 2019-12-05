@@ -25,6 +25,7 @@ public class LevelManager : MonoBehaviour
         instance = this;
         aiManager = GetComponent<AIManager>();
         uiManager = GetComponent<UiManager>();
+        Time.timeScale = 1f;
         
     }
 

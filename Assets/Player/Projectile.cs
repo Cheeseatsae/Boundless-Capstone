@@ -11,7 +11,7 @@ public class Projectile : MonoBehaviour
     private void Awake()
     {
         damager = GetComponent<Damager>();
-        //damager.OnHitEvent += SpawnParticle;
+        damager.OnHitEvent += SpawnParticle;
         rb = GetComponent<Rigidbody>();
     }
 
@@ -29,8 +29,8 @@ public class Projectile : MonoBehaviour
 
     void SpawnParticle()
     {
-        //GameObject g = Instantiate(hitParticle, transform.position, Quaternion.identity);
-        //Destroy(g, 2f);
+        GameObject g = Instantiate(hitParticle, transform.position, Quaternion.identity);
+        Destroy(g, 0.1f);
     }
 
     public void Update()

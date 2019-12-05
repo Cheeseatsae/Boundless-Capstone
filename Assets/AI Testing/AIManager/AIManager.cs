@@ -31,6 +31,8 @@ public class AIManager : MonoBehaviour
     public float secondsBetweenSpawn;
     public bool currentObjective = true;
 
+    public GameObject golumSpawnEffect;
+    public GameObject airAiSpawnEffect;
     public int numberofplayers;
     //AI Spawning Variables
     public Vector3 spawningLocation;
@@ -161,7 +163,16 @@ public class AIManager : MonoBehaviour
             spawningLocation = GetLocation(player);
             if (spawningLocation == Vector3.zero)
                 return;
-            if (toSpawn == airAi) spawningLocation.y = spawningLocation.y + 15;
+            if (toSpawn == airAi)
+            {
+                spawningLocation.y = spawningLocation.y + 15;
+                GameObject spawnEffect = Instantiate(airAiSpawnEffect, spawningLocation, Quaternion.identity);
+                Destroy(spawnEffect,2f);
+            }else if (toSpawn == groundAI)
+            {
+                GameObject spawnEffect = Instantiate(golumSpawnEffect, spawningLocation, Quaternion.identity);
+                Destroy(spawnEffect,2f);
+            }
 
             numberOfAi++;
             Debug.Log("spawn" + toSpawn);

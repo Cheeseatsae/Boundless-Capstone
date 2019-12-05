@@ -118,8 +118,12 @@ public class AirAiModel : AIBaseModel
             
             targetDirection = (target.transform.position - transform.position).normalized;
         }
+
+        if (NearMe.Count != 0)
+        {
+            Avoidance();
+        }
         
-        //Avoidance();
         
         //Abilities
         
@@ -140,13 +144,13 @@ public class AirAiModel : AIBaseModel
         return new Vector3(x,y,z);
     }
 
-//    private void OnTriggerEnter(Collider other)
-//    {
-//        if (other.GetComponent<AirAiModel>())
-//        {
-//            NearMe.Add(other.gameObject);
-//        }
-//    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.GetComponent<AirAiModel>())
+        {
+            NearMe.Add(other.gameObject);
+        }
+    }
 
     private void AddObjectNearMe(Collider other)
     {
@@ -156,13 +160,13 @@ public class AirAiModel : AIBaseModel
         }
     }
 
-//    private void OnTriggerExit(Collider other)
-//    {
-//        if (NearMe.Contains(other.gameObject))
-//        {
-//            NearMe.Remove(other.gameObject);
-//        }
-//    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (NearMe.Contains(other.gameObject))
+        {
+            NearMe.Remove(other.gameObject);
+        }
+    }
     
     private void RemoveObjectNearMe(Collider other)
     {
@@ -180,8 +184,7 @@ public class AirAiModel : AIBaseModel
             float dist = Vector3.Distance(transform.position, ai.transform.position);
             if (dist <= toClose)
             {
-                Vector3 dir = (ai.transform.position - transform.position).normalized;
-                rb.velocity = -dir * (speed * 2);
+                Dodge();
             }
         }
     }

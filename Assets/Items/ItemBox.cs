@@ -36,7 +36,7 @@ public class ItemBox : Interactable
         PlayerInteraction.ChangeMoney(-cost);
         GameObject p = Instantiate(pickup, transform.position + Vector3.up, Quaternion.identity);
         p.GetComponent<Pickup>().PickItem();
-        
+        floatingCost.SetActive(false);
         p.GetComponent<Rigidbody>().AddForce((Vector3.forward + Vector3.up) * 300);
         
         Destroy(this);
@@ -52,7 +52,7 @@ public class ItemBox : Interactable
         if (LevelManager.instance.player != null)
         {
             float playerDistance = Vector3.Distance(LevelManager.instance.player.transform.position, transform.position);
-            if (playerDistance <= minPlayerDistance)
+            if (playerDistance <= minPlayerDistance && !activated)
             {
                 floatingCost.SetActive(true);
                 Vector3 lookDirection = LevelManager.instance.player.transform.position - transform.position;;

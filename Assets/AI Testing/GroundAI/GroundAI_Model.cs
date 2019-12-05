@@ -26,7 +26,7 @@ public class GroundAI_Model : AIBaseModel
     public bool cantFire = false;
 
     public float chargeDuration = 2;
-    
+    public ParticleSystem nova;
     public NavMeshAgent navmesh;
     // Start is called before the first frame update
 
@@ -46,6 +46,9 @@ public class GroundAI_Model : AIBaseModel
             {
                 Destroy(this.gameObject);
             }
+            Vector3 lookDirection = LevelManager.instance.player.transform.position - transform.position;;
+            lookDirection.y = 0;
+            transform.rotation = Quaternion.LookRotation(lookDirection);
             
             RaycastHit hit;
         
