@@ -163,6 +163,7 @@ public class PlayerAnimator : MonoBehaviour
     private void PlayAnimDeath()
     {
         dead = true;
+        IKActive = false;
         
         animator.applyRootMotion = true;
         

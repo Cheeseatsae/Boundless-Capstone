@@ -84,7 +84,6 @@ public class PlayerModel : MonoBehaviour
     
     private void Awake()
     {
-
         speed = baseSpeed;
         maxSpeed = baseMaxSpeed;
         sprintSpeedMult = baseSprintSpeedMult;
@@ -140,6 +139,8 @@ public class PlayerModel : MonoBehaviour
         PlayerUI.instance.Setup(gameObject);
         health = GetComponent<Health>();
         health.OnHealthChange += PlayerUI.instance.UpdateHealth;
+
+        health.EventDeath += Death;
         
         CameraControl.playerCam.followObj = this.gameObject;
         
@@ -150,6 +151,18 @@ public class PlayerModel : MonoBehaviour
         UpdateForwardInput(1);
     }
 
+    private void Death()
+    {
+        controller.enabled = false;
+        ability1.enabled = false;
+        ability2.enabled = false;
+        ability3.enabled = false;
+        ability4.enabled = false;
+        playerInteraction.enabled = false;
+        StopAllCoroutines();
+        this.enabled = false;
+    }
+    
     private IEnumerator MarkPreviousPosition()
     {
         yield return new WaitForSeconds(0.3f);
@@ -408,7 +421,8 @@ public class PlayerModel : MonoBehaviour
         controller.OnQKeyInput -= OnQKeyInput;
         controller.OnRKeyInput -= OnRKeyInput;
         
-        GetComponent<Health>().OnHealthChange -= PlayerUI.instance.UpdateHealth;
+        health.OnHealthChange -= PlayerUI.instance.UpdateHealth;
+        health.EventDeath -= Death;
     }
 
     // PLAYFAB TESTING
