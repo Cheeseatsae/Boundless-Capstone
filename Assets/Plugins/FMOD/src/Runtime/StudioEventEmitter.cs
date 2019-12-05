@@ -181,6 +181,82 @@ namespace FMODUnity
 
             hasTriggered = true;
         }
+        
+        public void Play(float volume)
+        {
+            if (TriggerOnce && hasTriggered)
+            {
+                return;
+            }
+
+            if (string.IsNullOrEmpty(Event))
+            {
+                return;
+            }
+
+            if (!eventDescription.isValid())
+            {
+                Lookup();
+            }
+
+            if (!Event.StartsWith(SnapshotString, StringComparison.CurrentCultureIgnoreCase))
+            {
+                eventDescription.isOneshot(out isOneshot);
+            }
+            bool is3D;
+            eventDescription.is3D(out is3D);
+
+            if (!instance.isValid())
+            {
+                instance.clearHandle();
+            }
+
+            // Let previous oneshot instances play out
+            if (isOneshot && instance.isValid())
+            {
+                instance.release();
+                instance.clearHandle();
+            }
+
+            if (!instance.isValid())
+            {
+                eventDescription.createInstance(out instance);
+
+                // Only want to update if we need to set 3D attributes
+                if (is3D)
+                {
+                    var rigidBody = GetComponent<Rigidbody>();
+                    var rigidBody2D = GetComponent<Rigidbody2D>();
+                    var transform = GetComponent<Transform>();
+                    if (rigidBody)
+                    {
+                        instance.set3DAttributes(RuntimeUtils.To3DAttributes(gameObject, rigidBody));
+                        RuntimeManager.AttachInstanceToGameObject(instance, transform, rigidBody);
+                    }
+                    else
+                    {
+                        instance.set3DAttributes(RuntimeUtils.To3DAttributes(gameObject, rigidBody2D));
+                        RuntimeManager.AttachInstanceToGameObject(instance, transform, rigidBody2D);
+                    }
+                }
+            }
+
+            foreach(var param in Params)
+            {
+                instance.setParameterByID(param.ID, param.Value);
+            }
+
+            if (is3D && OverrideAttenuation)
+            {
+                instance.setProperty(FMOD.Studio.EVENT_PROPERTY.MINIMUM_DISTANCE, OverrideMinDistance);
+                instance.setProperty(FMOD.Studio.EVENT_PROPERTY.MAXIMUM_DISTANCE, OverrideMaxDistance);
+            }
+
+            instance.setVolume(volume);
+            instance.start();
+
+            hasTriggered = true;
+        }
 
         public void Stop()
         {

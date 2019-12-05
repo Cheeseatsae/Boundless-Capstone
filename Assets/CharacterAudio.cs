@@ -15,7 +15,7 @@ public class CharacterAudio : MonoBehaviour
 
     public void PlaySound(int sound)
     {
-        sounds[sound].Play();
+        sounds[sound].Play(Jukebox.SFXVolume);
     }
 
     public void StopSound(int sound, bool fade)

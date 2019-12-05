@@ -80,6 +80,8 @@ public class PlayerModel : MonoBehaviour
     public AnimationAction AnimationEventSprint;
     public AnimationAction AnimationEventRun;
 
+    public Health health;
+    
     private void Awake()
     {
 
@@ -136,7 +138,8 @@ public class PlayerModel : MonoBehaviour
         PlayerUI.instance.player = this;
         PlayerUI.instance.playerHealth = GetComponent<Health>();
         PlayerUI.instance.Setup(gameObject);
-        GetComponent<Health>().OnHealthChange += PlayerUI.instance.UpdateHealth;
+        health = GetComponent<Health>();
+        health.OnHealthChange += PlayerUI.instance.UpdateHealth;
         
         CameraControl.playerCam.followObj = this.gameObject;
         

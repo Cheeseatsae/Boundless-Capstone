@@ -23,6 +23,7 @@ public class Health : MonoBehaviour
     public event TakeDamageDelegate EventTakeDamage;
     
     public event OnDeath EventDeath;
+    public static event OnDeath PlayerDeath;
     
     public event BossDeath BossDead;
     private bool bossDead = false;
@@ -46,16 +47,13 @@ public class Health : MonoBehaviour
             }
         }  
             
-        
-     
     }
    
     private void Death()
     {
         if (GetComponent<PlayerModel>())
         {
-            //Do Da Death things
-            Destroy(gameObject);
+            PlayerDeath?.Invoke();
             return;
         }
 

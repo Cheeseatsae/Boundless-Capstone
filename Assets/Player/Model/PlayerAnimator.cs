@@ -26,6 +26,7 @@ public class PlayerAnimator : MonoBehaviour
 
         model.AnimationEventJump += PlayAnimJump;
         model.AnimationEventLand += PlayAnimLand;
+        model.health.EventDeath += PlayAnimDeath;
 //        model.AnimationEventSprint += PlayAnimSprint;
 //        model.AnimationEventRun += PlayAnimRun;
 
@@ -50,6 +51,7 @@ public class PlayerAnimator : MonoBehaviour
 //        a2.AnimationEventAbility2 -= PlayAnimAbility2;
         a3.AnimationEventAbility3 -= PlayAnimAbility3;
 //        a4.AnimationEventAbility4 -= PlayAnimAbility4;
+        model.health.EventDeath -= PlayAnimDeath;
     }
 
     void OnAnimatorIK()
@@ -86,6 +88,7 @@ public class PlayerAnimator : MonoBehaviour
     private void FixedUpdate()
     {
         if (!model.grounded) return;
+        if (dead) return;
         
         if (model.body.velocity.magnitude > 0.1f)
         {
@@ -133,12 +136,14 @@ public class PlayerAnimator : MonoBehaviour
 
     private void PlayAnimJump()
     {
+        if (dead) return;
         animator.SetTrigger("Jump");
     }
 
     private bool spawnCompensation = false;
     private void PlayAnimLand()
     {
+        if (dead) return;
         if (!spawnCompensation)
         {
             spawnCompensation = true;
@@ -151,6 +156,22 @@ public class PlayerAnimator : MonoBehaviour
     public void PlayStepSound()
     {
         model.audio.PlaySound(6);
+    }
+
+    private bool dead;
+    
+    private void PlayAnimDeath()
+    {
+        dead = true;
+        
+        animator.applyRootMotion = true;
+        
+        animator.ResetTrigger("Land");
+        animator.ResetTrigger("Jump");
+        animator.ResetTrigger("Idle");
+        animator.ResetTrigger("Running");
+        
+        animator.SetTrigger("Death");
     }
     
 //    private void PlayAnimSprint()
@@ -177,6 +198,7 @@ public class PlayerAnimator : MonoBehaviour
     
     private void PlayAnimAbility3()
     {
+        if (dead) return;
         animator.SetTrigger("Jump");
     }
     
