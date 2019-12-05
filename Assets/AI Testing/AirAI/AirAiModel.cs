@@ -49,25 +49,39 @@ public class AirAiModel : AIBaseModel
     public ParticleSystem particleSystem;
 
     public ParticleSystem deathParticleSystem;
+
+    public CharacterAudio audio;
     
     private void Awake()
     {
         health = GetComponent<Health>();
         health.OnHealthChange += Dodge;
 
-        myCols = GetComponentInChildren<ColliderScript>();
+        health.EventDeath += Death;
         
+        myCols = GetComponentInChildren<ColliderScript>();
+
+        audio = GetComponent<CharacterAudio>();
         // I converted the trigger functions on this script to use the collider script
         // but it was never being used in the first place so
-        
+
 //        myCols.EnterTrigger += AddObjectNearMe;
 //        myCols.ExitTrigger += RemoveObjectNearMe;
     }
 
+    public override void Start()
+    {
+        base.Start();
+        audio.PlaySound(0);
+    }
+    
     private void OnDestroy()
     {
 //        myCols.EnterTrigger -= AddObjectNearMe;
 //        myCols.ExitTrigger -= RemoveObjectNearMe;
+
+        health.EventDeath += Death;
+        audio.StopSound(0, true);
     }
 
     // Update is called once per frame
@@ -134,6 +148,11 @@ public class AirAiModel : AIBaseModel
             StartCoroutine(FlakCooldown()); 
         }
     }
+
+    private void Death()
+    {
+        audio.PlaySound(1);
+    }
     
     //Calculate Movement Deviation
     public Vector3 RandomVector(float min, float max)
@@ -199,7 +218,8 @@ public class AirAiModel : AIBaseModel
         {
             currentSpawnPos = bulletPos2;
         }
-
+        
+        audio.PlaySound(2);
         GameObject flak = Instantiate(projectilePref, currentSpawnPos.position, Quaternion.identity);
         Rigidbody flakRb = flak.GetComponent<Rigidbody>();
         flakRb.velocity = targetDirection * projSpeed;

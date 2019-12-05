@@ -8,7 +8,7 @@ public class CharacterAudio : MonoBehaviour
     public List<StudioEventEmitter> sounds; 
     
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         sounds.AddRange(GetComponentsInChildren<StudioEventEmitter>());
     }

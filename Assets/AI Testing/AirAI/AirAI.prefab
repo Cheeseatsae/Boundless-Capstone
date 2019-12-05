@@ -112,7 +112,7 @@ Transform:
   m_Children:
   - {fileID: 4388191990515773076}
   m_Father: {fileID: 8853996144945510296}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &1075800669041110869
 SphereCollider:
@@ -190,6 +190,7 @@ GameObject:
   - component: {fileID: 7293549280160946370}
   - component: {fileID: 235032150809878350}
   - component: {fileID: 7963023767620466932}
+  - component: {fileID: 2982771567738036299}
   m_Layer: 0
   m_Name: AirAI
   m_TagString: AirAi
@@ -208,6 +209,7 @@ Transform:
   m_LocalPosition: {x: 59.24625, y: 24.539005, z: 85.10547}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
+  - {fileID: 4051000938647546022}
   - {fileID: 4239920170117206970}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -301,6 +303,19 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 4
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2982771567738036299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1299756857714876720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e99d62682eaf3d64ba4948e892c4fc22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds: []
 --- !u!1 &1355134456532438835
 GameObject:
   m_ObjectHideFlags: 0
@@ -848,6 +863,108 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!1 &5237453429726252678
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4051000938647546022}
+  - component: {fileID: 2967286736007543300}
+  - component: {fileID: 1666668805233905383}
+  - component: {fileID: 821809479211074499}
+  m_Layer: 0
+  m_Name: Audio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4051000938647546022
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5237453429726252678}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8853996144945510296}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2967286736007543300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5237453429726252678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/AirAi/Air AI Hum
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &1666668805233905383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5237453429726252678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/AirAi/Air AI Explosion
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &821809479211074499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5237453429726252678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/AirAi/Air AI Shot
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &5855825850675901084
 GameObject:
   m_ObjectHideFlags: 0
@@ -1082,10 +1199,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7190397243637353939}
     m_Modifications:
-    - target: {fileID: 195198, guid: ba8d7f7d02a92d9429a17beba429f0ff, type: 3}
-      propertyPath: m_Name
-      value: YellowFireMuzzleFlash
-      objectReference: {fileID: 0}
     - target: {fileID: 19847732, guid: ba8d7f7d02a92d9429a17beba429f0ff, type: 3}
       propertyPath: InitialModule.startSizeY.minMaxState
       value: 3
@@ -1154,6 +1267,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 195198, guid: ba8d7f7d02a92d9429a17beba429f0ff, type: 3}
+      propertyPath: m_Name
+      value: YellowFireMuzzleFlash
+      objectReference: {fileID: 0}
     - target: {fileID: 19847008, guid: ba8d7f7d02a92d9429a17beba429f0ff, type: 3}
       propertyPath: playOnAwake
       value: 0
@@ -1168,15 +1285,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba8d7f7d02a92d9429a17beba429f0ff, type: 3}
---- !u!198 &4878158576398404358 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 19847732, guid: ba8d7f7d02a92d9429a17beba429f0ff,
-    type: 3}
-  m_PrefabInstance: {fileID: 4878158576418181426}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4878158576417833056 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 479570, guid: ba8d7f7d02a92d9429a17beba429f0ff,
+    type: 3}
+  m_PrefabInstance: {fileID: 4878158576418181426}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &4878158576398404358 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 19847732, guid: ba8d7f7d02a92d9429a17beba429f0ff,
     type: 3}
   m_PrefabInstance: {fileID: 4878158576418181426}
   m_PrefabAsset: {fileID: 0}

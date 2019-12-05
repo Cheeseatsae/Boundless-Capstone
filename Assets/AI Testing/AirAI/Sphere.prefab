@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1893794073838380599}
   - component: {fileID: 912747378589774596}
   - component: {fileID: 7569203746401732933}
+  - component: {fileID: 3247756658517991985}
   m_Layer: 2
   m_Name: Sphere
   m_TagString: AirAi
@@ -128,6 +129,29 @@ MonoBehaviour:
     type: 3}
   aiDamager: {fileID: 0}
   damager: {fileID: 0}
+--- !u!114 &3247756658517991985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 618036274288355436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/AirAi/Air AI Explosion
+  PlayEvent: 3
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 100
 --- !u!1001 &6102838289196833777
 PrefabInstance:
   m_ObjectHideFlags: 0
