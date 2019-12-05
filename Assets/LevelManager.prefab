@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6871666997646057134}
   - component: {fileID: 6934361639926962298}
   - component: {fileID: 7565998191770093400}
+  - component: {fileID: 1498325721}
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: Untagged
@@ -59,6 +60,8 @@ MonoBehaviour:
   uiManager: {fileID: 0}
   player: {fileID: 8086389977643893722, guid: 58c3dce607ee80247991f80241eb2b1c, type: 3}
   paused: 0
+  agni: {fileID: 0}
+  portal: {fileID: 0}
 --- !u!114 &6871666997646057134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -86,11 +89,17 @@ MonoBehaviour:
   maxEnemySpawnDistance: 20
   minEnemySpawnDistance: 15
   numberOfAi: 0
-  numberOfKills: 10
+  numberOfKills: 0
+  killLimit: 3
   secondsBetweenSpawn: 10
+  currentObjective: 1
+  golumSpawnEffect: {fileID: 4711210788322819733, guid: 098b1b770a9eb5041a8db6510bbd4ee2,
+    type: 3}
+  airAiSpawnEffect: {fileID: 132680, guid: b0bad241702d21444a4cf49f8dfa2374, type: 3}
   numberofplayers: 0
   spawningLocation: {x: 0, y: 0, z: 0}
   toSpawn: {fileID: 0}
+  stopSpawn: 0
 --- !u!114 &6934361639926962298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,3 +159,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   settings: {fileID: 0}
   settingsAnim: {fileID: 0}
+  interaction: {fileID: 0}
+  textLogger: {fileID: 0}
+--- !u!114 &1498325721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8595958045922215488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3740e028b75bd2842b38d8ad5d5dc235, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  aiManager: {fileID: 6871666997646057134}
+  text: {fileID: 0}
+  objectiveList:
+  - 
+  - 
+  - 
+  - 
