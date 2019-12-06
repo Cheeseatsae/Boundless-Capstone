@@ -17,9 +17,14 @@ public class ActivateVolcano : MonoBehaviour
     public float radius;
 
     public float upModifier;
+
+    public CharacterAudio audio;
+    
     // Start is called before the first frame update
     void Start()
     {
+        audio = GetComponent<CharacterAudio>();
+        audio.PlaySound(0);
         LevelManager.instance.portal.PortalActivate += Explosion;
         //shardList = gameObject.GetComponentsInChildren<MeshCollider>();
     }
@@ -38,6 +43,9 @@ public class ActivateVolcano : MonoBehaviour
     public IEnumerator ExploWithWait()
     {
         yield return new WaitForSeconds(waitTime);
+        audio.StopSound	(0, true);
+        audio.PlaySound(1);
+        
         foreach (MeshCollider collider in shardList)
         {
             Rigidbody rb = collider.GetComponent<Rigidbody>();

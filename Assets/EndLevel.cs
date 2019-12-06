@@ -29,6 +29,7 @@ public class EndLevel : MonoBehaviour
             camCol.distance = camCol.maxDist;
             if (camCol.distance <= 2f)
             {
+                Jukebox.instance.RestartSoundtrack();
                 SceneManager.LoadScene(2);
             }
         }

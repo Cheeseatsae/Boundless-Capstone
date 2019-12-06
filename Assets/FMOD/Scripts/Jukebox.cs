@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Runtime.Serialization;
 using UnityEngine;
 
 public class Jukebox : MonoBehaviour
@@ -24,6 +25,8 @@ public class Jukebox : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
+        
+        Health.PlayerDeath += RestartSoundtrack;
     }
 
     // Start is called before the first frame update
@@ -44,7 +47,7 @@ public class Jukebox : MonoBehaviour
     }
 
     [ContextMenu("RestartSoundtrack")]
-    private void RestartSoundtrack()
+    public void RestartSoundtrack()
     {
         StopSoundtrack();
         soundtrack.start();
@@ -69,6 +72,7 @@ public class Jukebox : MonoBehaviour
     {
         StopSoundtrack();
         soundtrack.release();
+        Health.PlayerDeath -= RestartSoundtrack;
     }
     
     // Update is called once per frame
