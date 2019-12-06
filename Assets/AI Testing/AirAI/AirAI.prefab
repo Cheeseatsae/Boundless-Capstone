@@ -374,7 +374,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5561349426305759274, guid: 8f19d9b65a3ef154aa62bef34a5a28e3, type: 3}
+  - {fileID: 2100000, guid: e2829c27a26028348a9453556cb4c021, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -843,7 +843,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5561349426305759274, guid: 8f19d9b65a3ef154aa62bef34a5a28e3, type: 3}
+  - {fileID: 2100000, guid: e2829c27a26028348a9453556cb4c021, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1200,10 +1200,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7190397243637353939}
     m_Modifications:
-    - target: {fileID: 195198, guid: ba8d7f7d02a92d9429a17beba429f0ff, type: 3}
-      propertyPath: m_Name
-      value: YellowFireMuzzleFlash
-      objectReference: {fileID: 0}
     - target: {fileID: 19847732, guid: ba8d7f7d02a92d9429a17beba429f0ff, type: 3}
       propertyPath: InitialModule.startSizeY.minMaxState
       value: 3
@@ -1271,6 +1267,10 @@ PrefabInstance:
     - target: {fileID: 479570, guid: ba8d7f7d02a92d9429a17beba429f0ff, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 195198, guid: ba8d7f7d02a92d9429a17beba429f0ff, type: 3}
+      propertyPath: m_Name
+      value: YellowFireMuzzleFlash
       objectReference: {fileID: 0}
     - target: {fileID: 19847008, guid: ba8d7f7d02a92d9429a17beba429f0ff, type: 3}
       propertyPath: playOnAwake

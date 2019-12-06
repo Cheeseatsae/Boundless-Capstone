@@ -2066,6 +2066,7 @@ MonoBehaviour:
   abilityCheck: 0
   canCast: 0
   alive: 1
+  audio: {fileID: 0}
 --- !u!114 &265910205
 MonoBehaviour:
   m_ObjectHideFlags: 0
