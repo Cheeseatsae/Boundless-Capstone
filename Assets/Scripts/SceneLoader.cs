@@ -20,7 +20,6 @@ public class SceneLoader : MonoBehaviour
     public void LoadPlayScene()
     {
         SceneManager.LoadScene(1);
-        Jukebox.instance.RestartSoundtrack();
         Jukebox.instance.SetProgressionVariable(4);
         
     }
@@ -35,5 +34,17 @@ public class SceneLoader : MonoBehaviour
     public void LoadCreditsScene()
     {
         SceneManager.LoadScene(2);
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
+
+    public void Retry()
+    {
+        SceneManager.LoadScene(1);
+        Jukebox.instance.RestartSoundtrack();
+        Jukebox.instance.SetProgressionVariable(4);
     }
 }

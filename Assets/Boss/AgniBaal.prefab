@@ -2080,7 +2080,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   abilityCD: 5
-  damage: 5
+  damage: 10
   onCd: 0
   target: {fileID: 0}
   castTime: 7
@@ -2136,7 +2136,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b54b534b3f0f2534ca26d3b3855d7a7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseMaxHealth: 10000
+  baseMaxHealth: 1500
   health: 0
   maxHealth: 0
   baseHealthRegen: 0

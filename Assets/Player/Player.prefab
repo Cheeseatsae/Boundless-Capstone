@@ -2288,7 +2288,7 @@ MonoBehaviour:
   boostDir: {x: 0, y: 1250, z: 0}
   explosionRadius: 8
   damage: 0
-  cooldown: 3
+  cooldown: 8
   jumpTime: 0.3
   particleSystem: {fileID: 81048664654602034}
 --- !u!114 &-2313572668704378061
@@ -2694,10 +2694,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8326542786986882722}
     m_Modifications:
-    - target: {fileID: 175018, guid: 7acc3ea9272505b4aba8ffd481b34dba, type: 3}
-      propertyPath: m_Name
-      value: BlueFlamethrower2
-      objectReference: {fileID: 0}
     - target: {fileID: 19807910, guid: 7acc3ea9272505b4aba8ffd481b34dba, type: 3}
       propertyPath: InitialModule.startSizeY.minMaxState
       value: 3
@@ -2773,6 +2769,10 @@ PrefabInstance:
     - target: {fileID: 460898, guid: 7acc3ea9272505b4aba8ffd481b34dba, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 175018, guid: 7acc3ea9272505b4aba8ffd481b34dba, type: 3}
+      propertyPath: m_Name
+      value: BlueFlamethrower2
       objectReference: {fileID: 0}
     - target: {fileID: 474944, guid: 7acc3ea9272505b4aba8ffd481b34dba, type: 3}
       propertyPath: m_LocalPosition.y
