@@ -26,7 +26,25 @@ public class BossAnimController : MonoBehaviour
     {
         model.lavaFountain.Cast();
     }
-    
-    
+
+    public void PlayFireBreath()
+    {
+        model.audio.PlaySound(0);
+    }
+
+    public void StopPlayFireBreath()
+    {
+        model.audio.StopSound(0, true);
+    }
+
+    public void PlayThrow()
+    {
+        model.audio.PlaySound(1);
+    }
+
+    public void PlayDeath()
+    {
+        model.audio.PlaySound(2);
+    }
 
 }

@@ -137,6 +137,7 @@ public class PlayerAnimator : MonoBehaviour
     private void PlayAnimJump()
     {
         if (dead) return;
+        ResetTriggers();
         animator.SetTrigger("Jump");
     }
 
@@ -167,10 +168,7 @@ public class PlayerAnimator : MonoBehaviour
         
         animator.applyRootMotion = true;
         
-        animator.ResetTrigger("Land");
-        animator.ResetTrigger("Jump");
-        animator.ResetTrigger("Idle");
-        animator.ResetTrigger("Running");
+        ResetTriggers();
         
         animator.SetTrigger("Death");
     }
@@ -196,10 +194,19 @@ public class PlayerAnimator : MonoBehaviour
 //        animTimer = animTimerMark;
 //        
 //    }
-    
+
+    private void ResetTriggers()
+    {
+        animator.ResetTrigger("Land");
+        animator.ResetTrigger("Jump");
+        animator.ResetTrigger("Idle");
+        animator.ResetTrigger("Running");
+    }
+
     private void PlayAnimAbility3()
     {
         if (dead) return;
+        ResetTriggers();
         animator.SetTrigger("Jump");
     }
     

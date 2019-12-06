@@ -25,12 +25,16 @@ public class Boss_Model : MonoBehaviour
     public bool canCast = false;
 
     public bool alive = true;
+
+    public CharacterAudio audio;
+    
     // Start is called before the first frame update
     void Start()
     {
         GetComponent<Health>().OnHealthChange += PlayerUI.instance.UpdateBossHealth;
         //currentAbility = lavaFountain;
         StartCoroutine(TestCast());
+        audio = GetComponent<CharacterAudio>();
     }
 
     // Update is called once per frame
@@ -63,9 +67,6 @@ public class Boss_Model : MonoBehaviour
             dir.y = 0;
             transform.rotation = Quaternion.LookRotation(dir);
         }
-        
-        
-
     }
 
     public void AbilitySelect()

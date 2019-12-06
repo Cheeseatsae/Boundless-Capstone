@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6621155068828772134}
   - component: {fileID: 151993003259051224}
   - component: {fileID: 997016667935433637}
+  - component: {fileID: 8530158961141662241}
   m_Layer: 2
   m_Name: Follower
   m_TagString: Untagged
@@ -97,6 +98,29 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8530158961141662241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7107901973988133340}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/Boss/BossLavaFountain
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 90
 --- !u!1001 &1408827219092048034
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -104,11 +128,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7902549028353799357}
     m_Modifications:
-    - target: {fileID: 8031920573885055376, guid: 337c0a415a2a9b949b20abad6ef9c924,
-        type: 3}
-      propertyPath: m_Name
-      value: YellowJetFlame2
-      objectReference: {fileID: 0}
     - target: {fileID: 8031920573885343746, guid: 337c0a415a2a9b949b20abad6ef9c924,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -179,6 +198,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.25
       objectReference: {fileID: 0}
+    - target: {fileID: 8031920573885055376, guid: 337c0a415a2a9b949b20abad6ef9c924,
+        type: 3}
+      propertyPath: m_Name
+      value: YellowJetFlame2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 337c0a415a2a9b949b20abad6ef9c924, type: 3}
 --- !u!4 &9005569575730045088 stripped
@@ -194,11 +218,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7902549028353799357}
     m_Modifications:
-    - target: {fileID: 8031920573885055376, guid: 337c0a415a2a9b949b20abad6ef9c924,
-        type: 3}
-      propertyPath: m_Name
-      value: YellowJetFlame2 (1)
-      objectReference: {fileID: 0}
     - target: {fileID: 8031920573885343746, guid: 337c0a415a2a9b949b20abad6ef9c924,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -268,6 +287,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8031920573885055376, guid: 337c0a415a2a9b949b20abad6ef9c924,
+        type: 3}
+      propertyPath: m_Name
+      value: YellowJetFlame2 (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 337c0a415a2a9b949b20abad6ef9c924, type: 3}

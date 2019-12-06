@@ -213,7 +213,7 @@
 	<object class="MixerBusFader" id="{d977b7e0-d591-496e-a392-a1d5738cf2f2}" />
 	<object class="SpatialiserEffect" id="{23ba28a4-ec20-42ed-879d-1632432849bf}">
 		<property name="maximumDistance">
-			<value>60</value>
+			<value>200</value>
 		</property>
 	</object>
 	<object class="SFXReverbEffect" id="{b4d62404-0aa7-4bd5-9b7a-b76b5ec2802f}">

@@ -13,8 +13,10 @@ public class ShardScript : MonoBehaviour
     public int damage;
     // Start is called before the first frame update
     public float destroyTimer;
+
     private void OnCollisionEnter(Collision other)
     {
+
         if (other.gameObject.GetComponent<PlayerModel>())
         {
             Health health = other.gameObject.GetComponent<Health>();
@@ -29,6 +31,7 @@ public class ShardScript : MonoBehaviour
 
     private void Start()
     {
+
         if (player != null)
         {
             transform.LookAt(player.transform);
