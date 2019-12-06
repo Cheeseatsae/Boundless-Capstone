@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 using UnityEngine;
+using UnityEngine.AI;
 using Random = UnityEngine.Random;
 
 public class AIManager : MonoBehaviour
@@ -13,7 +14,7 @@ public class AIManager : MonoBehaviour
 
     public GameObject player;
 
-    public float distanceCheck;
+    
     public float elapsedTime;
 
     public GameObject groundAI;
@@ -116,15 +117,13 @@ public class AIManager : MonoBehaviour
         }
 
         if (hit.point != Vector3.zero)
-            //Debug.Log("Didnt hit nothing");
-            returnLocation = hit.point;
-        //Debug.Log(returnLocation);
-
-        else
-            returnLocation = Vector3.zero;
-
-
-        //Debug.Log(returnLocation);
+        {
+            NavMeshHit navPoint;
+            if (NavMesh.SamplePosition(hit.point, out navPoint, 15f, NavMesh.AllAreas))
+            {
+                returnLocation = navPoint.position;
+            }
+        }else returnLocation = Vector3.zero;
 
         return returnLocation;
     }

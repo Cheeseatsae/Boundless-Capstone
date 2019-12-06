@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2752fe5dc83717e4ca54f76c769ae032, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 8
+  damage: 15
   waitTime: 1
   emission: {fileID: 1792289986431232185, guid: a958bff9b5181e54999a05c12e3930ae,
     type: 3}

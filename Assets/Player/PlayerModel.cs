@@ -160,6 +160,7 @@ public class PlayerModel : MonoBehaviour
         ability4.enabled = false;
         playerInteraction.enabled = false;
         StopAllCoroutines();
+        health.enabled = false;
         this.enabled = false;
     }
     

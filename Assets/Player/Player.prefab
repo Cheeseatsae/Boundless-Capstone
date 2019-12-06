@@ -2150,11 +2150,11 @@ MonoBehaviour:
   ability3: {fileID: 0}
   ability4: {fileID: 0}
   playerInteraction: {fileID: 0}
-  baseAttackSpeed: 3000
+  baseAttackSpeed: 50
   attackSpeed: 0
   baseAttackRange: 5
   attackRange: 0
-  baseAttackDamage: 10
+  baseAttackDamage: 5
   attackDamage: 0
   target: {x: 0, y: 0, z: 0}
   sphereRadius: 0.75
@@ -2168,6 +2168,7 @@ MonoBehaviour:
   attackOccupied: 0
   floor: 10
   crumbTrail: []
+  health: {fileID: 0}
   camOffset: 6
   playFabUserObj: {fileID: 2609842523394191113, guid: 96876c159dd002e43a639731b5995faa,
     type: 3}
@@ -2260,7 +2261,7 @@ MonoBehaviour:
   player: {fileID: 0}
   projectilePref: {fileID: 4270748845602874235, guid: 9042d922e3dbf0047be8b46899c9834b,
     type: 3}
-  baseDamage: 15
+  baseDamage: 10
   chargeDuration: 2
   projectileSpeed: 50
   baseExplosionRadius: 4
@@ -2286,7 +2287,7 @@ MonoBehaviour:
     type: 3}
   boostDir: {x: 0, y: 1250, z: 0}
   explosionRadius: 8
-  damage: 25
+  damage: 0
   cooldown: 3
   jumpTime: 0.3
   particleSystem: {fileID: 81048664654602034}

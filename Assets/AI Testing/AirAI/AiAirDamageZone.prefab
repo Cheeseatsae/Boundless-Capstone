@@ -112,7 +112,7 @@ MonoBehaviour:
   knockupStrength: 15
   particleSystem: {fileID: 5967376831867597852}
   slamDamage: 0
-  explosionDamage: 5
+  explosionDamage: 3
   layer:
     serializedVersion: 2
     m_Bits: 512

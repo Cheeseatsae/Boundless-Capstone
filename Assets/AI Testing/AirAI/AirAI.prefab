@@ -228,7 +228,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   rb: {fileID: 0}
-  speed: 10
+  speed: 7
   minGroundDistance: 10
   maxGroundDistance: 20
   targetDir: {x: 0, y: 0, z: 0}
@@ -254,6 +254,7 @@ MonoBehaviour:
   dodgeSelect: 0
   particleSystem: {fileID: 4878158576398404358}
   deathParticleSystem: {fileID: 0}
+  audio: {fileID: 0}
 --- !u!54 &7293549280160946370
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1199,6 +1200,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7190397243637353939}
     m_Modifications:
+    - target: {fileID: 195198, guid: ba8d7f7d02a92d9429a17beba429f0ff, type: 3}
+      propertyPath: m_Name
+      value: YellowFireMuzzleFlash
+      objectReference: {fileID: 0}
     - target: {fileID: 19847732, guid: ba8d7f7d02a92d9429a17beba429f0ff, type: 3}
       propertyPath: InitialModule.startSizeY.minMaxState
       value: 3
@@ -1266,10 +1271,6 @@ PrefabInstance:
     - target: {fileID: 479570, guid: ba8d7f7d02a92d9429a17beba429f0ff, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 195198, guid: ba8d7f7d02a92d9429a17beba429f0ff, type: 3}
-      propertyPath: m_Name
-      value: YellowFireMuzzleFlash
       objectReference: {fileID: 0}
     - target: {fileID: 19847008, guid: ba8d7f7d02a92d9429a17beba429f0ff, type: 3}
       propertyPath: playOnAwake
