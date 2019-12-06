@@ -1312,8 +1312,8 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 1, g: 1, b: 1, a: 1}
-        key1: {r: 1, g: 1, b: 1, a: 1}
+        key0: {r: 0.9528302, g: 0.8017818, b: 0, a: 1}
+        key1: {r: 0.9433962, g: 0.5159903, b: 0.06674972, a: 1}
         key2: {r: 1, g: 1, b: 1, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -4854,11 +4854,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 688211578782138620}
     m_Modifications:
-    - target: {fileID: -927199367670048503, guid: c6e76fafd31d50045aa52c61ad4629d3,
-        type: 3}
-      propertyPath: m_Name
-      value: cone
-      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: c6e76fafd31d50045aa52c61ad4629d3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4923,6 +4918,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: c6e76fafd31d50045aa52c61ad4629d3,
+        type: 3}
+      propertyPath: m_Name
+      value: cone
       objectReference: {fileID: 0}
     - target: {fileID: -1504981713932161579, guid: c6e76fafd31d50045aa52c61ad4629d3,
         type: 3}

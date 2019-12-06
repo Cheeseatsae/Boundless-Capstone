@@ -18,6 +18,7 @@ public class FollowerMerge : MonoBehaviour
     public float damageTimer;
     public int amountOfTicks;
     public int damagePerTick;
+    public SciFiBeamStatic beam;
     public void Start()
     {
         if (isLeader)
@@ -34,6 +35,8 @@ public class FollowerMerge : MonoBehaviour
         if (isLeader)
         {
             transform.localScale = Scale;
+
+            
         }
     }
 

@@ -36,19 +36,22 @@ public class AIDamager : MonoBehaviour
 
         foreach (Collider col in cols)
         {
+            if (col.GetComponent<PlayerModel>())
+            {
+                Rigidbody targetRb = col.gameObject.GetComponent<Rigidbody>();
 
-            Rigidbody targetRb = col.gameObject.GetComponent<Rigidbody>();
+                Vector3 dir = (col.gameObject.transform.position - owner.transform.position) * 3;
+                dir.y = 0;
+                dir = dir.normalized;
+                dir.y = knockupDirection.y;
 
-            Vector3 dir = (col.gameObject.transform.position - owner.transform.position) * 3;
-            dir.y = 0;
-            dir = dir.normalized;
-            dir.y = knockupDirection.y;
+                ApplyKnockback(col.gameObject, dir * knockupStrength);
 
-            ApplyKnockback(col.gameObject, dir * knockupStrength);
+                targetRb.velocity = dir * knockupStrength;
+                Health health = col.gameObject.GetComponent<Health>();
+                health.DoDamage(slamDamage);
+            }
 
-            targetRb.velocity = dir * knockupStrength;
-            Health health = col.gameObject.GetComponent<Health>();
-            health.DoDamage(slamDamage);
         }
 
         owner.GetComponent<Health>().EventDeath -= Delete;
@@ -69,8 +72,12 @@ public class AIDamager : MonoBehaviour
         particleSystem.Play();
         foreach (Collider col in cols)
         {
-            Health health = col.gameObject.GetComponent<Health>();
-            health.DoDamage(explosionDamage);
+            if (col.GetComponent<PlayerModel>())
+            {
+                Health health = col.gameObject.GetComponent<Health>();
+                health.DoDamage(explosionDamage);
+            }
+
         }
 
         DeleteExplosion();

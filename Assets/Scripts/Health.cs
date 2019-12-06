@@ -70,6 +70,8 @@ public class Health : MonoBehaviour
         {
             GroundAI_Model model = GetComponent<GroundAI_Model>();
             model.anim.SetTrigger("Dead");
+            model.navmesh.isStopped = true;
+            model.navmesh.velocity = new Vector3(0,0,0);
             model.GetComponent<Collider>().enabled = false;
         }
 

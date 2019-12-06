@@ -20,6 +20,7 @@ public class ActivatePortal : Interactable
             base.Interact();
             PortalActivate?.Invoke();
             aura.SetActive(false);
+            active = false;
 
         }
     }

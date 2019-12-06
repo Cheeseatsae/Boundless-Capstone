@@ -35,6 +35,7 @@ public class GroundAI_Model : AIBaseModel
     private void Awake()
     {
         navmesh = GetComponent<NavMeshAgent>();
+        
     }
 
     public override void Start()
