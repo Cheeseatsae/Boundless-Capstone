@@ -42,10 +42,10 @@ public class ActivateVolcano : MonoBehaviour
 
     public IEnumerator ExploWithWait()
     {
-        yield return new WaitForSeconds(waitTime);
-        audio.StopSound	(0, true);
         audio.PlaySound(1);
-        
+        yield return new WaitForSeconds(waitTime);
+        audio.StopSound(0, true);
+
         foreach (MeshCollider collider in shardList)
         {
             Rigidbody rb = collider.GetComponent<Rigidbody>();
