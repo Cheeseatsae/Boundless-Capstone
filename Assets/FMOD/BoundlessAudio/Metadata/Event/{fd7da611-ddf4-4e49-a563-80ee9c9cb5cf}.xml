@@ -150,9 +150,6 @@
 	</object>
 	<object class="MixerBusPanner" id="{8bc27aeb-5dad-4b11-b569-c7691ddcffc9}" />
 	<object class="SingleSound" id="{5c597530-aee4-4ef5-adbe-8b666bf29834}">
-		<property name="start">
-			<value>0.45000000000000001</value>
-		</property>
 		<property name="length">
 			<value>0.76183333333333336</value>
 		</property>
@@ -171,7 +168,7 @@
 	</object>
 	<object class="SingleSound" id="{8ce51357-ab79-4d86-8d12-5b6d45d68ace}">
 		<property name="start">
-			<value>1.8500000000000005</value>
+			<value>1.4000000000000001</value>
 		</property>
 		<property name="length">
 			<value>0.76183333333333336</value>
@@ -208,7 +205,7 @@
 	</object>
 	<object class="SingleSound" id="{cc4712e3-e9ac-4060-89ec-34657a03700b}">
 		<property name="start">
-			<value>0.64704433497536962</value>
+			<value>0.19704433497536955</value>
 		</property>
 		<property name="length">
 			<value>0.76183333333333336</value>
@@ -247,7 +244,7 @@
 	</object>
 	<object class="SingleSound" id="{17c9e94f-83ab-46ec-8731-9a34be57975a}">
 		<property name="start">
-			<value>0.55160098522167478</value>
+			<value>0.1016009852216747</value>
 		</property>
 		<property name="length">
 			<value>0.76183333333333336</value>
@@ -292,7 +289,7 @@
 	</object>
 	<object class="SingleSound" id="{a82b0fbf-1d1c-4b41-bd6c-45d4b37dd1f0}">
 		<property name="start">
-			<value>0.70554187192118234</value>
+			<value>0.25554187192118227</value>
 		</property>
 		<property name="length">
 			<value>0.76183333333333336</value>
@@ -332,7 +329,7 @@
 	</object>
 	<object class="SingleSound" id="{18cf8575-525f-45ec-a4d4-56b0ad822ca1}">
 		<property name="start">
-			<value>0.80098522167487718</value>
+			<value>0.35098522167487722</value>
 		</property>
 		<property name="length">
 			<value>0.76183333333333336</value>
@@ -374,7 +371,7 @@
 	</object>
 	<object class="SingleSound" id="{d6d1c150-78a1-41f1-aa1f-df8ca7fe903f}">
 		<property name="start">
-			<value>0.91798029556650285</value>
+			<value>0.46798029556650295</value>
 		</property>
 		<property name="length">
 			<value>0.76183333333333336</value>
@@ -544,7 +541,7 @@
 			<value>2</value>
 		</property>
 		<property name="maximumDistance">
-			<value>15</value>
+			<value>45</value>
 		</property>
 	</object>
 	<object class="MixerBusFader" id="{05fabc29-dc15-4808-bb2c-ba1b8c1703c2}" />

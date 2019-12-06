@@ -32,4 +32,29 @@ public class AiAnimHandler : MonoBehaviour
     {
         model.nova.Play();
     }
+
+    public void PlayStep()
+    {
+        model.audio.PlaySound(0);
+    }
+
+    public void PlayJump()
+    {
+        model.audio.PlaySound(1);
+    }
+
+    public void PlaySlam()
+    {
+        model.audio.PlaySound(2);
+    }
+
+    public void PlayDeath()
+    {
+        model.audio.PlaySound(3);
+    }
+    
+    public void PlayThrow()
+    {
+        model.audio.PlaySound(4);
+    }
 }

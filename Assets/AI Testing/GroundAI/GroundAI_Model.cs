@@ -30,9 +30,17 @@ public class GroundAI_Model : AIBaseModel
     public NavMeshAgent navmesh;
     // Start is called before the first frame update
 
+    public CharacterAudio audio;
+    
     private void Awake()
     {
         navmesh = GetComponent<NavMeshAgent>();
+    }
+
+    public override void Start()
+    {
+        base.Start();
+        audio = GetComponent<CharacterAudio>();
     }
 
     // Update is called once per frame

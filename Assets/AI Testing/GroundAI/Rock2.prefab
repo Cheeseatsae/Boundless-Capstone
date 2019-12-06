@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6428020360497972715}
   - component: {fileID: 3331665807933517183}
   - component: {fileID: -3099661795881927556}
+  - component: {fileID: 121294113961978977}
   m_Layer: 2
   m_Name: Rock2
   m_TagString: Untagged
@@ -143,3 +144,26 @@ MonoBehaviour:
   waitTime: 1
   emission: {fileID: 1792289986431232185, guid: a958bff9b5181e54999a05c12e3930ae,
     type: 3}
+--- !u!114 &121294113961978977
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1561131534318745845}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  Event: event:/GroundAi/GroundProjectileHit
+  PlayEvent: 3
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 50
