@@ -13,6 +13,9 @@ public class ItemBox : Interactable
     public GameObject floatingCost;
     public float minPlayerDistance;
 
+    public GameObject lid;
+    public Transform spawnPoint;
+    
     private void Start()
     {
         active = true;
@@ -30,21 +33,16 @@ public class ItemBox : Interactable
     {
         if (currency < cost) return;
         
-        VisualEffect();
         activated = true;
-        active = false;
+        active = false; 
         PlayerInteraction.ChangeMoney(-cost);
-        GameObject p = Instantiate(pickup, transform.position + Vector3.up, Quaternion.identity);
+        GameObject p = Instantiate(pickup, spawnPoint.position, Quaternion.identity);
         p.GetComponent<Pickup>().PickItem();
         floatingCost.SetActive(false);
-        p.GetComponent<Rigidbody>().AddForce((Vector3.forward + Vector3.up) * 300);
+        lid.GetComponent<Rigidbody>().isKinematic = false;
+        lid.GetComponent<Rigidbody>().AddForce((Vector3.forward + Vector3.up) * 600);
         
         Destroy(this);
-    }
-
-    private void VisualEffect()
-    {
-        GetComponent<Renderer>().material.color = Color.grey;   
     }
 
     private void Update()
