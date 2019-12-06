@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 143205878975623407}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 149.7415, y: 98.080315, z: -18.077665}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalScale: {x: 8.5, y: 8.5, z: 8.5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -45,7 +45,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c28e9fba8a3394b4d89c59a993cc8274, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  effect: Attack Speed has been increased
   stackCount: 0
   player: {fileID: 0}
 --- !u!33 &4924068012797170652

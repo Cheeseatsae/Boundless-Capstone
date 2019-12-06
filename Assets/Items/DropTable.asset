@@ -41,10 +41,3 @@ MonoBehaviour:
       type: 3}
     scriptToAdd: {fileID: 5475232514579099374, guid: 23aedd6a63aee524f96ee151421c50ad,
       type: 3}
-  - itemId: 4
-    physical: 0
-    lightColour: {r: 0.85882354, g: 0, b: 0.7551235, a: 1}
-    objectToAdd: {fileID: 646008549159855928, guid: ab5326cf20198b648b160201fe1cc800,
-      type: 3}
-    scriptToAdd: {fileID: 4347840874716392043, guid: ab5326cf20198b648b160201fe1cc800,
-      type: 3}

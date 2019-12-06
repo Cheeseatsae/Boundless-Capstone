@@ -107,6 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1eef4792348311f4f9dded7a40891627, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  active: 0
   spawnPoint: {fileID: 0}
   table: {fileID: 11400000, guid: 23355081488f80f428fd5d1754faeb42, type: 2}
   item:
@@ -127,7 +128,7 @@ Light:
   m_Type: 2
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 30
-  m_Range: 3
+  m_Range: 2
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
