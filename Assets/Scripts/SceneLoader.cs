@@ -26,9 +26,12 @@ public class SceneLoader : MonoBehaviour
 
     public void LoadMainScene()
     {
+        if (SceneManager.GetActiveScene().buildIndex == 1)
+        {
+            Jukebox.instance.RestartSoundtrack();
+            Jukebox.instance.SetProgressionVariable(0);
+        }
         SceneManager.LoadScene(0);
-
-
     }
 
     public void LoadCreditsScene()
